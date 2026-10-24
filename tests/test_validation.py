@@ -126,3 +126,13 @@ def test_linhas_repetidas_sao_somadas(catalog):
     report = validate_cart(lines(("acougue-001", 1), ("acougue-001", 1)), Constraints(people=5), catalog)
     assert len(report.lines) == 1
     assert report.lines[0].quantity == 2
+
+
+def test_soma_de_refeicoes_principais_nao_pode_exceder(catalog):
+    # 3 kits para 5 (15) + 4 bandejas de mini sanduíches (12) = comida para 27 num pedido de 12.
+    report = validate_cart(
+        lines(("graofino-003", 3), ("graofino-007", 4)),
+        Constraints(people=12, required_categories=[Category.PRATO_PRINCIPAL]),
+        catalog,
+    )
+    assert ProblemCode.EXCESSIVE_QUANTITY in codes(report)

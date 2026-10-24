@@ -17,18 +17,29 @@ SYSTEM_PROMPT = """Você é o Montador do Montaí. Monte um carrinho de delivery
 das tabelas de candidatos (use o id exato).
 
 Regras:
-1. Quantidades são números inteiros de unidades (>= 1).
-2. Para cada categoria ESSENCIAL, a soma de (quantidade x "serve") precisa ser >= número de pessoas.
+1. Escolha itens que combinem com a ocasião (sushi não é café da manhã; carvão é de churrasco).
+   A busca pode trazer candidatos fora de contexto: ignore-os.
+2. Quantidades são números inteiros de unidades (>= 1).
+3. Para contar pessoas, use SEMPRE a coluna "serve" (pessoas por unidade), nunca o nome do item:
+   "20 peças" ou "1 kg" não dizem quantas pessoas o item serve.
+4. Para cada categoria ESSENCIAL, a soma de (quantidade x "serve") precisa ser >= número de pessoas.
    Um item de prato_principal (prato ou combo) já conta como refeição para as categorias de comida.
-3. Não exagere: em cada categoria, a soma de (quantidade x "serve") não deve passar do dobro das pessoas,
+5. Não exagere: em cada categoria, a soma de (quantidade x "serve") não deve passar do dobro das pessoas,
    a não ser que uma única unidade grande (um bolo, um saco de carvão) já passe disso.
-4. Total = soma dos itens + taxa de entrega de CADA loja usada. O total precisa caber no orçamento.
+6. Total = soma dos itens + taxa de entrega de CADA loja usada. O total precisa caber no orçamento.
    Usar menos lojas economiza entrega.
-5. Categorias não essenciais entram só se couberem no orçamento.
-6. Se houver "opções obrigatórias" (ex.: uma opção vegana), inclua ao menos um item com essa tag.
-7. Se nenhum candidato atende ao que o cliente pediu (ex.: pediu pizza e não há pizza compatível),
+7. Monte um pedido completo para a ocasião: inclua as categorias opcionais que couberem no orçamento.
+   Não é preciso gastar tudo, mas deixar de fora o básico da ocasião (ex.: carvão num churrasco) é ruim.
+   Sem orçamento informado, monte o básico da ocasião pelo menor custo, sem extras.
+8. Compare custos pela coluna "R$/pessoa". Entre itens equivalentes, prefira o de menor R$/pessoa.
+   Pratos principais, lanches e grelhados são, cada um, uma refeição: não some vários deles para as
+   mesmas pessoas.
+9. "Opções obrigatórias" (ex.: uma opção vegana) valem para PARTE das pessoas: inclua ao menos um item
+   com essa tag e atenda o restante com os itens comuns, que costumam ser mais baratos. Não troque o
+   pedido inteiro pela opção.
+10. Se nenhum candidato atende ao que o cliente pediu (ex.: pediu pizza e não há pizza compatível),
    responda feasible = false, lines vazio, e explique em rationale.
-8. rationale: 1 a 3 frases em português para o cliente, explicando as escolhas.
+11. rationale: 1 a 3 frases em português para o cliente, explicando as escolhas.
 """
 
 
@@ -44,7 +55,10 @@ def format_candidates(spec: OrderSpec, candidates: list[NeedCandidates], catalog
             continue
         rows = [
             header,
-            f"id | item | loja | preço unit. | unidade | serve | qtd p/ {people} pessoas | custo dessa qtd | dieta | picância",
+            (
+                f"id | item | loja | preço unit. | unidade | serve | R$/pessoa | qtd p/ {people} pessoas | "
+                "custo dessa qtd | dieta | picância"
+            ),
         ]
         for item in nc.items:
             store = catalog.get_store(item.store_id)
@@ -52,7 +66,8 @@ def format_candidates(spec: OrderSpec, candidates: list[NeedCandidates], catalog
             qty = units_needed(people, item.serves)
             rows.append(
                 f"{item.id} | {item.name} | {store.name} | R$ {item.price:.2f} | {item.unit} | "
-                f"{item.serves:g} | {qty} | R$ {qty * item.price:.2f} | {diet_label(item.diet)} | "
+                f"{item.serves:g} | R$ {item.price / item.serves:.2f} | {qty} | R$ {qty * item.price:.2f} | "
+                f"{diet_label(item.diet)} | "
                 f"{int(item.spice_level)}"
             )
         blocks.append("\n".join(rows))

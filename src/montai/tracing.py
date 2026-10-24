@@ -26,6 +26,7 @@ class Step(BaseModel):
     input: Any = None
     output: Any = None
     llm_calls: int = 0
+    retries: int = 0  # respostas fora do formato que precisaram ser refeitas
     tokens_in: int = 0
     tokens_out: int = 0
     cost_usd: float = 0.0

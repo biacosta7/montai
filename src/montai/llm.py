@@ -13,6 +13,7 @@ from __future__ import annotations
 import copy
 from typing import Any, TypeVar
 
+import openai
 from openai import OpenAI
 from pydantic import BaseModel, ValidationError
 
@@ -36,9 +37,29 @@ def strict_json_schema(model: type[BaseModel]) -> dict:
     valores padrão, então essa conversão não muda o significado deles.
     """
     schema = copy.deepcopy(model.model_json_schema())
+    defs = schema.get("$defs", {})
+
+    def collapse_optional(node: dict) -> None:
+        # Pydantic escreve `X | None` como anyOf [X, {"type": "null"}]. O modo
+        # estrito do Groq recusa esse anyOf, mas aceita a forma equivalente
+        # {"type": [X, "null"]} (ou um enum que inclui null).
+        branches = node.get("anyOf")
+        if not branches or len(branches) != 2 or {"type": "null"} not in branches:
+            return
+        other = next(b for b in branches if b != {"type": "null"})
+        if "$ref" in other:
+            other = copy.deepcopy(defs[other["$ref"].split("/")[-1]])
+        if "type" not in other or not isinstance(other["type"], str):
+            return
+        del node["anyOf"]
+        node.update(other)
+        node["type"] = [other["type"], "null"]
+        if "enum" in node:
+            node["enum"] = [*node["enum"], None]
 
     def visit(node: Any) -> None:
         if isinstance(node, dict):
+            collapse_optional(node)
             if node.get("type") == "object" and "properties" in node:
                 node["additionalProperties"] = False
                 node["required"] = list(node["properties"])
@@ -99,13 +120,14 @@ class LLMClient:
         return response.choices[0].message
 
     def structured(
-        self, messages: list[dict], schema: type[T], *, step: Step | None = None, attempts: int = 2
+        self, messages: list[dict], schema: type[T], *, step: Step | None = None, attempts: int = 3
     ) -> T:
         """Pede uma resposta no formato `schema` e valida com Pydantic.
 
-        Mesmo com modo estrito, a validação acontece no nosso código: o schema
-        garante o formato, mas regras como "quantidade > 0" são do Pydantic e
-        do validador. Se o JSON vier inválido, o erro volta para o modelo uma vez.
+        O "modo estrito" do Groq não restringe a geração: ele valida depois e,
+        se o JSON não bate com o schema, devolve erro 400 (json_validate_failed)
+        com a geração que falhou. Tratamos esse erro igual a um JSON que não
+        passou no Pydantic: o erro volta ao modelo, que tenta de novo.
         """
         response_format = {
             "type": "json_schema",
@@ -114,14 +136,24 @@ class LLMClient:
         history = list(messages)
         last_error = ""
         for _ in range(attempts):
-            message = self.chat(history, step=step, response_format=response_format)
-            content = message.content or ""
             try:
+                message = self.chat(history, step=step, response_format=response_format)
+                content = message.content or ""
                 return schema.model_validate_json(content)
+            except openai.BadRequestError as exc:
+                body = exc.body if isinstance(exc.body, dict) else {}
+                if body.get("code") != "json_validate_failed":
+                    raise
+                # Obs.: o provedor não devolve o uso de tokens de uma geração
+                # recusada, então essas tentativas não entram no custo estimado.
+                content = body.get("failed_generation", "")
+                last_error = body.get("message", str(exc))
             except ValidationError as exc:
                 last_error = str(exc)
-                history += [
-                    {"role": "assistant", "content": content},
-                    {"role": "user", "content": f"O JSON não passou na validação:\n{exc}\nCorrija e responda de novo."},
-                ]
+            if step is not None:
+                step.retries += 1
+            history += [
+                {"role": "assistant", "content": content},
+                {"role": "user", "content": f"O JSON não passou na validação:\n{last_error}\nCorrija e responda de novo."},
+            ]
         raise LLMError(f"resposta inválida para {schema.__name__}: {last_error}")

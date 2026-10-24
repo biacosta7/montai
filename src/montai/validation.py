@@ -32,6 +32,9 @@ NON_FOOD = {Category.UTENSILIOS}
 # comida exigidas (grelhados, acompanhamento etc.), mas não bebida ou sobremesa.
 MEAL_CATEGORY = Category.PRATO_PRINCIPAL
 NOT_COVERED_BY_MEAL = {Category.BEBIDA, Category.BEBIDA_ALCOOLICA, Category.SOBREMESA, *NON_FOOD}
+# Categorias que, sozinhas, já são a refeição de alguém. Somadas, também não
+# podem passar do limite de excesso: 12 kits + 12 sanduíches é comida para 24.
+MAIN_COURSES = {Category.PRATO_PRINCIPAL, Category.LANCHE, Category.GRELHADOS}
 
 
 class ProblemCode(StrEnum):
@@ -159,6 +162,17 @@ def validate_cart(lines: list[ProposalLine], constraints: Constraints, catalog: 
             add(ProblemCode.EXCESSIVE_QUANTITY,
                 f"'{category.value}' atende {covered:g} pessoas para um pedido de {people}: "
                 f"é desperdício (limite {limit:g}).")
+
+    main_courses = [(i, q) for i, q in resolved if i.category in MAIN_COURSES]
+    present = {i.category for i, _ in main_courses}
+    if len(present) > 1:
+        covered = sum(i.serves * q for i, q in main_courses)
+        limit = max_reasonable_coverage(people, max(i.serves for i, _ in main_courses))
+        if covered > limit + 1e-9:
+            names = ", ".join(sorted(c.value for c in present))
+            add(ProblemCode.EXCESSIVE_QUANTITY,
+                f"Somando as refeições principais ({names}), o carrinho alimenta {covered:g} pessoas "
+                f"para um pedido de {people}: é desperdício (limite {limit:g}).")
 
     return ValidationReport(
         ok=not problems,
