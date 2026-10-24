@@ -1,0 +1,6852 @@
+{
+  "version": "1.0",
+  "stores": [
+    {
+      "id": "acougue",
+      "name": "Açougue Boi na Brasa",
+      "type": "açougue",
+      "description": "Carnes frescas para churrasco, linguiças, espetinhos e carvão.",
+      "delivery_fee": 7.9
+    },
+    {
+      "id": "churrascaria",
+      "name": "Churrascaria Gaúcha Querência",
+      "type": "churrascaria",
+      "description": "Churrasco gaúcho assado e pronto para servir, com acompanhamentos.",
+      "delivery_fee": 9.9
+    },
+    {
+      "id": "mercado",
+      "name": "Supermercado Bom Preço",
+      "type": "mercado",
+      "description": "Supermercado com bebidas, frios, mercearia, congelados e descartáveis.",
+      "delivery_fee": 5.9
+    },
+    {
+      "id": "verdevida",
+      "name": "Verde Vida Cozinha Natural",
+      "type": "comida saudável",
+      "description": "Cozinha natural com bowls, saladas, pratos leves e muitas opções veganas.",
+      "delivery_fee": 6.9
+    },
+    {
+      "id": "padaria",
+      "name": "Padaria Pão Dourado",
+      "type": "padaria",
+      "description": "Pães, frios, salgados, bolos e café para o dia a dia e para eventos.",
+      "delivery_fee": 4.9
+    },
+    {
+      "id": "kenzo",
+      "name": "Sushi Kenzo",
+      "type": "japonês",
+      "description": "Culinária japonesa: combinados, temakis, sashimis e pratos quentes.",
+      "delivery_fee": 8.9
+    },
+    {
+      "id": "nonna",
+      "name": "Pizzaria Forno da Nonna",
+      "type": "pizzaria",
+      "description": "Pizzas de forno a lenha, com opções vegana e sem glúten.",
+      "delivery_fee": 6.9
+    },
+    {
+      "id": "massamia",
+      "name": "Cantina Massa Mia",
+      "type": "italiano",
+      "description": "Cantina italiana com massas, risotos, parmegianas e vinhos.",
+      "delivery_fee": 7.9
+    },
+    {
+      "id": "chapa",
+      "name": "Hamburgueria Chapa Quente",
+      "type": "hamburgueria",
+      "description": "Hambúrgueres artesanais, batatas e milkshakes.",
+      "delivery_fee": 5.9
+    },
+    {
+      "id": "caseiro",
+      "name": "Restaurante Sabor Caseiro",
+      "type": "comida brasileira",
+      "description": "Comida caseira brasileira: pratos feitos, feijoada, moqueca e marmitas.",
+      "delivery_fee": 4.9
+    },
+    {
+      "id": "lapicante",
+      "name": "La Picante Cozinha Mexicana",
+      "type": "mexicano",
+      "description": "Comida mexicana com tacos, burritos, nachos e pratos picantes.",
+      "delivery_fee": 7.9
+    },
+    {
+      "id": "bangkok",
+      "name": "Bangkok Express",
+      "type": "tailandês",
+      "description": "Comida tailandesa: pad thai, curries e sopas aromáticas.",
+      "delivery_fee": 8.9
+    },
+    {
+      "id": "doceria",
+      "name": "Doceria Açúcar & Afeto",
+      "type": "doceria",
+      "description": "Bolos, tortas, docinhos de festa e sobremesas, com opções veganas e sem glúten.",
+      "delivery_fee": 6.9
+    },
+    {
+      "id": "adega",
+      "name": "Adega Lúpulo & Uva",
+      "type": "adega",
+      "description": "Cervejas, vinhos, destilados, gelo e petiscos.",
+      "delivery_fee": 5.9
+    },
+    {
+      "id": "hortifruti",
+      "name": "Hortifruti Feira Fresca",
+      "type": "hortifruti",
+      "description": "Frutas, verduras e legumes frescos, além de frutas já cortadas.",
+      "delivery_fee": 4.9
+    },
+    {
+      "id": "sahara",
+      "name": "Sahara Cozinha Árabe",
+      "type": "árabe",
+      "description": "Esfihas, kibes, pastas, falafel e grelhados árabes.",
+      "delivery_fee": 5.9
+    },
+    {
+      "id": "graofino",
+      "name": "Grão Fino Café & Bistrô",
+      "type": "café e bistrô",
+      "description": "Café da manhã, brunch e kits corporativos para escritórios.",
+      "delivery_fee": 6.9
+    },
+    {
+      "id": "aloha",
+      "name": "Aloha Poke & Bowls",
+      "type": "poke",
+      "description": "Pokes havaianos, bowls e açaí, com opções sem glúten e veganas.",
+      "delivery_fee": 7.9
+    }
+  ],
+  "items": [
+    {
+      "id": "acougue-001",
+      "store_id": "acougue",
+      "name": "Picanha bovina",
+      "description": "Peça de picanha com capa de gordura, ideal para churrasco na brasa.",
+      "category": "grelhados",
+      "price": 94.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-002",
+      "store_id": "acougue",
+      "name": "Alcatra em bifes grossos",
+      "description": "Alcatra bovina cortada em bifes de 3 cm para grelhar.",
+      "category": "grelhados",
+      "price": 54.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-003",
+      "store_id": "acougue",
+      "name": "Fraldinha",
+      "description": "Fraldinha bovina macia e suculenta, corte clássico de churrasco.",
+      "category": "grelhados",
+      "price": 49.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-004",
+      "store_id": "acougue",
+      "name": "Maminha",
+      "description": "Maminha bovina em peça, para assar inteira na grelha.",
+      "category": "grelhados",
+      "price": 52.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-005",
+      "store_id": "acougue",
+      "name": "Contrafilé",
+      "description": "Contrafilé bovino em bifes com gordura lateral.",
+      "category": "grelhados",
+      "price": 59.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-006",
+      "store_id": "acougue",
+      "name": "Costela bovina janela",
+      "description": "Costela bovina com osso para assar lentamente no fogo de chão.",
+      "category": "grelhados",
+      "price": 34.9,
+      "unit": "kg",
+      "serves": 1.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-007",
+      "store_id": "acougue",
+      "name": "Cupim",
+      "description": "Cupim bovino para assar envolto em papel alumínio.",
+      "category": "grelhados",
+      "price": 39.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-008",
+      "store_id": "acougue",
+      "name": "Linguiça toscana",
+      "description": "Linguiça de porco tipo toscana, temperada, para grelha.",
+      "category": "grelhados",
+      "price": 27.9,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-009",
+      "store_id": "acougue",
+      "name": "Linguiça apimentada",
+      "description": "Linguiça de porco com pimenta calabresa, sabor picante.",
+      "category": "grelhados",
+      "price": 29.9,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "acougue-010",
+      "store_id": "acougue",
+      "name": "Linguiça de frango",
+      "description": "Linguiça de frango temperada com ervas, opção mais leve.",
+      "category": "grelhados",
+      "price": 24.9,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-011",
+      "store_id": "acougue",
+      "name": "Coxinha da asa de frango temperada",
+      "description": "Coxinha da asa de frango marinada em alho e limão.",
+      "category": "grelhados",
+      "price": 21.9,
+      "unit": "kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-012",
+      "store_id": "acougue",
+      "name": "Coração de frango",
+      "description": "Coração de frango limpo, pronto para espetar.",
+      "category": "grelhados",
+      "price": 32.9,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-013",
+      "store_id": "acougue",
+      "name": "Panceta suína",
+      "description": "Panceta de porco em tiras para pururucar na brasa.",
+      "category": "grelhados",
+      "price": 36.9,
+      "unit": "kg",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-014",
+      "store_id": "acougue",
+      "name": "Costelinha suína",
+      "description": "Costelinha de porco temperada com barbecue.",
+      "category": "grelhados",
+      "price": 31.9,
+      "unit": "kg",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-015",
+      "store_id": "acougue",
+      "name": "Espetinho de carne 10 unidades",
+      "description": "Dez espetos de carne bovina (alcatra) temperados.",
+      "category": "grelhados",
+      "price": 49.9,
+      "unit": "pacote 10 espetos",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-016",
+      "store_id": "acougue",
+      "name": "Espetinho de frango com bacon 10 unidades",
+      "description": "Dez espetos de frango enrolado em bacon.",
+      "category": "grelhados",
+      "price": 39.9,
+      "unit": "pacote 10 espetos",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-017",
+      "store_id": "acougue",
+      "name": "Queijo coalho no espeto",
+      "description": "Sete espetos de queijo coalho para dourar na grelha.",
+      "category": "entrada",
+      "price": 32.9,
+      "unit": "pacote 7 espetos",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-018",
+      "store_id": "acougue",
+      "name": "Pão de alho tradicional",
+      "description": "Cinco pães de alho com queijo e manteiga, prontos para assar.",
+      "category": "acompanhamento",
+      "price": 17.9,
+      "unit": "pacote 400 g (5 unidades)",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-019",
+      "store_id": "acougue",
+      "name": "Pão de alho apimentado",
+      "description": "Cinco pães de alho com queijo e pimenta, prontos para assar.",
+      "category": "acompanhamento",
+      "price": 18.9,
+      "unit": "pacote 400 g (5 unidades)",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "acougue-020",
+      "store_id": "acougue",
+      "name": "Hambúrguer bovino artesanal 4 unidades",
+      "description": "Quatro hambúrgueres de carne bovina de 180 g.",
+      "category": "grelhados",
+      "price": 39.9,
+      "unit": "pacote 4 x 180 g",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-021",
+      "store_id": "acougue",
+      "name": "Carvão vegetal 5 kg",
+      "description": "Saco de carvão vegetal de eucalipto para churrasqueira.",
+      "category": "utensilios",
+      "price": 32.9,
+      "unit": "saco 5 kg",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-022",
+      "store_id": "acougue",
+      "name": "Carvão vegetal 10 kg",
+      "description": "Saco grande de carvão vegetal para churrasco de muita gente.",
+      "category": "utensilios",
+      "price": 54.9,
+      "unit": "saco 10 kg",
+      "serves": 12.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-023",
+      "store_id": "acougue",
+      "name": "Sal grosso 1 kg",
+      "description": "Sal grosso para temperar carnes de churrasco.",
+      "category": "utensilios",
+      "price": 4.9,
+      "unit": "pacote 1 kg",
+      "serves": 20.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "acougue-024",
+      "store_id": "acougue",
+      "name": "Acendedor de carvão",
+      "description": "Tabletes acendedores para começar o fogo da churrasqueira.",
+      "category": "utensilios",
+      "price": 9.9,
+      "unit": "caixa 20 tabletes",
+      "serves": 20.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-001",
+      "store_id": "churrascaria",
+      "name": "Picanha assada fatiada 500 g",
+      "description": "Picanha assada na brasa, fatiada, ao ponto.",
+      "category": "grelhados",
+      "price": 79.9,
+      "unit": "bandeja 500 g",
+      "serves": 1.7,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-002",
+      "store_id": "churrascaria",
+      "name": "Fraldinha assada 500 g",
+      "description": "Fraldinha assada na brasa com sal grosso, fatiada.",
+      "category": "grelhados",
+      "price": 59.9,
+      "unit": "bandeja 500 g",
+      "serves": 1.7,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-003",
+      "store_id": "churrascaria",
+      "name": "Costela no bafo 1 kg",
+      "description": "Costela bovina assada por 8 horas, desmanchando.",
+      "category": "grelhados",
+      "price": 89.9,
+      "unit": "bandeja 1 kg",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-004",
+      "store_id": "churrascaria",
+      "name": "Maminha ao molho de mostarda 500 g",
+      "description": "Maminha assada com molho cremoso de mostarda.",
+      "category": "grelhados",
+      "price": 54.9,
+      "unit": "bandeja 500 g",
+      "serves": 1.7,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-005",
+      "store_id": "churrascaria",
+      "name": "Frango assado inteiro",
+      "description": "Frango inteiro assado com ervas e alho.",
+      "category": "grelhados",
+      "price": 49.9,
+      "unit": "unidade",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-006",
+      "store_id": "churrascaria",
+      "name": "Linguiça assada 500 g",
+      "description": "Linguiça toscana assada na brasa, em rodelas.",
+      "category": "grelhados",
+      "price": 29.9,
+      "unit": "bandeja 500 g",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-007",
+      "store_id": "churrascaria",
+      "name": "Combo churrasco gaúcho para 4",
+      "description": "Picanha, linguiça, frango, arroz, farofa e vinagrete para 4 pessoas.",
+      "category": "prato_principal",
+      "price": 239.9,
+      "unit": "combo",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-008",
+      "store_id": "churrascaria",
+      "name": "Combo churrasco gaúcho para 2",
+      "description": "Picanha, linguiça, arroz, farofa e vinagrete para 2 pessoas.",
+      "category": "prato_principal",
+      "price": 129.9,
+      "unit": "combo",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-009",
+      "store_id": "churrascaria",
+      "name": "Arroz branco 500 g",
+      "description": "Arroz branco soltinho.",
+      "category": "acompanhamento",
+      "price": 14.9,
+      "unit": "pote 500 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-010",
+      "store_id": "churrascaria",
+      "name": "Arroz carreteiro 500 g",
+      "description": "Arroz carreteiro com carne seca desfiada.",
+      "category": "acompanhamento",
+      "price": 32.9,
+      "unit": "pote 500 g",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-011",
+      "store_id": "churrascaria",
+      "name": "Farofa de mandioca com bacon 300 g",
+      "description": "Farofa crocante de mandioca com bacon e manteiga.",
+      "category": "acompanhamento",
+      "price": 16.9,
+      "unit": "pote 300 g",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-012",
+      "store_id": "churrascaria",
+      "name": "Farofa de banana vegana 300 g",
+      "description": "Farofa de mandioca com banana-da-terra e azeite.",
+      "category": "acompanhamento",
+      "price": 17.9,
+      "unit": "pote 300 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-013",
+      "store_id": "churrascaria",
+      "name": "Vinagrete 300 g",
+      "description": "Vinagrete de tomate, cebola e pimentão.",
+      "category": "acompanhamento",
+      "price": 12.9,
+      "unit": "pote 300 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-014",
+      "store_id": "churrascaria",
+      "name": "Mandioca cozida na manteiga 500 g",
+      "description": "Mandioca cozida e dourada na manteiga.",
+      "category": "acompanhamento",
+      "price": 19.9,
+      "unit": "pote 500 g",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-015",
+      "store_id": "churrascaria",
+      "name": "Maionese de batata 500 g",
+      "description": "Salada de batata com maionese caseira e cheiro-verde.",
+      "category": "acompanhamento",
+      "price": 22.9,
+      "unit": "pote 500 g",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-016",
+      "store_id": "churrascaria",
+      "name": "Polenta frita 400 g",
+      "description": "Palitos de polenta frita crocante.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "porção 400 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-017",
+      "store_id": "churrascaria",
+      "name": "Pão de alho assado 6 unidades",
+      "description": "Pães de alho com queijo assados na brasa.",
+      "category": "acompanhamento",
+      "price": 22.9,
+      "unit": "porção 6 unidades",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-018",
+      "store_id": "churrascaria",
+      "name": "Salada verde 300 g",
+      "description": "Alface, rúcula, tomate e cebola roxa.",
+      "category": "salada",
+      "price": 18.9,
+      "unit": "pote 300 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-019",
+      "store_id": "churrascaria",
+      "name": "Feijão tropeiro 500 g",
+      "description": "Feijão com farinha de mandioca, ovo, bacon e linguiça.",
+      "category": "acompanhamento",
+      "price": 29.9,
+      "unit": "pote 500 g",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-020",
+      "store_id": "churrascaria",
+      "name": "Pudim de leite inteiro",
+      "description": "Pudim de leite condensado com calda de caramelo.",
+      "category": "sobremesa",
+      "price": 39.9,
+      "unit": "pudim inteiro",
+      "serves": 8.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "churrascaria-021",
+      "store_id": "churrascaria",
+      "name": "Refrigerante guaraná 2 L",
+      "description": "Refrigerante sabor guaraná, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 12.9,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-001",
+      "store_id": "mercado",
+      "name": "Refrigerante cola 2 L",
+      "description": "Refrigerante sabor cola, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 10.9,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-002",
+      "store_id": "mercado",
+      "name": "Refrigerante cola zero 2 L",
+      "description": "Refrigerante sabor cola sem açúcar, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 10.9,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-003",
+      "store_id": "mercado",
+      "name": "Refrigerante guaraná 2 L",
+      "description": "Refrigerante sabor guaraná, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 9.49,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-004",
+      "store_id": "mercado",
+      "name": "Refrigerante cola lata 350 ml",
+      "description": "Refrigerante sabor cola em lata.",
+      "category": "bebida",
+      "price": 4.29,
+      "unit": "lata 350 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-005",
+      "store_id": "mercado",
+      "name": "Água mineral sem gás 1,5 L",
+      "description": "Água mineral natural sem gás.",
+      "category": "bebida",
+      "price": 3.49,
+      "unit": "garrafa 1,5 L",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-006",
+      "store_id": "mercado",
+      "name": "Água com gás 500 ml",
+      "description": "Água mineral gaseificada.",
+      "category": "bebida",
+      "price": 2.99,
+      "unit": "garrafa 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-007",
+      "store_id": "mercado",
+      "name": "Suco de uva integral 1 L",
+      "description": "Suco de uva integral, sem adição de açúcar.",
+      "category": "bebida",
+      "price": 16.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-008",
+      "store_id": "mercado",
+      "name": "Suco de laranja integral 1 L",
+      "description": "Suco de laranja integral pasteurizado.",
+      "category": "bebida",
+      "price": 13.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-009",
+      "store_id": "mercado",
+      "name": "Cerveja pilsen lata 350 ml",
+      "description": "Cerveja tipo pilsen em lata.",
+      "category": "bebida_alcoolica",
+      "price": 4.49,
+      "unit": "lata 350 ml",
+      "serves": 0.33,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-010",
+      "store_id": "mercado",
+      "name": "Cerveja pilsen fardo 12 latas",
+      "description": "Fardo com 12 latas de cerveja pilsen de 350 ml.",
+      "category": "bebida_alcoolica",
+      "price": 46.9,
+      "unit": "fardo 12 latas",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-011",
+      "store_id": "mercado",
+      "name": "Cerveja sem glúten long neck",
+      "description": "Cerveja lager produzida sem glúten, garrafa 355 ml.",
+      "category": "bebida_alcoolica",
+      "price": 8.9,
+      "unit": "long neck 355 ml",
+      "serves": 0.33,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-012",
+      "store_id": "mercado",
+      "name": "Cerveja sem álcool lata",
+      "description": "Cerveja sem álcool em lata de 350 ml.",
+      "category": "bebida",
+      "price": 4.99,
+      "unit": "lata 350 ml",
+      "serves": 0.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-013",
+      "store_id": "mercado",
+      "name": "Vinho tinto seco nacional",
+      "description": "Vinho tinto seco de uvas cabernet e merlot.",
+      "category": "bebida_alcoolica",
+      "price": 39.9,
+      "unit": "garrafa 750 ml",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-014",
+      "store_id": "mercado",
+      "name": "Carvão vegetal 3 kg",
+      "description": "Saco pequeno de carvão vegetal.",
+      "category": "utensilios",
+      "price": 19.9,
+      "unit": "saco 3 kg",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-015",
+      "store_id": "mercado",
+      "name": "Carvão vegetal 5 kg",
+      "description": "Saco de carvão vegetal para churrasqueira.",
+      "category": "utensilios",
+      "price": 28.9,
+      "unit": "saco 5 kg",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-016",
+      "store_id": "mercado",
+      "name": "Kit descartáveis para 10 pessoas",
+      "description": "Pratos, copos, talheres e guardanapos descartáveis.",
+      "category": "utensilios",
+      "price": 24.9,
+      "unit": "kit",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-017",
+      "store_id": "mercado",
+      "name": "Gelo em cubos 5 kg",
+      "description": "Saco de gelo em cubos para bebidas.",
+      "category": "utensilios",
+      "price": 14.9,
+      "unit": "saco 5 kg",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-018",
+      "store_id": "mercado",
+      "name": "Queijo muçarela fatiado 200 g",
+      "description": "Queijo muçarela fatiado para sanduíches.",
+      "category": "frios_laticinios",
+      "price": 12.9,
+      "unit": "bandeja 200 g",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-019",
+      "store_id": "mercado",
+      "name": "Presunto cozido fatiado 200 g",
+      "description": "Presunto cozido fatiado fino.",
+      "category": "frios_laticinios",
+      "price": 10.9,
+      "unit": "bandeja 200 g",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-020",
+      "store_id": "mercado",
+      "name": "Peito de peru fatiado 150 g",
+      "description": "Peito de peru defumado fatiado.",
+      "category": "frios_laticinios",
+      "price": 14.9,
+      "unit": "bandeja 150 g",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-021",
+      "store_id": "mercado",
+      "name": "Manteiga com sal 200 g",
+      "description": "Manteiga de leite com sal.",
+      "category": "frios_laticinios",
+      "price": 14.9,
+      "unit": "pote 200 g",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-022",
+      "store_id": "mercado",
+      "name": "Requeijão cremoso 200 g",
+      "description": "Requeijão cremoso tradicional.",
+      "category": "frios_laticinios",
+      "price": 9.9,
+      "unit": "copo 200 g",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-023",
+      "store_id": "mercado",
+      "name": "Queijo vegetal tipo muçarela 150 g",
+      "description": "Queijo vegetal à base de castanha de caju, fatiado.",
+      "category": "frios_laticinios",
+      "price": 22.9,
+      "unit": "bandeja 150 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-024",
+      "store_id": "mercado",
+      "name": "Iogurte natural integral",
+      "description": "Iogurte natural integral sem açúcar, pote 170 g.",
+      "category": "frios_laticinios",
+      "price": 3.99,
+      "unit": "pote 170 g",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-025",
+      "store_id": "mercado",
+      "name": "Leite integral 1 L",
+      "description": "Leite de vaca integral UHT.",
+      "category": "bebida",
+      "price": 5.49,
+      "unit": "caixa 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-026",
+      "store_id": "mercado",
+      "name": "Bebida vegetal de aveia 1 L",
+      "description": "Bebida vegetal de aveia, alternativa ao leite.",
+      "category": "bebida",
+      "price": 14.9,
+      "unit": "caixa 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-027",
+      "store_id": "mercado",
+      "name": "Pão de forma tradicional",
+      "description": "Pão de forma branco fatiado, pacote 500 g.",
+      "category": "paes",
+      "price": 8.99,
+      "unit": "pacote 500 g",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-028",
+      "store_id": "mercado",
+      "name": "Pão de forma sem glúten",
+      "description": "Pão de forma fatiado feito com farinha de arroz, 350 g.",
+      "category": "paes",
+      "price": 19.9,
+      "unit": "pacote 350 g",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-029",
+      "store_id": "mercado",
+      "name": "Pão de alho congelado",
+      "description": "Cinco pães de alho com queijo, congelados.",
+      "category": "acompanhamento",
+      "price": 14.9,
+      "unit": "pacote 400 g (5 unidades)",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-030",
+      "store_id": "mercado",
+      "name": "Linguiça toscana 700 g",
+      "description": "Linguiça de porco tipo toscana, bandeja 700 g.",
+      "category": "grelhados",
+      "price": 19.9,
+      "unit": "bandeja 700 g",
+      "serves": 2.8,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-031",
+      "store_id": "mercado",
+      "name": "Coxinha da asa congelada 1 kg",
+      "description": "Coxinha da asa de frango congelada.",
+      "category": "grelhados",
+      "price": 19.9,
+      "unit": "pacote 1 kg",
+      "serves": 2.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-032",
+      "store_id": "mercado",
+      "name": "Kit churrasco econômico 2 kg",
+      "description": "Acém, linguiça toscana e coxa de frango temperados.",
+      "category": "grelhados",
+      "price": 69.9,
+      "unit": "kit 2 kg",
+      "serves": 5.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-033",
+      "store_id": "mercado",
+      "name": "Hambúrguer vegetal 2 unidades",
+      "description": "Hambúrguer à base de proteína de ervilha, 2 x 113 g.",
+      "category": "grelhados",
+      "price": 21.9,
+      "unit": "caixa 226 g",
+      "serves": 1.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-034",
+      "store_id": "mercado",
+      "name": "Mix de folhas pronto 200 g",
+      "description": "Alface americana, rúcula e agrião lavados.",
+      "category": "salada",
+      "price": 8.9,
+      "unit": "pacote 200 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-035",
+      "store_id": "mercado",
+      "name": "Batata palha 140 g",
+      "description": "Batata palha crocante.",
+      "category": "acompanhamento",
+      "price": 8.9,
+      "unit": "pacote 140 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-036",
+      "store_id": "mercado",
+      "name": "Farofa pronta temperada 250 g",
+      "description": "Farofa de mandioca temperada pronta para servir.",
+      "category": "acompanhamento",
+      "price": 7.49,
+      "unit": "pacote 250 g",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-037",
+      "store_id": "mercado",
+      "name": "Amendoim torrado 500 g",
+      "description": "Amendoim torrado e salgado para petiscar.",
+      "category": "entrada",
+      "price": 14.9,
+      "unit": "pacote 500 g",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-038",
+      "store_id": "mercado",
+      "name": "Batata chips 120 g",
+      "description": "Batata chips ondulada sabor original.",
+      "category": "entrada",
+      "price": 9.9,
+      "unit": "pacote 120 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-039",
+      "store_id": "mercado",
+      "name": "Sorvete de creme 1,5 L",
+      "description": "Sorvete de creme tradicional.",
+      "category": "sobremesa",
+      "price": 22.9,
+      "unit": "pote 1,5 L",
+      "serves": 8.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-040",
+      "store_id": "mercado",
+      "name": "Sorvete vegano de chocolate 1 L",
+      "description": "Sorvete de chocolate à base de leite de coco.",
+      "category": "sobremesa",
+      "price": 29.9,
+      "unit": "pote 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-041",
+      "store_id": "mercado",
+      "name": "Banana prata",
+      "description": "Banana prata madura.",
+      "category": "hortifruti",
+      "price": 6.99,
+      "unit": "kg",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "mercado-042",
+      "store_id": "mercado",
+      "name": "Melancia inteira",
+      "description": "Melancia inteira de cerca de 8 kg.",
+      "category": "hortifruti",
+      "price": 24.9,
+      "unit": "unidade",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-001",
+      "store_id": "verdevida",
+      "name": "Bowl de quinoa com legumes assados",
+      "description": "Quinoa, abóbora, brócolis, grão-de-bico e molho de tahine.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-002",
+      "store_id": "verdevida",
+      "name": "Salada Caesar com frango grelhado",
+      "description": "Alface romana, frango grelhado, parmesão e croutons.",
+      "category": "salada",
+      "price": 36.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-003",
+      "store_id": "verdevida",
+      "name": "Salada mediterrânea de grão-de-bico",
+      "description": "Grão-de-bico, pepino, tomate, azeitona e hortelã.",
+      "category": "salada",
+      "price": 32.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-004",
+      "store_id": "verdevida",
+      "name": "Salada de folhas com manga e castanhas",
+      "description": "Folhas verdes, manga, castanha de caju e molho cítrico.",
+      "category": "salada",
+      "price": 29.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-005",
+      "store_id": "verdevida",
+      "name": "Frango grelhado com purê de abóbora",
+      "description": "Filé de frango grelhado com purê de abóbora e legumes.",
+      "category": "prato_principal",
+      "price": 42.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-006",
+      "store_id": "verdevida",
+      "name": "Tilápia grelhada com legumes no vapor",
+      "description": "Filé de tilápia grelhado, brócolis, cenoura e abobrinha.",
+      "category": "prato_principal",
+      "price": 46.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-007",
+      "store_id": "verdevida",
+      "name": "Escondidinho de mandioca com carne seca",
+      "description": "Purê de mandioca gratinado com queijo e carne seca.",
+      "category": "prato_principal",
+      "price": 44.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-008",
+      "store_id": "verdevida",
+      "name": "Moqueca de palmito com arroz integral",
+      "description": "Palmito e banana-da-terra no leite de coco com dendê.",
+      "category": "prato_principal",
+      "price": 41.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "verdevida-009",
+      "store_id": "verdevida",
+      "name": "Strogonoff de cogumelos",
+      "description": "Cogumelos paris e shitake ao molho de leite de coco, com arroz.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-010",
+      "store_id": "verdevida",
+      "name": "Lasanha de berinjela",
+      "description": "Camadas de berinjela, molho de tomate e queijo muçarela.",
+      "category": "prato_principal",
+      "price": 41.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-011",
+      "store_id": "verdevida",
+      "name": "Curry de legumes com arroz basmati",
+      "description": "Curry de grão-de-bico, couve-flor e espinafre.",
+      "category": "prato_principal",
+      "price": 38.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "verdevida-012",
+      "store_id": "verdevida",
+      "name": "Tofu grelhado com legumes salteados",
+      "description": "Tofu grelhado com shoyu, brócolis e cenoura salteados.",
+      "category": "prato_principal",
+      "price": 38.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-013",
+      "store_id": "verdevida",
+      "name": "Marmita fit semanal 5 refeições",
+      "description": "Cinco marmitas de frango, arroz integral e brócolis.",
+      "category": "prato_principal",
+      "price": 129.9,
+      "unit": "kit 5 marmitas",
+      "serves": 5.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-014",
+      "store_id": "verdevida",
+      "name": "Wrap integral de frango",
+      "description": "Wrap integral com frango desfiado, cenoura e folhas.",
+      "category": "lanche",
+      "price": 27.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-015",
+      "store_id": "verdevida",
+      "name": "Sopa de abóbora com gengibre 500 ml",
+      "description": "Creme de abóbora com gengibre e leite de coco.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "pote 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "verdevida-016",
+      "store_id": "verdevida",
+      "name": "Caldo verde 500 ml",
+      "description": "Caldo de batata com couve e calabresa.",
+      "category": "entrada",
+      "price": 22.9,
+      "unit": "pote 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-017",
+      "store_id": "verdevida",
+      "name": "Homus com palitos de cenoura",
+      "description": "Pasta de grão-de-bico com tahine e palitos de legumes.",
+      "category": "entrada",
+      "price": 22.9,
+      "unit": "porção",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-018",
+      "store_id": "verdevida",
+      "name": "Arroz integral 500 g",
+      "description": "Arroz integral cozido.",
+      "category": "acompanhamento",
+      "price": 16.9,
+      "unit": "pote 500 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-019",
+      "store_id": "verdevida",
+      "name": "Legumes assados 400 g",
+      "description": "Abóbora, cenoura, batata-doce e brócolis assados no azeite.",
+      "category": "acompanhamento",
+      "price": 22.9,
+      "unit": "pote 400 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-020",
+      "store_id": "verdevida",
+      "name": "Suco verde 500 ml",
+      "description": "Couve, maçã, limão e gengibre.",
+      "category": "bebida",
+      "price": 14.9,
+      "unit": "garrafa 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-021",
+      "store_id": "verdevida",
+      "name": "Suco de abacaxi com hortelã 500 ml",
+      "description": "Suco natural de abacaxi com hortelã.",
+      "category": "bebida",
+      "price": 13.9,
+      "unit": "garrafa 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-022",
+      "store_id": "verdevida",
+      "name": "Kombucha de frutas vermelhas 300 ml",
+      "description": "Chá fermentado com frutas vermelhas.",
+      "category": "bebida",
+      "price": 15.9,
+      "unit": "garrafa 300 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-023",
+      "store_id": "verdevida",
+      "name": "Brownie vegano sem glúten",
+      "description": "Brownie de cacau com farinha de amêndoas.",
+      "category": "sobremesa",
+      "price": 14.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-024",
+      "store_id": "verdevida",
+      "name": "Mousse de chocolate com abacate",
+      "description": "Mousse de cacau e abacate adoçado com tâmaras.",
+      "category": "sobremesa",
+      "price": 15.9,
+      "unit": "pote",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "verdevida-025",
+      "store_id": "verdevida",
+      "name": "Salada de frutas 300 g",
+      "description": "Mamão, manga, banana, morango e laranja.",
+      "category": "hortifruti",
+      "price": 13.9,
+      "unit": "pote 300 g",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-001",
+      "store_id": "padaria",
+      "name": "Pão francês 10 unidades",
+      "description": "Dez pães franceses crocantes do dia.",
+      "category": "paes",
+      "price": 8.9,
+      "unit": "pacote 10 unidades",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-002",
+      "store_id": "padaria",
+      "name": "Pão de queijo 20 unidades",
+      "description": "Vinte pães de queijo mineiro médios.",
+      "category": "paes",
+      "price": 18.9,
+      "unit": "pacote 20 unidades",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-003",
+      "store_id": "padaria",
+      "name": "Pão integral fatiado 500 g",
+      "description": "Pão integral com grãos, fatiado.",
+      "category": "paes",
+      "price": 13.9,
+      "unit": "pacote 500 g",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-004",
+      "store_id": "padaria",
+      "name": "Pão de leite 6 unidades",
+      "description": "Pães macios de leite.",
+      "category": "paes",
+      "price": 9.9,
+      "unit": "pacote 6 unidades",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-005",
+      "store_id": "padaria",
+      "name": "Baguete",
+      "description": "Baguete tradicional de fermentação lenta.",
+      "category": "paes",
+      "price": 9.9,
+      "unit": "unidade",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-006",
+      "store_id": "padaria",
+      "name": "Pão sem glúten de arroz e chia",
+      "description": "Pão sem glúten feito com farinha de arroz e chia, 400 g.",
+      "category": "paes",
+      "price": 21.9,
+      "unit": "unidade 400 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-007",
+      "store_id": "padaria",
+      "name": "Croissant de manteiga",
+      "description": "Croissant folhado amanteigado.",
+      "category": "paes",
+      "price": 7.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-008",
+      "store_id": "padaria",
+      "name": "Croissant de presunto e queijo",
+      "description": "Croissant recheado com presunto e queijo.",
+      "category": "lanche",
+      "price": 10.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-009",
+      "store_id": "padaria",
+      "name": "Queijo minas frescal 400 g",
+      "description": "Queijo minas frescal artesanal.",
+      "category": "frios_laticinios",
+      "price": 23.9,
+      "unit": "peça 400 g",
+      "serves": 8.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-010",
+      "store_id": "padaria",
+      "name": "Kit presunto e queijo fatiados 300 g",
+      "description": "Presunto cozido e queijo prato fatiados.",
+      "category": "frios_laticinios",
+      "price": 19.9,
+      "unit": "bandeja 300 g",
+      "serves": 6.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-011",
+      "store_id": "padaria",
+      "name": "Manteiga 200 g",
+      "description": "Manteiga de leite com sal.",
+      "category": "frios_laticinios",
+      "price": 13.9,
+      "unit": "pote 200 g",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-012",
+      "store_id": "padaria",
+      "name": "Geleia de morango 300 g",
+      "description": "Geleia artesanal de morango.",
+      "category": "frios_laticinios",
+      "price": 15.9,
+      "unit": "pote 300 g",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-013",
+      "store_id": "padaria",
+      "name": "Café coado garrafa térmica 1 L",
+      "description": "Café coado na hora em garrafa térmica, cerca de 8 xícaras.",
+      "category": "bebida",
+      "price": 24.9,
+      "unit": "garrafa 1 L",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-014",
+      "store_id": "padaria",
+      "name": "Café com leite 300 ml",
+      "description": "Café coado com leite vaporizado.",
+      "category": "bebida",
+      "price": 7.9,
+      "unit": "copo 300 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-015",
+      "store_id": "padaria",
+      "name": "Cappuccino 300 ml",
+      "description": "Cappuccino cremoso com canela.",
+      "category": "bebida",
+      "price": 11.9,
+      "unit": "copo 300 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-016",
+      "store_id": "padaria",
+      "name": "Suco de laranja natural 1 L",
+      "description": "Suco de laranja espremido na hora.",
+      "category": "bebida",
+      "price": 19.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-017",
+      "store_id": "padaria",
+      "name": "Leite integral 1 L",
+      "description": "Leite de vaca integral.",
+      "category": "bebida",
+      "price": 5.9,
+      "unit": "caixa 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-018",
+      "store_id": "padaria",
+      "name": "Bebida vegetal de amêndoas 1 L",
+      "description": "Bebida vegetal de amêndoas sem açúcar.",
+      "category": "bebida",
+      "price": 16.9,
+      "unit": "caixa 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-019",
+      "store_id": "padaria",
+      "name": "Chá mate gelado 1 L",
+      "description": "Chá mate com limão.",
+      "category": "bebida",
+      "price": 9.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-020",
+      "store_id": "padaria",
+      "name": "Misto quente",
+      "description": "Pão de forma na chapa com presunto e queijo.",
+      "category": "lanche",
+      "price": 11.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-021",
+      "store_id": "padaria",
+      "name": "Sanduíche natural de frango",
+      "description": "Pão integral, frango desfiado, cenoura e alface.",
+      "category": "lanche",
+      "price": 13.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-022",
+      "store_id": "padaria",
+      "name": "Sanduíche natural vegano",
+      "description": "Pão integral, homus, abobrinha grelhada e rúcula.",
+      "category": "lanche",
+      "price": 14.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-023",
+      "store_id": "padaria",
+      "name": "Pão na chapa",
+      "description": "Pão francês na chapa com manteiga.",
+      "category": "lanche",
+      "price": 6.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-024",
+      "store_id": "padaria",
+      "name": "Salgados sortidos 25 unidades",
+      "description": "Coxinha, kibe, risoles e bolinha de queijo fritos.",
+      "category": "entrada",
+      "price": 49.9,
+      "unit": "caixa 25 unidades",
+      "serves": 5.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-025",
+      "store_id": "padaria",
+      "name": "Salgados sortidos 100 unidades",
+      "description": "Cento de salgados fritos para festa: coxinha, kibe, risoles.",
+      "category": "entrada",
+      "price": 169.9,
+      "unit": "caixa 100 unidades",
+      "serves": 20.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-026",
+      "store_id": "padaria",
+      "name": "Bolo de cenoura com cobertura de chocolate",
+      "description": "Bolo de cenoura inteiro com calda de chocolate.",
+      "category": "sobremesa",
+      "price": 42.9,
+      "unit": "bolo inteiro",
+      "serves": 12.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-027",
+      "store_id": "padaria",
+      "name": "Bolo de fubá",
+      "description": "Bolo de fubá caseiro inteiro.",
+      "category": "sobremesa",
+      "price": 34.9,
+      "unit": "bolo inteiro",
+      "serves": 12.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-028",
+      "store_id": "padaria",
+      "name": "Bolo de laranja sem glúten",
+      "description": "Bolo de laranja inteiro feito com farinha de arroz.",
+      "category": "sobremesa",
+      "price": 44.9,
+      "unit": "bolo inteiro",
+      "serves": 12.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-029",
+      "store_id": "padaria",
+      "name": "Sonho de creme",
+      "description": "Sonho recheado com creme de baunilha.",
+      "category": "sobremesa",
+      "price": 7.5,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-030",
+      "store_id": "padaria",
+      "name": "Salada de frutas 500 ml",
+      "description": "Salada de frutas da estação.",
+      "category": "hortifruti",
+      "price": 15.9,
+      "unit": "pote 500 ml",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "padaria-031",
+      "store_id": "padaria",
+      "name": "Mamão papaia",
+      "description": "Mamão papaia maduro.",
+      "category": "hortifruti",
+      "price": 6.9,
+      "unit": "unidade",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-001",
+      "store_id": "kenzo",
+      "name": "Combinado salmão 20 peças",
+      "description": "Sushis, uramakis e sashimis de salmão.",
+      "category": "prato_principal",
+      "price": 79.9,
+      "unit": "combinado 20 peças",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-002",
+      "store_id": "kenzo",
+      "name": "Combinado salmão 40 peças",
+      "description": "Sushis, uramakis, hossomakis e sashimis de salmão.",
+      "category": "prato_principal",
+      "price": 149.9,
+      "unit": "combinado 40 peças",
+      "serves": 2.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-003",
+      "store_id": "kenzo",
+      "name": "Combinado festa 60 peças",
+      "description": "Variedade de sushis, sashimis, hot rolls e uramakis.",
+      "category": "prato_principal",
+      "price": 209.9,
+      "unit": "combinado 60 peças",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-004",
+      "store_id": "kenzo",
+      "name": "Combinado festa 100 peças",
+      "description": "Barca com cem peças variadas de salmão, atum e kani.",
+      "category": "prato_principal",
+      "price": 329.9,
+      "unit": "barca 100 peças",
+      "serves": 5.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-005",
+      "store_id": "kenzo",
+      "name": "Combinado vegetariano 20 peças",
+      "description": "Sushis de pepino, manga, shimeji, cenoura e tofu.",
+      "category": "prato_principal",
+      "price": 59.9,
+      "unit": "combinado 20 peças",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-006",
+      "store_id": "kenzo",
+      "name": "Combinado sem glúten 20 peças",
+      "description": "Sushis e sashimis de salmão com shoyu sem glúten (tamari), sem empanados.",
+      "category": "prato_principal",
+      "price": 84.9,
+      "unit": "combinado 20 peças",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-007",
+      "store_id": "kenzo",
+      "name": "Sashimi de salmão 15 fatias",
+      "description": "Fatias de salmão fresco.",
+      "category": "prato_principal",
+      "price": 64.9,
+      "unit": "porção 15 fatias",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-008",
+      "store_id": "kenzo",
+      "name": "Uramaki filadélfia 8 peças",
+      "description": "Uramaki de salmão com cream cheese.",
+      "category": "entrada",
+      "price": 34.9,
+      "unit": "8 peças",
+      "serves": 0.5,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-009",
+      "store_id": "kenzo",
+      "name": "Hossomaki de pepino 8 peças",
+      "description": "Rolinhos de arroz, alga e pepino.",
+      "category": "entrada",
+      "price": 16.9,
+      "unit": "8 peças",
+      "serves": 0.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-010",
+      "store_id": "kenzo",
+      "name": "Hot roll 10 peças",
+      "description": "Sushi empanado e frito com salmão e cream cheese.",
+      "category": "entrada",
+      "price": 32.9,
+      "unit": "10 peças",
+      "serves": 0.7,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-011",
+      "store_id": "kenzo",
+      "name": "Temaki de salmão",
+      "description": "Cone de alga com arroz, salmão e cebolinha.",
+      "category": "lanche",
+      "price": 32.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-012",
+      "store_id": "kenzo",
+      "name": "Temaki filadélfia",
+      "description": "Cone de alga com salmão e cream cheese.",
+      "category": "lanche",
+      "price": 34.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-013",
+      "store_id": "kenzo",
+      "name": "Temaki spicy de salmão",
+      "description": "Cone de alga com salmão ao molho picante de pimenta.",
+      "category": "lanche",
+      "price": 34.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "kenzo-014",
+      "store_id": "kenzo",
+      "name": "Yakisoba de frango 500 g",
+      "description": "Macarrão com frango e legumes ao molho shoyu.",
+      "category": "prato_principal",
+      "price": 44.9,
+      "unit": "porção 500 g",
+      "serves": 1.5,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-015",
+      "store_id": "kenzo",
+      "name": "Yakisoba de legumes 500 g",
+      "description": "Macarrão com legumes ao molho shoyu.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "porção 500 g",
+      "serves": 1.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-016",
+      "store_id": "kenzo",
+      "name": "Teppanyaki de salmão",
+      "description": "Salmão grelhado na chapa com legumes e arroz gohan.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-017",
+      "store_id": "kenzo",
+      "name": "Guioza de porco 6 unidades",
+      "description": "Pastéis japoneses de carne de porco grelhados.",
+      "category": "entrada",
+      "price": 28.9,
+      "unit": "6 unidades",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-018",
+      "store_id": "kenzo",
+      "name": "Guioza de legumes 6 unidades",
+      "description": "Pastéis japoneses de legumes grelhados.",
+      "category": "entrada",
+      "price": 26.9,
+      "unit": "6 unidades",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-019",
+      "store_id": "kenzo",
+      "name": "Harumaki de legumes 4 unidades",
+      "description": "Rolinho primavera frito de legumes.",
+      "category": "entrada",
+      "price": 19.9,
+      "unit": "4 unidades",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-020",
+      "store_id": "kenzo",
+      "name": "Missoshiru",
+      "description": "Sopa de missô com tofu e cebolinha.",
+      "category": "entrada",
+      "price": 12.9,
+      "unit": "tigela 300 ml",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-021",
+      "store_id": "kenzo",
+      "name": "Edamame 200 g",
+      "description": "Vagens de soja cozidas com sal grosso.",
+      "category": "entrada",
+      "price": 21.9,
+      "unit": "porção 200 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-022",
+      "store_id": "kenzo",
+      "name": "Sunomono",
+      "description": "Salada agridoce de pepino com gergelim.",
+      "category": "salada",
+      "price": 15.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-023",
+      "store_id": "kenzo",
+      "name": "Ceviche de peixe branco",
+      "description": "Peixe branco marinado no limão com cebola roxa e pimenta.",
+      "category": "entrada",
+      "price": 39.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "kenzo-024",
+      "store_id": "kenzo",
+      "name": "Arroz gohan 300 g",
+      "description": "Arroz japonês cozido.",
+      "category": "acompanhamento",
+      "price": 12.9,
+      "unit": "pote 300 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-025",
+      "store_id": "kenzo",
+      "name": "Mochi de morango 3 unidades",
+      "description": "Doce japonês de massa de arroz com morango.",
+      "category": "sobremesa",
+      "price": 21.9,
+      "unit": "3 unidades",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "kenzo-026",
+      "store_id": "kenzo",
+      "name": "Chá verde gelado 500 ml",
+      "description": "Chá verde japonês gelado sem açúcar.",
+      "category": "bebida",
+      "price": 9.9,
+      "unit": "garrafa 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-001",
+      "store_id": "nonna",
+      "name": "Pizza muçarela média",
+      "description": "Molho de tomate, muçarela e orégano.",
+      "category": "prato_principal",
+      "price": 46.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-002",
+      "store_id": "nonna",
+      "name": "Pizza muçarela grande",
+      "description": "Molho de tomate, muçarela e orégano.",
+      "category": "prato_principal",
+      "price": 59.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-003",
+      "store_id": "nonna",
+      "name": "Pizza margherita média",
+      "description": "Molho de tomate, muçarela de búfala e manjericão.",
+      "category": "prato_principal",
+      "price": 50.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-004",
+      "store_id": "nonna",
+      "name": "Pizza margherita grande",
+      "description": "Molho de tomate, muçarela de búfala e manjericão.",
+      "category": "prato_principal",
+      "price": 64.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-005",
+      "store_id": "nonna",
+      "name": "Pizza calabresa média",
+      "description": "Calabresa fatiada, cebola e azeitona.",
+      "category": "prato_principal",
+      "price": 49.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [],
+      "spice_level": 1
+    },
+    {
+      "id": "nonna-006",
+      "store_id": "nonna",
+      "name": "Pizza calabresa grande",
+      "description": "Calabresa fatiada, cebola e azeitona.",
+      "category": "prato_principal",
+      "price": 62.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 1
+    },
+    {
+      "id": "nonna-007",
+      "store_id": "nonna",
+      "name": "Pizza portuguesa média",
+      "description": "Presunto, ovo, cebola, ervilha, azeitona e muçarela.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-008",
+      "store_id": "nonna",
+      "name": "Pizza portuguesa grande",
+      "description": "Presunto, ovo, cebola, ervilha, azeitona e muçarela.",
+      "category": "prato_principal",
+      "price": 69.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-009",
+      "store_id": "nonna",
+      "name": "Pizza frango com catupiry média",
+      "description": "Frango desfiado com requeijão cremoso.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-010",
+      "store_id": "nonna",
+      "name": "Pizza frango com catupiry grande",
+      "description": "Frango desfiado com requeijão cremoso.",
+      "category": "prato_principal",
+      "price": 69.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-011",
+      "store_id": "nonna",
+      "name": "Pizza quatro queijos média",
+      "description": "Muçarela, provolone, parmesão e gorgonzola.",
+      "category": "prato_principal",
+      "price": 56.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-012",
+      "store_id": "nonna",
+      "name": "Pizza quatro queijos grande",
+      "description": "Muçarela, provolone, parmesão e gorgonzola.",
+      "category": "prato_principal",
+      "price": 72.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-013",
+      "store_id": "nonna",
+      "name": "Pizza pepperoni média",
+      "description": "Pepperoni fatiado e muçarela.",
+      "category": "prato_principal",
+      "price": 58.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [],
+      "spice_level": 1
+    },
+    {
+      "id": "nonna-014",
+      "store_id": "nonna",
+      "name": "Pizza pepperoni grande",
+      "description": "Pepperoni fatiado e muçarela.",
+      "category": "prato_principal",
+      "price": 74.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 1
+    },
+    {
+      "id": "nonna-015",
+      "store_id": "nonna",
+      "name": "Pizza calabresa picante média",
+      "description": "Calabresa, pimenta calabresa e pimenta biquinho.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [],
+      "spice_level": 3
+    },
+    {
+      "id": "nonna-016",
+      "store_id": "nonna",
+      "name": "Pizza calabresa picante grande",
+      "description": "Calabresa, pimenta calabresa e pimenta biquinho.",
+      "category": "prato_principal",
+      "price": 69.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 3
+    },
+    {
+      "id": "nonna-017",
+      "store_id": "nonna",
+      "name": "Pizza napolitana média",
+      "description": "Muçarela, tomate fatiado e parmesão.",
+      "category": "prato_principal",
+      "price": 50.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-018",
+      "store_id": "nonna",
+      "name": "Pizza napolitana grande",
+      "description": "Muçarela, tomate fatiado e parmesão.",
+      "category": "prato_principal",
+      "price": 64.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-019",
+      "store_id": "nonna",
+      "name": "Pizza rúcula com tomate seco média",
+      "description": "Muçarela, rúcula e tomate seco.",
+      "category": "prato_principal",
+      "price": 56.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-020",
+      "store_id": "nonna",
+      "name": "Pizza rúcula com tomate seco grande",
+      "description": "Muçarela, rúcula e tomate seco.",
+      "category": "prato_principal",
+      "price": 72.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-021",
+      "store_id": "nonna",
+      "name": "Pizza atum média",
+      "description": "Atum, cebola e muçarela.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-022",
+      "store_id": "nonna",
+      "name": "Pizza atum grande",
+      "description": "Atum, cebola e muçarela.",
+      "category": "prato_principal",
+      "price": 69.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-023",
+      "store_id": "nonna",
+      "name": "Pizza vegana de legumes média",
+      "description": "Abobrinha, berinjela, pimentão e queijo vegetal de castanha.",
+      "category": "prato_principal",
+      "price": 58.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-024",
+      "store_id": "nonna",
+      "name": "Pizza vegana de legumes grande",
+      "description": "Abobrinha, berinjela, pimentão e queijo vegetal de castanha.",
+      "category": "prato_principal",
+      "price": 74.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-025",
+      "store_id": "nonna",
+      "name": "Pizza margherita sem glúten média",
+      "description": "Massa sem glúten, molho de tomate, muçarela e manjericão.",
+      "category": "prato_principal",
+      "price": 62.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-026",
+      "store_id": "nonna",
+      "name": "Pizza margherita sem glúten grande",
+      "description": "Massa sem glúten, molho de tomate, muçarela e manjericão.",
+      "category": "prato_principal",
+      "price": 79.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-027",
+      "store_id": "nonna",
+      "name": "Pizza chocolate com morango média",
+      "description": "Pizza doce de chocolate ao leite com morangos.",
+      "category": "sobremesa",
+      "price": 50.9,
+      "unit": "pizza média (6 fatias)",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-028",
+      "store_id": "nonna",
+      "name": "Pizza chocolate com morango grande",
+      "description": "Pizza doce de chocolate ao leite com morangos.",
+      "category": "sobremesa",
+      "price": 64.9,
+      "unit": "pizza grande (8 fatias)",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-029",
+      "store_id": "nonna",
+      "name": "Refrigerante cola 2 L",
+      "description": "Refrigerante sabor cola, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 13.9,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-030",
+      "store_id": "nonna",
+      "name": "Refrigerante lata 350 ml",
+      "description": "Refrigerante em lata, sabores cola ou guaraná.",
+      "category": "bebida",
+      "price": 6.9,
+      "unit": "lata 350 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "nonna-031",
+      "store_id": "nonna",
+      "name": "Cerveja long neck",
+      "description": "Cerveja pilsen long neck 355 ml.",
+      "category": "bebida_alcoolica",
+      "price": 9.9,
+      "unit": "long neck 355 ml",
+      "serves": 0.33,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-001",
+      "store_id": "massamia",
+      "name": "Espaguete à bolonhesa",
+      "description": "Espaguete com molho de tomate e carne moída.",
+      "category": "prato_principal",
+      "price": 46.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-002",
+      "store_id": "massamia",
+      "name": "Fettuccine Alfredo",
+      "description": "Fettuccine ao molho de creme de leite e parmesão.",
+      "category": "prato_principal",
+      "price": 49.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-003",
+      "store_id": "massamia",
+      "name": "Lasanha à bolonhesa individual",
+      "description": "Lasanha de carne moída, presunto e queijo.",
+      "category": "prato_principal",
+      "price": 44.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-004",
+      "store_id": "massamia",
+      "name": "Lasanha à bolonhesa família 1,5 kg",
+      "description": "Lasanha de carne moída, presunto e queijo para 4.",
+      "category": "prato_principal",
+      "price": 119.9,
+      "unit": "travessa 1,5 kg",
+      "serves": 4.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-005",
+      "store_id": "massamia",
+      "name": "Nhoque ao sugo",
+      "description": "Nhoque de batata com molho de tomate e manjericão.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-006",
+      "store_id": "massamia",
+      "name": "Ravioli de ricota com espinafre",
+      "description": "Ravioli recheado de ricota e espinafre ao sugo.",
+      "category": "prato_principal",
+      "price": 48.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-007",
+      "store_id": "massamia",
+      "name": "Penne ao pesto",
+      "description": "Penne com pesto de manjericão, parmesão e pinoli.",
+      "category": "prato_principal",
+      "price": 44.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-008",
+      "store_id": "massamia",
+      "name": "Penne arrabbiata",
+      "description": "Penne com molho de tomate apimentado e alho.",
+      "category": "prato_principal",
+      "price": 42.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "massamia-009",
+      "store_id": "massamia",
+      "name": "Espaguete sem glúten ao sugo",
+      "description": "Espaguete de arroz com molho de tomate fresco.",
+      "category": "prato_principal",
+      "price": 47.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-010",
+      "store_id": "massamia",
+      "name": "Risoto de cogumelos",
+      "description": "Risoto de arroz arbóreo com cogumelos e parmesão.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-011",
+      "store_id": "massamia",
+      "name": "Risoto de camarão",
+      "description": "Risoto de camarão com tomate e manteiga.",
+      "category": "prato_principal",
+      "price": 64.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-012",
+      "store_id": "massamia",
+      "name": "Parmegiana de frango",
+      "description": "Filé de frango à parmegiana com arroz e fritas.",
+      "category": "prato_principal",
+      "price": 52.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-013",
+      "store_id": "massamia",
+      "name": "Parmegiana de carne família",
+      "description": "Filé bovino à parmegiana com arroz e fritas para 3.",
+      "category": "prato_principal",
+      "price": 129.9,
+      "unit": "travessa",
+      "serves": 3.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-014",
+      "store_id": "massamia",
+      "name": "Polpettone recheado",
+      "description": "Almôndega gigante de carne recheada com queijo ao sugo.",
+      "category": "prato_principal",
+      "price": 52.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-015",
+      "store_id": "massamia",
+      "name": "Salada caprese",
+      "description": "Tomate, muçarela de búfala, manjericão e azeite.",
+      "category": "salada",
+      "price": 32.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-016",
+      "store_id": "massamia",
+      "name": "Bruschetta de tomate 4 unidades",
+      "description": "Pão italiano tostado com tomate, alho e manjericão.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "4 unidades",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-017",
+      "store_id": "massamia",
+      "name": "Antepasto de berinjela 200 g",
+      "description": "Berinjela marinada no azeite com alho e ervas.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "pote 200 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-018",
+      "store_id": "massamia",
+      "name": "Pão italiano com azeite",
+      "description": "Pão italiano de fermentação natural com azeite e ervas.",
+      "category": "paes",
+      "price": 14.9,
+      "unit": "unidade",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-019",
+      "store_id": "massamia",
+      "name": "Tiramisù",
+      "description": "Sobremesa de café, mascarpone e cacau.",
+      "category": "sobremesa",
+      "price": 24.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-020",
+      "store_id": "massamia",
+      "name": "Panna cotta com frutas vermelhas",
+      "description": "Creme de baunilha com calda de frutas vermelhas.",
+      "category": "sobremesa",
+      "price": 21.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-021",
+      "store_id": "massamia",
+      "name": "Vinho tinto italiano",
+      "description": "Vinho tinto Chianti, garrafa 750 ml.",
+      "category": "bebida_alcoolica",
+      "price": 89.9,
+      "unit": "garrafa 750 ml",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "massamia-022",
+      "store_id": "massamia",
+      "name": "Água mineral 500 ml",
+      "description": "Água mineral sem gás.",
+      "category": "bebida",
+      "price": 5.9,
+      "unit": "garrafa 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-001",
+      "store_id": "chapa",
+      "name": "Burger clássico",
+      "description": "Pão brioche, hambúrguer bovino 180 g, queijo, alface e tomate.",
+      "category": "lanche",
+      "price": 34.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-002",
+      "store_id": "chapa",
+      "name": "Cheeseburger duplo",
+      "description": "Dois hambúrgueres bovinos, cheddar duplo e picles.",
+      "category": "lanche",
+      "price": 42.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-003",
+      "store_id": "chapa",
+      "name": "Bacon burger",
+      "description": "Hambúrguer bovino, bacon crocante, cheddar e cebola caramelizada.",
+      "category": "lanche",
+      "price": 39.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-004",
+      "store_id": "chapa",
+      "name": "Burger picante com jalapeño",
+      "description": "Hambúrguer bovino, jalapeño, pepper jack e maionese de pimenta.",
+      "category": "lanche",
+      "price": 39.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 2
+    },
+    {
+      "id": "chapa-005",
+      "store_id": "chapa",
+      "name": "Burger de frango crispy",
+      "description": "Sobrecoxa de frango empanada, salada e maionese.",
+      "category": "lanche",
+      "price": 33.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-006",
+      "store_id": "chapa",
+      "name": "Burger vegano de grão-de-bico",
+      "description": "Hambúrguer de grão-de-bico, maionese vegana e salada.",
+      "category": "lanche",
+      "price": 36.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-007",
+      "store_id": "chapa",
+      "name": "Burger no pão sem glúten",
+      "description": "Hambúrguer bovino com queijo em pão sem glúten.",
+      "category": "lanche",
+      "price": 41.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-008",
+      "store_id": "chapa",
+      "name": "Burger no prato sem pão",
+      "description": "Hambúrguer bovino, queijo, ovo e salada, servido no prato.",
+      "category": "lanche",
+      "price": 38.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-009",
+      "store_id": "chapa",
+      "name": "Combo família 4 burgers",
+      "description": "Quatro burgers clássicos, duas batatas grandes e refrigerante 2 L.",
+      "category": "lanche",
+      "price": 169.9,
+      "unit": "combo",
+      "serves": 4.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-010",
+      "store_id": "chapa",
+      "name": "Batata frita média",
+      "description": "Batata frita palito crocante.",
+      "category": "acompanhamento",
+      "price": 18.9,
+      "unit": "porção média",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-011",
+      "store_id": "chapa",
+      "name": "Batata frita grande",
+      "description": "Batata frita palito crocante, porção grande.",
+      "category": "acompanhamento",
+      "price": 26.9,
+      "unit": "porção grande",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-012",
+      "store_id": "chapa",
+      "name": "Batata com cheddar e bacon",
+      "description": "Batata frita coberta com cheddar cremoso e bacon.",
+      "category": "entrada",
+      "price": 32.9,
+      "unit": "porção",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-013",
+      "store_id": "chapa",
+      "name": "Onion rings",
+      "description": "Anéis de cebola empanados.",
+      "category": "entrada",
+      "price": 22.9,
+      "unit": "porção",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-014",
+      "store_id": "chapa",
+      "name": "Nuggets de frango 10 unidades",
+      "description": "Nuggets de frango empanados.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "10 unidades",
+      "serves": 2.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-015",
+      "store_id": "chapa",
+      "name": "Milkshake de chocolate 400 ml",
+      "description": "Milkshake de sorvete de chocolate.",
+      "category": "sobremesa",
+      "price": 22.9,
+      "unit": "copo 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-016",
+      "store_id": "chapa",
+      "name": "Milkshake de morango 400 ml",
+      "description": "Milkshake de sorvete com morango.",
+      "category": "sobremesa",
+      "price": 22.9,
+      "unit": "copo 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-017",
+      "store_id": "chapa",
+      "name": "Brownie com sorvete",
+      "description": "Brownie quente com bola de sorvete de creme.",
+      "category": "sobremesa",
+      "price": 24.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-018",
+      "store_id": "chapa",
+      "name": "Refrigerante lata 350 ml",
+      "description": "Refrigerante em lata.",
+      "category": "bebida",
+      "price": 6.5,
+      "unit": "lata 350 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "chapa-019",
+      "store_id": "chapa",
+      "name": "Refrigerante 2 L",
+      "description": "Refrigerante sabor cola, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 13.9,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-001",
+      "store_id": "caseiro",
+      "name": "Prato feito de bife",
+      "description": "Arroz, feijão, bife grelhado, salada e batata frita.",
+      "category": "prato_principal",
+      "price": 29.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-002",
+      "store_id": "caseiro",
+      "name": "Prato feito de frango grelhado",
+      "description": "Arroz, feijão, filé de frango grelhado e salada.",
+      "category": "prato_principal",
+      "price": 27.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-003",
+      "store_id": "caseiro",
+      "name": "Feijoada completa individual",
+      "description": "Feijoada com arroz, couve, farofa, laranja e torresmo.",
+      "category": "prato_principal",
+      "price": 44.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-004",
+      "store_id": "caseiro",
+      "name": "Feijoada completa para 4",
+      "description": "Feijoada com acompanhamentos para quatro pessoas.",
+      "category": "prato_principal",
+      "price": 149.9,
+      "unit": "kit família",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-005",
+      "store_id": "caseiro",
+      "name": "Strogonoff de frango",
+      "description": "Strogonoff de frango com arroz e batata palha.",
+      "category": "prato_principal",
+      "price": 34.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-006",
+      "store_id": "caseiro",
+      "name": "Escondidinho de carne seca",
+      "description": "Purê de mandioca com carne seca e queijo gratinado.",
+      "category": "prato_principal",
+      "price": 38.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-007",
+      "store_id": "caseiro",
+      "name": "Frango com quiabo e angu",
+      "description": "Frango caipira ensopado com quiabo e angu de milho.",
+      "category": "prato_principal",
+      "price": 32.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-008",
+      "store_id": "caseiro",
+      "name": "Bife acebolado",
+      "description": "Bife bovino acebolado com arroz, feijão e salada.",
+      "category": "prato_principal",
+      "price": 36.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-009",
+      "store_id": "caseiro",
+      "name": "Peixe frito com pirão",
+      "description": "Filé de peixe empanado com pirão e arroz.",
+      "category": "prato_principal",
+      "price": 42.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-010",
+      "store_id": "caseiro",
+      "name": "Moqueca baiana de peixe para 2",
+      "description": "Moqueca de peixe com dendê, leite de coco, arroz e pirão.",
+      "category": "prato_principal",
+      "price": 109.9,
+      "unit": "panela para 2",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "caseiro-011",
+      "store_id": "caseiro",
+      "name": "Baião de dois 500 g",
+      "description": "Arroz, feijão-de-corda, queijo coalho e carne seca.",
+      "category": "prato_principal",
+      "price": 32.9,
+      "unit": "pote 500 g",
+      "serves": 1.5,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-012",
+      "store_id": "caseiro",
+      "name": "Marmita vegetariana",
+      "description": "Arroz, feijão, legumes refogados e ovo cozido.",
+      "category": "prato_principal",
+      "price": 27.9,
+      "unit": "marmita",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-013",
+      "store_id": "caseiro",
+      "name": "Marmita vegana",
+      "description": "Arroz, feijão, legumes refogados e tofu grelhado.",
+      "category": "prato_principal",
+      "price": 28.9,
+      "unit": "marmita",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-014",
+      "store_id": "caseiro",
+      "name": "Couve refogada 300 g",
+      "description": "Couve manteiga refogada no alho e azeite.",
+      "category": "acompanhamento",
+      "price": 12.9,
+      "unit": "pote 300 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-015",
+      "store_id": "caseiro",
+      "name": "Arroz e feijão 500 g",
+      "description": "Arroz branco e feijão carioca caseiro.",
+      "category": "acompanhamento",
+      "price": 15.9,
+      "unit": "pote 500 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-016",
+      "store_id": "caseiro",
+      "name": "Mandioca frita 400 g",
+      "description": "Mandioca frita sequinha.",
+      "category": "entrada",
+      "price": 19.9,
+      "unit": "porção 400 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-017",
+      "store_id": "caseiro",
+      "name": "Pastel de carne 2 unidades",
+      "description": "Pastéis de feira recheados com carne moída.",
+      "category": "entrada",
+      "price": 16.9,
+      "unit": "2 unidades",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-018",
+      "store_id": "caseiro",
+      "name": "Bolinho de bacalhau 10 unidades",
+      "description": "Bolinhos de bacalhau fritos.",
+      "category": "entrada",
+      "price": 39.9,
+      "unit": "10 unidades",
+      "serves": 3.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-019",
+      "store_id": "caseiro",
+      "name": "Caldo de feijão 300 ml",
+      "description": "Caldo de feijão com bacon e cheiro-verde.",
+      "category": "entrada",
+      "price": 12.9,
+      "unit": "copo 300 ml",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-020",
+      "store_id": "caseiro",
+      "name": "Pudim de leite fatia",
+      "description": "Fatia de pudim de leite condensado.",
+      "category": "sobremesa",
+      "price": 10.9,
+      "unit": "fatia",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-021",
+      "store_id": "caseiro",
+      "name": "Doce de leite caseiro 200 g",
+      "description": "Doce de leite cremoso feito no tacho.",
+      "category": "sobremesa",
+      "price": 9.9,
+      "unit": "pote 200 g",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-022",
+      "store_id": "caseiro",
+      "name": "Suco de maracujá 500 ml",
+      "description": "Suco natural de maracujá.",
+      "category": "bebida",
+      "price": 9.9,
+      "unit": "copo 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "caseiro-023",
+      "store_id": "caseiro",
+      "name": "Limonada 500 ml",
+      "description": "Limonada natural.",
+      "category": "bebida",
+      "price": 9.9,
+      "unit": "copo 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "lapicante-001",
+      "store_id": "lapicante",
+      "name": "Tacos de carne 3 unidades",
+      "description": "Tortilhas de milho com carne bovina, cebola, coentro e queijo.",
+      "category": "lanche",
+      "price": 32.9,
+      "unit": "3 unidades",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "lapicante-002",
+      "store_id": "lapicante",
+      "name": "Tacos al pastor 3 unidades",
+      "description": "Tortilhas de milho com porco marinado e abacaxi.",
+      "category": "lanche",
+      "price": 34.9,
+      "unit": "3 unidades",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "lapicante-003",
+      "store_id": "lapicante",
+      "name": "Tacos de frango 3 unidades",
+      "description": "Tortilhas de milho com frango desfiado e queijo.",
+      "category": "lanche",
+      "price": 30.9,
+      "unit": "3 unidades",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-004",
+      "store_id": "lapicante",
+      "name": "Tacos de feijão e abobrinha 3 unidades",
+      "description": "Tortilhas de milho com feijão preto, abobrinha e salsa.",
+      "category": "lanche",
+      "price": 28.9,
+      "unit": "3 unidades",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-005",
+      "store_id": "lapicante",
+      "name": "Burrito de carne",
+      "description": "Tortilha de trigo com carne, arroz, feijão e queijo.",
+      "category": "lanche",
+      "price": 38.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 2
+    },
+    {
+      "id": "lapicante-006",
+      "store_id": "lapicante",
+      "name": "Burrito vegano",
+      "description": "Tortilha de trigo com feijão, arroz, milho e guacamole.",
+      "category": "lanche",
+      "price": 34.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-007",
+      "store_id": "lapicante",
+      "name": "Quesadilla de queijo",
+      "description": "Tortilha de trigo recheada com queijo derretido.",
+      "category": "lanche",
+      "price": 29.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "lapicante-008",
+      "store_id": "lapicante",
+      "name": "Quesadilla de frango",
+      "description": "Tortilha de trigo com frango e queijo.",
+      "category": "lanche",
+      "price": 32.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-009",
+      "store_id": "lapicante",
+      "name": "Nachos com guacamole e cheddar",
+      "description": "Tortilhas de milho com guacamole, cheddar e pico de gallo.",
+      "category": "entrada",
+      "price": 34.9,
+      "unit": "porção",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-010",
+      "store_id": "lapicante",
+      "name": "Nachos supremo",
+      "description": "Nachos com chili de carne, cheddar, jalapeño e creme azedo.",
+      "category": "entrada",
+      "price": 42.9,
+      "unit": "porção",
+      "serves": 3.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "lapicante-011",
+      "store_id": "lapicante",
+      "name": "Guacamole com tortilhas",
+      "description": "Guacamole fresco com chips de tortilha de milho.",
+      "category": "entrada",
+      "price": 26.9,
+      "unit": "porção 250 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-012",
+      "store_id": "lapicante",
+      "name": "Chili com carne 400 ml",
+      "description": "Ensopado de carne moída com feijão e pimenta.",
+      "category": "prato_principal",
+      "price": 32.9,
+      "unit": "pote 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "lapicante-013",
+      "store_id": "lapicante",
+      "name": "Chili vegano 400 ml",
+      "description": "Ensopado de feijão, lentilha e pimentão picante.",
+      "category": "prato_principal",
+      "price": 30.9,
+      "unit": "pote 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "lapicante-014",
+      "store_id": "lapicante",
+      "name": "Fajitas de frango para 2",
+      "description": "Tiras de frango com pimentões, tortilhas e acompanhamentos.",
+      "category": "prato_principal",
+      "price": 89.9,
+      "unit": "kit para 2",
+      "serves": 2.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-015",
+      "store_id": "lapicante",
+      "name": "Enchiladas de frango",
+      "description": "Tortilhas de milho com frango, molho de pimenta e queijo.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "lapicante-016",
+      "store_id": "lapicante",
+      "name": "Combo mexicano para 4",
+      "description": "Doze tacos, nachos com cheddar, guacamole e dois refrigerantes.",
+      "category": "prato_principal",
+      "price": 189.9,
+      "unit": "combo",
+      "serves": 4.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "lapicante-017",
+      "store_id": "lapicante",
+      "name": "Arroz mexicano 300 g",
+      "description": "Arroz com tomate, milho e pimenta.",
+      "category": "acompanhamento",
+      "price": 14.9,
+      "unit": "pote 300 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "lapicante-018",
+      "store_id": "lapicante",
+      "name": "Feijão refrito 300 g",
+      "description": "Feijão preto amassado e refogado.",
+      "category": "acompanhamento",
+      "price": 13.9,
+      "unit": "pote 300 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "lapicante-019",
+      "store_id": "lapicante",
+      "name": "Salsa picante habanero",
+      "description": "Molho de pimenta habanero muito picante, 200 g.",
+      "category": "acompanhamento",
+      "price": 12.9,
+      "unit": "pote 200 g",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "lapicante-020",
+      "store_id": "lapicante",
+      "name": "Churros com doce de leite 6 unidades",
+      "description": "Churros polvilhados com canela e doce de leite.",
+      "category": "sobremesa",
+      "price": 22.9,
+      "unit": "6 unidades",
+      "serves": 2.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "lapicante-021",
+      "store_id": "lapicante",
+      "name": "Margarita",
+      "description": "Drink de tequila, limão e licor de laranja.",
+      "category": "bebida_alcoolica",
+      "price": 29.9,
+      "unit": "copo 300 ml",
+      "serves": 0.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "lapicante-022",
+      "store_id": "lapicante",
+      "name": "Cerveja mexicana long neck",
+      "description": "Cerveja lager mexicana 355 ml.",
+      "category": "bebida_alcoolica",
+      "price": 13.9,
+      "unit": "long neck 355 ml",
+      "serves": 0.33,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "lapicante-023",
+      "store_id": "lapicante",
+      "name": "Água fresca de hibisco 500 ml",
+      "description": "Bebida gelada de hibisco com limão.",
+      "category": "bebida",
+      "price": 10.9,
+      "unit": "copo 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "bangkok-001",
+      "store_id": "bangkok",
+      "name": "Pad thai de camarão",
+      "description": "Macarrão de arroz com camarão, amendoim, broto de feijão e tamarindo.",
+      "category": "prato_principal",
+      "price": 49.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "bangkok-002",
+      "store_id": "bangkok",
+      "name": "Pad thai de frango",
+      "description": "Macarrão de arroz com frango, amendoim e tamarindo.",
+      "category": "prato_principal",
+      "price": 44.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "bangkok-003",
+      "store_id": "bangkok",
+      "name": "Pad thai vegano com tofu",
+      "description": "Macarrão de arroz com tofu, amendoim e legumes.",
+      "category": "prato_principal",
+      "price": 42.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "bangkok-004",
+      "store_id": "bangkok",
+      "name": "Curry verde de frango",
+      "description": "Frango no curry verde com leite de coco e manjericão.",
+      "category": "prato_principal",
+      "price": 46.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "bangkok-005",
+      "store_id": "bangkok",
+      "name": "Curry vermelho de carne",
+      "description": "Carne bovina no curry vermelho com leite de coco.",
+      "category": "prato_principal",
+      "price": 49.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "bangkok-006",
+      "store_id": "bangkok",
+      "name": "Curry amarelo de legumes",
+      "description": "Legumes e batata no curry amarelo com leite de coco.",
+      "category": "prato_principal",
+      "price": 41.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "bangkok-007",
+      "store_id": "bangkok",
+      "name": "Tom yum de camarão",
+      "description": "Sopa picante e azeda de camarão com capim-limão.",
+      "category": "entrada",
+      "price": 39.9,
+      "unit": "tigela 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "bangkok-008",
+      "store_id": "bangkok",
+      "name": "Tom kha gai",
+      "description": "Sopa de leite de coco com frango e galanga.",
+      "category": "entrada",
+      "price": 36.9,
+      "unit": "tigela 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "bangkok-009",
+      "store_id": "bangkok",
+      "name": "Arroz de jasmim 300 g",
+      "description": "Arroz tailandês de jasmim.",
+      "category": "acompanhamento",
+      "price": 12.9,
+      "unit": "pote 300 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "bangkok-010",
+      "store_id": "bangkok",
+      "name": "Arroz frito thai com ovo",
+      "description": "Arroz frito com ovo, cebolinha e shoyu.",
+      "category": "acompanhamento",
+      "price": 24.9,
+      "unit": "pote 300 g",
+      "serves": 1.5,
+      "diet": [
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "bangkok-011",
+      "store_id": "bangkok",
+      "name": "Rolinho primavera 4 unidades",
+      "description": "Rolinhos fritos de legumes com molho agridoce.",
+      "category": "entrada",
+      "price": 22.9,
+      "unit": "4 unidades",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "bangkok-012",
+      "store_id": "bangkok",
+      "name": "Satay de frango 4 espetos",
+      "description": "Espetinhos de frango com molho de amendoim.",
+      "category": "entrada",
+      "price": 32.9,
+      "unit": "4 espetos",
+      "serves": 1.5,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "bangkok-013",
+      "store_id": "bangkok",
+      "name": "Som tam",
+      "description": "Salada de mamão verde com pimenta, limão e molho de peixe.",
+      "category": "salada",
+      "price": 26.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 3
+    },
+    {
+      "id": "bangkok-014",
+      "store_id": "bangkok",
+      "name": "Larb de frango",
+      "description": "Salada morna de frango picado com ervas e pimenta.",
+      "category": "salada",
+      "price": 34.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "bangkok-015",
+      "store_id": "bangkok",
+      "name": "Stir fry de legumes com castanha de caju",
+      "description": "Legumes salteados no wok com castanha e shoyu.",
+      "category": "prato_principal",
+      "price": 38.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "bangkok-016",
+      "store_id": "bangkok",
+      "name": "Combo Bangkok para 2",
+      "description": "Dois pratos à escolha, rolinhos primavera e dois arroz de jasmim.",
+      "category": "prato_principal",
+      "price": 119.9,
+      "unit": "combo",
+      "serves": 2.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "bangkok-017",
+      "store_id": "bangkok",
+      "name": "Manga com arroz doce de coco",
+      "description": "Manga fresca com arroz glutinoso e leite de coco.",
+      "category": "sobremesa",
+      "price": 24.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "bangkok-018",
+      "store_id": "bangkok",
+      "name": "Chá tailandês gelado",
+      "description": "Chá preto com especiarias e leite condensado.",
+      "category": "bebida",
+      "price": 14.9,
+      "unit": "copo 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "bangkok-019",
+      "store_id": "bangkok",
+      "name": "Água de coco 330 ml",
+      "description": "Água de coco natural.",
+      "category": "bebida",
+      "price": 7.9,
+      "unit": "garrafa 330 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-001",
+      "store_id": "doceria",
+      "name": "Bolo de chocolate 1,5 kg",
+      "description": "Bolo de chocolate com recheio e cobertura de brigadeiro.",
+      "category": "sobremesa",
+      "price": 79.9,
+      "unit": "bolo 1,5 kg",
+      "serves": 15.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-002",
+      "store_id": "doceria",
+      "name": "Fatia de bolo de chocolate",
+      "description": "Fatia de bolo de chocolate com brigadeiro.",
+      "category": "sobremesa",
+      "price": 14.9,
+      "unit": "fatia",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-003",
+      "store_id": "doceria",
+      "name": "Bolo red velvet 2 kg",
+      "description": "Bolo red velvet com recheio de cream cheese.",
+      "category": "sobremesa",
+      "price": 119.9,
+      "unit": "bolo 2 kg",
+      "serves": 20.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-004",
+      "store_id": "doceria",
+      "name": "Torta de limão",
+      "description": "Torta de limão com merengue, inteira.",
+      "category": "sobremesa",
+      "price": 69.9,
+      "unit": "torta inteira",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-005",
+      "store_id": "doceria",
+      "name": "Torta de morango",
+      "description": "Torta de creme com morangos frescos, inteira.",
+      "category": "sobremesa",
+      "price": 79.9,
+      "unit": "torta inteira",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-006",
+      "store_id": "doceria",
+      "name": "Cheesecake de frutas vermelhas",
+      "description": "Cheesecake com calda de frutas vermelhas, inteiro.",
+      "category": "sobremesa",
+      "price": 89.9,
+      "unit": "torta inteira",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-007",
+      "store_id": "doceria",
+      "name": "Brigadeiros 25 unidades",
+      "description": "Brigadeiros gourmet de chocolate belga.",
+      "category": "sobremesa",
+      "price": 44.9,
+      "unit": "caixa 25 unidades",
+      "serves": 8.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-008",
+      "store_id": "doceria",
+      "name": "Brigadeiros 50 unidades",
+      "description": "Brigadeiros gourmet de chocolate belga.",
+      "category": "sobremesa",
+      "price": 84.9,
+      "unit": "caixa 50 unidades",
+      "serves": 16.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-009",
+      "store_id": "doceria",
+      "name": "Beijinhos 25 unidades",
+      "description": "Docinhos de coco com cravo.",
+      "category": "sobremesa",
+      "price": 44.9,
+      "unit": "caixa 25 unidades",
+      "serves": 8.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-010",
+      "store_id": "doceria",
+      "name": "Brigadeiro vegano 25 unidades",
+      "description": "Brigadeiros de cacau com leite de coco.",
+      "category": "sobremesa",
+      "price": 54.9,
+      "unit": "caixa 25 unidades",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-011",
+      "store_id": "doceria",
+      "name": "Bolo vegano de cenoura",
+      "description": "Bolo de cenoura com cobertura de chocolate amargo, inteiro.",
+      "category": "sobremesa",
+      "price": 59.9,
+      "unit": "bolo inteiro",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-012",
+      "store_id": "doceria",
+      "name": "Bolo de chocolate sem glúten",
+      "description": "Bolo de chocolate feito com farinha de arroz, inteiro.",
+      "category": "sobremesa",
+      "price": 74.9,
+      "unit": "bolo inteiro",
+      "serves": 12.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-013",
+      "store_id": "doceria",
+      "name": "Brownie 6 unidades",
+      "description": "Brownies de chocolate meio amargo com nozes.",
+      "category": "sobremesa",
+      "price": 39.9,
+      "unit": "caixa 6 unidades",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-014",
+      "store_id": "doceria",
+      "name": "Pudim de leite condensado",
+      "description": "Pudim de leite condensado inteiro com calda.",
+      "category": "sobremesa",
+      "price": 49.9,
+      "unit": "pudim inteiro",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-015",
+      "store_id": "doceria",
+      "name": "Mousse de maracujá 500 g",
+      "description": "Mousse aerada de maracujá.",
+      "category": "sobremesa",
+      "price": 29.9,
+      "unit": "pote 500 g",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-016",
+      "store_id": "doceria",
+      "name": "Pavê de chocolate",
+      "description": "Pavê de biscoito com creme de chocolate, travessa.",
+      "category": "sobremesa",
+      "price": 69.9,
+      "unit": "travessa",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-017",
+      "store_id": "doceria",
+      "name": "Torta holandesa",
+      "description": "Torta de creme com biscoito e cobertura de chocolate.",
+      "category": "sobremesa",
+      "price": 79.9,
+      "unit": "torta inteira",
+      "serves": 10.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-018",
+      "store_id": "doceria",
+      "name": "Cookies 6 unidades",
+      "description": "Cookies com gotas de chocolate.",
+      "category": "sobremesa",
+      "price": 29.9,
+      "unit": "caixa 6 unidades",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-019",
+      "store_id": "doceria",
+      "name": "Docinhos sortidos cento",
+      "description": "Cem docinhos de festa: brigadeiro, beijinho e cajuzinho.",
+      "category": "sobremesa",
+      "price": 159.9,
+      "unit": "caixa 100 unidades",
+      "serves": 30.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-020",
+      "store_id": "doceria",
+      "name": "Sorvete artesanal 1 L",
+      "description": "Sorvete artesanal de baunilha ou chocolate.",
+      "category": "sobremesa",
+      "price": 39.9,
+      "unit": "pote 1 L",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-021",
+      "store_id": "doceria",
+      "name": "Sorbet de manga 500 ml",
+      "description": "Sorbet de manga sem leite.",
+      "category": "sobremesa",
+      "price": 26.9,
+      "unit": "pote 500 ml",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "doceria-022",
+      "store_id": "doceria",
+      "name": "Pão de mel 6 unidades",
+      "description": "Pão de mel com cobertura de chocolate e recheio de doce de leite.",
+      "category": "sobremesa",
+      "price": 32.9,
+      "unit": "caixa 6 unidades",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-001",
+      "store_id": "adega",
+      "name": "Cerveja pilsen lata 350 ml",
+      "description": "Cerveja pilsen gelada em lata.",
+      "category": "bebida_alcoolica",
+      "price": 4.99,
+      "unit": "lata 350 ml",
+      "serves": 0.33,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-002",
+      "store_id": "adega",
+      "name": "Cerveja pilsen fardo 12 latas",
+      "description": "Doze latas de cerveja pilsen geladas.",
+      "category": "bebida_alcoolica",
+      "price": 49.9,
+      "unit": "fardo 12 latas",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-003",
+      "store_id": "adega",
+      "name": "Cerveja pilsen caixa 24 latas",
+      "description": "Vinte e quatro latas de cerveja pilsen geladas.",
+      "category": "bebida_alcoolica",
+      "price": 92.9,
+      "unit": "caixa 24 latas",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-004",
+      "store_id": "adega",
+      "name": "Cerveja IPA artesanal 500 ml",
+      "description": "Cerveja India Pale Ale artesanal lupulada.",
+      "category": "bebida_alcoolica",
+      "price": 19.9,
+      "unit": "garrafa 500 ml",
+      "serves": 0.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-005",
+      "store_id": "adega",
+      "name": "Cerveja de trigo Weiss 500 ml",
+      "description": "Cerveja de trigo alemã, leve e frutada.",
+      "category": "bebida_alcoolica",
+      "price": 17.9,
+      "unit": "garrafa 500 ml",
+      "serves": 0.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-006",
+      "store_id": "adega",
+      "name": "Cerveja sem glúten long neck",
+      "description": "Cerveja lager sem glúten, 355 ml.",
+      "category": "bebida_alcoolica",
+      "price": 8.9,
+      "unit": "long neck 355 ml",
+      "serves": 0.33,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-007",
+      "store_id": "adega",
+      "name": "Cerveja sem álcool lata",
+      "description": "Cerveja sem álcool em lata.",
+      "category": "bebida",
+      "price": 5.49,
+      "unit": "lata 350 ml",
+      "serves": 0.5,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-008",
+      "store_id": "adega",
+      "name": "Vinho tinto Malbec",
+      "description": "Vinho tinto Malbec argentino, 750 ml.",
+      "category": "bebida_alcoolica",
+      "price": 69.9,
+      "unit": "garrafa 750 ml",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-009",
+      "store_id": "adega",
+      "name": "Vinho branco Sauvignon Blanc",
+      "description": "Vinho branco chileno, fresco e cítrico, 750 ml.",
+      "category": "bebida_alcoolica",
+      "price": 59.9,
+      "unit": "garrafa 750 ml",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-010",
+      "store_id": "adega",
+      "name": "Vinho rosé",
+      "description": "Vinho rosé seco, 750 ml.",
+      "category": "bebida_alcoolica",
+      "price": 49.9,
+      "unit": "garrafa 750 ml",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-011",
+      "store_id": "adega",
+      "name": "Espumante brut",
+      "description": "Espumante nacional brut, 750 ml.",
+      "category": "bebida_alcoolica",
+      "price": 54.9,
+      "unit": "garrafa 750 ml",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-012",
+      "store_id": "adega",
+      "name": "Espumante sem álcool",
+      "description": "Bebida espumante de uva sem álcool, 750 ml.",
+      "category": "bebida",
+      "price": 34.9,
+      "unit": "garrafa 750 ml",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-013",
+      "store_id": "adega",
+      "name": "Cachaça artesanal 700 ml",
+      "description": "Cachaça artesanal envelhecida.",
+      "category": "bebida_alcoolica",
+      "price": 39.9,
+      "unit": "garrafa 700 ml",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-014",
+      "store_id": "adega",
+      "name": "Kit caipirinha para 10",
+      "description": "Cachaça, limões, açúcar e gelo para dez caipirinhas.",
+      "category": "bebida_alcoolica",
+      "price": 69.9,
+      "unit": "kit",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-015",
+      "store_id": "adega",
+      "name": "Gin 750 ml",
+      "description": "Gin seco London Dry.",
+      "category": "bebida_alcoolica",
+      "price": 99.9,
+      "unit": "garrafa 750 ml",
+      "serves": 12.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-016",
+      "store_id": "adega",
+      "name": "Água tônica lata",
+      "description": "Água tônica 350 ml.",
+      "category": "bebida",
+      "price": 5.49,
+      "unit": "lata 350 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-017",
+      "store_id": "adega",
+      "name": "Refrigerante cola 2 L",
+      "description": "Refrigerante sabor cola, garrafa 2 litros.",
+      "category": "bebida",
+      "price": 11.9,
+      "unit": "garrafa 2 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-018",
+      "store_id": "adega",
+      "name": "Água mineral 1,5 L",
+      "description": "Água mineral sem gás.",
+      "category": "bebida",
+      "price": 4.49,
+      "unit": "garrafa 1,5 L",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-019",
+      "store_id": "adega",
+      "name": "Gelo em cubos 5 kg",
+      "description": "Saco de gelo em cubos.",
+      "category": "utensilios",
+      "price": 15.9,
+      "unit": "saco 5 kg",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-020",
+      "store_id": "adega",
+      "name": "Copos descartáveis 50 unidades",
+      "description": "Copos plásticos de 300 ml.",
+      "category": "utensilios",
+      "price": 9.9,
+      "unit": "pacote 50 unidades",
+      "serves": 25.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-021",
+      "store_id": "adega",
+      "name": "Amendoim japonês 500 g",
+      "description": "Amendoim com cobertura crocante de farinha e shoyu.",
+      "category": "entrada",
+      "price": 19.9,
+      "unit": "pacote 500 g",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "adega-022",
+      "store_id": "adega",
+      "name": "Tábua de frios 500 g",
+      "description": "Salame, queijo provolone, azeitonas e pepino em conserva.",
+      "category": "entrada",
+      "price": 69.9,
+      "unit": "tábua 500 g",
+      "serves": 5.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-001",
+      "store_id": "hortifruti",
+      "name": "Banana prata",
+      "description": "Banana prata madura.",
+      "category": "hortifruti",
+      "price": 7.49,
+      "unit": "kg",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-002",
+      "store_id": "hortifruti",
+      "name": "Maçã fuji",
+      "description": "Maçã fuji crocante.",
+      "category": "hortifruti",
+      "price": 12.9,
+      "unit": "kg",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-003",
+      "store_id": "hortifruti",
+      "name": "Mamão formosa",
+      "description": "Mamão formosa maduro.",
+      "category": "hortifruti",
+      "price": 8.9,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-004",
+      "store_id": "hortifruti",
+      "name": "Abacaxi pérola",
+      "description": "Abacaxi pérola doce.",
+      "category": "hortifruti",
+      "price": 9.9,
+      "unit": "unidade",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-005",
+      "store_id": "hortifruti",
+      "name": "Meia melancia",
+      "description": "Metade de melancia, cerca de 4 kg.",
+      "category": "hortifruti",
+      "price": 14.9,
+      "unit": "unidade",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-006",
+      "store_id": "hortifruti",
+      "name": "Uva sem semente 500 g",
+      "description": "Uva verde sem semente.",
+      "category": "hortifruti",
+      "price": 14.9,
+      "unit": "bandeja 500 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-007",
+      "store_id": "hortifruti",
+      "name": "Morango 250 g",
+      "description": "Bandeja de morangos frescos.",
+      "category": "hortifruti",
+      "price": 9.9,
+      "unit": "bandeja 250 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-008",
+      "store_id": "hortifruti",
+      "name": "Manga palmer",
+      "description": "Manga palmer madura.",
+      "category": "hortifruti",
+      "price": 5.9,
+      "unit": "unidade",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-009",
+      "store_id": "hortifruti",
+      "name": "Laranja pera",
+      "description": "Laranja pera para suco ou consumo.",
+      "category": "hortifruti",
+      "price": 5.99,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-010",
+      "store_id": "hortifruti",
+      "name": "Limão tahiti",
+      "description": "Limão tahiti suculento.",
+      "category": "hortifruti",
+      "price": 6.9,
+      "unit": "kg",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-011",
+      "store_id": "hortifruti",
+      "name": "Abacate",
+      "description": "Abacate maduro.",
+      "category": "hortifruti",
+      "price": 12.9,
+      "unit": "kg",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-012",
+      "store_id": "hortifruti",
+      "name": "Tomate italiano",
+      "description": "Tomate italiano maduro.",
+      "category": "hortifruti",
+      "price": 8.9,
+      "unit": "kg",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-013",
+      "store_id": "hortifruti",
+      "name": "Cebola",
+      "description": "Cebola branca.",
+      "category": "hortifruti",
+      "price": 6.9,
+      "unit": "kg",
+      "serves": 10.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-014",
+      "store_id": "hortifruti",
+      "name": "Kit frutas cortadas para escritório 1 kg",
+      "description": "Melão, abacaxi, mamão, uva e morango já cortados.",
+      "category": "hortifruti",
+      "price": 39.9,
+      "unit": "bandeja 1 kg",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-015",
+      "store_id": "hortifruti",
+      "name": "Salada de frutas 1 kg",
+      "description": "Salada de frutas da estação com suco de laranja.",
+      "category": "hortifruti",
+      "price": 32.9,
+      "unit": "pote 1 kg",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-016",
+      "store_id": "hortifruti",
+      "name": "Mix de folhas lavadas 200 g",
+      "description": "Alface crespa, rúcula e agrião higienizados.",
+      "category": "salada",
+      "price": 9.9,
+      "unit": "pacote 200 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-017",
+      "store_id": "hortifruti",
+      "name": "Salada pronta tradicional 400 g",
+      "description": "Alface, tomate, cenoura ralada e pepino.",
+      "category": "salada",
+      "price": 14.9,
+      "unit": "pote 400 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-018",
+      "store_id": "hortifruti",
+      "name": "Espetinho de legumes 6 unidades",
+      "description": "Abobrinha, pimentão, cebola e cogumelo em espetos para grelhar.",
+      "category": "grelhados",
+      "price": 29.9,
+      "unit": "pacote 6 espetos",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-019",
+      "store_id": "hortifruti",
+      "name": "Milho verde 4 espigas",
+      "description": "Espigas de milho verde para cozinhar ou assar na brasa.",
+      "category": "grelhados",
+      "price": 9.9,
+      "unit": "pacote 4 espigas",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-020",
+      "store_id": "hortifruti",
+      "name": "Cogumelo portobello 200 g",
+      "description": "Cogumelos portobello inteiros, ótimos na grelha.",
+      "category": "grelhados",
+      "price": 16.9,
+      "unit": "bandeja 200 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-021",
+      "store_id": "hortifruti",
+      "name": "Abacaxi para grelhar fatiado",
+      "description": "Abacaxi em rodelas com canela para assar na churrasqueira.",
+      "category": "sobremesa",
+      "price": 12.9,
+      "unit": "bandeja 600 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-022",
+      "store_id": "hortifruti",
+      "name": "Água de coco 1 L",
+      "description": "Água de coco natural gelada.",
+      "category": "bebida",
+      "price": 14.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-023",
+      "store_id": "hortifruti",
+      "name": "Suco de laranja natural 1 L",
+      "description": "Suco de laranja espremido na hora.",
+      "category": "bebida",
+      "price": 15.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "hortifruti-024",
+      "store_id": "hortifruti",
+      "name": "Mix de castanhas 200 g",
+      "description": "Castanha de caju, castanha-do-pará, amêndoas e nozes.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "pacote 200 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-001",
+      "store_id": "sahara",
+      "name": "Esfiha de carne 12 unidades",
+      "description": "Esfihas abertas de carne bovina temperada.",
+      "category": "entrada",
+      "price": 59.9,
+      "unit": "12 unidades",
+      "serves": 4.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-002",
+      "store_id": "sahara",
+      "name": "Esfiha de queijo 12 unidades",
+      "description": "Esfihas abertas de queijo.",
+      "category": "entrada",
+      "price": 57.9,
+      "unit": "12 unidades",
+      "serves": 4.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-003",
+      "store_id": "sahara",
+      "name": "Esfiha de espinafre 12 unidades",
+      "description": "Esfihas fechadas de espinafre com cebola e limão.",
+      "category": "entrada",
+      "price": 54.9,
+      "unit": "12 unidades",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-004",
+      "store_id": "sahara",
+      "name": "Esfiha de zaatar 12 unidades",
+      "description": "Esfihas abertas de zaatar com azeite.",
+      "category": "entrada",
+      "price": 49.9,
+      "unit": "12 unidades",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-005",
+      "store_id": "sahara",
+      "name": "Kibe frito 12 unidades",
+      "description": "Kibes fritos de carne com trigo.",
+      "category": "entrada",
+      "price": 54.9,
+      "unit": "12 unidades",
+      "serves": 4.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-006",
+      "store_id": "sahara",
+      "name": "Kibe cru 300 g",
+      "description": "Kibe cru de carne bovina com hortelã e azeite.",
+      "category": "entrada",
+      "price": 39.9,
+      "unit": "porção 300 g",
+      "serves": 3.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-007",
+      "store_id": "sahara",
+      "name": "Kibe de abóbora 6 unidades",
+      "description": "Kibe assado de abóbora com trigo e espinafre.",
+      "category": "entrada",
+      "price": 29.9,
+      "unit": "6 unidades",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-008",
+      "store_id": "sahara",
+      "name": "Falafel 10 unidades",
+      "description": "Bolinhos de grão-de-bico com molho tahine.",
+      "category": "entrada",
+      "price": 32.9,
+      "unit": "10 unidades",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-009",
+      "store_id": "sahara",
+      "name": "Homus 300 g",
+      "description": "Pasta de grão-de-bico com tahine e azeite.",
+      "category": "entrada",
+      "price": 24.9,
+      "unit": "pote 300 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-010",
+      "store_id": "sahara",
+      "name": "Babaganuche 300 g",
+      "description": "Pasta de berinjela defumada com tahine.",
+      "category": "entrada",
+      "price": 26.9,
+      "unit": "pote 300 g",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-011",
+      "store_id": "sahara",
+      "name": "Coalhada seca 200 g",
+      "description": "Coalhada seca com azeite e zaatar.",
+      "category": "entrada",
+      "price": 22.9,
+      "unit": "pote 200 g",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-012",
+      "store_id": "sahara",
+      "name": "Tabule 400 g",
+      "description": "Salada de trigo, tomate, salsinha, hortelã e limão.",
+      "category": "salada",
+      "price": 24.9,
+      "unit": "pote 400 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-013",
+      "store_id": "sahara",
+      "name": "Fatuche",
+      "description": "Salada de folhas, tomate, pepino e pão sírio torrado.",
+      "category": "salada",
+      "price": 29.9,
+      "unit": "porção",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-014",
+      "store_id": "sahara",
+      "name": "Charuto de folha de uva 10 unidades",
+      "description": "Folhas de uva recheadas com arroz e carne.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "10 unidades",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-015",
+      "store_id": "sahara",
+      "name": "Arroz com lentilha 500 g",
+      "description": "Mujadara: arroz com lentilha e cebola caramelizada.",
+      "category": "acompanhamento",
+      "price": 28.9,
+      "unit": "pote 500 g",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-016",
+      "store_id": "sahara",
+      "name": "Shawarma de frango",
+      "description": "Pão sírio com frango, alho, picles e batata.",
+      "category": "lanche",
+      "price": 34.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "sahara-017",
+      "store_id": "sahara",
+      "name": "Shawarma de falafel",
+      "description": "Pão sírio com falafel, homus e salada.",
+      "category": "lanche",
+      "price": 31.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-018",
+      "store_id": "sahara",
+      "name": "Kafta grelhada 4 espetos",
+      "description": "Espetos de carne moída temperada grelhados.",
+      "category": "grelhados",
+      "price": 44.9,
+      "unit": "4 espetos",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-019",
+      "store_id": "sahara",
+      "name": "Shish taouk 4 espetos",
+      "description": "Espetos de frango marinado em iogurte e especiarias.",
+      "category": "grelhados",
+      "price": 39.9,
+      "unit": "4 espetos",
+      "serves": 2.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 1
+    },
+    {
+      "id": "sahara-020",
+      "store_id": "sahara",
+      "name": "Pão sírio 6 unidades",
+      "description": "Pão sírio tradicional.",
+      "category": "paes",
+      "price": 9.9,
+      "unit": "pacote 6 unidades",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-021",
+      "store_id": "sahara",
+      "name": "Mix árabe para 4",
+      "description": "Doze esfihas, doze kibes, homus, tabule e pão sírio.",
+      "category": "prato_principal",
+      "price": 159.9,
+      "unit": "combo",
+      "serves": 4.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-022",
+      "store_id": "sahara",
+      "name": "Baklava 6 unidades",
+      "description": "Doce folhado de nozes e pistache com calda de mel.",
+      "category": "sobremesa",
+      "price": 34.9,
+      "unit": "6 unidades",
+      "serves": 3.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "sahara-023",
+      "store_id": "sahara",
+      "name": "Limonada com hortelã 500 ml",
+      "description": "Limonada natural com hortelã.",
+      "category": "bebida",
+      "price": 11.9,
+      "unit": "copo 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-001",
+      "store_id": "graofino",
+      "name": "Kit café da manhã corporativo 10 pessoas",
+      "description": "Pães, frios, frutas cortadas, bolo, café, leite e suco para 10 pessoas.",
+      "category": "prato_principal",
+      "price": 349.9,
+      "unit": "kit",
+      "serves": 10.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-002",
+      "store_id": "graofino",
+      "name": "Kit café da manhã 5 pessoas",
+      "description": "Pães, frios, frutas, bolo, café e suco para 5 pessoas.",
+      "category": "prato_principal",
+      "price": 189.9,
+      "unit": "kit",
+      "serves": 5.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-003",
+      "store_id": "graofino",
+      "name": "Kit café da manhã vegano 5 pessoas",
+      "description": "Pães veganos, homus, geleia, frutas, bolo vegano, café e leite de aveia.",
+      "category": "prato_principal",
+      "price": 219.9,
+      "unit": "kit",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-004",
+      "store_id": "graofino",
+      "name": "Croissant tradicional",
+      "description": "Croissant folhado na manteiga.",
+      "category": "paes",
+      "price": 8.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-005",
+      "store_id": "graofino",
+      "name": "Pão de queijo 30 unidades",
+      "description": "Trinta mini pães de queijo assados.",
+      "category": "paes",
+      "price": 34.9,
+      "unit": "pacote 30 unidades",
+      "serves": 6.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-006",
+      "store_id": "graofino",
+      "name": "Mini sanduíches sortidos 20 unidades",
+      "description": "Mini sanduíches de presunto, queijo, peito de peru e atum.",
+      "category": "lanche",
+      "price": 99.9,
+      "unit": "bandeja 20 unidades",
+      "serves": 6.0,
+      "diet": [],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-007",
+      "store_id": "graofino",
+      "name": "Mini sanduíches veganos 10 unidades",
+      "description": "Mini sanduíches de homus, legumes grelhados e pasta de tofu.",
+      "category": "lanche",
+      "price": 59.9,
+      "unit": "bandeja 10 unidades",
+      "serves": 3.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-008",
+      "store_id": "graofino",
+      "name": "Tapioca de queijo coalho",
+      "description": "Tapioca recheada com queijo coalho.",
+      "category": "lanche",
+      "price": 16.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-009",
+      "store_id": "graofino",
+      "name": "Tapioca de frango",
+      "description": "Tapioca recheada com frango desfiado e requeijão.",
+      "category": "lanche",
+      "price": 17.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-010",
+      "store_id": "graofino",
+      "name": "Tapioca de banana com canela",
+      "description": "Tapioca de banana, canela e pasta de amendoim.",
+      "category": "lanche",
+      "price": 15.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-011",
+      "store_id": "graofino",
+      "name": "Wrap de ovos mexidos",
+      "description": "Wrap de trigo com ovos mexidos, queijo e espinafre.",
+      "category": "lanche",
+      "price": 18.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-012",
+      "store_id": "graofino",
+      "name": "Ovos mexidos com torradas",
+      "description": "Ovos mexidos cremosos com torradas de pão rústico.",
+      "category": "lanche",
+      "price": 19.9,
+      "unit": "prato",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-013",
+      "store_id": "graofino",
+      "name": "Panquecas americanas com mel 3 unidades",
+      "description": "Panquecas fofas com mel e manteiga.",
+      "category": "sobremesa",
+      "price": 22.9,
+      "unit": "3 unidades",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-014",
+      "store_id": "graofino",
+      "name": "Iogurte com granola e frutas",
+      "description": "Iogurte natural com granola, banana e morango.",
+      "category": "sobremesa",
+      "price": 16.9,
+      "unit": "pote 300 g",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-015",
+      "store_id": "graofino",
+      "name": "Bowl de açaí 400 ml",
+      "description": "Açaí puro com banana e morango.",
+      "category": "sobremesa",
+      "price": 22.9,
+      "unit": "bowl 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-016",
+      "store_id": "graofino",
+      "name": "Overnight oats vegano",
+      "description": "Aveia com bebida de amêndoas, chia e frutas vermelhas.",
+      "category": "sobremesa",
+      "price": 15.9,
+      "unit": "pote",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-017",
+      "store_id": "graofino",
+      "name": "Bolo de laranja inteiro",
+      "description": "Bolo de laranja caseiro inteiro.",
+      "category": "sobremesa",
+      "price": 49.9,
+      "unit": "bolo inteiro",
+      "serves": 12.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-018",
+      "store_id": "graofino",
+      "name": "Muffin de blueberry",
+      "description": "Muffin de blueberry.",
+      "category": "sobremesa",
+      "price": 11.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegetariano"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-019",
+      "store_id": "graofino",
+      "name": "Cookie vegano",
+      "description": "Cookie de aveia com gotas de chocolate amargo.",
+      "category": "sobremesa",
+      "price": 9.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-020",
+      "store_id": "graofino",
+      "name": "Bandeja de frutas fatiadas 1 kg",
+      "description": "Frutas da estação fatiadas.",
+      "category": "hortifruti",
+      "price": 49.9,
+      "unit": "bandeja 1 kg",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-021",
+      "store_id": "graofino",
+      "name": "Café coado garrafa térmica 1 L",
+      "description": "Café especial coado, cerca de 8 xícaras.",
+      "category": "bebida",
+      "price": 29.9,
+      "unit": "garrafa 1 L",
+      "serves": 8.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-022",
+      "store_id": "graofino",
+      "name": "Café coado garrafa térmica 2 L",
+      "description": "Café especial coado, cerca de 16 xícaras.",
+      "category": "bebida",
+      "price": 52.9,
+      "unit": "garrafa 2 L",
+      "serves": 16.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-023",
+      "store_id": "graofino",
+      "name": "Leite integral garrafa 1 L",
+      "description": "Leite integral quente para acompanhar o café.",
+      "category": "bebida",
+      "price": 9.9,
+      "unit": "garrafa 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegetariano",
+        "sem_gluten"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-024",
+      "store_id": "graofino",
+      "name": "Bebida de aveia garrafa 1 L",
+      "description": "Bebida vegetal de aveia vaporizada para o café.",
+      "category": "bebida",
+      "price": 18.9,
+      "unit": "garrafa 1 L",
+      "serves": 5.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-025",
+      "store_id": "graofino",
+      "name": "Chá de camomila garrafa 1 L",
+      "description": "Chá de camomila em garrafa térmica.",
+      "category": "bebida",
+      "price": 22.9,
+      "unit": "garrafa 1 L",
+      "serves": 6.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-026",
+      "store_id": "graofino",
+      "name": "Suco de laranja 1 L",
+      "description": "Suco de laranja natural.",
+      "category": "bebida",
+      "price": 21.9,
+      "unit": "garrafa 1 L",
+      "serves": 4.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "graofino-027",
+      "store_id": "graofino",
+      "name": "Água mineral 500 ml",
+      "description": "Água mineral sem gás.",
+      "category": "bebida",
+      "price": 4.9,
+      "unit": "garrafa 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-001",
+      "store_id": "aloha",
+      "name": "Poke de salmão",
+      "description": "Arroz, salmão cru, pepino, manga, edamame e shoyu.",
+      "category": "prato_principal",
+      "price": 49.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-002",
+      "store_id": "aloha",
+      "name": "Poke de salmão sem glúten",
+      "description": "Arroz, salmão cru, pepino, manga e tamari sem glúten.",
+      "category": "prato_principal",
+      "price": 52.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-003",
+      "store_id": "aloha",
+      "name": "Poke de atum",
+      "description": "Arroz, atum cru, cebola roxa, alga e shoyu.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-004",
+      "store_id": "aloha",
+      "name": "Poke de tofu",
+      "description": "Arroz, tofu marinado, cenoura, pepino e shoyu.",
+      "category": "prato_principal",
+      "price": 39.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-005",
+      "store_id": "aloha",
+      "name": "Poke vegano sem glúten",
+      "description": "Arroz, tofu, abacate, manga, pepino e tamari sem glúten.",
+      "category": "prato_principal",
+      "price": 42.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-006",
+      "store_id": "aloha",
+      "name": "Poke de camarão picante",
+      "description": "Arroz, camarão, maionese de sriracha e pepino.",
+      "category": "prato_principal",
+      "price": 54.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 2
+    },
+    {
+      "id": "aloha-007",
+      "store_id": "aloha",
+      "name": "Poke de frango teriyaki",
+      "description": "Arroz, frango grelhado ao teriyaki e legumes.",
+      "category": "prato_principal",
+      "price": 42.9,
+      "unit": "bowl",
+      "serves": 1.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-008",
+      "store_id": "aloha",
+      "name": "Poke família 4 bowls",
+      "description": "Quatro pokes de salmão ou tofu, à escolha.",
+      "category": "prato_principal",
+      "price": 179.9,
+      "unit": "combo",
+      "serves": 4.0,
+      "diet": [
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-009",
+      "store_id": "aloha",
+      "name": "Salada havaiana",
+      "description": "Folhas, abacaxi grelhado, abacate e castanhas.",
+      "category": "salada",
+      "price": 32.9,
+      "unit": "porção",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-010",
+      "store_id": "aloha",
+      "name": "Edamame com sal",
+      "description": "Vagens de soja cozidas.",
+      "category": "entrada",
+      "price": 19.9,
+      "unit": "porção 200 g",
+      "serves": 2.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-011",
+      "store_id": "aloha",
+      "name": "Bowl de açaí 500 ml",
+      "description": "Açaí com banana, morango e coco ralado.",
+      "category": "sobremesa",
+      "price": 24.9,
+      "unit": "bowl 500 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-012",
+      "store_id": "aloha",
+      "name": "Picolé de frutas",
+      "description": "Picolé artesanal de frutas, sabores variados.",
+      "category": "sobremesa",
+      "price": 8.9,
+      "unit": "unidade",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-013",
+      "store_id": "aloha",
+      "name": "Suco de abacaxi com hortelã",
+      "description": "Suco natural, 400 ml.",
+      "category": "bebida",
+      "price": 12.9,
+      "unit": "copo 400 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-014",
+      "store_id": "aloha",
+      "name": "Água de coco 330 ml",
+      "description": "Água de coco natural.",
+      "category": "bebida",
+      "price": 8.9,
+      "unit": "garrafa 330 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    },
+    {
+      "id": "aloha-015",
+      "store_id": "aloha",
+      "name": "Kombucha de gengibre",
+      "description": "Kombucha de gengibre e limão, 300 ml.",
+      "category": "bebida",
+      "price": 14.9,
+      "unit": "garrafa 300 ml",
+      "serves": 1.0,
+      "diet": [
+        "vegano",
+        "vegetariano",
+        "sem_gluten",
+        "sem_lactose"
+      ],
+      "spice_level": 0
+    }
+  ]
+}
