@@ -1,0 +1,82 @@
+{
+  "description": "Gabarito para avaliar a busca semântica (recall@5). Os itens relevantes foram definidos pelo significado da consulta, antes de olhar os resultados do modelo. Filtros, quando presentes, são os mesmos que o Buscador aplicaria.",
+  "queries": [
+    {
+      "id": "r01",
+      "query": "carvão para churrasqueira",
+      "relevant": ["acougue-021", "acougue-022", "mercado-014", "mercado-015"]
+    },
+    {
+      "id": "r02",
+      "query": "picanha para churrasco",
+      "relevant": ["acougue-001", "churrascaria-001"]
+    },
+    {
+      "id": "r03",
+      "query": "cerveja sem glúten",
+      "relevant": ["mercado-011", "adega-006"]
+    },
+    {
+      "id": "r04",
+      "query": "pão sem glúten",
+      "relevant": ["mercado-028", "padaria-006"]
+    },
+    {
+      "id": "r05",
+      "query": "café para servir a equipe no escritório",
+      "relevant": ["padaria-013", "graofino-021", "graofino-022"]
+    },
+    {
+      "id": "r06",
+      "query": "comida tailandesa apimentada",
+      "relevant": ["bangkok-004", "bangkok-005", "bangkok-007", "bangkok-013", "bangkok-014", "bangkok-006"]
+    },
+    {
+      "id": "r07",
+      "query": "hambúrguer vegano",
+      "relevant": ["chapa-006", "mercado-033"]
+    },
+    {
+      "id": "r08",
+      "query": "kit de café da manhã para várias pessoas",
+      "relevant": ["graofino-001", "graofino-002", "graofino-003"]
+    },
+    {
+      "id": "r09",
+      "query": "refrigerante 2 litros",
+      "relevant": ["mercado-001", "mercado-002", "mercado-003", "churrascaria-021", "nonna-029", "chapa-019", "adega-017"]
+    },
+    {
+      "id": "r10",
+      "query": "frutas cortadas para o escritório",
+      "relevant": ["hortifruti-014", "graofino-020", "hortifruti-015", "padaria-030", "verdevida-025"]
+    },
+    {
+      "id": "r11",
+      "query": "docinhos de festa como brigadeiro",
+      "filters": {"categories": ["sobremesa"]},
+      "relevant": ["doceria-019", "doceria-007", "doceria-008", "doceria-009", "doceria-010"]
+    },
+    {
+      "id": "r12",
+      "query": "macarrão",
+      "filters": {"diet": ["sem_gluten"]},
+      "relevant": ["massamia-009", "bangkok-001", "bangkok-002", "bangkok-003"]
+    },
+    {
+      "id": "r13",
+      "query": "salgados fritos para festa",
+      "relevant": ["padaria-024", "padaria-025", "sahara-005"]
+    },
+    {
+      "id": "r14",
+      "query": "bebida sem álcool para brindar",
+      "relevant": ["adega-012"]
+    },
+    {
+      "id": "r15",
+      "query": "sushi vegetariano",
+      "relevant": ["kenzo-005", "kenzo-009"]
+    }
+  ]
+}

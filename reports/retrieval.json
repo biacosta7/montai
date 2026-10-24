@@ -1,0 +1,1138 @@
+[
+  {
+    "embedding": "minilm",
+    "k": 5,
+    "mean_recall": 0.53,
+    "mrr": 0.6911,
+    "results": [
+      {
+        "id": "r01",
+        "query": "carvão para churrasqueira",
+        "retrieved": [
+          "acougue-022",
+          "mercado-015",
+          "mercado-014",
+          "acougue-021",
+          "acougue-024"
+        ],
+        "relevant": [
+          "acougue-021",
+          "acougue-022",
+          "mercado-014",
+          "mercado-015"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r02",
+        "query": "picanha para churrasco",
+        "retrieved": [
+          "acougue-001",
+          "acougue-023",
+          "acougue-014",
+          "churrascaria-008",
+          "padaria-020"
+        ],
+        "relevant": [
+          "acougue-001",
+          "churrascaria-001"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r03",
+        "query": "cerveja sem glúten",
+        "retrieved": [
+          "mercado-012",
+          "adega-003",
+          "adega-007",
+          "adega-012",
+          "adega-011"
+        ],
+        "relevant": [
+          "mercado-011",
+          "adega-006"
+        ],
+        "recall": 0.0,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "id": "r04",
+        "query": "pão sem glúten",
+        "retrieved": [
+          "mercado-027",
+          "mercado-028",
+          "padaria-006",
+          "acougue-018",
+          "padaria-003"
+        ],
+        "relevant": [
+          "mercado-028",
+          "padaria-006"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "id": "r05",
+        "query": "café para servir a equipe no escritório",
+        "retrieved": [
+          "graofino-001",
+          "graofino-002",
+          "padaria-013",
+          "graofino-021",
+          "padaria-014"
+        ],
+        "relevant": [
+          "padaria-013",
+          "graofino-021",
+          "graofino-022"
+        ],
+        "recall": 0.6666666666666666,
+        "reciprocal_rank": 0.3333333333333333
+      },
+      {
+        "id": "r06",
+        "query": "comida tailandesa apimentada",
+        "retrieved": [
+          "bangkok-001",
+          "bangkok-015",
+          "bangkok-002",
+          "bangkok-016",
+          "bangkok-011"
+        ],
+        "relevant": [
+          "bangkok-004",
+          "bangkok-005",
+          "bangkok-007",
+          "bangkok-013",
+          "bangkok-014",
+          "bangkok-006"
+        ],
+        "recall": 0.0,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "id": "r07",
+        "query": "hambúrguer vegano",
+        "retrieved": [
+          "chapa-006",
+          "chapa-003",
+          "acougue-014",
+          "padaria-022",
+          "chapa-007"
+        ],
+        "relevant": [
+          "chapa-006",
+          "mercado-033"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r08",
+        "query": "kit de café da manhã para várias pessoas",
+        "retrieved": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003",
+          "graofino-013",
+          "graofino-016"
+        ],
+        "relevant": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r09",
+        "query": "refrigerante 2 litros",
+        "retrieved": [
+          "chapa-018",
+          "mercado-004",
+          "mercado-006",
+          "mercado-012",
+          "mercado-002"
+        ],
+        "relevant": [
+          "mercado-001",
+          "mercado-002",
+          "mercado-003",
+          "churrascaria-021",
+          "nonna-029",
+          "chapa-019",
+          "adega-017"
+        ],
+        "recall": 0.2,
+        "reciprocal_rank": 0.2
+      },
+      {
+        "id": "r10",
+        "query": "frutas cortadas para o escritório",
+        "retrieved": [
+          "hortifruti-014",
+          "doceria-009",
+          "doceria-004",
+          "hortifruti-021",
+          "verdevida-021"
+        ],
+        "relevant": [
+          "hortifruti-014",
+          "graofino-020",
+          "hortifruti-015",
+          "padaria-030",
+          "verdevida-025"
+        ],
+        "recall": 0.2,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r11",
+        "query": "docinhos de festa como brigadeiro",
+        "retrieved": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-010",
+          "doceria-001"
+        ],
+        "relevant": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-009",
+          "doceria-010"
+        ],
+        "recall": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r12",
+        "query": "macarrão",
+        "retrieved": [
+          "massamia-009",
+          "massamia-011",
+          "kenzo-007",
+          "sahara-010",
+          "churrascaria-004"
+        ],
+        "relevant": [
+          "massamia-009",
+          "bangkok-001",
+          "bangkok-002",
+          "bangkok-003"
+        ],
+        "recall": 0.25,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r13",
+        "query": "salgados fritos para festa",
+        "retrieved": [
+          "padaria-025",
+          "acougue-001",
+          "chapa-012",
+          "verdevida-005",
+          "acougue-014"
+        ],
+        "relevant": [
+          "padaria-024",
+          "padaria-025",
+          "sahara-005"
+        ],
+        "recall": 0.3333333333333333,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r14",
+        "query": "bebida sem álcool para brindar",
+        "retrieved": [
+          "mercado-012",
+          "adega-007",
+          "adega-012",
+          "adega-003",
+          "graofino-027"
+        ],
+        "relevant": [
+          "adega-012"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 0.3333333333333333
+      },
+      {
+        "id": "r15",
+        "query": "sushi vegetariano",
+        "retrieved": [
+          "kenzo-005",
+          "kenzo-020",
+          "kenzo-017",
+          "kenzo-014",
+          "kenzo-016"
+        ],
+        "relevant": [
+          "kenzo-005",
+          "kenzo-009"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  },
+  {
+    "embedding": "e5-small",
+    "k": 5,
+    "mean_recall": 0.8,
+    "mrr": 0.8967,
+    "results": [
+      {
+        "id": "r01",
+        "query": "carvão para churrasqueira",
+        "retrieved": [
+          "mercado-015",
+          "acougue-024",
+          "acougue-021",
+          "acougue-022",
+          "churrascaria-010"
+        ],
+        "relevant": [
+          "acougue-021",
+          "acougue-022",
+          "mercado-014",
+          "mercado-015"
+        ],
+        "recall": 0.75,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r02",
+        "query": "picanha para churrasco",
+        "retrieved": [
+          "acougue-001",
+          "churrascaria-008",
+          "churrascaria-001",
+          "churrascaria-007",
+          "mercado-032"
+        ],
+        "relevant": [
+          "acougue-001",
+          "churrascaria-001"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r03",
+        "query": "cerveja sem glúten",
+        "retrieved": [
+          "mercado-011",
+          "adega-006",
+          "adega-007",
+          "chapa-007",
+          "mercado-012"
+        ],
+        "relevant": [
+          "mercado-011",
+          "adega-006"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r04",
+        "query": "pão sem glúten",
+        "retrieved": [
+          "padaria-006",
+          "mercado-028",
+          "chapa-007",
+          "nonna-025",
+          "padaria-028"
+        ],
+        "relevant": [
+          "mercado-028",
+          "padaria-006"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r05",
+        "query": "café para servir a equipe no escritório",
+        "retrieved": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003",
+          "hortifruti-014",
+          "graofino-021"
+        ],
+        "relevant": [
+          "padaria-013",
+          "graofino-021",
+          "graofino-022"
+        ],
+        "recall": 0.3333333333333333,
+        "reciprocal_rank": 0.2
+      },
+      {
+        "id": "r06",
+        "query": "comida tailandesa apimentada",
+        "retrieved": [
+          "bangkok-001",
+          "bangkok-002",
+          "bangkok-012",
+          "bangkok-013",
+          "bangkok-014"
+        ],
+        "relevant": [
+          "bangkok-004",
+          "bangkok-005",
+          "bangkok-007",
+          "bangkok-013",
+          "bangkok-014",
+          "bangkok-006"
+        ],
+        "recall": 0.4,
+        "reciprocal_rank": 0.25
+      },
+      {
+        "id": "r07",
+        "query": "hambúrguer vegano",
+        "retrieved": [
+          "chapa-006",
+          "mercado-033",
+          "lapicante-006",
+          "padaria-022",
+          "graofino-003"
+        ],
+        "relevant": [
+          "chapa-006",
+          "mercado-033"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r08",
+        "query": "kit de café da manhã para várias pessoas",
+        "retrieved": [
+          "graofino-002",
+          "graofino-001",
+          "graofino-003",
+          "mercado-016",
+          "hortifruti-014"
+        ],
+        "relevant": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r09",
+        "query": "refrigerante 2 litros",
+        "retrieved": [
+          "mercado-003",
+          "mercado-001",
+          "chapa-019",
+          "adega-017",
+          "churrascaria-021"
+        ],
+        "relevant": [
+          "mercado-001",
+          "mercado-002",
+          "mercado-003",
+          "churrascaria-021",
+          "nonna-029",
+          "chapa-019",
+          "adega-017"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r10",
+        "query": "frutas cortadas para o escritório",
+        "retrieved": [
+          "hortifruti-014",
+          "graofino-001",
+          "verdevida-025",
+          "graofino-020",
+          "hortifruti-015"
+        ],
+        "relevant": [
+          "hortifruti-014",
+          "graofino-020",
+          "hortifruti-015",
+          "padaria-030",
+          "verdevida-025"
+        ],
+        "recall": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r11",
+        "query": "docinhos de festa como brigadeiro",
+        "retrieved": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-010",
+          "doceria-002"
+        ],
+        "relevant": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-009",
+          "doceria-010"
+        ],
+        "recall": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r12",
+        "query": "macarrão",
+        "retrieved": [
+          "bangkok-002",
+          "bangkok-001",
+          "bangkok-003",
+          "bangkok-007",
+          "massamia-011"
+        ],
+        "relevant": [
+          "massamia-009",
+          "bangkok-001",
+          "bangkok-002",
+          "bangkok-003"
+        ],
+        "recall": 0.75,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r13",
+        "query": "salgados fritos para festa",
+        "retrieved": [
+          "padaria-025",
+          "hortifruti-017",
+          "padaria-024",
+          "hortifruti-015",
+          "adega-022"
+        ],
+        "relevant": [
+          "padaria-024",
+          "padaria-025",
+          "sahara-005"
+        ],
+        "recall": 0.6666666666666666,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r14",
+        "query": "bebida sem álcool para brindar",
+        "retrieved": [
+          "adega-012",
+          "mercado-012",
+          "adega-007",
+          "mercado-011",
+          "adega-006"
+        ],
+        "relevant": [
+          "adega-012"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r15",
+        "query": "sushi vegetariano",
+        "retrieved": [
+          "kenzo-005",
+          "kenzo-015",
+          "kenzo-022",
+          "kenzo-014",
+          "kenzo-020"
+        ],
+        "relevant": [
+          "kenzo-005",
+          "kenzo-009"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  },
+  {
+    "embedding": "minilm + atributos",
+    "k": 5,
+    "mean_recall": 0.57,
+    "mrr": 0.6078,
+    "results": [
+      {
+        "id": "r01",
+        "query": "carvão para churrasqueira",
+        "retrieved": [
+          "acougue-022",
+          "mercado-015",
+          "sahara-011",
+          "acougue-024",
+          "mercado-014"
+        ],
+        "relevant": [
+          "acougue-021",
+          "acougue-022",
+          "mercado-014",
+          "mercado-015"
+        ],
+        "recall": 0.75,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r02",
+        "query": "picanha para churrasco",
+        "retrieved": [
+          "churrascaria-008",
+          "padaria-020",
+          "churrascaria-007",
+          "acougue-001",
+          "lapicante-005"
+        ],
+        "relevant": [
+          "acougue-001",
+          "churrascaria-001"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 0.25
+      },
+      {
+        "id": "r03",
+        "query": "cerveja sem glúten",
+        "retrieved": [
+          "adega-003",
+          "mercado-012",
+          "lapicante-021",
+          "adega-011",
+          "graofino-024"
+        ],
+        "relevant": [
+          "mercado-011",
+          "adega-006"
+        ],
+        "recall": 0.0,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "id": "r04",
+        "query": "pão sem glúten",
+        "retrieved": [
+          "mercado-027",
+          "mercado-028",
+          "padaria-006",
+          "acougue-018",
+          "padaria-003"
+        ],
+        "relevant": [
+          "mercado-028",
+          "padaria-006"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "id": "r05",
+        "query": "café para servir a equipe no escritório",
+        "retrieved": [
+          "graofino-001",
+          "graofino-002",
+          "padaria-013",
+          "graofino-021",
+          "graofino-003"
+        ],
+        "relevant": [
+          "padaria-013",
+          "graofino-021",
+          "graofino-022"
+        ],
+        "recall": 0.6666666666666666,
+        "reciprocal_rank": 0.3333333333333333
+      },
+      {
+        "id": "r06",
+        "query": "comida tailandesa apimentada",
+        "retrieved": [
+          "bangkok-001",
+          "bangkok-015",
+          "bangkok-016",
+          "bangkok-009",
+          "bangkok-007"
+        ],
+        "relevant": [
+          "bangkok-004",
+          "bangkok-005",
+          "bangkok-007",
+          "bangkok-013",
+          "bangkok-014",
+          "bangkok-006"
+        ],
+        "recall": 0.2,
+        "reciprocal_rank": 0.2
+      },
+      {
+        "id": "r07",
+        "query": "hambúrguer vegano",
+        "retrieved": [
+          "chapa-006",
+          "chapa-003",
+          "mercado-033",
+          "padaria-022",
+          "chapa-005"
+        ],
+        "relevant": [
+          "chapa-006",
+          "mercado-033"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r08",
+        "query": "kit de café da manhã para várias pessoas",
+        "retrieved": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003",
+          "graofino-013",
+          "graofino-018"
+        ],
+        "relevant": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r09",
+        "query": "refrigerante 2 litros",
+        "retrieved": [
+          "mercado-004",
+          "chapa-018",
+          "mercado-002",
+          "mercado-001",
+          "chapa-019"
+        ],
+        "relevant": [
+          "mercado-001",
+          "mercado-002",
+          "mercado-003",
+          "churrascaria-021",
+          "nonna-029",
+          "chapa-019",
+          "adega-017"
+        ],
+        "recall": 0.6,
+        "reciprocal_rank": 0.3333333333333333
+      },
+      {
+        "id": "r10",
+        "query": "frutas cortadas para o escritório",
+        "retrieved": [
+          "hortifruti-014",
+          "doceria-004",
+          "doceria-009",
+          "hortifruti-009",
+          "hortifruti-021"
+        ],
+        "relevant": [
+          "hortifruti-014",
+          "graofino-020",
+          "hortifruti-015",
+          "padaria-030",
+          "verdevida-025"
+        ],
+        "recall": 0.2,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r11",
+        "query": "docinhos de festa como brigadeiro",
+        "retrieved": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-010",
+          "doceria-001"
+        ],
+        "relevant": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-009",
+          "doceria-010"
+        ],
+        "recall": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r12",
+        "query": "macarrão",
+        "retrieved": [
+          "massamia-011",
+          "churrascaria-004",
+          "padaria-010",
+          "sahara-010",
+          "padaria-009"
+        ],
+        "relevant": [
+          "massamia-009",
+          "bangkok-001",
+          "bangkok-002",
+          "bangkok-003"
+        ],
+        "recall": 0.0,
+        "reciprocal_rank": 0.0
+      },
+      {
+        "id": "r13",
+        "query": "salgados fritos para festa",
+        "retrieved": [
+          "padaria-025",
+          "chapa-012",
+          "acougue-001",
+          "padaria-020",
+          "verdevida-005"
+        ],
+        "relevant": [
+          "padaria-024",
+          "padaria-025",
+          "sahara-005"
+        ],
+        "recall": 0.3333333333333333,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r14",
+        "query": "bebida sem álcool para brindar",
+        "retrieved": [
+          "mercado-012",
+          "adega-012",
+          "adega-007",
+          "graofino-027",
+          "graofino-025"
+        ],
+        "relevant": [
+          "adega-012"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "id": "r15",
+        "query": "sushi vegetariano",
+        "retrieved": [
+          "kenzo-005",
+          "kenzo-017",
+          "kenzo-015",
+          "kenzo-019",
+          "kenzo-014"
+        ],
+        "relevant": [
+          "kenzo-005",
+          "kenzo-009"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  },
+  {
+    "embedding": "e5-small + atributos",
+    "k": 5,
+    "mean_recall": 0.8,
+    "mrr": 0.8967,
+    "results": [
+      {
+        "id": "r01",
+        "query": "carvão para churrasqueira",
+        "retrieved": [
+          "mercado-015",
+          "acougue-024",
+          "acougue-021",
+          "acougue-022",
+          "acougue-023"
+        ],
+        "relevant": [
+          "acougue-021",
+          "acougue-022",
+          "mercado-014",
+          "mercado-015"
+        ],
+        "recall": 0.75,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r02",
+        "query": "picanha para churrasco",
+        "retrieved": [
+          "acougue-001",
+          "churrascaria-008",
+          "churrascaria-007",
+          "churrascaria-001",
+          "lapicante-020"
+        ],
+        "relevant": [
+          "acougue-001",
+          "churrascaria-001"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r03",
+        "query": "cerveja sem glúten",
+        "retrieved": [
+          "mercado-011",
+          "adega-006",
+          "adega-007",
+          "mercado-012",
+          "chapa-007"
+        ],
+        "relevant": [
+          "mercado-011",
+          "adega-006"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r04",
+        "query": "pão sem glúten",
+        "retrieved": [
+          "mercado-028",
+          "padaria-006",
+          "chapa-007",
+          "padaria-028",
+          "aloha-002"
+        ],
+        "relevant": [
+          "mercado-028",
+          "padaria-006"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r05",
+        "query": "café para servir a equipe no escritório",
+        "retrieved": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003",
+          "hortifruti-014",
+          "graofino-022"
+        ],
+        "relevant": [
+          "padaria-013",
+          "graofino-021",
+          "graofino-022"
+        ],
+        "recall": 0.3333333333333333,
+        "reciprocal_rank": 0.2
+      },
+      {
+        "id": "r06",
+        "query": "comida tailandesa apimentada",
+        "retrieved": [
+          "bangkok-001",
+          "bangkok-002",
+          "bangkok-012",
+          "bangkok-014",
+          "bangkok-013"
+        ],
+        "relevant": [
+          "bangkok-004",
+          "bangkok-005",
+          "bangkok-007",
+          "bangkok-013",
+          "bangkok-014",
+          "bangkok-006"
+        ],
+        "recall": 0.4,
+        "reciprocal_rank": 0.25
+      },
+      {
+        "id": "r07",
+        "query": "hambúrguer vegano",
+        "retrieved": [
+          "chapa-006",
+          "mercado-033",
+          "lapicante-006",
+          "padaria-022",
+          "chapa-010"
+        ],
+        "relevant": [
+          "chapa-006",
+          "mercado-033"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r08",
+        "query": "kit de café da manhã para várias pessoas",
+        "retrieved": [
+          "graofino-002",
+          "graofino-001",
+          "graofino-003",
+          "mercado-016",
+          "hortifruti-014"
+        ],
+        "relevant": [
+          "graofino-001",
+          "graofino-002",
+          "graofino-003"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r09",
+        "query": "refrigerante 2 litros",
+        "retrieved": [
+          "mercado-003",
+          "mercado-001",
+          "adega-017",
+          "chapa-019",
+          "churrascaria-021"
+        ],
+        "relevant": [
+          "mercado-001",
+          "mercado-002",
+          "mercado-003",
+          "churrascaria-021",
+          "nonna-029",
+          "chapa-019",
+          "adega-017"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r10",
+        "query": "frutas cortadas para o escritório",
+        "retrieved": [
+          "hortifruti-014",
+          "graofino-001",
+          "verdevida-025",
+          "hortifruti-015",
+          "graofino-020"
+        ],
+        "relevant": [
+          "hortifruti-014",
+          "graofino-020",
+          "hortifruti-015",
+          "padaria-030",
+          "verdevida-025"
+        ],
+        "recall": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r11",
+        "query": "docinhos de festa como brigadeiro",
+        "retrieved": [
+          "doceria-019",
+          "doceria-008",
+          "doceria-007",
+          "doceria-010",
+          "doceria-002"
+        ],
+        "relevant": [
+          "doceria-019",
+          "doceria-007",
+          "doceria-008",
+          "doceria-009",
+          "doceria-010"
+        ],
+        "recall": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r12",
+        "query": "macarrão",
+        "retrieved": [
+          "bangkok-002",
+          "bangkok-001",
+          "bangkok-003",
+          "bangkok-007",
+          "massamia-011"
+        ],
+        "relevant": [
+          "massamia-009",
+          "bangkok-001",
+          "bangkok-002",
+          "bangkok-003"
+        ],
+        "recall": 0.75,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r13",
+        "query": "salgados fritos para festa",
+        "retrieved": [
+          "padaria-025",
+          "hortifruti-017",
+          "padaria-024",
+          "hortifruti-015",
+          "hortifruti-021"
+        ],
+        "relevant": [
+          "padaria-024",
+          "padaria-025",
+          "sahara-005"
+        ],
+        "recall": 0.6666666666666666,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r14",
+        "query": "bebida sem álcool para brindar",
+        "retrieved": [
+          "adega-012",
+          "mercado-012",
+          "adega-007",
+          "mercado-011",
+          "lapicante-021"
+        ],
+        "relevant": [
+          "adega-012"
+        ],
+        "recall": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "id": "r15",
+        "query": "sushi vegetariano",
+        "retrieved": [
+          "kenzo-005",
+          "kenzo-015",
+          "kenzo-022",
+          "kenzo-018",
+          "kenzo-019"
+        ],
+        "relevant": [
+          "kenzo-005",
+          "kenzo-009"
+        ],
+        "recall": 0.5,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  }
+]
