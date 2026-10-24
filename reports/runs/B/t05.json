@@ -1,0 +1,276 @@
+{
+  "case_id": "t05",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida japonesa para 2 pessoas até R$ 100",
+  "finished_at": "2026-10-24T23:29:13+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "kenzo-015",
+        "name": "Yakisoba de legumes 500 g",
+        "store_id": "kenzo",
+        "store_name": "Sushi Kenzo",
+        "unit": "porção 500 g",
+        "quantity": 2,
+        "unit_price": 39.9,
+        "subtotal": 79.8
+      },
+      {
+        "item_id": "mercado-006",
+        "name": "Água com gás 500 ml",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 500 ml",
+        "quantity": 1,
+        "unit_price": 2.99,
+        "subtotal": 2.99
+      }
+    ],
+    "items_total": 82.79,
+    "delivery_total": 14.8,
+    "total": 97.59,
+    "people": 2,
+    "budget": 100.0,
+    "message": "Escolhi duas porções de Yakisoba de legumes (serve 3 pessoas) para cobrir o jantar e um água com gás para completar a refeição, mantendo o total dentro do orçamento de R$100.",
+    "problems": [],
+    "assumptions": [
+      "Nenhuma restrição alimentar foi informada.",
+      "Bebida considerada opcional, pois não foi especificada.",
+      "Itens de entrada ou acompanhamentos não foram solicitados, portanto omitidos."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar japonês",
+    "people": 2,
+    "budget": 100.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "sushi ou combo japonês",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "água ou refrigerante",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhuma restrição alimentar foi informada.",
+      "Bebida considerada opcional, pois não foi especificada.",
+      "Itens de entrada ou acompanhamentos não foram solicitados, portanto omitidos."
+    ]
+  },
+  "trace": {
+    "run_id": "d3d882bb4c25",
+    "version": "B",
+    "order": "comida japonesa para 2 pessoas até R$ 100",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "comida japonesa para 2 pessoas até R$ 100",
+        "output": {
+          "occasion": "jantar japonês",
+          "people": 2,
+          "budget": 100.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "sushi ou combo japonês",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "água ou refrigerante",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhuma restrição alimentar foi informada.",
+            "Bebida considerada opcional, pois não foi especificada.",
+            "Itens de entrada ou acompanhamentos não foram solicitados, portanto omitidos."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1350,
+        "tokens_out": 197,
+        "cost_usd": 0.0003207,
+        "latency_ms": 6124.1,
+        "wait_ms": 5000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "sushi ou combo japonês",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "água ou refrigerante",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "kenzo-005",
+              "nome": "Combinado vegetariano 20 peças",
+              "score": 0.8894
+            },
+            {
+              "id": "kenzo-001",
+              "nome": "Combinado salmão 20 peças",
+              "score": 0.888
+            },
+            {
+              "id": "kenzo-015",
+              "nome": "Yakisoba de legumes 500 g",
+              "score": 0.8815
+            },
+            {
+              "id": "kenzo-006",
+              "nome": "Combinado sem glúten 20 peças",
+              "score": 0.8804
+            },
+            {
+              "id": "kenzo-014",
+              "nome": "Yakisoba de frango 500 g",
+              "score": 0.8757
+            },
+            {
+              "id": "kenzo-016",
+              "nome": "Teppanyaki de salmão",
+              "score": 0.8719
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8774
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8743
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8729
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8707
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8701
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8686
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 106.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "kenzo-015",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-006",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi duas porções de Yakisoba de legumes (serve 3 pessoas) para cobrir o jantar e um água com gás para completar a refeição, mantendo o total dentro do orçamento de R$100."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1832,
+        "tokens_out": 435,
+        "cost_usd": 0.0005357999999999999,
+        "latency_ms": 15599.1,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "kenzo-015",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-006",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 97.59,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 3.0,
+            "bebida": 1.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

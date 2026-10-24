@@ -1,0 +1,401 @@
+{
+  "case_id": "a04",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "quero um jantar especial",
+  "finished_at": "2026-10-24T23:37:16+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-001",
+        "name": "Prato feito de bife",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 29.9,
+        "subtotal": 59.8
+      }
+    ],
+    "items_total": 59.8,
+    "delivery_total": 4.9,
+    "total": 64.7,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o prato de bife mais econômico (R$/pessoa = 29,90) e suficiente para 2 pessoas, usando apenas um restaurante para minimizar a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Número de pessoas não especificado; assumido 2 pessoas.",
+      "Orçamento não mencionado; deixado como null.",
+      "Nenhuma restrição dietética informada.",
+      "Nível de picância não indicado; deixado como null."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar especial",
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato principal elegante para jantar",
+        "essential": true
+      },
+      {
+        "category": "entrada",
+        "query": "entrada sofisticada ou petisco",
+        "essential": false
+      },
+      {
+        "category": "acompanhamento",
+        "query": "acompanhamento como arroz ou legumes",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "bebida sem álcool elegante (ex.: água com gás, suco)",
+        "essential": false
+      },
+      {
+        "category": "sobremesa",
+        "query": "sobremesa doce ou sofisticada",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de pessoas não especificado; assumido 2 pessoas.",
+      "Orçamento não mencionado; deixado como null.",
+      "Nenhuma restrição dietética informada.",
+      "Nível de picância não indicado; deixado como null."
+    ]
+  },
+  "trace": {
+    "run_id": "47ce7c7bb0fc",
+    "version": "B",
+    "order": "quero um jantar especial",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "quero um jantar especial",
+        "output": {
+          "occasion": "jantar especial",
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato principal elegante para jantar",
+              "essential": true
+            },
+            {
+              "category": "entrada",
+              "query": "entrada sofisticada ou petisco",
+              "essential": false
+            },
+            {
+              "category": "acompanhamento",
+              "query": "acompanhamento como arroz ou legumes",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "bebida sem álcool elegante (ex.: água com gás, suco)",
+              "essential": false
+            },
+            {
+              "category": "sobremesa",
+              "query": "sobremesa doce ou sofisticada",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de pessoas não especificado; assumido 2 pessoas.",
+            "Orçamento não mencionado; deixado como null.",
+            "Nenhuma restrição dietética informada.",
+            "Nível de picância não indicado; deixado como null."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1343,
+        "tokens_out": 329,
+        "cost_usd": 0.00039885,
+        "latency_ms": 12733.2,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato principal elegante para jantar",
+            "essential": true
+          },
+          {
+            "category": "entrada",
+            "query": "entrada sofisticada ou petisco",
+            "essential": false
+          },
+          {
+            "category": "acompanhamento",
+            "query": "acompanhamento como arroz ou legumes",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "bebida sem álcool elegante (ex.: água com gás, suco)",
+            "essential": false
+          },
+          {
+            "category": "sobremesa",
+            "query": "sobremesa doce ou sofisticada",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.8601
+            },
+            {
+              "id": "massamia-003",
+              "nome": "Lasanha à bolonhesa individual",
+              "score": 0.8575
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8575
+            },
+            {
+              "id": "massamia-007",
+              "nome": "Penne ao pesto",
+              "score": 0.8564
+            },
+            {
+              "id": "lapicante-015",
+              "nome": "Enchiladas de frango",
+              "score": 0.856
+            },
+            {
+              "id": "massamia-001",
+              "nome": "Espaguete à bolonhesa",
+              "score": 0.856
+            }
+          ],
+          "entrada": [
+            {
+              "id": "kenzo-020",
+              "nome": "Missoshiru",
+              "score": 0.8518
+            },
+            {
+              "id": "caseiro-017",
+              "nome": "Pastel de carne 2 unidades",
+              "score": 0.8497
+            },
+            {
+              "id": "padaria-024",
+              "nome": "Salgados sortidos 25 unidades",
+              "score": 0.8402
+            },
+            {
+              "id": "mercado-037",
+              "nome": "Amendoim torrado 500 g",
+              "score": 0.8381
+            },
+            {
+              "id": "kenzo-010",
+              "nome": "Hot roll 10 peças",
+              "score": 0.8367
+            },
+            {
+              "id": "lapicante-010",
+              "nome": "Nachos supremo",
+              "score": 0.8363
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "lapicante-017",
+              "nome": "Arroz mexicano 300 g",
+              "score": 0.8853
+            },
+            {
+              "id": "acougue-019",
+              "nome": "Pão de alho apimentado",
+              "score": 0.8823
+            },
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8798
+            },
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.8795
+            },
+            {
+              "id": "kenzo-024",
+              "nome": "Arroz gohan 300 g",
+              "score": 0.8781
+            },
+            {
+              "id": "caseiro-015",
+              "nome": "Arroz e feijão 500 g",
+              "score": 0.8771
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.8748
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8691
+            },
+            {
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8665
+            },
+            {
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8654
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8644
+            },
+            {
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8629
+            }
+          ],
+          "sobremesa": [
+            {
+              "id": "doceria-020",
+              "nome": "Sorvete artesanal 1 L",
+              "score": 0.8789
+            },
+            {
+              "id": "doceria-017",
+              "nome": "Torta holandesa",
+              "score": 0.872
+            },
+            {
+              "id": "doceria-018",
+              "nome": "Cookies 6 unidades",
+              "score": 0.8692
+            },
+            {
+              "id": "padaria-029",
+              "nome": "Sonho de creme",
+              "score": 0.8688
+            },
+            {
+              "id": "doceria-021",
+              "nome": "Sorbet de manga 500 ml",
+              "score": 0.868
+            },
+            {
+              "id": "doceria-016",
+              "nome": "Pavê de chocolate",
+              "score": 0.8657
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 213.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-001",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi o prato de bife mais econômico (R$/pessoa = 29,90) e suficiente para 2 pessoas, usando apenas um restaurante para minimizar a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 3138,
+        "tokens_out": 384,
+        "cost_usd": 0.0007010999999999999,
+        "latency_ms": 16972.1,
+        "wait_ms": 15000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-001",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 64.7,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

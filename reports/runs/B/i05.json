@@ -1,0 +1,295 @@
+{
+  "case_id": "i05",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "café da manhã para 50 pessoas com R$ 60",
+  "finished_at": "2026-10-24T23:35:19+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": 50,
+    "budget": 60.0,
+    "message": "Não é possível atender este pedido: Só 'prato_principal' para 50 pessoa(s) custa no mínimo R$ 1949.90 com entrega, acima do orçamento de R$ 60.00.",
+    "problems": [
+      "Só 'prato_principal' para 50 pessoa(s) custa no mínimo R$ 1949.90 com entrega, acima do orçamento de R$ 60.00."
+    ],
+    "assumptions": [
+      "Nenhuma restrição alimentar foi mencionada.",
+      "Orçamento de R$ 60 para 50 pessoas exige itens de baixo custo e em volume.",
+      "Bebidas e acompanhamentos são considerados itens de apoio, não essenciais para alimentar todos."
+    ]
+  },
+  "spec": {
+    "occasion": "café da manhã",
+    "people": 50,
+    "budget": 60.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "kits de café da manhã para grupos grandes",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "café e suco em embalagens econômicas",
+        "essential": false
+      },
+      {
+        "category": "paes",
+        "query": "pães simples ou croissants em quantidade",
+        "essential": false
+      },
+      {
+        "category": "frios_laticinios",
+        "query": "queijo e requeijão em porções individuais",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhuma restrição alimentar foi mencionada.",
+      "Orçamento de R$ 60 para 50 pessoas exige itens de baixo custo e em volume.",
+      "Bebidas e acompanhamentos são considerados itens de apoio, não essenciais para alimentar todos."
+    ]
+  },
+  "trace": {
+    "run_id": "d53225536482",
+    "version": "B",
+    "order": "café da manhã para 50 pessoas com R$ 60",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "café da manhã para 50 pessoas com R$ 60",
+        "output": {
+          "occasion": "café da manhã",
+          "people": 50,
+          "budget": 60.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "kits de café da manhã para grupos grandes",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "café e suco em embalagens econômicas",
+              "essential": false
+            },
+            {
+              "category": "paes",
+              "query": "pães simples ou croissants em quantidade",
+              "essential": false
+            },
+            {
+              "category": "frios_laticinios",
+              "query": "queijo e requeijão em porções individuais",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhuma restrição alimentar foi mencionada.",
+            "Orçamento de R$ 60 para 50 pessoas exige itens de baixo custo e em volume.",
+            "Bebidas e acompanhamentos são considerados itens de apoio, não essenciais para alimentar todos."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 1,
+        "tokens_in": 1756,
+        "tokens_out": 304,
+        "cost_usd": 0.00044579999999999994,
+        "latency_ms": 32101.1,
+        "wait_ms": 29000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "kits de café da manhã para grupos grandes",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "café e suco em embalagens econômicas",
+            "essential": false
+          },
+          {
+            "category": "paes",
+            "query": "pães simples ou croissants em quantidade",
+            "essential": false
+          },
+          {
+            "category": "frios_laticinios",
+            "query": "queijo e requeijão em porções individuais",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "verdevida-011",
+              "nome": "Curry de legumes com arroz basmati",
+              "score": 0.8422
+            },
+            {
+              "id": "kenzo-005",
+              "nome": "Combinado vegetariano 20 peças",
+              "score": 0.8354
+            },
+            {
+              "id": "verdevida-001",
+              "nome": "Bowl de quinoa com legumes assados",
+              "score": 0.8352
+            },
+            {
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.835
+            },
+            {
+              "id": "lapicante-015",
+              "nome": "Enchiladas de frango",
+              "score": 0.8344
+            },
+            {
+              "id": "massamia-005",
+              "nome": "Nhoque ao sugo",
+              "score": 0.8336
+            }
+          ],
+          "bebida": [
+            {
+              "id": "graofino-026",
+              "nome": "Suco de laranja 1 L",
+              "score": 0.8624
+            },
+            {
+              "id": "aloha-013",
+              "nome": "Suco de abacaxi com hortelã",
+              "score": 0.8602
+            },
+            {
+              "id": "verdevida-020",
+              "nome": "Suco verde 500 ml",
+              "score": 0.8555
+            },
+            {
+              "id": "graofino-022",
+              "nome": "Café coado garrafa térmica 2 L",
+              "score": 0.847
+            },
+            {
+              "id": "graofino-021",
+              "nome": "Café coado garrafa térmica 1 L",
+              "score": 0.8466
+            },
+            {
+              "id": "verdevida-021",
+              "nome": "Suco de abacaxi com hortelã 500 ml",
+              "score": 0.8442
+            }
+          ],
+          "paes": [
+            {
+              "id": "padaria-001",
+              "nome": "Pão francês 10 unidades",
+              "score": 0.8873
+            },
+            {
+              "id": "graofino-004",
+              "nome": "Croissant tradicional",
+              "score": 0.8807
+            },
+            {
+              "id": "padaria-007",
+              "nome": "Croissant de manteiga",
+              "score": 0.8782
+            },
+            {
+              "id": "mercado-027",
+              "nome": "Pão de forma tradicional",
+              "score": 0.8703
+            },
+            {
+              "id": "padaria-003",
+              "nome": "Pão integral fatiado 500 g",
+              "score": 0.8655
+            },
+            {
+              "id": "graofino-005",
+              "nome": "Pão de queijo 30 unidades",
+              "score": 0.8638
+            }
+          ],
+          "frios_laticinios": [
+            {
+              "id": "padaria-010",
+              "nome": "Kit presunto e queijo fatiados 300 g",
+              "score": 0.8647
+            },
+            {
+              "id": "mercado-022",
+              "nome": "Requeijão cremoso 200 g",
+              "score": 0.8572
+            },
+            {
+              "id": "mercado-023",
+              "nome": "Queijo vegetal tipo muçarela 150 g",
+              "score": 0.8554
+            },
+            {
+              "id": "padaria-009",
+              "nome": "Queijo minas frescal 400 g",
+              "score": 0.8529
+            },
+            {
+              "id": "mercado-018",
+              "nome": "Queijo muçarela fatiado 200 g",
+              "score": 0.8436
+            },
+            {
+              "id": "mercado-019",
+              "nome": "Presunto cozido fatiado 200 g",
+              "score": 0.8374
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 327.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": true,
+          "motivos": [
+            "Só 'prato_principal' para 50 pessoa(s) custa no mínimo R$ 1949.90 com entrega, acima do orçamento de R$ 60.00."
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

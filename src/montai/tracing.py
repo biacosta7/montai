@@ -31,6 +31,7 @@ class Step(BaseModel):
     tokens_out: int = 0
     cost_usd: float = 0.0
     latency_ms: float = 0.0
+    wait_ms: float = 0.0  # parte da latência gasta esperando limite de taxa do provedor
     error: str | None = None
 
     def add_usage(self, tokens_in: int, tokens_out: int, cost_usd: float) -> None:
@@ -75,6 +76,15 @@ class Trace(BaseModel):
     @property
     def latency_ms(self) -> float:
         return sum(s.latency_ms for s in self.steps)
+
+    @property
+    def wait_ms(self) -> float:
+        return sum(s.wait_ms for s in self.steps)
+
+    @property
+    def net_latency_ms(self) -> float:
+        """Latência sem as esperas por limite de taxa: o que um plano pago veria."""
+        return self.latency_ms - self.wait_ms
 
     @property
     def llm_calls(self) -> int:

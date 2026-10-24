@@ -1,0 +1,273 @@
+{
+  "case_id": "t08",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "cerveja e petisco para 6 amigos, R$ 120",
+  "finished_at": "2026-10-24T23:30:20+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-037",
+        "name": "Amendoim torrado 500 g",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "pacote 500 g",
+        "quantity": 1,
+        "unit_price": 14.9,
+        "subtotal": 14.9
+      },
+      {
+        "item_id": "mercado-009",
+        "name": "Cerveja pilsen lata 350 ml",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "lata 350 ml",
+        "quantity": 19,
+        "unit_price": 4.49,
+        "subtotal": 85.31
+      }
+    ],
+    "items_total": 100.21,
+    "delivery_total": 5.9,
+    "total": 106.11,
+    "people": 6,
+    "budget": 120.0,
+    "message": "Um pacote de amendoim torrado serve 8 pessoas e cobre os petiscos; 19 latas de cerveja pilsen dão 6 porções. Ambos são do Supermercado Bom Preço, usando apenas uma taxa de entrega e ficando dentro do orçamento de R$120.",
+    "problems": [],
+    "assumptions": [
+      "O cliente não especificou tipos de petiscos, consideramos opções gerais que atendam a 6 pessoas.",
+      "Consideramos que a cerveja será suficiente para todos, sem detalhar marcas ou quantidade exata."
+    ]
+  },
+  "spec": {
+    "occasion": "reunião com amigos",
+    "people": 6,
+    "budget": 120.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "entrada",
+        "query": "petiscos variados",
+        "essential": true
+      },
+      {
+        "category": "bebida_alcoolica",
+        "query": "cerveja",
+        "essential": true
+      }
+    ],
+    "assumptions": [
+      "O cliente não especificou tipos de petiscos, consideramos opções gerais que atendam a 6 pessoas.",
+      "Consideramos que a cerveja será suficiente para todos, sem detalhar marcas ou quantidade exata."
+    ]
+  },
+  "trace": {
+    "run_id": "6922e4e216bb",
+    "version": "B",
+    "order": "cerveja e petisco para 6 amigos, R$ 120",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "cerveja e petisco para 6 amigos, R$ 120",
+        "output": {
+          "occasion": "reunião com amigos",
+          "people": 6,
+          "budget": 120.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "entrada",
+              "query": "petiscos variados",
+              "essential": true
+            },
+            {
+              "category": "bebida_alcoolica",
+              "query": "cerveja",
+              "essential": true
+            }
+          ],
+          "assumptions": [
+            "O cliente não especificou tipos de petiscos, consideramos opções gerais que atendam a 6 pessoas.",
+            "Consideramos que a cerveja será suficiente para todos, sem detalhar marcas ou quantidade exata."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1353,
+        "tokens_out": 207,
+        "cost_usd": 0.00032714999999999996,
+        "latency_ms": 7225.2,
+        "wait_ms": 6000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "entrada",
+            "query": "petiscos variados",
+            "essential": true
+          },
+          {
+            "category": "bebida_alcoolica",
+            "query": "cerveja",
+            "essential": true
+          }
+        ],
+        "output": {
+          "entrada": [
+            {
+              "id": "caseiro-017",
+              "nome": "Pastel de carne 2 unidades",
+              "score": 0.8487
+            },
+            {
+              "id": "lapicante-009",
+              "nome": "Nachos com guacamole e cheddar",
+              "score": 0.8478
+            },
+            {
+              "id": "mercado-037",
+              "nome": "Amendoim torrado 500 g",
+              "score": 0.8456
+            },
+            {
+              "id": "kenzo-018",
+              "nome": "Guioza de legumes 6 unidades",
+              "score": 0.8426
+            },
+            {
+              "id": "lapicante-010",
+              "nome": "Nachos supremo",
+              "score": 0.8422
+            },
+            {
+              "id": "padaria-024",
+              "nome": "Salgados sortidos 25 unidades",
+              "score": 0.8396
+            }
+          ],
+          "bebida_alcoolica": [
+            {
+              "id": "adega-004",
+              "nome": "Cerveja IPA artesanal 500 ml",
+              "score": 0.8795
+            },
+            {
+              "id": "lapicante-022",
+              "nome": "Cerveja mexicana long neck",
+              "score": 0.868
+            },
+            {
+              "id": "nonna-031",
+              "nome": "Cerveja long neck",
+              "score": 0.8675
+            },
+            {
+              "id": "mercado-009",
+              "nome": "Cerveja pilsen lata 350 ml",
+              "score": 0.8674
+            },
+            {
+              "id": "adega-001",
+              "nome": "Cerveja pilsen lata 350 ml",
+              "score": 0.8669
+            },
+            {
+              "id": "adega-006",
+              "nome": "Cerveja sem glúten long neck",
+              "score": 0.8653
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 244.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "mercado-037",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-009",
+              "quantity": 19
+            }
+          ],
+          "rationale": "Um pacote de amendoim torrado serve 8 pessoas e cobre os petiscos; 19 latas de cerveja pilsen dão 6 porções. Ambos são do Supermercado Bom Preço, usando apenas uma taxa de entrega e ficando dentro do orçamento de R$120."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1855,
+        "tokens_out": 1031,
+        "cost_usd": 0.00089685,
+        "latency_ms": 16918.3,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "mercado-037",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-009",
+            "quantity": 19
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 106.11,
+          "problemas": [],
+          "cobertura": {
+            "entrada": 8.0,
+            "bebida_alcoolica": 6.27
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

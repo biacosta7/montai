@@ -10,4 +10,3 @@ __pycache__/
 # artefatos gerados localmente (recriados pelos scripts)
 data/index/
 logs/
-reports/cache/

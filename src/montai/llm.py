@@ -11,6 +11,7 @@ Não há framework aqui de propósito: são ~100 linhas que dá para ler inteira
 from __future__ import annotations
 
 import copy
+import time
 from typing import Any, TypeVar
 
 import openai
@@ -25,6 +26,27 @@ T = TypeVar("T", bound=BaseModel)
 
 class LLMError(RuntimeError):
     pass
+
+
+class QuotaExhausted(RuntimeError):
+    """A cota do provedor acabou (ex.: limite diário). Não é falha do pedido.
+
+    Não herda de LLMError de propósito: o pipeline trata LLMError como "não
+    consegui montar o carrinho", mas cota esgotada deve interromper a
+    avaliação em vez de virar uma falha registrada.
+    """
+
+
+MAX_ATTEMPTS = 8
+MAX_WAIT_S = 90  # pedir para esperar mais que isso indica cota diária, não por minuto
+
+
+def _retry_after(exc: openai.APIStatusError) -> float | None:
+    value = exc.response.headers.get("retry-after") if exc.response is not None else None
+    try:
+        return float(value) if value is not None else None
+    except ValueError:
+        return None
 
 
 def strict_json_schema(model: type[BaseModel]) -> dict:
@@ -78,10 +100,10 @@ class LLMClient:
         self.settings = settings or LLMSettings.from_env()
         if not self.settings.api_key:
             raise LLMError("LLM_API_KEY não configurada. Copie .env.example para .env e preencha.")
-        # max_retries: o SDK já reenvia com espera crescente em erros 429
-        # (limite de taxa) e 5xx, respeitando o cabeçalho retry-after.
+        # Reenvios ficam com a gente (max_retries=0) para medir quanto tempo foi
+        # gasto esperando o limite de taxa, separado do tempo do modelo.
         self.client = OpenAI(
-            base_url=self.settings.base_url, api_key=self.settings.api_key, max_retries=6
+            base_url=self.settings.base_url, api_key=self.settings.api_key, max_retries=0
         )
 
     @property
@@ -109,7 +131,7 @@ class LLMClient:
         if self.settings.reasoning_effort:
             kwargs["reasoning_effort"] = self.settings.reasoning_effort
 
-        response = self.client.chat.completions.create(**kwargs)
+        response = self._create_with_retries(kwargs, step)
         usage = response.usage
         if step is not None and usage is not None:
             step.add_usage(
@@ -118,6 +140,21 @@ class LLMClient:
                 self.cost(usage.prompt_tokens, usage.completion_tokens),
             )
         return response.choices[0].message
+
+    def _create_with_retries(self, kwargs: dict, step: Step | None):
+        for attempt in range(MAX_ATTEMPTS):
+            try:
+                return self.client.chat.completions.create(**kwargs)
+            except openai.RateLimitError as exc:
+                wait = _retry_after(exc) or min(2**attempt, 30)
+                if wait > MAX_WAIT_S:
+                    raise QuotaExhausted(f"cota do provedor esgotada; tente em {wait:.0f} s") from exc
+            except (openai.APIConnectionError, openai.InternalServerError):
+                wait = min(2**attempt, 30)
+            if step is not None:
+                step.wait_ms += wait * 1000
+            time.sleep(wait)
+        raise LLMError(f"o provedor não respondeu depois de {MAX_ATTEMPTS} tentativas")
 
     def structured(
         self, messages: list[dict], schema: type[T], *, step: Step | None = None, attempts: int = 3

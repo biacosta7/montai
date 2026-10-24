@@ -1,0 +1,272 @@
+{
+  "case_id": "c04",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "lanche sem glúten para 2 crianças, sem pimenta",
+  "finished_at": "2026-10-24T23:32:09+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "graofino-010",
+        "name": "Tapioca de banana com canela",
+        "store_id": "graofino",
+        "store_name": "Grão Fino Café & Bistrô",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 15.9,
+        "subtotal": 31.8
+      },
+      {
+        "item_id": "mercado-005",
+        "name": "Água mineral sem gás 1,5 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 1,5 L",
+        "quantity": 1,
+        "unit_price": 3.49,
+        "subtotal": 3.49
+      }
+    ],
+    "items_total": 35.29,
+    "delivery_total": 12.8,
+    "total": 48.09,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi as tapiocas de banana (sem glúten) que são as mais econômicas e servem as duas crianças, e água mineral de 1,5 L que cobre a hidratação com custo baixo.",
+    "problems": [],
+    "assumptions": [
+      "Consideramos que crianças não precisam de acompanhamento ou sobremesa, a menos que o cliente solicite.",
+      "Não foi especificado tipo de lanche, portanto incluímos opções genéricas sem glúten."
+    ]
+  },
+  "spec": {
+    "occasion": "lanche para crianças",
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": 0,
+    "needs": [
+      {
+        "category": "lanche",
+        "query": "sanduíches ou wraps sem glúten",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "suco ou água sem açúcar",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Consideramos que crianças não precisam de acompanhamento ou sobremesa, a menos que o cliente solicite.",
+      "Não foi especificado tipo de lanche, portanto incluímos opções genéricas sem glúten."
+    ]
+  },
+  "trace": {
+    "run_id": "f1142c1f1fc5",
+    "version": "B",
+    "order": "lanche sem glúten para 2 crianças, sem pimenta",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "lanche sem glúten para 2 crianças, sem pimenta",
+        "output": {
+          "occasion": "lanche para crianças",
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": 0,
+          "needs": [
+            {
+              "category": "lanche",
+              "query": "sanduíches ou wraps sem glúten",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "suco ou água sem açúcar",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Consideramos que crianças não precisam de acompanhamento ou sobremesa, a menos que o cliente solicite.",
+            "Não foi especificado tipo de lanche, portanto incluímos opções genéricas sem glúten."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1352,
+        "tokens_out": 187,
+        "cost_usd": 0.000315,
+        "latency_ms": 16087.2,
+        "wait_ms": 15000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "lanche",
+            "query": "sanduíches ou wraps sem glúten",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "suco ou água sem açúcar",
+            "essential": false
+          }
+        ],
+        "output": {
+          "lanche": [
+            {
+              "id": "chapa-007",
+              "nome": "Burger no pão sem glúten",
+              "score": 0.8775
+            },
+            {
+              "id": "chapa-008",
+              "nome": "Burger no prato sem pão",
+              "score": 0.8762
+            },
+            {
+              "id": "graofino-009",
+              "nome": "Tapioca de frango",
+              "score": 0.86
+            },
+            {
+              "id": "graofino-010",
+              "nome": "Tapioca de banana com canela",
+              "score": 0.8578
+            },
+            {
+              "id": "graofino-008",
+              "nome": "Tapioca de queijo coalho",
+              "score": 0.8547
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8818
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.881
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8797
+            },
+            {
+              "id": "adega-018",
+              "nome": "Água mineral 1,5 L",
+              "score": 0.8754
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8747
+            },
+            {
+              "id": "aloha-013",
+              "nome": "Suco de abacaxi com hortelã",
+              "score": 0.8736
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 251.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "graofino-010",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-005",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi as tapiocas de banana (sem glúten) que são as mais econômicas e servem as duas crianças, e água mineral de 1,5 L que cobre a hidratação com custo baixo."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1786,
+        "tokens_out": 507,
+        "cost_usd": 0.0005720999999999999,
+        "latency_ms": 1491.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "graofino-010",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-005",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 48.09,
+          "problemas": [],
+          "cobertura": {
+            "lanche": 2.0,
+            "bebida": 3.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

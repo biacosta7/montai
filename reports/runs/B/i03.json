@@ -1,0 +1,298 @@
+{
+  "case_id": "i03",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "festa de aniversário para 30 pessoas com R$ 60",
+  "finished_at": "2026-10-24T23:34:33+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": 30,
+    "budget": 60.0,
+    "message": "Não é possível atender este pedido: Só 'prato_principal' para 30 pessoa(s) custa no mínimo R$ 662.90 com entrega, acima do orçamento de R$ 60.00.",
+    "problems": [
+      "Só 'prato_principal' para 30 pessoa(s) custa no mínimo R$ 662.90 com entrega, acima do orçamento de R$ 60.00."
+    ],
+    "assumptions": [
+      "Com orçamento de R$ 60 para 30 pessoas, consideramos apenas itens essenciais e de baixo custo.",
+      "Não foram especificadas restrições alimentares, portanto nenhum diet foi incluído.",
+      "Nenhum nível de picância foi mencionado.",
+      "Assumimos que o cliente deseja opções econômicas de salgadinhos, refrigerante, doces simples e descartáveis."
+    ]
+  },
+  "spec": {
+    "occasion": "festa de aniversário",
+    "people": 30,
+    "budget": 60.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "salgadinhos e porções de festa",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante em garrafa",
+        "essential": false
+      },
+      {
+        "category": "sobremesa",
+        "query": "doces para festa infantil",
+        "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "descartáveis para festa",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Com orçamento de R$ 60 para 30 pessoas, consideramos apenas itens essenciais e de baixo custo.",
+      "Não foram especificadas restrições alimentares, portanto nenhum diet foi incluído.",
+      "Nenhum nível de picância foi mencionado.",
+      "Assumimos que o cliente deseja opções econômicas de salgadinhos, refrigerante, doces simples e descartáveis."
+    ]
+  },
+  "trace": {
+    "run_id": "ae053e2ccf18",
+    "version": "B",
+    "order": "festa de aniversário para 30 pessoas com R$ 60",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "festa de aniversário para 30 pessoas com R$ 60",
+        "output": {
+          "occasion": "festa de aniversário",
+          "people": 30,
+          "budget": 60.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "salgadinhos e porções de festa",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante em garrafa",
+              "essential": false
+            },
+            {
+              "category": "sobremesa",
+              "query": "doces para festa infantil",
+              "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "descartáveis para festa",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Com orçamento de R$ 60 para 30 pessoas, consideramos apenas itens essenciais e de baixo custo.",
+            "Não foram especificadas restrições alimentares, portanto nenhum diet foi incluído.",
+            "Nenhum nível de picância foi mencionado.",
+            "Assumimos que o cliente deseja opções econômicas de salgadinhos, refrigerante, doces simples e descartáveis."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1351,
+        "tokens_out": 316,
+        "cost_usd": 0.00039225,
+        "latency_ms": 1107.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "salgadinhos e porções de festa",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante em garrafa",
+            "essential": false
+          },
+          {
+            "category": "sobremesa",
+            "query": "doces para festa infantil",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "descartáveis para festa",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-011",
+              "nome": "Baião de dois 500 g",
+              "score": 0.8311
+            },
+            {
+              "id": "massamia-003",
+              "nome": "Lasanha à bolonhesa individual",
+              "score": 0.8281
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8281
+            },
+            {
+              "id": "aloha-001",
+              "nome": "Poke de salmão",
+              "score": 0.8275
+            },
+            {
+              "id": "caseiro-008",
+              "nome": "Bife acebolado",
+              "score": 0.827
+            },
+            {
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.8269
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.9089
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.907
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.9043
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.9026
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8994
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8992
+            }
+          ],
+          "sobremesa": [
+            {
+              "id": "doceria-018",
+              "nome": "Cookies 6 unidades",
+              "score": 0.8549
+            },
+            {
+              "id": "doceria-013",
+              "nome": "Brownie 6 unidades",
+              "score": 0.8504
+            },
+            {
+              "id": "lapicante-020",
+              "nome": "Churros com doce de leite 6 unidades",
+              "score": 0.8504
+            },
+            {
+              "id": "doceria-022",
+              "nome": "Pão de mel 6 unidades",
+              "score": 0.8485
+            },
+            {
+              "id": "doceria-009",
+              "nome": "Beijinhos 25 unidades",
+              "score": 0.8485
+            },
+            {
+              "id": "caseiro-021",
+              "nome": "Doce de leite caseiro 200 g",
+              "score": 0.8457
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8774
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8503
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8218
+            },
+            {
+              "id": "acougue-023",
+              "nome": "Sal grosso 1 kg",
+              "score": 0.8186
+            },
+            {
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8173
+            },
+            {
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8161
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 91.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": true,
+          "motivos": [
+            "Só 'prato_principal' para 30 pessoa(s) custa no mínimo R$ 662.90 com entrega, acima do orçamento de R$ 60.00."
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

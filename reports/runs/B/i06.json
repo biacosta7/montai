@@ -1,0 +1,219 @@
+{
+  "case_id": "i06",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "pizza vegana e sem glúten para 2",
+  "finished_at": "2026-10-24T23:20:52+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": 2,
+    "budget": null,
+    "message": "Não há opções de pizza vegana e sem glúten nas categorias essenciais; os itens disponíveis são outros pratos, portanto não é possível montar o pedido solicitado.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum valor de orçamento foi informado, portanto foi usado null.",
+      "A bebida foi incluída como item de apoio, pois não foi especificada pelo cliente."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar com pizza",
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "vegano",
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "pizza vegana sem glúten",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum valor de orçamento foi informado, portanto foi usado null.",
+      "A bebida foi incluída como item de apoio, pois não foi especificada pelo cliente."
+    ]
+  },
+  "trace": {
+    "run_id": "c3b9e696201f",
+    "version": "B",
+    "order": "pizza vegana e sem glúten para 2",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "pizza vegana e sem glúten para 2",
+        "output": {
+          "occasion": "jantar com pizza",
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "vegano",
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "pizza vegana sem glúten",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum valor de orçamento foi informado, portanto foi usado null.",
+            "A bebida foi incluída como item de apoio, pois não foi especificada pelo cliente."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1349,
+        "tokens_out": 208,
+        "cost_usd": 0.00032714999999999996,
+        "latency_ms": 862.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "pizza vegana sem glúten",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.8967
+            },
+            {
+              "id": "massamia-009",
+              "nome": "Espaguete sem glúten ao sugo",
+              "score": 0.8945
+            },
+            {
+              "id": "lapicante-013",
+              "nome": "Chili vegano 400 ml",
+              "score": 0.8895
+            },
+            {
+              "id": "caseiro-013",
+              "nome": "Marmita vegana",
+              "score": 0.8864
+            },
+            {
+              "id": "bangkok-003",
+              "nome": "Pad thai vegano com tofu",
+              "score": 0.8731
+            },
+            {
+              "id": "verdevida-011",
+              "nome": "Curry de legumes com arroz basmati",
+              "score": 0.8729
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8784
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8755
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8729
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8676
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8669
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 57.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": false,
+          "lines": [],
+          "rationale": "Não há opções de pizza vegana e sem glúten nas categorias essenciais; os itens disponíveis são outros pratos, portanto não é possível montar o pedido solicitado."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1936,
+        "tokens_out": 88,
+        "cost_usd": 0.0003432,
+        "latency_ms": 13930.1,
+        "wait_ms": 13000.0,
+        "error": null
+      }
+    ]
+  }
+}

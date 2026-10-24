@@ -1,0 +1,346 @@
+{
+  "case_id": "c06",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida japonesa sem glúten para 2",
+  "finished_at": "2026-10-24T23:33:05+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "aloha-005",
+        "name": "Poke vegano sem glúten",
+        "store_id": "aloha",
+        "store_name": "Aloha Poke & Bowls",
+        "unit": "bowl",
+        "quantity": 2,
+        "unit_price": 42.9,
+        "subtotal": 85.8
+      },
+      {
+        "item_id": "mercado-006",
+        "name": "Água com gás 500 ml",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 500 ml",
+        "quantity": 2,
+        "unit_price": 2.99,
+        "subtotal": 5.98
+      },
+      {
+        "item_id": "aloha-010",
+        "name": "Edamame com sal",
+        "store_id": "aloha",
+        "store_name": "Aloha Poke & Bowls",
+        "unit": "porção 200 g",
+        "quantity": 1,
+        "unit_price": 19.9,
+        "subtotal": 19.9
+      }
+    ],
+    "items_total": 111.68,
+    "delivery_total": 13.8,
+    "total": 125.48,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi poke vegano sem glúten (aloha-005) como prato principal, que atende ao número de pessoas ao menor custo. Adicionei água com gás (mercado-006) e edamame (aloha-010) como opções econômicas e adequadas ao tema japonês.",
+    "problems": [],
+    "assumptions": [
+      "Não foi especificado tipo de bebida, assumindo opção não alcoólica básica.",
+      "Nenhum limite de orçamento foi informado.",
+      "Consideramos que a refeição principal deve atender a todos os convidados."
+    ]
+  },
+  "spec": {
+    "occasion": "refeição japonesa",
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "sushi ou pratos japoneses sem glúten",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "água ou refrigerante",
+        "essential": false
+      },
+      {
+        "category": "entrada",
+        "query": "edamame ou sopa miso sem glúten",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Não foi especificado tipo de bebida, assumindo opção não alcoólica básica.",
+      "Nenhum limite de orçamento foi informado.",
+      "Consideramos que a refeição principal deve atender a todos os convidados."
+    ]
+  },
+  "trace": {
+    "run_id": "e0183d56f1bd",
+    "version": "B",
+    "order": "comida japonesa sem glúten para 2",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "comida japonesa sem glúten para 2",
+        "output": {
+          "occasion": "refeição japonesa",
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "sushi ou pratos japoneses sem glúten",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "água ou refrigerante",
+              "essential": false
+            },
+            {
+              "category": "entrada",
+              "query": "edamame ou sopa miso sem glúten",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Não foi especificado tipo de bebida, assumindo opção não alcoólica básica.",
+            "Nenhum limite de orçamento foi informado.",
+            "Consideramos que a refeição principal deve atender a todos os convidados."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1348,
+        "tokens_out": 245,
+        "cost_usd": 0.0003492,
+        "latency_ms": 12386.0,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "sushi ou pratos japoneses sem glúten",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "água ou refrigerante",
+            "essential": false
+          },
+          {
+            "category": "entrada",
+            "query": "edamame ou sopa miso sem glúten",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "kenzo-006",
+              "nome": "Combinado sem glúten 20 peças",
+              "score": 0.9341
+            },
+            {
+              "id": "kenzo-007",
+              "nome": "Sashimi de salmão 15 fatias",
+              "score": 0.9003
+            },
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.8901
+            },
+            {
+              "id": "aloha-002",
+              "nome": "Poke de salmão sem glúten",
+              "score": 0.89
+            },
+            {
+              "id": "massamia-009",
+              "nome": "Espaguete sem glúten ao sugo",
+              "score": 0.8851
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8794
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8774
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8743
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8729
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8707
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8701
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8686
+            }
+          ],
+          "entrada": [
+            {
+              "id": "kenzo-021",
+              "nome": "Edamame 200 g",
+              "score": 0.8976
+            },
+            {
+              "id": "aloha-010",
+              "nome": "Edamame com sal",
+              "score": 0.8925
+            },
+            {
+              "id": "bangkok-008",
+              "nome": "Tom kha gai",
+              "score": 0.8762
+            },
+            {
+              "id": "bangkok-007",
+              "nome": "Tom yum de camarão",
+              "score": 0.8683
+            },
+            {
+              "id": "mercado-037",
+              "nome": "Amendoim torrado 500 g",
+              "score": 0.86
+            },
+            {
+              "id": "sahara-009",
+              "nome": "Homus 300 g",
+              "score": 0.8579
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 298.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "aloha-005",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-006",
+              "quantity": 2
+            },
+            {
+              "item_id": "aloha-010",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi poke vegano sem glúten (aloha-005) como prato principal, que atende ao número de pessoas ao menor custo. Adicionei água com gás (mercado-006) e edamame (aloha-010) como opções econômicas e adequadas ao tema japonês."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2376,
+        "tokens_out": 457,
+        "cost_usd": 0.0006305999999999999,
+        "latency_ms": 19817.4,
+        "wait_ms": 18000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "aloha-005",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-006",
+            "quantity": 2
+          },
+          {
+            "item_id": "aloha-010",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 125.48,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0,
+            "bebida": 2.0,
+            "entrada": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.9,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "case_id": "a06",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "churrasco no fim de semana, uns amigos vão aparecer",
+  "finished_at": "2026-10-24T23:38:01+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-032",
+        "name": "Kit churrasco econômico 2 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit 2 kg",
+        "quantity": 2,
+        "unit_price": 69.9,
+        "subtotal": 139.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 2,
+        "unit_price": 9.49,
+        "subtotal": 18.98
+      },
+      {
+        "item_id": "mercado-015",
+        "name": "Carvão vegetal 5 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "saco 5 kg",
+        "quantity": 1,
+        "unit_price": 28.9,
+        "subtotal": 28.9
+      },
+      {
+        "item_id": "mercado-016",
+        "name": "Kit descartáveis para 10 pessoas",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit",
+        "quantity": 1,
+        "unit_price": 24.9,
+        "subtotal": 24.9
+      }
+    ],
+    "items_total": 212.58,
+    "delivery_total": 5.9,
+    "total": 218.48,
+    "people": 6,
+    "budget": null,
+    "message": "Escolhi o kit churrasco econômico (2 unidades) e duas garrafas de refrigerante barato para cobrir 6 pessoas, e acrescentei carvão 5 kg e descartáveis, tudo do Supermercado Bom Preço, minimizando taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Número de convidados estimado em 6 pessoas, já que o cliente não informou quantos.",
+      "Orçamento não mencionado, portanto deixado como null.",
+      "Nenhuma restrição alimentar especificada, assumindo que todos podem comer tudo.",
+      "Nível de pimenta não mencionado, portanto max_spice deixado null."
+    ]
+  },
+  "spec": {
+    "occasion": "churrasco no fim de semana",
+    "people": 6,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "grelhados",
+        "query": "carnes, linguiças e opções vegetais para churrasco",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz, farofa, vinagrete e pão de alho",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerantes, sucos e água",
+        "essential": true
+      },
+      {
+        "category": "utensilios",
+        "query": "carvão e descartáveis para churrasco",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de convidados estimado em 6 pessoas, já que o cliente não informou quantos.",
+      "Orçamento não mencionado, portanto deixado como null.",
+      "Nenhuma restrição alimentar especificada, assumindo que todos podem comer tudo.",
+      "Nível de pimenta não mencionado, portanto max_spice deixado null."
+    ]
+  },
+  "trace": {
+    "run_id": "3ca17816846c",
+    "version": "B",
+    "order": "churrasco no fim de semana, uns amigos vão aparecer",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "churrasco no fim de semana, uns amigos vão aparecer",
+        "output": {
+          "occasion": "churrasco no fim de semana",
+          "people": 6,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "grelhados",
+              "query": "carnes, linguiças e opções vegetais para churrasco",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz, farofa, vinagrete e pão de alho",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerantes, sucos e água",
+              "essential": true
+            },
+            {
+              "category": "utensilios",
+              "query": "carvão e descartáveis para churrasco",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de convidados estimado em 6 pessoas, já que o cliente não informou quantos.",
+            "Orçamento não mencionado, portanto deixado como null.",
+            "Nenhuma restrição alimentar especificada, assumindo que todos podem comer tudo.",
+            "Nível de pimenta não mencionado, portanto max_spice deixado null."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1350,
+        "tokens_out": 339,
+        "cost_usd": 0.0004059,
+        "latency_ms": 5153.4,
+        "wait_ms": 4000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "grelhados",
+            "query": "carnes, linguiças e opções vegetais para churrasco",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz, farofa, vinagrete e pão de alho",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerantes, sucos e água",
+            "essential": true
+          },
+          {
+            "category": "utensilios",
+            "query": "carvão e descartáveis para churrasco",
+            "essential": false
+          }
+        ],
+        "output": {
+          "grelhados": [
+            {
+              "id": "mercado-032",
+              "nome": "Kit churrasco econômico 2 kg",
+              "score": 0.876
+            },
+            {
+              "id": "churrascaria-006",
+              "nome": "Linguiça assada 500 g",
+              "score": 0.866
+            },
+            {
+              "id": "acougue-001",
+              "nome": "Picanha bovina",
+              "score": 0.8643
+            },
+            {
+              "id": "hortifruti-018",
+              "nome": "Espetinho de legumes 6 unidades",
+              "score": 0.8627
+            },
+            {
+              "id": "acougue-003",
+              "nome": "Fraldinha",
+              "score": 0.8619
+            },
+            {
+              "id": "acougue-009",
+              "nome": "Linguiça apimentada",
+              "score": 0.8614
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "acougue-018",
+              "nome": "Pão de alho tradicional",
+              "score": 0.8585
+            },
+            {
+              "id": "acougue-019",
+              "nome": "Pão de alho apimentado",
+              "score": 0.8535
+            },
+            {
+              "id": "churrascaria-017",
+              "nome": "Pão de alho assado 6 unidades",
+              "score": 0.8534
+            },
+            {
+              "id": "mercado-029",
+              "nome": "Pão de alho congelado",
+              "score": 0.8526
+            },
+            {
+              "id": "churrascaria-012",
+              "nome": "Farofa de banana vegana 300 g",
+              "score": 0.8471
+            },
+            {
+              "id": "caseiro-014",
+              "nome": "Couve refogada 300 g",
+              "score": 0.8412
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8692
+            },
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8652
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8645
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8637
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8632
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8629
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "acougue-022",
+              "nome": "Carvão vegetal 10 kg",
+              "score": 0.8862
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8842
+            },
+            {
+              "id": "mercado-015",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8836
+            },
+            {
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8818
+            },
+            {
+              "id": "acougue-023",
+              "nome": "Sal grosso 1 kg",
+              "score": 0.8795
+            },
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8595
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 151.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "mercado-032",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-015",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-016",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o kit churrasco econômico (2 unidades) e duas garrafas de refrigerante barato para cobrir 6 pessoas, e acrescentei carvão 5 kg e descartáveis, tudo do Supermercado Bom Preço, minimizando taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2851,
+        "tokens_out": 519,
+        "cost_usd": 0.00073905,
+        "latency_ms": 16086.4,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "mercado-032",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-015",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-016",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 218.48,
+          "problemas": [],
+          "cobertura": {
+            "grelhados": 10.0,
+            "bebida": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

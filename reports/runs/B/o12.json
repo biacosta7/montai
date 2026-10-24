@@ -1,0 +1,405 @@
+{
+  "case_id": "o12",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida árabe para 6 pessoas",
+  "finished_at": "2026-10-24T23:26:31+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "sahara-014",
+        "name": "Charuto de folha de uva 10 unidades",
+        "store_id": "sahara",
+        "store_name": "Sahara Cozinha Árabe",
+        "unit": "10 unidades",
+        "quantity": 3,
+        "unit_price": 39.9,
+        "subtotal": 119.7
+      },
+      {
+        "item_id": "sahara-009",
+        "name": "Homus 300 g",
+        "store_id": "sahara",
+        "store_name": "Sahara Cozinha Árabe",
+        "unit": "pote 300 g",
+        "quantity": 2,
+        "unit_price": 24.9,
+        "subtotal": 49.8
+      },
+      {
+        "item_id": "sahara-015",
+        "name": "Arroz com lentilha 500 g",
+        "store_id": "sahara",
+        "store_name": "Sahara Cozinha Árabe",
+        "unit": "pote 500 g",
+        "quantity": 2,
+        "unit_price": 28.9,
+        "subtotal": 57.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 2,
+        "unit_price": 9.49,
+        "subtotal": 18.98
+      }
+    ],
+    "items_total": 246.28,
+    "delivery_total": 11.8,
+    "total": 258.08,
+    "people": 6,
+    "budget": null,
+    "message": "Selecionamos o charuto de folha de uva (3 unidades) como prato principal, suficiente para 6 pessoas e o mais barato. Complementamos com homus, arroz com lentilha e refrigerante guaraná, usando apenas duas lojas para minimizar a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum orçamento foi especificado; assume‑se que o cliente tem flexibilidade de preço.",
+      "Não foram informadas restrições alimentares nem nível de picância, portanto nenhum filtro de dieta ou de pimenta será aplicado."
+    ]
+  },
+  "spec": {
+    "occasion": "comida árabe",
+    "people": 6,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "pratos árabes principais como esfihas, kibe, kafta",
+        "essential": true
+      },
+      {
+        "category": "entrada",
+        "query": "petiscos árabes como homus, babaganoush, tabule",
+        "essential": false
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz árabe, pão sírio, salada de pepino",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum orçamento foi especificado; assume‑se que o cliente tem flexibilidade de preço.",
+      "Não foram informadas restrições alimentares nem nível de picância, portanto nenhum filtro de dieta ou de pimenta será aplicado."
+    ]
+  },
+  "trace": {
+    "run_id": "6c4055a08ca7",
+    "version": "B",
+    "order": "comida árabe para 6 pessoas",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "comida árabe para 6 pessoas",
+        "output": {
+          "occasion": "comida árabe",
+          "people": 6,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "pratos árabes principais como esfihas, kibe, kafta",
+              "essential": true
+            },
+            {
+              "category": "entrada",
+              "query": "petiscos árabes como homus, babaganoush, tabule",
+              "essential": false
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz árabe, pão sírio, salada de pepino",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum orçamento foi especificado; assume‑se que o cliente tem flexibilidade de preço.",
+            "Não foram informadas restrições alimentares nem nível de picância, portanto nenhum filtro de dieta ou de pimenta será aplicado."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1346,
+        "tokens_out": 299,
+        "cost_usd": 0.0003813,
+        "latency_ms": 10579.9,
+        "wait_ms": 9000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "pratos árabes principais como esfihas, kibe, kafta",
+            "essential": true
+          },
+          {
+            "category": "entrada",
+            "query": "petiscos árabes como homus, babaganoush, tabule",
+            "essential": false
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz árabe, pão sírio, salada de pepino",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "sahara-021",
+              "nome": "Mix árabe para 4",
+              "score": 0.9005
+            },
+            {
+              "id": "aloha-003",
+              "nome": "Poke de atum",
+              "score": 0.8549
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8531
+            },
+            {
+              "id": "verdevida-011",
+              "nome": "Curry de legumes com arroz basmati",
+              "score": 0.8509
+            },
+            {
+              "id": "aloha-004",
+              "nome": "Poke de tofu",
+              "score": 0.8459
+            },
+            {
+              "id": "sahara-014",
+              "nome": "Charuto de folha de uva 10 unidades",
+              "score": 0.8458
+            }
+          ],
+          "entrada": [
+            {
+              "id": "sahara-009",
+              "nome": "Homus 300 g",
+              "score": 0.8559
+            },
+            {
+              "id": "sahara-010",
+              "nome": "Babaganuche 300 g",
+              "score": 0.8481
+            },
+            {
+              "id": "verdevida-017",
+              "nome": "Homus com palitos de cenoura",
+              "score": 0.8362
+            },
+            {
+              "id": "sahara-007",
+              "nome": "Kibe de abóbora 6 unidades",
+              "score": 0.833
+            },
+            {
+              "id": "sahara-008",
+              "nome": "Falafel 10 unidades",
+              "score": 0.832
+            },
+            {
+              "id": "sahara-001",
+              "nome": "Esfiha de carne 12 unidades",
+              "score": 0.8313
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "sahara-015",
+              "nome": "Arroz com lentilha 500 g",
+              "score": 0.8489
+            },
+            {
+              "id": "acougue-019",
+              "nome": "Pão de alho apimentado",
+              "score": 0.8425
+            },
+            {
+              "id": "churrascaria-017",
+              "nome": "Pão de alho assado 6 unidades",
+              "score": 0.8383
+            },
+            {
+              "id": "acougue-018",
+              "nome": "Pão de alho tradicional",
+              "score": 0.8344
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.8331
+            },
+            {
+              "id": "lapicante-017",
+              "nome": "Arroz mexicano 300 g",
+              "score": 0.8317
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8765
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8735
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8711
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8689
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8655
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 263.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "sahara-014",
+              "quantity": 3
+            },
+            {
+              "item_id": "sahara-009",
+              "quantity": 2
+            },
+            {
+              "item_id": "sahara-015",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Selecionamos o charuto de folha de uva (3 unidades) como prato principal, suficiente para 6 pessoas e o mais barato. Complementamos com homus, arroz com lentilha e refrigerante guaraná, usando apenas duas lojas para minimizar a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2849,
+        "tokens_out": 560,
+        "cost_usd": 0.0007633499999999999,
+        "latency_ms": 26081.6,
+        "wait_ms": 24000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "sahara-014",
+            "quantity": 3
+          },
+          {
+            "item_id": "sahara-009",
+            "quantity": 2
+          },
+          {
+            "item_id": "sahara-015",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 258.08,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 6.0,
+            "entrada": 8.0,
+            "acompanhamento": 6.0,
+            "bebida": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

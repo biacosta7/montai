@@ -1,0 +1,362 @@
+{
+  "case_id": "c09",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida tailandesa vegana para 2, pouco apimentada",
+  "finished_at": "2026-10-24T23:34:19+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "bangkok-015",
+        "name": "Stir fry de legumes com castanha de caju",
+        "store_id": "bangkok",
+        "store_name": "Bangkok Express",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 38.9,
+        "subtotal": 77.8
+      },
+      {
+        "item_id": "bangkok-009",
+        "name": "Arroz de jasmim 300 g",
+        "store_id": "bangkok",
+        "store_name": "Bangkok Express",
+        "unit": "pote 300 g",
+        "quantity": 1,
+        "unit_price": 12.9,
+        "subtotal": 12.9
+      }
+    ],
+    "items_total": 90.7,
+    "delivery_total": 8.9,
+    "total": 99.6,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o stir fry vegano de legumes (mais barato) para o prato principal e um arroz jasmine que serve 2 pessoas, tudo da Bangkok Express, minimizando taxa de entrega.",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": {
+    "occasion": "jantar tailandês",
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "vegano"
+    ],
+    "diet_options": [],
+    "max_spice": 1,
+    "needs": [
+      {
+        "category": "entrada",
+        "query": "rolinho primavera vegano",
+        "essential": false
+      },
+      {
+        "category": "prato_principal",
+        "query": "curry tailandês vegano",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz jasmine",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "chá gelado ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": []
+  },
+  "trace": {
+    "run_id": "731cabe43d2e",
+    "version": "B",
+    "order": "comida tailandesa vegana para 2, pouco apimentada",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "comida tailandesa vegana para 2, pouco apimentada",
+        "output": {
+          "occasion": "jantar tailandês",
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "vegano"
+          ],
+          "diet_options": [],
+          "max_spice": 1,
+          "needs": [
+            {
+              "category": "entrada",
+              "query": "rolinho primavera vegano",
+              "essential": false
+            },
+            {
+              "category": "prato_principal",
+              "query": "curry tailandês vegano",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz jasmine",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "chá gelado ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1353,
+        "tokens_out": 262,
+        "cost_usd": 0.00036015,
+        "latency_ms": 12287.2,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "entrada",
+            "query": "rolinho primavera vegano",
+            "essential": false
+          },
+          {
+            "category": "prato_principal",
+            "query": "curry tailandês vegano",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz jasmine",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "chá gelado ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "entrada": [
+            {
+              "id": "bangkok-011",
+              "nome": "Rolinho primavera 4 unidades",
+              "score": 0.912
+            },
+            {
+              "id": "kenzo-019",
+              "nome": "Harumaki de legumes 4 unidades",
+              "score": 0.8974
+            },
+            {
+              "id": "kenzo-009",
+              "nome": "Hossomaki de pepino 8 peças",
+              "score": 0.8681
+            },
+            {
+              "id": "adega-021",
+              "nome": "Amendoim japonês 500 g",
+              "score": 0.8519
+            },
+            {
+              "id": "aloha-010",
+              "nome": "Edamame com sal",
+              "score": 0.85
+            },
+            {
+              "id": "hortifruti-024",
+              "nome": "Mix de castanhas 200 g",
+              "score": 0.8497
+            }
+          ],
+          "prato_principal": [
+            {
+              "id": "bangkok-003",
+              "nome": "Pad thai vegano com tofu",
+              "score": 0.895
+            },
+            {
+              "id": "bangkok-015",
+              "nome": "Stir fry de legumes com castanha de caju",
+              "score": 0.891
+            },
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.8772
+            },
+            {
+              "id": "kenzo-005",
+              "nome": "Combinado vegetariano 20 peças",
+              "score": 0.8766
+            },
+            {
+              "id": "aloha-004",
+              "nome": "Poke de tofu",
+              "score": 0.8729
+            },
+            {
+              "id": "verdevida-001",
+              "nome": "Bowl de quinoa com legumes assados",
+              "score": 0.8702
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "bangkok-009",
+              "nome": "Arroz de jasmim 300 g",
+              "score": 0.8893
+            },
+            {
+              "id": "kenzo-024",
+              "nome": "Arroz gohan 300 g",
+              "score": 0.8484
+            },
+            {
+              "id": "lapicante-017",
+              "nome": "Arroz mexicano 300 g",
+              "score": 0.8464
+            },
+            {
+              "id": "sahara-015",
+              "nome": "Arroz com lentilha 500 g",
+              "score": 0.8358
+            },
+            {
+              "id": "caseiro-015",
+              "nome": "Arroz e feijão 500 g",
+              "score": 0.828
+            },
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.8277
+            }
+          ],
+          "bebida": [
+            {
+              "id": "kenzo-026",
+              "nome": "Chá verde gelado 500 ml",
+              "score": 0.8977
+            },
+            {
+              "id": "padaria-019",
+              "nome": "Chá mate gelado 1 L",
+              "score": 0.8907
+            },
+            {
+              "id": "hortifruti-022",
+              "nome": "Água de coco 1 L",
+              "score": 0.8629
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8603
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8569
+            },
+            {
+              "id": "graofino-025",
+              "nome": "Chá de camomila garrafa 1 L",
+              "score": 0.8536
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 345.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "bangkok-015",
+              "quantity": 2
+            },
+            {
+              "item_id": "bangkok-009",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o stir fry vegano de legumes (mais barato) para o prato principal e um arroz jasmine que serve 2 pessoas, tudo da Bangkok Express, minimizando taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2864,
+        "tokens_out": 473,
+        "cost_usd": 0.0007134,
+        "latency_ms": 15818.7,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "bangkok-015",
+            "quantity": 2
+          },
+          {
+            "item_id": "bangkok-009",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 99.6,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0,
+            "acompanhamento": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

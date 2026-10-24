@@ -1,0 +1,367 @@
+{
+  "case_id": "o13",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar romântico italiano para 2, com vinho",
+  "finished_at": "2026-10-24T23:26:58+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "massamia-004",
+        "name": "Lasanha à bolonhesa família 1,5 kg",
+        "store_id": "massamia",
+        "store_name": "Cantina Massa Mia",
+        "unit": "travessa 1,5 kg",
+        "quantity": 1,
+        "unit_price": 119.9,
+        "subtotal": 119.9
+      },
+      {
+        "item_id": "mercado-013",
+        "name": "Vinho tinto seco nacional",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 750 ml",
+        "quantity": 1,
+        "unit_price": 39.9,
+        "subtotal": 39.9
+      }
+    ],
+    "items_total": 159.8,
+    "delivery_total": 13.8,
+    "total": 173.6,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi a lasanha família (serve 4) para atender 2 pessoas gastando menos por pessoa, e o vinho mais barato (R$/pessoa 9,97). Assim cobrimos o prato principal e a bebida essencial com o menor custo total.",
+    "problems": [],
+    "assumptions": [
+      "O cliente não especificou bebidas não alcoólicas, assumindo que apenas o vinho é necessário.",
+      "Não há restrições alimentares ou limite de preço informados."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar romântico italiano",
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "massa ou prato italiano principal (ex.: lasanha, fettuccine, risoto)",
+        "essential": true
+      },
+      {
+        "category": "entrada",
+        "query": "antipasto italiano (ex.: bruschetta, caprese)",
+        "essential": false
+      },
+      {
+        "category": "bebida_alcoolica",
+        "query": "vinho tinto ou branco italiano",
+        "essential": true
+      },
+      {
+        "category": "sobremesa",
+        "query": "tiramisu ou panna cotta",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "O cliente não especificou bebidas não alcoólicas, assumindo que apenas o vinho é necessário.",
+      "Não há restrições alimentares ou limite de preço informados."
+    ]
+  },
+  "trace": {
+    "run_id": "1a546ecd71ea",
+    "version": "B",
+    "order": "jantar romântico italiano para 2, com vinho",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar romântico italiano para 2, com vinho",
+        "output": {
+          "occasion": "jantar romântico italiano",
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "massa ou prato italiano principal (ex.: lasanha, fettuccine, risoto)",
+              "essential": true
+            },
+            {
+              "category": "entrada",
+              "query": "antipasto italiano (ex.: bruschetta, caprese)",
+              "essential": false
+            },
+            {
+              "category": "bebida_alcoolica",
+              "query": "vinho tinto ou branco italiano",
+              "essential": true
+            },
+            {
+              "category": "sobremesa",
+              "query": "tiramisu ou panna cotta",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "O cliente não especificou bebidas não alcoólicas, assumindo que apenas o vinho é necessário.",
+            "Não há restrições alimentares ou limite de preço informados."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1349,
+        "tokens_out": 304,
+        "cost_usd": 0.00038475,
+        "latency_ms": 12693.6,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "massa ou prato italiano principal (ex.: lasanha, fettuccine, risoto)",
+            "essential": true
+          },
+          {
+            "category": "entrada",
+            "query": "antipasto italiano (ex.: bruschetta, caprese)",
+            "essential": false
+          },
+          {
+            "category": "bebida_alcoolica",
+            "query": "vinho tinto ou branco italiano",
+            "essential": true
+          },
+          {
+            "category": "sobremesa",
+            "query": "tiramisu ou panna cotta",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "massamia-003",
+              "nome": "Lasanha à bolonhesa individual",
+              "score": 0.8836
+            },
+            {
+              "id": "massamia-002",
+              "nome": "Fettuccine Alfredo",
+              "score": 0.868
+            },
+            {
+              "id": "massamia-004",
+              "nome": "Lasanha à bolonhesa família 1,5 kg",
+              "score": 0.8671
+            },
+            {
+              "id": "massamia-014",
+              "nome": "Polpettone recheado",
+              "score": 0.8649
+            },
+            {
+              "id": "massamia-005",
+              "nome": "Nhoque ao sugo",
+              "score": 0.8635
+            },
+            {
+              "id": "massamia-001",
+              "nome": "Espaguete à bolonhesa",
+              "score": 0.8625
+            }
+          ],
+          "entrada": [
+            {
+              "id": "massamia-016",
+              "nome": "Bruschetta de tomate 4 unidades",
+              "score": 0.8272
+            },
+            {
+              "id": "caseiro-017",
+              "nome": "Pastel de carne 2 unidades",
+              "score": 0.8175
+            },
+            {
+              "id": "chapa-013",
+              "nome": "Onion rings",
+              "score": 0.8103
+            },
+            {
+              "id": "massamia-017",
+              "nome": "Antepasto de berinjela 200 g",
+              "score": 0.8095
+            },
+            {
+              "id": "kenzo-020",
+              "nome": "Missoshiru",
+              "score": 0.8082
+            },
+            {
+              "id": "chapa-012",
+              "nome": "Batata com cheddar e bacon",
+              "score": 0.8008
+            }
+          ],
+          "bebida_alcoolica": [
+            {
+              "id": "massamia-021",
+              "nome": "Vinho tinto italiano",
+              "score": 0.8967
+            },
+            {
+              "id": "adega-009",
+              "nome": "Vinho branco Sauvignon Blanc",
+              "score": 0.874
+            },
+            {
+              "id": "adega-008",
+              "nome": "Vinho tinto Malbec",
+              "score": 0.8703
+            },
+            {
+              "id": "mercado-013",
+              "nome": "Vinho tinto seco nacional",
+              "score": 0.8677
+            },
+            {
+              "id": "adega-010",
+              "nome": "Vinho rosé",
+              "score": 0.8296
+            },
+            {
+              "id": "adega-011",
+              "nome": "Espumante brut",
+              "score": 0.8257
+            }
+          ],
+          "sobremesa": [
+            {
+              "id": "massamia-019",
+              "nome": "Tiramisù",
+              "score": 0.8737
+            },
+            {
+              "id": "massamia-020",
+              "nome": "Panna cotta com frutas vermelhas",
+              "score": 0.8706
+            },
+            {
+              "id": "verdevida-024",
+              "nome": "Mousse de chocolate com abacate",
+              "score": 0.8337
+            },
+            {
+              "id": "graofino-019",
+              "nome": "Cookie vegano",
+              "score": 0.8298
+            },
+            {
+              "id": "padaria-026",
+              "nome": "Bolo de cenoura com cobertura de chocolate",
+              "score": 0.8287
+            },
+            {
+              "id": "doceria-016",
+              "nome": "Pavê de chocolate",
+              "score": 0.8287
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 345.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "massamia-004",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-013",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi a lasanha família (serve 4) para atender 2 pessoas gastando menos por pessoa, e o vinho mais barato (R$/pessoa 9,97). Assim cobrimos o prato principal e a bebida essencial com o menor custo total."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2673,
+        "tokens_out": 486,
+        "cost_usd": 0.00069255,
+        "latency_ms": 13790.3,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "massamia-004",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-013",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 173.6,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 4.0,
+            "bebida_alcoolica": 4.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

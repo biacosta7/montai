@@ -1,0 +1,473 @@
+{
+  "case_id": "o10",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar mexicano para 4, pode ser bem apimentado",
+  "finished_at": "2026-10-24T23:25:22+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "lapicante-013",
+        "name": "Chili vegano 400 ml",
+        "store_id": "lapicante",
+        "store_name": "La Picante Cozinha Mexicana",
+        "unit": "pote 400 ml",
+        "quantity": 4,
+        "unit_price": 30.9,
+        "subtotal": 123.6
+      },
+      {
+        "item_id": "lapicante-011",
+        "name": "Guacamole com tortilhas",
+        "store_id": "lapicante",
+        "store_name": "La Picante Cozinha Mexicana",
+        "unit": "porção 250 g",
+        "quantity": 2,
+        "unit_price": 26.9,
+        "subtotal": 53.8
+      },
+      {
+        "item_id": "lapicante-017",
+        "name": "Arroz mexicano 300 g",
+        "store_id": "lapicante",
+        "store_name": "La Picante Cozinha Mexicana",
+        "unit": "pote 300 g",
+        "quantity": 2,
+        "unit_price": 14.9,
+        "subtotal": 29.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      },
+      {
+        "item_id": "mercado-016",
+        "name": "Kit descartáveis para 10 pessoas",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit",
+        "quantity": 1,
+        "unit_price": 24.9,
+        "subtotal": 24.9
+      }
+    ],
+    "items_total": 241.59,
+    "delivery_total": 13.8,
+    "total": 255.39,
+    "people": 4,
+    "budget": null,
+    "message": "Escolhemos o Chili vegano (serve 1, menor R$/pessoa) em 4 unidades para atender 4 pessoas, completamos com guacamole, arroz mexicano e refrigerante barato, e incluímos um kit de descartáveis. Tudo de duas lojas, minimizando taxa de entrega e custo total.",
+    "problems": [],
+    "assumptions": [
+      "O cliente não especificou restrições alimentares, portanto assume‑se que não há restrições.",
+      "Orçamento não informado, será considerado ilimitado dentro do contexto da ocasião.",
+      "Bebidas incluídas como suporte, não foram detalhadas; sugerimos refrigerante e cerveja."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar mexicano",
+    "people": 4,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": 3,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "tacos e burritos mexicanos",
+        "essential": true
+      },
+      {
+        "category": "entrada",
+        "query": "nachos com guacamole",
+        "essential": false
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz mexicano e feijão preto",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante e cerveja",
+        "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "descartáveis e gelo",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "O cliente não especificou restrições alimentares, portanto assume‑se que não há restrições.",
+      "Orçamento não informado, será considerado ilimitado dentro do contexto da ocasião.",
+      "Bebidas incluídas como suporte, não foram detalhadas; sugerimos refrigerante e cerveja."
+    ]
+  },
+  "trace": {
+    "run_id": "20c609094ed7",
+    "version": "B",
+    "order": "jantar mexicano para 4, pode ser bem apimentado",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar mexicano para 4, pode ser bem apimentado",
+        "output": {
+          "occasion": "jantar mexicano",
+          "people": 4,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": 3,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "tacos e burritos mexicanos",
+              "essential": true
+            },
+            {
+              "category": "entrada",
+              "query": "nachos com guacamole",
+              "essential": false
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz mexicano e feijão preto",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante e cerveja",
+              "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "descartáveis e gelo",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "O cliente não especificou restrições alimentares, portanto assume‑se que não há restrições.",
+            "Orçamento não informado, será considerado ilimitado dentro do contexto da ocasião.",
+            "Bebidas incluídas como suporte, não foram detalhadas; sugerimos refrigerante e cerveja."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1351,
+        "tokens_out": 350,
+        "cost_usd": 0.00041265,
+        "latency_ms": 11492.6,
+        "wait_ms": 10000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "tacos e burritos mexicanos",
+            "essential": true
+          },
+          {
+            "category": "entrada",
+            "query": "nachos com guacamole",
+            "essential": false
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz mexicano e feijão preto",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante e cerveja",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "descartáveis e gelo",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "lapicante-016",
+              "nome": "Combo mexicano para 4",
+              "score": 0.876
+            },
+            {
+              "id": "lapicante-015",
+              "nome": "Enchiladas de frango",
+              "score": 0.8499
+            },
+            {
+              "id": "lapicante-012",
+              "nome": "Chili com carne 400 ml",
+              "score": 0.8358
+            },
+            {
+              "id": "lapicante-014",
+              "nome": "Fajitas de frango para 2",
+              "score": 0.8345
+            },
+            {
+              "id": "lapicante-013",
+              "nome": "Chili vegano 400 ml",
+              "score": 0.828
+            },
+            {
+              "id": "aloha-004",
+              "nome": "Poke de tofu",
+              "score": 0.8274
+            }
+          ],
+          "entrada": [
+            {
+              "id": "lapicante-009",
+              "nome": "Nachos com guacamole e cheddar",
+              "score": 0.9145
+            },
+            {
+              "id": "lapicante-011",
+              "nome": "Guacamole com tortilhas",
+              "score": 0.8987
+            },
+            {
+              "id": "lapicante-010",
+              "nome": "Nachos supremo",
+              "score": 0.8933
+            },
+            {
+              "id": "adega-021",
+              "nome": "Amendoim japonês 500 g",
+              "score": 0.8444
+            },
+            {
+              "id": "kenzo-010",
+              "nome": "Hot roll 10 peças",
+              "score": 0.8429
+            },
+            {
+              "id": "kenzo-017",
+              "nome": "Guioza de porco 6 unidades",
+              "score": 0.8413
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "lapicante-018",
+              "nome": "Feijão refrito 300 g",
+              "score": 0.882
+            },
+            {
+              "id": "lapicante-017",
+              "nome": "Arroz mexicano 300 g",
+              "score": 0.8684
+            },
+            {
+              "id": "caseiro-015",
+              "nome": "Arroz e feijão 500 g",
+              "score": 0.8676
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.8505
+            },
+            {
+              "id": "kenzo-024",
+              "nome": "Arroz gohan 300 g",
+              "score": 0.8494
+            },
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.8449
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8857
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8829
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8825
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.882
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8816
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8797
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8745
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8622
+            },
+            {
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8609
+            },
+            {
+              "id": "adega-019",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8566
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8256
+            },
+            {
+              "id": "mercado-014",
+              "nome": "Carvão vegetal 3 kg",
+              "score": 0.8219
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 179.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "lapicante-013",
+              "quantity": 4
+            },
+            {
+              "item_id": "lapicante-011",
+              "quantity": 2
+            },
+            {
+              "item_id": "lapicante-017",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-016",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhemos o Chili vegano (serve 1, menor R$/pessoa) em 4 unidades para atender 4 pessoas, completamos com guacamole, arroz mexicano e refrigerante barato, e incluímos um kit de descartáveis. Tudo de duas lojas, minimizando taxa de entrega e custo total."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 3301,
+        "tokens_out": 615,
+        "cost_usd": 0.0008641499999999999,
+        "latency_ms": 20213.9,
+        "wait_ms": 18000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "lapicante-013",
+            "quantity": 4
+          },
+          {
+            "item_id": "lapicante-011",
+            "quantity": 2
+          },
+          {
+            "item_id": "lapicante-017",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-016",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 255.39,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 4.0,
+            "entrada": 4.0,
+            "acompanhamento": 4.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

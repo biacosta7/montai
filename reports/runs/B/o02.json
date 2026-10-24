@@ -1,0 +1,352 @@
+{
+  "case_id": "o02",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar leve e sem glúten para 2, nada apimentado",
+  "finished_at": "2026-10-24T23:21:18+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-002",
+        "name": "Prato feito de frango grelhado",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 27.9,
+        "subtotal": 55.8
+      }
+    ],
+    "items_total": 55.8,
+    "delivery_total": 4.9,
+    "total": 60.7,
+    "people": 2,
+    "budget": null,
+    "message": "Selecionamos o prato de frango grelhado, o mais barato e sem glúten, em quantidade suficiente para 2 pessoas, usando apenas um restaurante para minimizar a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto budget = null.",
+      "Como o cliente não especificou tipo de prato principal, foi sugerido uma opção leve sem glúten."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar leve",
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": 0,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato leve sem glúten, como peixe grelhado ou frango",
+        "essential": true
+      },
+      {
+        "category": "salada",
+        "query": "salada fresca sem glúten",
+        "essential": false
+      },
+      {
+        "category": "entrada",
+        "query": "sopa ou patê leve sem glúten",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "água ou suco sem açúcar",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto budget = null.",
+      "Como o cliente não especificou tipo de prato principal, foi sugerido uma opção leve sem glúten."
+    ]
+  },
+  "trace": {
+    "run_id": "4e5548f47c1e",
+    "version": "B",
+    "order": "jantar leve e sem glúten para 2, nada apimentado",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar leve e sem glúten para 2, nada apimentado",
+        "output": {
+          "occasion": "jantar leve",
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": 0,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato leve sem glúten, como peixe grelhado ou frango",
+              "essential": true
+            },
+            {
+              "category": "salada",
+              "query": "salada fresca sem glúten",
+              "essential": false
+            },
+            {
+              "category": "entrada",
+              "query": "sopa ou patê leve sem glúten",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "água ou suco sem açúcar",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum orçamento foi informado, portanto budget = null.",
+            "Como o cliente não especificou tipo de prato principal, foi sugerido uma opção leve sem glúten."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1354,
+        "tokens_out": 299,
+        "cost_usd": 0.0003825,
+        "latency_ms": 1239.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato leve sem glúten, como peixe grelhado ou frango",
+            "essential": true
+          },
+          {
+            "category": "salada",
+            "query": "salada fresca sem glúten",
+            "essential": false
+          },
+          {
+            "category": "entrada",
+            "query": "sopa ou patê leve sem glúten",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "água ou suco sem açúcar",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-002",
+              "nome": "Prato feito de frango grelhado",
+              "score": 0.9075
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8933
+            },
+            {
+              "id": "verdevida-005",
+              "nome": "Frango grelhado com purê de abóbora",
+              "score": 0.8931
+            },
+            {
+              "id": "verdevida-006",
+              "nome": "Tilápia grelhada com legumes no vapor",
+              "score": 0.8846
+            },
+            {
+              "id": "massamia-009",
+              "nome": "Espaguete sem glúten ao sugo",
+              "score": 0.8827
+            },
+            {
+              "id": "kenzo-006",
+              "nome": "Combinado sem glúten 20 peças",
+              "score": 0.8825
+            }
+          ],
+          "salada": [
+            {
+              "id": "hortifruti-017",
+              "nome": "Salada pronta tradicional 400 g",
+              "score": 0.9128
+            },
+            {
+              "id": "verdevida-003",
+              "nome": "Salada mediterrânea de grão-de-bico",
+              "score": 0.8956
+            },
+            {
+              "id": "hortifruti-016",
+              "nome": "Mix de folhas lavadas 200 g",
+              "score": 0.8916
+            },
+            {
+              "id": "churrascaria-018",
+              "nome": "Salada verde 300 g",
+              "score": 0.8913
+            },
+            {
+              "id": "massamia-015",
+              "nome": "Salada caprese",
+              "score": 0.8838
+            },
+            {
+              "id": "aloha-009",
+              "nome": "Salada havaiana",
+              "score": 0.8784
+            }
+          ],
+          "entrada": [
+            {
+              "id": "verdevida-017",
+              "nome": "Homus com palitos de cenoura",
+              "score": 0.8785
+            },
+            {
+              "id": "verdevida-016",
+              "nome": "Caldo verde 500 ml",
+              "score": 0.8624
+            },
+            {
+              "id": "sahara-009",
+              "nome": "Homus 300 g",
+              "score": 0.8597
+            },
+            {
+              "id": "sahara-010",
+              "nome": "Babaganuche 300 g",
+              "score": 0.8541
+            },
+            {
+              "id": "aloha-010",
+              "nome": "Edamame com sal",
+              "score": 0.8528
+            },
+            {
+              "id": "massamia-017",
+              "nome": "Antepasto de berinjela 200 g",
+              "score": 0.8521
+            }
+          ],
+          "bebida": [
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8846
+            },
+            {
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8832
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8826
+            },
+            {
+              "id": "adega-018",
+              "nome": "Água mineral 1,5 L",
+              "score": 0.8789
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8775
+            },
+            {
+              "id": "aloha-013",
+              "nome": "Suco de abacaxi com hortelã",
+              "score": 0.8768
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 729.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-002",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Selecionamos o prato de frango grelhado, o mais barato e sem glúten, em quantidade suficiente para 2 pessoas, usando apenas um restaurante para minimizar a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2879,
+        "tokens_out": 429,
+        "cost_usd": 0.00068925,
+        "latency_ms": 5525.6,
+        "wait_ms": 4000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-002",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 60.7,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

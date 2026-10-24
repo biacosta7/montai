@@ -1,0 +1,254 @@
+{
+  "case_id": "a05",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "lanche rápido e barato",
+  "finished_at": "2026-10-24T23:37:40+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "padaria-021",
+        "name": "Sanduíche natural de frango",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 13.9,
+        "subtotal": 27.8
+      }
+    ],
+    "items_total": 27.8,
+    "delivery_total": 4.9,
+    "total": 32.7,
+    "people": 2,
+    "budget": null,
+    "message": "Para 2 pessoas, o sanduíche natural de frango da Padaria Pão Dourado serve 1 pessoa por unidade, tem o menor R$/pessoa entre as opções e gera o menor custo total, incluindo a taxa de entrega da mesma loja.",
+    "problems": [],
+    "assumptions": [
+      "Número de pessoas assumido como 2 por não ter sido especificado.",
+      "Orçamento não informado, considerado sem restrição."
+    ]
+  },
+  "spec": {
+    "occasion": "lanche rápido e barato",
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "lanche",
+        "query": "sanduíches ou wraps simples",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de pessoas assumido como 2 por não ter sido especificado.",
+      "Orçamento não informado, considerado sem restrição."
+    ]
+  },
+  "trace": {
+    "run_id": "7fe492326acb",
+    "version": "B",
+    "order": "lanche rápido e barato",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "lanche rápido e barato",
+        "output": {
+          "occasion": "lanche rápido e barato",
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "lanche",
+              "query": "sanduíches ou wraps simples",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de pessoas assumido como 2 por não ter sido especificado.",
+            "Orçamento não informado, considerado sem restrição."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1343,
+        "tokens_out": 190,
+        "cost_usd": 0.00031545,
+        "latency_ms": 7218.2,
+        "wait_ms": 6000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "lanche",
+            "query": "sanduíches ou wraps simples",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "lanche": [
+            {
+              "id": "graofino-006",
+              "nome": "Mini sanduíches sortidos 20 unidades",
+              "score": 0.8752
+            },
+            {
+              "id": "graofino-011",
+              "nome": "Wrap de ovos mexidos",
+              "score": 0.8735
+            },
+            {
+              "id": "verdevida-014",
+              "nome": "Wrap integral de frango",
+              "score": 0.8728
+            },
+            {
+              "id": "graofino-007",
+              "nome": "Mini sanduíches veganos 10 unidades",
+              "score": 0.8719
+            },
+            {
+              "id": "padaria-021",
+              "nome": "Sanduíche natural de frango",
+              "score": 0.8578
+            },
+            {
+              "id": "padaria-022",
+              "nome": "Sanduíche natural vegano",
+              "score": 0.8575
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8765
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8735
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8711
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8689
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8655
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 243.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "padaria-021",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Para 2 pessoas, o sanduíche natural de frango da Padaria Pão Dourado serve 1 pessoa por unidade, tem o menor R$/pessoa entre as opções e gera o menor custo total, incluindo a taxa de entrega da mesma loja."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1887,
+        "tokens_out": 364,
+        "cost_usd": 0.0005014500000000001,
+        "latency_ms": 16674.7,
+        "wait_ms": 15000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "padaria-021",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 32.7,
+          "problemas": [],
+          "cobertura": {
+            "lanche": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "case_id": "c07",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar para 5 pessoas: uma é vegana e outra é celíaca",
+  "finished_at": "2026-10-24T23:33:29+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-013",
+        "name": "Marmita vegana",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "marmita",
+        "quantity": 5,
+        "unit_price": 28.9,
+        "subtotal": 144.5
+      }
+    ],
+    "items_total": 144.5,
+    "delivery_total": 4.9,
+    "total": 149.4,
+    "people": 5,
+    "budget": null,
+    "message": "Escolhi a marmita vegana do Restaurante Sabor Caseiro, que atende ao requisito vegano e sem glúten, com o menor custo por pessoa. Cinco unidades cobrem exatamente as 5 pessoas, mantendo o pedido econômico.",
+    "problems": [],
+    "assumptions": [
+      "Não foi especificado o tipo de comida, assumindo que o cliente quer opções variadas que atendam às restrições.",
+      "Orçamento não informado, portanto considerado ilimitado."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar",
+    "people": 5,
+    "budget": null,
+    "diet": [],
+    "diet_options": [
+      "vegano",
+      "sem_gluten"
+    ],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato principal variado para atender vegano e celíaco",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "bebidas sem álcool variadas",
+        "essential": false
+      },
+      {
+        "category": "acompanhamento",
+        "query": "acompanhamentos sem glúten e veganos",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Não foi especificado o tipo de comida, assumindo que o cliente quer opções variadas que atendam às restrições.",
+      "Orçamento não informado, portanto considerado ilimitado."
+    ]
+  },
+  "trace": {
+    "run_id": "9abd9be25e7b",
+    "version": "B",
+    "order": "jantar para 5 pessoas: uma é vegana e outra é celíaca",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar para 5 pessoas: uma é vegana e outra é celíaca",
+        "output": {
+          "occasion": "jantar",
+          "people": 5,
+          "budget": null,
+          "diet": [],
+          "diet_options": [
+            "vegano",
+            "sem_gluten"
+          ],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato principal variado para atender vegano e celíaco",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "bebidas sem álcool variadas",
+              "essential": false
+            },
+            {
+              "category": "acompanhamento",
+              "query": "acompanhamentos sem glúten e veganos",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Não foi especificado o tipo de comida, assumindo que o cliente quer opções variadas que atendam às restrições.",
+            "Orçamento não informado, portanto considerado ilimitado."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1355,
+        "tokens_out": 277,
+        "cost_usd": 0.00036945,
+        "latency_ms": 13347.2,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato principal variado para atender vegano e celíaco",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "bebidas sem álcool variadas",
+            "essential": false
+          },
+          {
+            "category": "acompanhamento",
+            "query": "acompanhamentos sem glúten e veganos",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "kenzo-005",
+              "nome": "Combinado vegetariano 20 peças",
+              "score": 0.8846
+            },
+            {
+              "id": "caseiro-013",
+              "nome": "Marmita vegana",
+              "score": 0.8824
+            },
+            {
+              "id": "graofino-003",
+              "nome": "Kit café da manhã vegano 5 pessoas",
+              "score": 0.8797
+            },
+            {
+              "id": "aloha-004",
+              "nome": "Poke de tofu",
+              "score": 0.8789
+            },
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.8767
+            },
+            {
+              "id": "lapicante-013",
+              "nome": "Chili vegano 400 ml",
+              "score": 0.8767
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9069
+            },
+            {
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.9068
+            },
+            {
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.9008
+            },
+            {
+              "id": "graofino-024",
+              "nome": "Bebida de aveia garrafa 1 L",
+              "score": 0.8861
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8835
+            },
+            {
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8789
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8977
+            },
+            {
+              "id": "caseiro-015",
+              "nome": "Arroz e feijão 500 g",
+              "score": 0.8869
+            },
+            {
+              "id": "caseiro-014",
+              "nome": "Couve refogada 300 g",
+              "score": 0.8868
+            },
+            {
+              "id": "churrascaria-012",
+              "nome": "Farofa de banana vegana 300 g",
+              "score": 0.8819
+            },
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.8801
+            },
+            {
+              "id": "lapicante-018",
+              "nome": "Feijão refrito 300 g",
+              "score": 0.8795
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 363.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-013",
+              "quantity": 5
+            }
+          ],
+          "rationale": "Escolhi a marmita vegana do Restaurante Sabor Caseiro, que atende ao requisito vegano e sem glúten, com o menor custo por pessoa. Cinco unidades cobrem exatamente as 5 pessoas, mantendo o pedido econômico."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2427,
+        "tokens_out": 354,
+        "cost_usd": 0.00057645,
+        "latency_ms": 10583.6,
+        "wait_ms": 9000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-013",
+            "quantity": 5
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 149.4,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

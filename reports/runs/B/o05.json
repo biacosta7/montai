@@ -1,0 +1,344 @@
+{
+  "case_id": "o05",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "rodízio de sushi em casa para 4 pessoas",
+  "finished_at": "2026-10-24T23:22:50+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "kenzo-004",
+        "name": "Combinado festa 100 peças",
+        "store_id": "kenzo",
+        "store_name": "Sushi Kenzo",
+        "unit": "barca 100 peças",
+        "quantity": 1,
+        "unit_price": 329.9,
+        "subtotal": 329.9
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      },
+      {
+        "item_id": "mercado-016",
+        "name": "Kit descartáveis para 10 pessoas",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit",
+        "quantity": 1,
+        "unit_price": 24.9,
+        "subtotal": 24.9
+      }
+    ],
+    "items_total": 364.29,
+    "delivery_total": 14.8,
+    "total": 379.09,
+    "people": 4,
+    "budget": null,
+    "message": "Escolhi a barca de sushi de 100 peças (serve 5) que cobre 4 pessoas com menor custo, e completei com refrigerante e kit descartável do supermercado, usando apenas duas lojas para economizar a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto budget = null.",
+      "Não foram especificadas restrições alimentares.",
+      "Não houve indicação de nível de picância.",
+      "Bebida e utensílios foram incluídos como itens de apoio, pois são úteis para um rodízio em casa."
+    ]
+  },
+  "spec": {
+    "occasion": "rodízio de sushi em casa",
+    "people": 4,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "sushi para rodízio",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou água",
+        "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "gelo e descartáveis",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto budget = null.",
+      "Não foram especificadas restrições alimentares.",
+      "Não houve indicação de nível de picância.",
+      "Bebida e utensílios foram incluídos como itens de apoio, pois são úteis para um rodízio em casa."
+    ]
+  },
+  "trace": {
+    "run_id": "2f53799a250e",
+    "version": "B",
+    "order": "rodízio de sushi em casa para 4 pessoas",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "rodízio de sushi em casa para 4 pessoas",
+        "output": {
+          "occasion": "rodízio de sushi em casa",
+          "people": 4,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "sushi para rodízio",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou água",
+              "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "gelo e descartáveis",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum orçamento foi informado, portanto budget = null.",
+            "Não foram especificadas restrições alimentares.",
+            "Não houve indicação de nível de picância.",
+            "Bebida e utensílios foram incluídos como itens de apoio, pois são úteis para um rodízio em casa."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1349,
+        "tokens_out": 287,
+        "cost_usd": 0.00037454999999999997,
+        "latency_ms": 10490.0,
+        "wait_ms": 9000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "sushi para rodízio",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou água",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "gelo e descartáveis",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "kenzo-005",
+              "nome": "Combinado vegetariano 20 peças",
+              "score": 0.8735
+            },
+            {
+              "id": "kenzo-003",
+              "nome": "Combinado festa 60 peças",
+              "score": 0.8664
+            },
+            {
+              "id": "kenzo-004",
+              "nome": "Combinado festa 100 peças",
+              "score": 0.8646
+            },
+            {
+              "id": "kenzo-015",
+              "nome": "Yakisoba de legumes 500 g",
+              "score": 0.8619
+            },
+            {
+              "id": "kenzo-014",
+              "nome": "Yakisoba de frango 500 g",
+              "score": 0.8589
+            },
+            {
+              "id": "kenzo-006",
+              "nome": "Combinado sem glúten 20 peças",
+              "score": 0.8567
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8765
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8735
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8711
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8689
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8655
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8773
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.863
+            },
+            {
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8571
+            },
+            {
+              "id": "adega-019",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8541
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8235
+            },
+            {
+              "id": "acougue-023",
+              "nome": "Sal grosso 1 kg",
+              "score": 0.822
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 171.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "kenzo-004",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-016",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi a barca de sushi de 100 peças (serve 5) que cobre 4 pessoas com menor custo, e completei com refrigerante e kit descartável do supermercado, usando apenas duas lojas para economizar a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2345,
+        "tokens_out": 380,
+        "cost_usd": 0.00057975,
+        "latency_ms": 19708.1,
+        "wait_ms": 18000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "kenzo-004",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-016",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 379.09,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 5.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

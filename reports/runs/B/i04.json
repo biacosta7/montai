@@ -1,0 +1,198 @@
+{
+  "case_id": "i04",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "sushi para 6 pessoas com R$ 40",
+  "finished_at": "2026-10-24T23:34:47+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": 6,
+    "budget": 40.0,
+    "message": "Não é possível atender este pedido: Só 'prato_principal' para 6 pessoa(s) custa no mínimo R$ 168.50 com entrega, acima do orçamento de R$ 40.00.",
+    "problems": [
+      "Só 'prato_principal' para 6 pessoa(s) custa no mínimo R$ 168.50 com entrega, acima do orçamento de R$ 40.00."
+    ],
+    "assumptions": [
+      "Não foram especificados acompanhamentos nem sobremesas; consideramos apenas sushi como prato principal e bebida como item de apoio.",
+      "Como o orçamento é limitado, incluímos apenas os itens essenciais para a refeição."
+    ]
+  },
+  "spec": {
+    "occasion": "sushi",
+    "people": 6,
+    "budget": 40.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "sushi",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "água ou suco",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Não foram especificados acompanhamentos nem sobremesas; consideramos apenas sushi como prato principal e bebida como item de apoio.",
+      "Como o orçamento é limitado, incluímos apenas os itens essenciais para a refeição."
+    ]
+  },
+  "trace": {
+    "run_id": "12af8633e4f9",
+    "version": "B",
+    "order": "sushi para 6 pessoas com R$ 40",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "sushi para 6 pessoas com R$ 40",
+        "output": {
+          "occasion": "sushi",
+          "people": 6,
+          "budget": 40.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "sushi",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "água ou suco",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Não foram especificados acompanhamentos nem sobremesas; consideramos apenas sushi como prato principal e bebida como item de apoio.",
+            "Como o orçamento é limitado, incluímos apenas os itens essenciais para a refeição."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1349,
+        "tokens_out": 203,
+        "cost_usd": 0.00032415,
+        "latency_ms": 13225.6,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "sushi",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "água ou suco",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "kenzo-015",
+              "nome": "Yakisoba de legumes 500 g",
+              "score": 0.8446
+            },
+            {
+              "id": "verdevida-012",
+              "nome": "Tofu grelhado com legumes salteados",
+              "score": 0.8183
+            },
+            {
+              "id": "aloha-004",
+              "nome": "Poke de tofu",
+              "score": 0.8173
+            },
+            {
+              "id": "bangkok-015",
+              "nome": "Stir fry de legumes com castanha de caju",
+              "score": 0.8109
+            },
+            {
+              "id": "verdevida-011",
+              "nome": "Curry de legumes com arroz basmati",
+              "score": 0.8035
+            },
+            {
+              "id": "massamia-005",
+              "nome": "Nhoque ao sugo",
+              "score": 0.7995
+            }
+          ],
+          "bebida": [
+            {
+              "id": "aloha-013",
+              "nome": "Suco de abacaxi com hortelã",
+              "score": 0.8637
+            },
+            {
+              "id": "verdevida-020",
+              "nome": "Suco verde 500 ml",
+              "score": 0.8577
+            },
+            {
+              "id": "adega-018",
+              "nome": "Água mineral 1,5 L",
+              "score": 0.856
+            },
+            {
+              "id": "graofino-026",
+              "nome": "Suco de laranja 1 L",
+              "score": 0.8544
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8539
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8529
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 228.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": true,
+          "motivos": [
+            "Só 'prato_principal' para 6 pessoa(s) custa no mínimo R$ 168.50 com entrega, acima do orçamento de R$ 40.00."
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 1.7,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

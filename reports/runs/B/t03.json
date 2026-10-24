@@ -1,0 +1,351 @@
+{
+  "case_id": "t03",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "almoço para 6 pessoas gastando no máximo R$ 200",
+  "finished_at": "2026-10-24T23:28:42+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-001",
+        "name": "Prato feito de bife",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 6,
+        "unit_price": 29.9,
+        "subtotal": 179.4
+      }
+    ],
+    "items_total": 179.4,
+    "delivery_total": 4.9,
+    "total": 184.3,
+    "people": 6,
+    "budget": 200.0,
+    "message": "Escolhi o prato feito de bife, que tem o menor R$/pessoa entre as opções e atende exatamente 6 pessoas. O total (179,40 + taxa de entrega 4,90) fica dentro do orçamento de R$200.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum detalhe de restrição alimentar foi fornecido, então assume‑se que não há restrições.",
+      "Como não foi especificado o tipo de prato principal, assume‑se um prato pronto ou combo adequado para um almoço de 6 pessoas.",
+      "Bebidas são incluídas como apoio, sem preferência especificada."
+    ]
+  },
+  "spec": {
+    "occasion": "almoço",
+    "people": 6,
+    "budget": 200.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato principal para almoço em grupo",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz, farofa e batata frita",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco",
+        "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "descartáveis e gelo",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum detalhe de restrição alimentar foi fornecido, então assume‑se que não há restrições.",
+      "Como não foi especificado o tipo de prato principal, assume‑se um prato pronto ou combo adequado para um almoço de 6 pessoas.",
+      "Bebidas são incluídas como apoio, sem preferência especificada."
+    ]
+  },
+  "trace": {
+    "run_id": "ff61f357866c",
+    "version": "B",
+    "order": "almoço para 6 pessoas gastando no máximo R$ 200",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "almoço para 6 pessoas gastando no máximo R$ 200",
+        "output": {
+          "occasion": "almoço",
+          "people": 6,
+          "budget": 200.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato principal para almoço em grupo",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz, farofa e batata frita",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco",
+              "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "descartáveis e gelo",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum detalhe de restrição alimentar foi fornecido, então assume‑se que não há restrições.",
+            "Como não foi especificado o tipo de prato principal, assume‑se um prato pronto ou combo adequado para um almoço de 6 pessoas.",
+            "Bebidas são incluídas como apoio, sem preferência especificada."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1352,
+        "tokens_out": 302,
+        "cost_usd": 0.000384,
+        "latency_ms": 13604.1,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato principal para almoço em grupo",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz, farofa e batata frita",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "descartáveis e gelo",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "graofino-002",
+              "nome": "Kit café da manhã 5 pessoas",
+              "score": 0.8746
+            },
+            {
+              "id": "aloha-003",
+              "nome": "Poke de atum",
+              "score": 0.8689
+            },
+            {
+              "id": "lapicante-015",
+              "nome": "Enchiladas de frango",
+              "score": 0.8686
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8673
+            },
+            {
+              "id": "churrascaria-008",
+              "nome": "Combo churrasco gaúcho para 2",
+              "score": 0.8662
+            },
+            {
+              "id": "massamia-003",
+              "nome": "Lasanha à bolonhesa individual",
+              "score": 0.8657
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.8753
+            },
+            {
+              "id": "churrascaria-012",
+              "nome": "Farofa de banana vegana 300 g",
+              "score": 0.8688
+            },
+            {
+              "id": "mercado-036",
+              "nome": "Farofa pronta temperada 250 g",
+              "score": 0.8681
+            },
+            {
+              "id": "churrascaria-011",
+              "nome": "Farofa de mandioca com bacon 300 g",
+              "score": 0.8648
+            },
+            {
+              "id": "chapa-011",
+              "nome": "Batata frita grande",
+              "score": 0.862
+            },
+            {
+              "id": "chapa-010",
+              "nome": "Batata frita média",
+              "score": 0.8596
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8784
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8755
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8729
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8676
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8669
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8745
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8622
+            },
+            {
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8609
+            },
+            {
+              "id": "adega-019",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8566
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8256
+            },
+            {
+              "id": "mercado-014",
+              "nome": "Carvão vegetal 3 kg",
+              "score": 0.8219
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 260.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-001",
+              "quantity": 6
+            }
+          ],
+          "rationale": "Escolhi o prato feito de bife, que tem o menor R$/pessoa entre as opções e atende exatamente 6 pessoas. O total (179,40 + taxa de entrega 4,90) fica dentro do orçamento de R$200."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2858,
+        "tokens_out": 507,
+        "cost_usd": 0.0007329,
+        "latency_ms": 8900.8,
+        "wait_ms": 7000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-001",
+            "quantity": 6
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 184.3,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 6.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

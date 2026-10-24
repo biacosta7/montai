@@ -1,0 +1,167 @@
+{
+  "case_id": "i02",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar para 4 pessoas com R$ 10",
+  "finished_at": "2026-10-24T23:34:32+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": 4,
+    "budget": 10.0,
+    "message": "Não é possível atender este pedido: Não há itens de 'prato_principal' ('prato econômico para jantar') compatíveis com as restrições (nenhuma) e o orçamento.",
+    "problems": [
+      "Não há itens de 'prato_principal' ('prato econômico para jantar') compatíveis com as restrições (nenhuma) e o orçamento."
+    ],
+    "assumptions": [
+      "Com orçamento de R$ 10,00 para 4 pessoas, assume‑se que o cliente quer opções muito econômicas, como porções individuais ou combos promocionais.",
+      "Nenhum detalhe foi dado sobre restrições alimentares, tipo de comida ou preferência por bebidas, então foram incluídas apenas categorias genéricas."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar",
+    "people": 4,
+    "budget": 10.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato econômico para jantar",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "bebida de baixo custo",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Com orçamento de R$ 10,00 para 4 pessoas, assume‑se que o cliente quer opções muito econômicas, como porções individuais ou combos promocionais.",
+      "Nenhum detalhe foi dado sobre restrições alimentares, tipo de comida ou preferência por bebidas, então foram incluídas apenas categorias genéricas."
+    ]
+  },
+  "trace": {
+    "run_id": "69f822928256",
+    "version": "B",
+    "order": "jantar para 4 pessoas com R$ 10",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar para 4 pessoas com R$ 10",
+        "output": {
+          "occasion": "jantar",
+          "people": 4,
+          "budget": 10.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato econômico para jantar",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "bebida de baixo custo",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Com orçamento de R$ 10,00 para 4 pessoas, assume‑se que o cliente quer opções muito econômicas, como porções individuais ou combos promocionais.",
+            "Nenhum detalhe foi dado sobre restrições alimentares, tipo de comida ou preferência por bebidas, então foram incluídas apenas categorias genéricas."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1349,
+        "tokens_out": 232,
+        "cost_usd": 0.00034155,
+        "latency_ms": 13148.3,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato econômico para jantar",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "bebida de baixo custo",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [],
+          "bebida": [
+            {
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8684
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8619
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8601
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8591
+            },
+            {
+              "id": "mercado-025",
+              "nome": "Leite integral 1 L",
+              "score": 0.8531
+            },
+            {
+              "id": "graofino-023",
+              "nome": "Leite integral garrafa 1 L",
+              "score": 0.8529
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 268.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": true,
+          "motivos": [
+            "Não há itens de 'prato_principal' ('prato econômico para jantar') compatíveis com as restrições (nenhuma) e o orçamento."
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

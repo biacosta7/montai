@@ -1,0 +1,254 @@
+{
+  "case_id": "t02",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "pizza para 4 pessoas, só tenho R$ 110",
+  "finished_at": "2026-10-24T23:28:19+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "nonna-001",
+        "name": "Pizza muçarela média",
+        "store_id": "nonna",
+        "store_name": "Pizzaria Forno da Nonna",
+        "unit": "pizza média (6 fatias)",
+        "quantity": 2,
+        "unit_price": 46.9,
+        "subtotal": 93.8
+      }
+    ],
+    "items_total": 93.8,
+    "delivery_total": 6.9,
+    "total": 100.7,
+    "people": 4,
+    "budget": 110.0,
+    "message": "Escolhemos duas pizzas médias de muçarela (nonna-001), que servem exatamente 4 pessoas e são as mais baratas por pessoa. O total (incluindo taxa de entrega) fica dentro do orçamento de R$110.",
+    "problems": [],
+    "assumptions": [
+      "Nenhuma restrição alimentar foi informada.",
+      "A bebida foi incluída como item opcional, pois não foi especificada."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar com pizza",
+    "people": 4,
+    "budget": 110.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "pizza",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhuma restrição alimentar foi informada.",
+      "A bebida foi incluída como item opcional, pois não foi especificada."
+    ]
+  },
+  "trace": {
+    "run_id": "835776338ee2",
+    "version": "B",
+    "order": "pizza para 4 pessoas, só tenho R$ 110",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "pizza para 4 pessoas, só tenho R$ 110",
+        "output": {
+          "occasion": "jantar com pizza",
+          "people": 4,
+          "budget": 110.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "pizza",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhuma restrição alimentar foi informada.",
+            "A bebida foi incluída como item opcional, pois não foi especificada."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1350,
+        "tokens_out": 184,
+        "cost_usd": 0.00031289999999999996,
+        "latency_ms": 11220.0,
+        "wait_ms": 10000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "pizza",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "nonna-020",
+              "nome": "Pizza rúcula com tomate seco grande",
+              "score": 0.8496
+            },
+            {
+              "id": "nonna-019",
+              "nome": "Pizza rúcula com tomate seco média",
+              "score": 0.8457
+            },
+            {
+              "id": "nonna-002",
+              "nome": "Pizza muçarela grande",
+              "score": 0.8427
+            },
+            {
+              "id": "nonna-018",
+              "nome": "Pizza napolitana grande",
+              "score": 0.8414
+            },
+            {
+              "id": "nonna-024",
+              "nome": "Pizza vegana de legumes grande",
+              "score": 0.8403
+            },
+            {
+              "id": "nonna-001",
+              "nome": "Pizza muçarela média",
+              "score": 0.8392
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8765
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8735
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8711
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8689
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8655
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 287.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "nonna-001",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhemos duas pizzas médias de muçarela (nonna-001), que servem exatamente 4 pessoas e são as mais baratas por pessoa. O total (incluindo taxa de entrega) fica dentro do orçamento de R$110."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1842,
+        "tokens_out": 606,
+        "cost_usd": 0.0006399,
+        "latency_ms": 3851.8,
+        "wait_ms": 2000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "nonna-001",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 100.7,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 4.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

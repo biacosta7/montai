@@ -1,0 +1,339 @@
+{
+  "case_id": "o09",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "lanche da tarde para 3 pessoas",
+  "finished_at": "2026-10-24T23:24:50+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "padaria-021",
+        "name": "Sanduíche natural de frango",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "unidade",
+        "quantity": 3,
+        "unit_price": 13.9,
+        "subtotal": 41.7
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      },
+      {
+        "item_id": "doceria-011",
+        "name": "Bolo vegano de cenoura",
+        "store_id": "doceria",
+        "store_name": "Doceria Açúcar & Afeto",
+        "unit": "bolo inteiro",
+        "quantity": 1,
+        "unit_price": 59.9,
+        "subtotal": 59.9
+      }
+    ],
+    "items_total": 111.09,
+    "delivery_total": 17.7,
+    "total": 128.79,
+    "people": 3,
+    "budget": null,
+    "message": "Escolhi sanduíches de frango (R$/pessoa mais baixo) para atender 3 pessoas, um refrigerante 2 L que serve até 5 e um bolo vegano que já cobre a quantidade; assim cobri lanche, bebida e sobremesa com o menor custo total.",
+    "problems": [],
+    "assumptions": [
+      "O cliente não especificou tipos de lanches, então consideramos sanduíches e wraps como opções padrão.",
+      "Bebidas e sobremesas foram incluídas como itens de apoio, pois são típicas de um lanche da tarde."
+    ]
+  },
+  "spec": {
+    "occasion": "lanche da tarde",
+    "people": 3,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "lanche",
+        "query": "sanduíches e wraps para lanche da tarde",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco para acompanhar",
+        "essential": false
+      },
+      {
+        "category": "sobremesa",
+        "query": "doces leves ou bolo fatiado",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "O cliente não especificou tipos de lanches, então consideramos sanduíches e wraps como opções padrão.",
+      "Bebidas e sobremesas foram incluídas como itens de apoio, pois são típicas de um lanche da tarde."
+    ]
+  },
+  "trace": {
+    "run_id": "a0d36861bb53",
+    "version": "B",
+    "order": "lanche da tarde para 3 pessoas",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "lanche da tarde para 3 pessoas",
+        "output": {
+          "occasion": "lanche da tarde",
+          "people": 3,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "lanche",
+              "query": "sanduíches e wraps para lanche da tarde",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco para acompanhar",
+              "essential": false
+            },
+            {
+              "category": "sobremesa",
+              "query": "doces leves ou bolo fatiado",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "O cliente não especificou tipos de lanches, então consideramos sanduíches e wraps como opções padrão.",
+            "Bebidas e sobremesas foram incluídas como itens de apoio, pois são típicas de um lanche da tarde."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1346,
+        "tokens_out": 243,
+        "cost_usd": 0.0003477,
+        "latency_ms": 10204.3,
+        "wait_ms": 9000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "lanche",
+            "query": "sanduíches e wraps para lanche da tarde",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco para acompanhar",
+            "essential": false
+          },
+          {
+            "category": "sobremesa",
+            "query": "doces leves ou bolo fatiado",
+            "essential": false
+          }
+        ],
+        "output": {
+          "lanche": [
+            {
+              "id": "graofino-006",
+              "nome": "Mini sanduíches sortidos 20 unidades",
+              "score": 0.8773
+            },
+            {
+              "id": "graofino-011",
+              "nome": "Wrap de ovos mexidos",
+              "score": 0.877
+            },
+            {
+              "id": "padaria-022",
+              "nome": "Sanduíche natural vegano",
+              "score": 0.8754
+            },
+            {
+              "id": "padaria-021",
+              "nome": "Sanduíche natural de frango",
+              "score": 0.8742
+            },
+            {
+              "id": "verdevida-014",
+              "nome": "Wrap integral de frango",
+              "score": 0.8741
+            },
+            {
+              "id": "graofino-007",
+              "nome": "Mini sanduíches veganos 10 unidades",
+              "score": 0.8728
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8719
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8718
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8704
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8687
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8685
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8681
+            }
+          ],
+          "sobremesa": [
+            {
+              "id": "doceria-003",
+              "nome": "Bolo red velvet 2 kg",
+              "score": 0.8787
+            },
+            {
+              "id": "doceria-002",
+              "nome": "Fatia de bolo de chocolate",
+              "score": 0.876
+            },
+            {
+              "id": "doceria-001",
+              "nome": "Bolo de chocolate 1,5 kg",
+              "score": 0.8686
+            },
+            {
+              "id": "doceria-011",
+              "nome": "Bolo vegano de cenoura",
+              "score": 0.8681
+            },
+            {
+              "id": "doceria-022",
+              "nome": "Pão de mel 6 unidades",
+              "score": 0.8651
+            },
+            {
+              "id": "sahara-022",
+              "nome": "Baklava 6 unidades",
+              "score": 0.8651
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 164.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "padaria-021",
+              "quantity": 3
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 1
+            },
+            {
+              "item_id": "doceria-011",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi sanduíches de frango (R$/pessoa mais baixo) para atender 3 pessoas, um refrigerante 2 L que serve até 5 e um bolo vegano que já cobre a quantidade; assim cobri lanche, bebida e sobremesa com o menor custo total."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2336,
+        "tokens_out": 432,
+        "cost_usd": 0.0006095999999999999,
+        "latency_ms": 12665.0,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "padaria-021",
+            "quantity": 3
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 1
+          },
+          {
+            "item_id": "doceria-011",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 128.79,
+          "problemas": [],
+          "cobertura": {
+            "lanche": 3.0,
+            "bebida": 5.0,
+            "sobremesa": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

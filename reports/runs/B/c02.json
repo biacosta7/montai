@@ -1,0 +1,307 @@
+{
+  "case_id": "c02",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "almoço sem lactose e sem glúten para 3, nada apimentado",
+  "finished_at": "2026-10-24T23:31:27+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-002",
+        "name": "Prato feito de frango grelhado",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 3,
+        "unit_price": 27.9,
+        "subtotal": 83.7
+      }
+    ],
+    "items_total": 83.7,
+    "delivery_total": 4.9,
+    "total": 88.6,
+    "people": 3,
+    "budget": null,
+    "message": "Escolhi o prato de frango grelhado (sem lactose e sem glúten) que serve 1 pessoa por unidade; 3 unidades cobrem as 3 pessoas e é a opção mais barata. Não incluí acompanhamentos ou bebidas para manter o pedido econômico e usar apenas um estabelecimento, reduzindo a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Como não foi especificado o tipo de prato, consideramos opções variadas (ex.: arroz, feijão, carnes ou pratos veganos) que atendam às restrições.",
+      "Incluímos bebida como item de apoio, já que o cliente não a mencionou."
+    ]
+  },
+  "spec": {
+    "occasion": "almoço",
+    "people": 3,
+    "budget": null,
+    "diet": [
+      "sem_lactose",
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": 0,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato principal sem lactose e sem glúten",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "acompanhamentos sem lactose e sem glúten",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "bebidas sem lactose",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Como não foi especificado o tipo de prato, consideramos opções variadas (ex.: arroz, feijão, carnes ou pratos veganos) que atendam às restrições.",
+      "Incluímos bebida como item de apoio, já que o cliente não a mencionou."
+    ]
+  },
+  "trace": {
+    "run_id": "25a4926d81eb",
+    "version": "B",
+    "order": "almoço sem lactose e sem glúten para 3, nada apimentado",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "almoço sem lactose e sem glúten para 3, nada apimentado",
+        "output": {
+          "occasion": "almoço",
+          "people": 3,
+          "budget": null,
+          "diet": [
+            "sem_lactose",
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": 0,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato principal sem lactose e sem glúten",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "acompanhamentos sem lactose e sem glúten",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "bebidas sem lactose",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Como não foi especificado o tipo de prato, consideramos opções variadas (ex.: arroz, feijão, carnes ou pratos veganos) que atendam às restrições.",
+            "Incluímos bebida como item de apoio, já que o cliente não a mencionou."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1355,
+        "tokens_out": 267,
+        "cost_usd": 0.00036344999999999997,
+        "latency_ms": 7411.8,
+        "wait_ms": 6000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato principal sem lactose e sem glúten",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "acompanhamentos sem lactose e sem glúten",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "bebidas sem lactose",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.9171
+            },
+            {
+              "id": "caseiro-002",
+              "nome": "Prato feito de frango grelhado",
+              "score": 0.9073
+            },
+            {
+              "id": "kenzo-006",
+              "nome": "Combinado sem glúten 20 peças",
+              "score": 0.9056
+            },
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.8991
+            },
+            {
+              "id": "massamia-009",
+              "nome": "Espaguete sem glúten ao sugo",
+              "score": 0.8986
+            },
+            {
+              "id": "aloha-002",
+              "nome": "Poke de salmão sem glúten",
+              "score": 0.8958
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8875
+            },
+            {
+              "id": "caseiro-014",
+              "nome": "Couve refogada 300 g",
+              "score": 0.8859
+            },
+            {
+              "id": "caseiro-015",
+              "nome": "Arroz e feijão 500 g",
+              "score": 0.8785
+            },
+            {
+              "id": "lapicante-018",
+              "nome": "Feijão refrito 300 g",
+              "score": 0.8771
+            },
+            {
+              "id": "churrascaria-019",
+              "nome": "Feijão tropeiro 500 g",
+              "score": 0.8769
+            },
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.875
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9148
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.9065
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.9029
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.9024
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.9005
+            },
+            {
+              "id": "adega-018",
+              "nome": "Água mineral 1,5 L",
+              "score": 0.9003
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 305.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-002",
+              "quantity": 3
+            }
+          ],
+          "rationale": "Escolhi o prato de frango grelhado (sem lactose e sem glúten) que serve 1 pessoa por unidade; 3 unidades cobrem as 3 pessoas e é a opção mais barata. Não incluí acompanhamentos ou bebidas para manter o pedido econômico e usar apenas um estabelecimento, reduzindo a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2429,
+        "tokens_out": 413,
+        "cost_usd": 0.00061215,
+        "latency_ms": 19647.0,
+        "wait_ms": 18000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-002",
+            "quantity": 3
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 88.6,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 3.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

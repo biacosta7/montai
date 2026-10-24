@@ -5,7 +5,7 @@ import pytest
 from openai._exceptions import httpx2
 
 from montai.config import LLMSettings
-from montai.llm import LLMClient, LLMError, strict_json_schema
+from montai.llm import LLMClient, LLMError, QuotaExhausted, strict_json_schema
 from montai.models import CartProposal, OrderSpec
 from montai.tracing import Step
 
@@ -86,3 +86,48 @@ def test_opcional_vira_tipo_com_null():
 
 def test_custo_estimado(client):
     assert client.cost(1_000_000, 1_000_000) == pytest.approx(0.75)
+
+
+def rate_limited(retry_after: str) -> openai.RateLimitError:
+    request = httpx2.Request("POST", "https://example.test")
+    response = httpx2.Response(429, request=request, headers={"retry-after": retry_after})
+    return openai.RateLimitError("limite", response=response, body={})
+
+
+class FakeCompletions:
+    def __init__(self, outcomes):
+        self.outcomes = list(outcomes)
+
+    def create(self, **kwargs):
+        outcome = self.outcomes.pop(0)
+        if isinstance(outcome, Exception):
+            raise outcome
+        return outcome
+
+
+def fake_sdk(client, outcomes):
+    class Chat:
+        completions = FakeCompletions(outcomes)
+
+    class SDK:
+        chat = Chat()
+
+    client.client = SDK()
+
+
+def test_espera_limite_por_minuto_e_registra_espera(client, monkeypatch):
+    slept = []
+    monkeypatch.setattr("montai.llm.time.sleep", slept.append)
+    ok = object()
+    fake_sdk(client, [rate_limited("2"), ok])
+    step = Step(name="x")
+    assert client._create_with_retries({}, step) is ok
+    assert slept == [2.0]
+    assert step.wait_ms == 2000
+
+
+def test_cota_diaria_interrompe(client, monkeypatch):
+    monkeypatch.setattr("montai.llm.time.sleep", lambda s: None)
+    fake_sdk(client, [rate_limited("3600")])
+    with pytest.raises(QuotaExhausted):
+        client._create_with_retries({}, None)

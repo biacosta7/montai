@@ -1,0 +1,398 @@
+{
+  "case_id": "o07",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "almoço de domingo em família, 8 pessoas, comida caseira",
+  "finished_at": "2026-10-24T23:24:01+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-002",
+        "name": "Prato feito de frango grelhado",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 8,
+        "unit_price": 27.9,
+        "subtotal": 223.2
+      }
+    ],
+    "items_total": 223.2,
+    "delivery_total": 4.9,
+    "total": 228.1,
+    "people": 8,
+    "budget": null,
+    "message": "Selecionamos o prato feito de frango grelhado, o mais barato por pessoa, servindo 8 pessoas com 8 unidades. Só uma loja é usada, minimizando a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum restrição dietética foi informada, portanto não há dietas aplicáveis.",
+      "Orçamento não foi especificado, mantendo como null.",
+      "A picância não foi mencionada, portanto max_spice permanece null."
+    ]
+  },
+  "spec": {
+    "occasion": "almoço de domingo em família",
+    "people": 8,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "comida caseira tradicional",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz, farofa e batata",
+        "essential": false
+      },
+      {
+        "category": "salada",
+        "query": "salada verde com legumes",
+        "essential": false
+      },
+      {
+        "category": "sobremesa",
+        "query": "doce caseiro ou fruta",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante, suco ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum restrição dietética foi informada, portanto não há dietas aplicáveis.",
+      "Orçamento não foi especificado, mantendo como null.",
+      "A picância não foi mencionada, portanto max_spice permanece null."
+    ]
+  },
+  "trace": {
+    "run_id": "d7529b62ab18",
+    "version": "B",
+    "order": "almoço de domingo em família, 8 pessoas, comida caseira",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "almoço de domingo em família, 8 pessoas, comida caseira",
+        "output": {
+          "occasion": "almoço de domingo em família",
+          "people": 8,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "comida caseira tradicional",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz, farofa e batata",
+              "essential": false
+            },
+            {
+              "category": "salada",
+              "query": "salada verde com legumes",
+              "essential": false
+            },
+            {
+              "category": "sobremesa",
+              "query": "doce caseiro ou fruta",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante, suco ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum restrição dietética foi informada, portanto não há dietas aplicáveis.",
+            "Orçamento não foi especificado, mantendo como null.",
+            "A picância não foi mencionada, portanto max_spice permanece null."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1352,
+        "tokens_out": 345,
+        "cost_usd": 0.00040979999999999993,
+        "latency_ms": 12981.2,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "comida caseira tradicional",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz, farofa e batata",
+            "essential": false
+          },
+          {
+            "category": "salada",
+            "query": "salada verde com legumes",
+            "essential": false
+          },
+          {
+            "category": "sobremesa",
+            "query": "doce caseiro ou fruta",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante, suco ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.8819
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8777
+            },
+            {
+              "id": "caseiro-012",
+              "nome": "Marmita vegetariana",
+              "score": 0.8764
+            },
+            {
+              "id": "caseiro-002",
+              "nome": "Prato feito de frango grelhado",
+              "score": 0.8759
+            },
+            {
+              "id": "caseiro-008",
+              "nome": "Bife acebolado",
+              "score": 0.8746
+            },
+            {
+              "id": "caseiro-013",
+              "nome": "Marmita vegana",
+              "score": 0.8732
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "churrascaria-012",
+              "nome": "Farofa de banana vegana 300 g",
+              "score": 0.8702
+            },
+            {
+              "id": "mercado-036",
+              "nome": "Farofa pronta temperada 250 g",
+              "score": 0.8654
+            },
+            {
+              "id": "churrascaria-011",
+              "nome": "Farofa de mandioca com bacon 300 g",
+              "score": 0.8641
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.8587
+            },
+            {
+              "id": "caseiro-015",
+              "nome": "Arroz e feijão 500 g",
+              "score": 0.8514
+            },
+            {
+              "id": "chapa-011",
+              "nome": "Batata frita grande",
+              "score": 0.8514
+            }
+          ],
+          "salada": [
+            {
+              "id": "verdevida-003",
+              "nome": "Salada mediterrânea de grão-de-bico",
+              "score": 0.9021
+            },
+            {
+              "id": "churrascaria-018",
+              "nome": "Salada verde 300 g",
+              "score": 0.8997
+            },
+            {
+              "id": "verdevida-004",
+              "nome": "Salada de folhas com manga e castanhas",
+              "score": 0.8967
+            },
+            {
+              "id": "bangkok-013",
+              "nome": "Som tam",
+              "score": 0.8937
+            },
+            {
+              "id": "hortifruti-017",
+              "nome": "Salada pronta tradicional 400 g",
+              "score": 0.8846
+            },
+            {
+              "id": "kenzo-022",
+              "nome": "Sunomono",
+              "score": 0.8844
+            }
+          ],
+          "sobremesa": [
+            {
+              "id": "caseiro-021",
+              "nome": "Doce de leite caseiro 200 g",
+              "score": 0.8812
+            },
+            {
+              "id": "doceria-006",
+              "nome": "Cheesecake de frutas vermelhas",
+              "score": 0.8682
+            },
+            {
+              "id": "doceria-019",
+              "nome": "Docinhos sortidos cento",
+              "score": 0.8659
+            },
+            {
+              "id": "graofino-017",
+              "nome": "Bolo de laranja inteiro",
+              "score": 0.8612
+            },
+            {
+              "id": "lapicante-020",
+              "nome": "Churros com doce de leite 6 unidades",
+              "score": 0.8585
+            },
+            {
+              "id": "doceria-018",
+              "nome": "Cookies 6 unidades",
+              "score": 0.8555
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.875
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8747
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8712
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8711
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8693
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 160.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-002",
+              "quantity": 8
+            }
+          ],
+          "rationale": "Selecionamos o prato feito de frango grelhado, o mais barato por pessoa, servindo 8 pessoas com 8 unidades. Só uma loja é usada, minimizando a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 3260,
+        "tokens_out": 455,
+        "cost_usd": 0.000762,
+        "latency_ms": 23778.9,
+        "wait_ms": 22000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-002",
+            "quantity": 8
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 228.1,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 8.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

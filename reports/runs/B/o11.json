@@ -1,0 +1,301 @@
+{
+  "case_id": "o11",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "sessão de filme para 2 com hambúrguer e batata frita",
+  "finished_at": "2026-10-24T23:25:54+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "chapa-001",
+        "name": "Burger clássico",
+        "store_id": "chapa",
+        "store_name": "Hamburgueria Chapa Quente",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 34.9,
+        "subtotal": 69.8
+      }
+    ],
+    "items_total": 69.8,
+    "delivery_total": 5.9,
+    "total": 75.7,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o Burger clássico, que tem o menor custo por pessoa entre os lanches e cobre as 2 pessoas necessárias. Sem itens extras para manter o pedido econômico.",
+    "problems": [],
+    "assumptions": [
+      "Não foi especificado tipo de bebida, assumindo refrigerante ou suco como apoio.",
+      "Nenhuma restrição alimentar ou limite de picância mencionado."
+    ]
+  },
+  "spec": {
+    "occasion": "sessão de filme",
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "lanche",
+        "query": "hambúrguer",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "batata frita",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Não foi especificado tipo de bebida, assumindo refrigerante ou suco como apoio.",
+      "Nenhuma restrição alimentar ou limite de picância mencionado."
+    ]
+  },
+  "trace": {
+    "run_id": "317becaed54b",
+    "version": "B",
+    "order": "sessão de filme para 2 com hambúrguer e batata frita",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "sessão de filme para 2 com hambúrguer e batata frita",
+        "output": {
+          "occasion": "sessão de filme",
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "lanche",
+              "query": "hambúrguer",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "batata frita",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Não foi especificado tipo de bebida, assumindo refrigerante ou suco como apoio.",
+            "Nenhuma restrição alimentar ou limite de picância mencionado."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1354,
+        "tokens_out": 253,
+        "cost_usd": 0.00035489999999999995,
+        "latency_ms": 14408.6,
+        "wait_ms": 13000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "lanche",
+            "query": "hambúrguer",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "batata frita",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco",
+            "essential": false
+          }
+        ],
+        "output": {
+          "lanche": [
+            {
+              "id": "chapa-008",
+              "nome": "Burger no prato sem pão",
+              "score": 0.871
+            },
+            {
+              "id": "chapa-003",
+              "nome": "Bacon burger",
+              "score": 0.8697
+            },
+            {
+              "id": "chapa-004",
+              "nome": "Burger picante com jalapeño",
+              "score": 0.8658
+            },
+            {
+              "id": "chapa-002",
+              "nome": "Cheeseburger duplo",
+              "score": 0.8651
+            },
+            {
+              "id": "chapa-001",
+              "nome": "Burger clássico",
+              "score": 0.8648
+            },
+            {
+              "id": "chapa-006",
+              "nome": "Burger vegano de grão-de-bico",
+              "score": 0.8533
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "chapa-010",
+              "nome": "Batata frita média",
+              "score": 0.8927
+            },
+            {
+              "id": "chapa-011",
+              "nome": "Batata frita grande",
+              "score": 0.8913
+            },
+            {
+              "id": "mercado-035",
+              "nome": "Batata palha 140 g",
+              "score": 0.8541
+            },
+            {
+              "id": "churrascaria-015",
+              "nome": "Maionese de batata 500 g",
+              "score": 0.8537
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.853
+            },
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8362
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8784
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8755
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8729
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8676
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8669
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 267.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "chapa-001",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi o Burger clássico, que tem o menor custo por pessoa entre os lanches e cobre as 2 pessoas necessárias. Sem itens extras para manter o pedido econômico."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2274,
+        "tokens_out": 173,
+        "cost_usd": 0.00044489999999999997,
+        "latency_ms": 17496.4,
+        "wait_ms": 16000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "chapa-001",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 75.7,
+          "problemas": [],
+          "cobertura": {
+            "lanche": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

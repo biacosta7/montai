@@ -1,0 +1,323 @@
+{
+  "case_id": "o08",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "happy hour no escritório para 10 pessoas com cerveja e petiscos",
+  "finished_at": "2026-10-24T23:24:27+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-009",
+        "name": "Cerveja pilsen lata 350 ml",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "lata 350 ml",
+        "quantity": 31,
+        "unit_price": 4.49,
+        "subtotal": 139.19
+      },
+      {
+        "item_id": "mercado-037",
+        "name": "Amendoim torrado 500 g",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "pacote 500 g",
+        "quantity": 2,
+        "unit_price": 14.9,
+        "subtotal": 29.8
+      }
+    ],
+    "items_total": 168.99,
+    "delivery_total": 5.9,
+    "total": 174.89,
+    "people": 10,
+    "budget": null,
+    "message": "Escolhi a cerveja mais barata (lata 350 ml) e amendoim torrado, que cobre 10 pessoas sem exceder o dobro. Tudo vem do mesmo supermercado, reduzindo a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum orçamento foi especificado, portanto budget = null.",
+      "Não foram informadas restrições alimentares.",
+      "Não foi especificado nível de picância, então max_spice = null."
+    ]
+  },
+  "spec": {
+    "occasion": "happy hour no escritório",
+    "people": 10,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "bebida_alcoolica",
+        "query": "cerveja",
+        "essential": true
+      },
+      {
+        "category": "entrada",
+        "query": "petiscos variados",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "amendoim ou batata frita",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum orçamento foi especificado, portanto budget = null.",
+      "Não foram informadas restrições alimentares.",
+      "Não foi especificado nível de picância, então max_spice = null."
+    ]
+  },
+  "trace": {
+    "run_id": "8c5366b7ef9d",
+    "version": "B",
+    "order": "happy hour no escritório para 10 pessoas com cerveja e petiscos",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "happy hour no escritório para 10 pessoas com cerveja e petiscos",
+        "output": {
+          "occasion": "happy hour no escritório",
+          "people": 10,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "bebida_alcoolica",
+              "query": "cerveja",
+              "essential": true
+            },
+            {
+              "category": "entrada",
+              "query": "petiscos variados",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "amendoim ou batata frita",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum orçamento foi especificado, portanto budget = null.",
+            "Não foram informadas restrições alimentares.",
+            "Não foi especificado nível de picância, então max_spice = null."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1352,
+        "tokens_out": 245,
+        "cost_usd": 0.00034979999999999994,
+        "latency_ms": 13170.8,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "bebida_alcoolica",
+            "query": "cerveja",
+            "essential": true
+          },
+          {
+            "category": "entrada",
+            "query": "petiscos variados",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "amendoim ou batata frita",
+            "essential": false
+          }
+        ],
+        "output": {
+          "bebida_alcoolica": [
+            {
+              "id": "adega-004",
+              "nome": "Cerveja IPA artesanal 500 ml",
+              "score": 0.8795
+            },
+            {
+              "id": "lapicante-022",
+              "nome": "Cerveja mexicana long neck",
+              "score": 0.868
+            },
+            {
+              "id": "nonna-031",
+              "nome": "Cerveja long neck",
+              "score": 0.8675
+            },
+            {
+              "id": "mercado-009",
+              "nome": "Cerveja pilsen lata 350 ml",
+              "score": 0.8674
+            },
+            {
+              "id": "adega-001",
+              "nome": "Cerveja pilsen lata 350 ml",
+              "score": 0.8669
+            },
+            {
+              "id": "adega-006",
+              "nome": "Cerveja sem glúten long neck",
+              "score": 0.8653
+            }
+          ],
+          "entrada": [
+            {
+              "id": "caseiro-017",
+              "nome": "Pastel de carne 2 unidades",
+              "score": 0.8487
+            },
+            {
+              "id": "lapicante-009",
+              "nome": "Nachos com guacamole e cheddar",
+              "score": 0.8478
+            },
+            {
+              "id": "mercado-037",
+              "nome": "Amendoim torrado 500 g",
+              "score": 0.8456
+            },
+            {
+              "id": "kenzo-018",
+              "nome": "Guioza de legumes 6 unidades",
+              "score": 0.8426
+            },
+            {
+              "id": "lapicante-010",
+              "nome": "Nachos supremo",
+              "score": 0.8422
+            },
+            {
+              "id": "padaria-025",
+              "nome": "Salgados sortidos 100 unidades",
+              "score": 0.8411
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "chapa-010",
+              "nome": "Batata frita média",
+              "score": 0.8817
+            },
+            {
+              "id": "chapa-011",
+              "nome": "Batata frita grande",
+              "score": 0.8776
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.8609
+            },
+            {
+              "id": "churrascaria-015",
+              "nome": "Maionese de batata 500 g",
+              "score": 0.8543
+            },
+            {
+              "id": "mercado-035",
+              "nome": "Batata palha 140 g",
+              "score": 0.8535
+            },
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8498
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 144.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "mercado-009",
+              "quantity": 31
+            },
+            {
+              "item_id": "mercado-037",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi a cerveja mais barata (lata 350 ml) e amendoim torrado, que cobre 10 pessoas sem exceder o dobro. Tudo vem do mesmo supermercado, reduzindo a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2379,
+        "tokens_out": 414,
+        "cost_usd": 0.00060525,
+        "latency_ms": 12727.2,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "mercado-009",
+            "quantity": 31
+          },
+          {
+            "item_id": "mercado-037",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 174.89,
+          "problemas": [],
+          "cobertura": {
+            "bebida_alcoolica": 10.23,
+            "entrada": 16.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

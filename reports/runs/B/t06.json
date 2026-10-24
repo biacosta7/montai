@@ -1,0 +1,264 @@
+{
+  "case_id": "t06",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "festa para 20 pessoas com salgados e refrigerante, orçamento de R$ 250",
+  "finished_at": "2026-10-24T23:29:42+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "sahara-011",
+        "name": "Coalhada seca 200 g",
+        "store_id": "sahara",
+        "store_name": "Sahara Cozinha Árabe",
+        "unit": "pote 200 g",
+        "quantity": 7,
+        "unit_price": 22.9,
+        "subtotal": 160.3
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 4,
+        "unit_price": 9.49,
+        "subtotal": 37.96
+      }
+    ],
+    "items_total": 198.26,
+    "delivery_total": 11.8,
+    "total": 210.06,
+    "people": 20,
+    "budget": 250.0,
+    "message": "Escolhi a coalhada seca (7 potes) que serve 21 pessoas com melhor custo por pessoa e 4 garrafas de refrigerante guaraná (Supermercado) que atendem 20 pessoas, ficando dentro do orçamento e usando apenas duas lojas para economizar a taxa de entrega.",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": {
+    "occasion": "festa",
+    "people": 20,
+    "budget": 250.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "entrada",
+        "query": "salgados para festa",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante para festa",
+        "essential": true
+      }
+    ],
+    "assumptions": []
+  },
+  "trace": {
+    "run_id": "327490c24e3f",
+    "version": "B",
+    "order": "festa para 20 pessoas com salgados e refrigerante, orçamento de R$ 250",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "festa para 20 pessoas com salgados e refrigerante, orçamento de R$ 250",
+        "output": {
+          "occasion": "festa",
+          "people": 20,
+          "budget": 250.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "entrada",
+              "query": "salgados para festa",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante para festa",
+              "essential": true
+            }
+          ],
+          "assumptions": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1357,
+        "tokens_out": 175,
+        "cost_usd": 0.00030854999999999994,
+        "latency_ms": 13259.3,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "entrada",
+            "query": "salgados para festa",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante para festa",
+            "essential": true
+          }
+        ],
+        "output": {
+          "entrada": [
+            {
+              "id": "padaria-025",
+              "nome": "Salgados sortidos 100 unidades",
+              "score": 0.8831
+            },
+            {
+              "id": "padaria-024",
+              "nome": "Salgados sortidos 25 unidades",
+              "score": 0.8565
+            },
+            {
+              "id": "caseiro-017",
+              "nome": "Pastel de carne 2 unidades",
+              "score": 0.8412
+            },
+            {
+              "id": "adega-022",
+              "nome": "Tábua de frios 500 g",
+              "score": 0.8336
+            },
+            {
+              "id": "sahara-011",
+              "nome": "Coalhada seca 200 g",
+              "score": 0.8303
+            },
+            {
+              "id": "bangkok-011",
+              "nome": "Rolinho primavera 4 unidades",
+              "score": 0.8295
+            }
+          ],
+          "bebida": [
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8649
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8648
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8626
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8617
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8608
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8597
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 337.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "sahara-011",
+              "quantity": 7
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 4
+            }
+          ],
+          "rationale": "Escolhi a coalhada seca (7 potes) que serve 21 pessoas com melhor custo por pessoa e 4 garrafas de refrigerante guaraná (Supermercado) que atendem 20 pessoas, ficando dentro do orçamento e usando apenas duas lojas para economizar a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1880,
+        "tokens_out": 433,
+        "cost_usd": 0.0005417999999999999,
+        "latency_ms": 15722.2,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "sahara-011",
+            "quantity": 7
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 4
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 210.06,
+          "problemas": [],
+          "cobertura": {
+            "entrada": 21.0,
+            "bebida": 20.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

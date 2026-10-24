@@ -1,0 +1,260 @@
+{
+  "case_id": "a01",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "algo pra comer hoje à noite",
+  "finished_at": "2026-10-24T23:36:05+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-002",
+        "name": "Prato feito de frango grelhado",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 27.9,
+        "subtotal": 55.8
+      }
+    ],
+    "items_total": 55.8,
+    "delivery_total": 4.9,
+    "total": 60.7,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o prato de frango grelhado, o mais barato por pessoa, e 2 unidades atendem as 2 pessoas. Não incluí bebida para manter o pedido econômico.",
+    "problems": [],
+    "assumptions": [
+      "Número de pessoas assumido como 2, pois não foi especificado.",
+      "Orçamento não informado, portanto deixado como null.",
+      "Nenhuma restrição alimentar foi mencionada.",
+      "Nível de picância não mencionado."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar",
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato principal para jantar",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "bebida para acompanhar a refeição",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de pessoas assumido como 2, pois não foi especificado.",
+      "Orçamento não informado, portanto deixado como null.",
+      "Nenhuma restrição alimentar foi mencionada.",
+      "Nível de picância não mencionado."
+    ]
+  },
+  "trace": {
+    "run_id": "536f1d32e492",
+    "version": "B",
+    "order": "algo pra comer hoje à noite",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "algo pra comer hoje à noite",
+        "output": {
+          "occasion": "jantar",
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato principal para jantar",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "bebida para acompanhar a refeição",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de pessoas assumido como 2, pois não foi especificado.",
+            "Orçamento não informado, portanto deixado como null.",
+            "Nenhuma restrição alimentar foi mencionada.",
+            "Nível de picância não mencionado."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1344,
+        "tokens_out": 214,
+        "cost_usd": 0.00033,
+        "latency_ms": 14354.2,
+        "wait_ms": 13000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato principal para jantar",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "bebida para acompanhar a refeição",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8727
+            },
+            {
+              "id": "massamia-001",
+              "nome": "Espaguete à bolonhesa",
+              "score": 0.8712
+            },
+            {
+              "id": "massamia-003",
+              "nome": "Lasanha à bolonhesa individual",
+              "score": 0.8703
+            },
+            {
+              "id": "massamia-007",
+              "nome": "Penne ao pesto",
+              "score": 0.8696
+            },
+            {
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.8693
+            },
+            {
+              "id": "caseiro-002",
+              "nome": "Prato feito de frango grelhado",
+              "score": 0.8671
+            }
+          ],
+          "bebida": [
+            {
+              "id": "graofino-023",
+              "nome": "Leite integral garrafa 1 L",
+              "score": 0.8793
+            },
+            {
+              "id": "graofino-024",
+              "nome": "Bebida de aveia garrafa 1 L",
+              "score": 0.871
+            },
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.8666
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.865
+            },
+            {
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8648
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8621
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 265.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-002",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi o prato de frango grelhado, o mais barato por pessoa, e 2 unidades atendem as 2 pessoas. Não incluí bebida para manter o pedido econômico."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1806,
+        "tokens_out": 336,
+        "cost_usd": 0.0004725,
+        "latency_ms": 3420.4,
+        "wait_ms": 2000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-002",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 60.7,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

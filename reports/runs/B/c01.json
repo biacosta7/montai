@@ -1,0 +1,376 @@
+{
+  "case_id": "c01",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar vegano e sem glúten para 4 pessoas",
+  "finished_at": "2026-10-24T23:31:00+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-013",
+        "name": "Marmita vegana",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "marmita",
+        "quantity": 4,
+        "unit_price": 28.9,
+        "subtotal": 115.6
+      },
+      {
+        "item_id": "mercado-005",
+        "name": "Água mineral sem gás 1,5 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 1,5 L",
+        "quantity": 2,
+        "unit_price": 3.49,
+        "subtotal": 6.98
+      }
+    ],
+    "items_total": 122.58,
+    "delivery_total": 10.8,
+    "total": 133.38,
+    "people": 4,
+    "budget": null,
+    "message": "Escolhi a Marmita vegana (R$28,90 por pessoa) como prato principal, atendendo exatamente 4 pessoas. Complementei com duas garrafas de água mineral (R$3,49 cada) para hidratação, mantendo o custo baixo e usando apenas duas lojas para reduzir a taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto foi considerado null.",
+      "Como não há menção de sobremesa ou utensílios, foram omitidos.",
+      "Considera‑se que a bebida é opcional e não precisa atender a restrições específicas além de ser sem álcool."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar vegano e sem glúten",
+    "people": 4,
+    "budget": null,
+    "diet": [
+      "vegano",
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato principal vegano e sem glúten",
+        "essential": true
+      },
+      {
+        "category": "salada",
+        "query": "salada vegana",
+        "essential": false
+      },
+      {
+        "category": "entrada",
+        "query": "entrada vegana sem glúten",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "bebida sem álcool",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto foi considerado null.",
+      "Como não há menção de sobremesa ou utensílios, foram omitidos.",
+      "Considera‑se que a bebida é opcional e não precisa atender a restrições específicas além de ser sem álcool."
+    ]
+  },
+  "trace": {
+    "run_id": "7a5e6f595879",
+    "version": "B",
+    "order": "jantar vegano e sem glúten para 4 pessoas",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar vegano e sem glúten para 4 pessoas",
+        "output": {
+          "occasion": "jantar vegano e sem glúten",
+          "people": 4,
+          "budget": null,
+          "diet": [
+            "vegano",
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato principal vegano e sem glúten",
+              "essential": true
+            },
+            {
+              "category": "salada",
+              "query": "salada vegana",
+              "essential": false
+            },
+            {
+              "category": "entrada",
+              "query": "entrada vegana sem glúten",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "bebida sem álcool",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum orçamento foi informado, portanto foi considerado null.",
+            "Como não há menção de sobremesa ou utensílios, foram omitidos.",
+            "Considera‑se que a bebida é opcional e não precisa atender a restrições específicas além de ser sem álcool."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1351,
+        "tokens_out": 306,
+        "cost_usd": 0.00038625,
+        "latency_ms": 15377.2,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato principal vegano e sem glúten",
+            "essential": true
+          },
+          {
+            "category": "salada",
+            "query": "salada vegana",
+            "essential": false
+          },
+          {
+            "category": "entrada",
+            "query": "entrada vegana sem glúten",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "bebida sem álcool",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.9108
+            },
+            {
+              "id": "caseiro-013",
+              "nome": "Marmita vegana",
+              "score": 0.9044
+            },
+            {
+              "id": "massamia-009",
+              "nome": "Espaguete sem glúten ao sugo",
+              "score": 0.9001
+            },
+            {
+              "id": "bangkok-003",
+              "nome": "Pad thai vegano com tofu",
+              "score": 0.8957
+            },
+            {
+              "id": "verdevida-011",
+              "nome": "Curry de legumes com arroz basmati",
+              "score": 0.8928
+            },
+            {
+              "id": "lapicante-013",
+              "nome": "Chili vegano 400 ml",
+              "score": 0.8896
+            }
+          ],
+          "salada": [
+            {
+              "id": "hortifruti-017",
+              "nome": "Salada pronta tradicional 400 g",
+              "score": 0.8992
+            },
+            {
+              "id": "churrascaria-018",
+              "nome": "Salada verde 300 g",
+              "score": 0.8963
+            },
+            {
+              "id": "verdevida-003",
+              "nome": "Salada mediterrânea de grão-de-bico",
+              "score": 0.8882
+            },
+            {
+              "id": "aloha-009",
+              "nome": "Salada havaiana",
+              "score": 0.887
+            },
+            {
+              "id": "kenzo-022",
+              "nome": "Sunomono",
+              "score": 0.8862
+            },
+            {
+              "id": "verdevida-004",
+              "nome": "Salada de folhas com manga e castanhas",
+              "score": 0.883
+            }
+          ],
+          "entrada": [
+            {
+              "id": "aloha-010",
+              "nome": "Edamame com sal",
+              "score": 0.8915
+            },
+            {
+              "id": "sahara-008",
+              "nome": "Falafel 10 unidades",
+              "score": 0.8812
+            },
+            {
+              "id": "verdevida-017",
+              "nome": "Homus com palitos de cenoura",
+              "score": 0.881
+            },
+            {
+              "id": "kenzo-021",
+              "nome": "Edamame 200 g",
+              "score": 0.8796
+            },
+            {
+              "id": "hortifruti-024",
+              "nome": "Mix de castanhas 200 g",
+              "score": 0.8777
+            },
+            {
+              "id": "massamia-017",
+              "nome": "Antepasto de berinjela 200 g",
+              "score": 0.8774
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9159
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8831
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8829
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8768
+            },
+            {
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8752
+            },
+            {
+              "id": "lapicante-023",
+              "nome": "Água fresca de hibisco 500 ml",
+              "score": 0.8741
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 283.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-013",
+              "quantity": 4
+            },
+            {
+              "item_id": "mercado-005",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi a Marmita vegana (R$28,90 por pessoa) como prato principal, atendendo exatamente 4 pessoas. Complementei com duas garrafas de água mineral (R$3,49 cada) para hidratação, mantendo o custo baixo e usando apenas duas lojas para reduzir a taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2943,
+        "tokens_out": 487,
+        "cost_usd": 0.00073365,
+        "latency_ms": 24470.5,
+        "wait_ms": 22000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-013",
+            "quantity": 4
+          },
+          {
+            "item_id": "mercado-005",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 133.38,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 4.0,
+            "bebida": 6.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

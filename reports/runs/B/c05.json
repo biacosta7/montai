@@ -1,0 +1,258 @@
+{
+  "case_id": "c05",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "sobremesas veganas para uma festa de 10 pessoas",
+  "finished_at": "2026-10-24T23:32:32+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "doceria-011",
+        "name": "Bolo vegano de cenoura",
+        "store_id": "doceria",
+        "store_name": "Doceria Açúcar & Afeto",
+        "unit": "bolo inteiro",
+        "quantity": 1,
+        "unit_price": 59.9,
+        "subtotal": 59.9
+      }
+    ],
+    "items_total": 59.9,
+    "delivery_total": 6.9,
+    "total": 66.8,
+    "people": 10,
+    "budget": null,
+    "message": "Escolhi o bolo vegano de cenoura, que serve exatamente 10 pessoas e tem o menor custo por pessoa entre as sobremesas veganas. Assim atendemos o essencial com o menor número de lojas e sem custos extras de bebidas.",
+    "problems": [],
+    "assumptions": [
+      "Como não foi especificada a bebida, inclui bebidas não alcoólicas como item de apoio.",
+      "Nenhum orçamento foi informado, portanto budget foi deixado como null."
+    ]
+  },
+  "spec": {
+    "occasion": "festa",
+    "people": 10,
+    "budget": null,
+    "diet": [
+      "vegano"
+    ],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "sobremesa",
+        "query": "sobremesas veganas",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "bebidas sem álcool para festa",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Como não foi especificada a bebida, inclui bebidas não alcoólicas como item de apoio.",
+      "Nenhum orçamento foi informado, portanto budget foi deixado como null."
+    ]
+  },
+  "trace": {
+    "run_id": "ec141cb65f23",
+    "version": "B",
+    "order": "sobremesas veganas para uma festa de 10 pessoas",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "sobremesas veganas para uma festa de 10 pessoas",
+        "output": {
+          "occasion": "festa",
+          "people": 10,
+          "budget": null,
+          "diet": [
+            "vegano"
+          ],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "sobremesa",
+              "query": "sobremesas veganas",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "bebidas sem álcool para festa",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Como não foi especificada a bebida, inclui bebidas não alcoólicas como item de apoio.",
+            "Nenhum orçamento foi informado, portanto budget foi deixado como null."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1350,
+        "tokens_out": 239,
+        "cost_usd": 0.00034589999999999995,
+        "latency_ms": 17297.5,
+        "wait_ms": 16000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "sobremesa",
+            "query": "sobremesas veganas",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "bebidas sem álcool para festa",
+            "essential": false
+          }
+        ],
+        "output": {
+          "sobremesa": [
+            {
+              "id": "graofino-016",
+              "nome": "Overnight oats vegano",
+              "score": 0.9002
+            },
+            {
+              "id": "graofino-019",
+              "nome": "Cookie vegano",
+              "score": 0.8994
+            },
+            {
+              "id": "doceria-011",
+              "nome": "Bolo vegano de cenoura",
+              "score": 0.8851
+            },
+            {
+              "id": "mercado-040",
+              "nome": "Sorvete vegano de chocolate 1 L",
+              "score": 0.8851
+            },
+            {
+              "id": "verdevida-023",
+              "nome": "Brownie vegano sem glúten",
+              "score": 0.8821
+            },
+            {
+              "id": "verdevida-024",
+              "nome": "Mousse de chocolate com abacate",
+              "score": 0.8805
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9002
+            },
+            {
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.889
+            },
+            {
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8878
+            },
+            {
+              "id": "graofino-024",
+              "nome": "Bebida de aveia garrafa 1 L",
+              "score": 0.8709
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8653
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8648
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 366.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "doceria-011",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o bolo vegano de cenoura, que serve exatamente 10 pessoas e tem o menor custo por pessoa entre as sobremesas veganas. Assim atendemos o essencial com o menor número de lojas e sem custos extras de bebidas."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1873,
+        "tokens_out": 265,
+        "cost_usd": 0.00043995,
+        "latency_ms": 5595.8,
+        "wait_ms": 4000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "doceria-011",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 66.8,
+          "problemas": [],
+          "cobertura": {
+            "sobremesa": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}
