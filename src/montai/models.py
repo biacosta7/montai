@@ -114,3 +114,106 @@ class Catalog(BaseModel):
 
     def get_store(self, store_id: str) -> Store | None:
         return self._stores_by_id.get(store_id)
+
+
+# ---------------------------------------------------------------------------
+# Pedido e carrinho
+# ---------------------------------------------------------------------------
+# Os modelos que o LLM preenche (OrderSpec, CartProposal) não têm valores
+# padrão nem limites numéricos no schema: isso os mantém compatíveis com o
+# modo estrito de structured outputs. Os limites são checados pelo validador.
+
+
+class CategoryNeed(BaseModel):
+    category: Category
+    query: str = Field(description="Consulta curta para a busca semântica, ex.: 'carnes para churrasco'.")
+    essential: bool = Field(
+        description="True se esta categoria precisa alimentar todas as pessoas (ex.: o prato principal)."
+    )
+
+
+class OrderSpec(BaseModel):
+    """Saída do Interpretador: o pedido em linguagem natural, estruturado."""
+
+    occasion: str
+    people: int
+    budget: float | None = Field(description="Orçamento total em reais, ou null se não informado.")
+    diet: list[DietTag] = Field(description="Restrições que valem para TODOS os itens.")
+    diet_options: list[DietTag] = Field(
+        description="Restrições que valem para pelo menos UMA opção (ex.: 'uma opção vegana')."
+    )
+    max_spice: SpiceLevel | None = Field(description="Picância máxima aceita, ou null.")
+    needs: list[CategoryNeed]
+    assumptions: list[str] = Field(description="Suposições feitas quando o pedido era vago.")
+
+    def constraints(self) -> Constraints:
+        return Constraints(
+            people=self.people,
+            budget=self.budget,
+            diet=self.diet,
+            diet_options=self.diet_options,
+            max_spice=self.max_spice,
+            required_categories=[n.category for n in self.needs if n.essential],
+        )
+
+
+class Constraints(BaseModel):
+    """Tudo que o validador precisa saber para julgar um carrinho.
+
+    É compartilhado pelas versões A e B: cada versão extrai as restrições do
+    seu jeito, mas o julgamento é sempre o mesmo código.
+    """
+
+    people: int = Field(ge=1)
+    budget: float | None = None
+    diet: list[DietTag] = Field(default_factory=list)
+    diet_options: list[DietTag] = Field(default_factory=list)
+    max_spice: SpiceLevel | None = None
+    required_categories: list[Category] = Field(default_factory=list)
+
+
+class ProposalLine(BaseModel):
+    item_id: str
+    quantity: int
+
+
+class CartProposal(BaseModel):
+    """Saída do Montador: só ids e quantidades. Preços e nomes vêm do catálogo."""
+
+    feasible: bool = Field(
+        description="False se nenhum candidato atende ao pedido (ex.: pediu pizza e não há pizza compatível)."
+    )
+    lines: list[ProposalLine]
+    rationale: str = Field(description="Explicação curta das escolhas, para o cliente.")
+
+
+class CartStatus(StrEnum):
+    OK = "ok"
+    IMPOSSIBLE = "impossivel"  # o pedido não pode ser atendido (provado ou declarado)
+    FAILED = "falhou"  # o sistema não conseguiu montar um carrinho válido
+
+
+class CartLine(BaseModel):
+    item_id: str
+    name: str
+    store_id: str
+    store_name: str
+    unit: str
+    quantity: int
+    unit_price: float
+    subtotal: float
+
+
+class Cart(BaseModel):
+    """Carrinho final, sempre construído e conferido pelo código."""
+
+    status: CartStatus
+    lines: list[CartLine] = Field(default_factory=list)
+    items_total: float = 0.0
+    delivery_total: float = 0.0
+    total: float = 0.0
+    people: int | None = None
+    budget: float | None = None
+    message: str = ""
+    problems: list[str] = Field(default_factory=list)
+    assumptions: list[str] = Field(default_factory=list)
