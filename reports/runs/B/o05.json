@@ -3,7 +3,7 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "rodízio de sushi em casa para 4 pessoas",
-  "finished_at": "2026-10-24T23:22:50+00:00",
+  "finished_at": "2026-10-25T04:58:49+00:00",
   "cart": {
     "status": "ok",
     "lines": [
@@ -43,17 +43,16 @@
     "total": 379.09,
     "people": 4,
     "budget": null,
-    "message": "Escolhi a barca de sushi de 100 peças (serve 5) que cobre 4 pessoas com menor custo, e completei com refrigerante e kit descartável do supermercado, usando apenas duas lojas para economizar a taxa de entrega.",
+    "message": "Escolhi a barca de 100 peças que serve 5 pessoas, suficiente para 4, com o menor custo por pessoa. Adicionei um refrigerante de 2 L e um kit descartável, ambos do Supermercado, para garantir bebida e utensílios.",
     "problems": [],
     "assumptions": [
-      "Nenhum orçamento foi informado, portanto budget = null.",
-      "Não foram especificadas restrições alimentares.",
-      "Não houve indicação de nível de picância.",
-      "Bebida e utensílios foram incluídos como itens de apoio, pois são úteis para um rodízio em casa."
+      "O cliente não especificou bebidas, presumindo opções sem álcool como refrigerante ou água.",
+      "Inclui utensílios como gelo e descartáveis para servir o sushi em casa."
     ]
   },
   "spec": {
     "occasion": "rodízio de sushi em casa",
+    "specific_dish": "sushi",
     "people": 4,
     "budget": null,
     "diet": [],
@@ -77,14 +76,12 @@
       }
     ],
     "assumptions": [
-      "Nenhum orçamento foi informado, portanto budget = null.",
-      "Não foram especificadas restrições alimentares.",
-      "Não houve indicação de nível de picância.",
-      "Bebida e utensílios foram incluídos como itens de apoio, pois são úteis para um rodízio em casa."
+      "O cliente não especificou bebidas, presumindo opções sem álcool como refrigerante ou água.",
+      "Inclui utensílios como gelo e descartáveis para servir o sushi em casa."
     ]
   },
   "trace": {
-    "run_id": "2f53799a250e",
+    "run_id": "549ef6b39a4a",
     "version": "B",
     "order": "rodízio de sushi em casa para 4 pessoas",
     "steps": [
@@ -93,6 +90,7 @@
         "input": "rodízio de sushi em casa para 4 pessoas",
         "output": {
           "occasion": "rodízio de sushi em casa",
+          "specific_dish": "sushi",
           "people": 4,
           "budget": null,
           "diet": [],
@@ -116,19 +114,17 @@
             }
           ],
           "assumptions": [
-            "Nenhum orçamento foi informado, portanto budget = null.",
-            "Não foram especificadas restrições alimentares.",
-            "Não houve indicação de nível de picância.",
-            "Bebida e utensílios foram incluídos como itens de apoio, pois são úteis para um rodízio em casa."
+            "O cliente não especificou bebidas, presumindo opções sem álcool como refrigerante ou água.",
+            "Inclui utensílios como gelo e descartáveis para servir o sushi em casa."
           ]
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1349,
-        "tokens_out": 287,
-        "cost_usd": 0.00037454999999999997,
-        "latency_ms": 10490.0,
-        "wait_ms": 9000.0,
+        "tokens_in": 1464,
+        "tokens_out": 257,
+        "cost_usd": 0.0003738,
+        "latency_ms": 17386.8,
+        "wait_ms": 16000.0,
         "error": null
       },
       {
@@ -253,7 +249,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 171.2,
+        "latency_ms": 141.4,
         "wait_ms": 0.0,
         "error": null
       },
@@ -269,7 +265,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.2,
         "wait_ms": 0.0,
         "error": null
       },
@@ -294,15 +290,15 @@
               "quantity": 1
             }
           ],
-          "rationale": "Escolhi a barca de sushi de 100 peças (serve 5) que cobre 4 pessoas com menor custo, e completei com refrigerante e kit descartável do supermercado, usando apenas duas lojas para economizar a taxa de entrega."
+          "rationale": "Escolhi a barca de 100 peças que serve 5 pessoas, suficiente para 4, com o menor custo por pessoa. Adicionei um refrigerante de 2 L e um kit descartável, ambos do Supermercado, para garantir bebida e utensílios."
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 2345,
-        "tokens_out": 380,
-        "cost_usd": 0.00057975,
-        "latency_ms": 19708.1,
-        "wait_ms": 18000.0,
+        "tokens_in": 2413,
+        "tokens_out": 342,
+        "cost_usd": 0.00056715,
+        "latency_ms": 1150.8,
+        "wait_ms": 0.0,
         "error": null
       },
       {

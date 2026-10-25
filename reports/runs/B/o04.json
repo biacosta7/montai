@@ -3,7 +3,7 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "noite de pizza com os amigos, somos 6",
-  "finished_at": "2026-10-24T23:22:19+00:00",
+  "finished_at": "2026-10-25T04:55:26+00:00",
   "cart": {
     "status": "ok",
     "lines": [
@@ -33,16 +33,17 @@
     "total": 151.58,
     "people": 6,
     "budget": null,
-    "message": "Escolhi duas pizzas muçarela grandes (serve 3 cada) para atender exatamente 6 pessoas com o menor R$/pessoa. Para as bebidas, duas garrafas de refrigerante guaraná de 2 L cobrem todos e são as mais econômicas.",
+    "message": "Escolhi duas pizzas grandes de muçarela (serve 3 cada) para atender exatamente 6 pessoas com o menor R$/pessoa. Complementei com duas garrafas de guaraná, que cobrem o grupo e são as mais econômicas. Nenhum item extra foi incluído para manter o custo baixo.",
     "problems": [],
     "assumptions": [
-      "Nenhum orçamento foi informado, portanto budget = null.",
-      "Nenhuma restrição alimentar foi mencionada.",
-      "Incluí bebidas como item de apoio, já que não foram especificadas."
+      "Orçamento não informado, será considerado ilimitado.",
+      "Bebidas não especificadas, supõe‑se opções comuns como refrigerante ou suco.",
+      "Inclui-se utensílios descartáveis como apoio para a entrega."
     ]
   },
   "spec": {
     "occasion": "noite de pizza com os amigos",
+    "specific_dish": "pizza",
     "people": 6,
     "budget": null,
     "diet": [],
@@ -58,16 +59,21 @@
         "category": "bebida",
         "query": "refrigerante ou suco",
         "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "descartáveis para entrega",
+        "essential": false
       }
     ],
     "assumptions": [
-      "Nenhum orçamento foi informado, portanto budget = null.",
-      "Nenhuma restrição alimentar foi mencionada.",
-      "Incluí bebidas como item de apoio, já que não foram especificadas."
+      "Orçamento não informado, será considerado ilimitado.",
+      "Bebidas não especificadas, supõe‑se opções comuns como refrigerante ou suco.",
+      "Inclui-se utensílios descartáveis como apoio para a entrega."
     ]
   },
   "trace": {
-    "run_id": "80b7449d6e0b",
+    "run_id": "69619244e480",
     "version": "B",
     "order": "noite de pizza com os amigos, somos 6",
     "steps": [
@@ -76,6 +82,7 @@
         "input": "noite de pizza com os amigos, somos 6",
         "output": {
           "occasion": "noite de pizza com os amigos",
+          "specific_dish": "pizza",
           "people": 6,
           "budget": null,
           "diet": [],
@@ -91,21 +98,26 @@
               "category": "bebida",
               "query": "refrigerante ou suco",
               "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "descartáveis para entrega",
+              "essential": false
             }
           ],
           "assumptions": [
-            "Nenhum orçamento foi informado, portanto budget = null.",
-            "Nenhuma restrição alimentar foi mencionada.",
-            "Incluí bebidas como item de apoio, já que não foram especificadas."
+            "Orçamento não informado, será considerado ilimitado.",
+            "Bebidas não especificadas, supõe‑se opções comuns como refrigerante ou suco.",
+            "Inclui-se utensílios descartáveis como apoio para a entrega."
           ]
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1349,
-        "tokens_out": 192,
-        "cost_usd": 0.00031754999999999994,
-        "latency_ms": 14064.0,
-        "wait_ms": 13000.0,
+        "tokens_in": 1464,
+        "tokens_out": 272,
+        "cost_usd": 0.0003828,
+        "latency_ms": 1016.8,
+        "wait_ms": 0.0,
         "error": null
       },
       {
@@ -119,6 +131,11 @@
           {
             "category": "bebida",
             "query": "refrigerante ou suco",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "descartáveis para entrega",
             "essential": false
           }
         ],
@@ -186,6 +203,38 @@
               "nome": "Refrigerante guaraná 2 L",
               "score": 0.8669
             }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8853
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8629
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8321
+            },
+            {
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8278
+            },
+            {
+              "id": "acougue-023",
+              "nome": "Sal grosso 1 kg",
+              "score": 0.8274
+            },
+            {
+              "id": "mercado-014",
+              "nome": "Carvão vegetal 3 kg",
+              "score": 0.8242
+            }
           ]
         },
         "llm_calls": 0,
@@ -193,7 +242,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 273.1,
+        "latency_ms": 123.9,
         "wait_ms": 0.0,
         "error": null
       },
@@ -209,7 +258,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.1,
         "wait_ms": 0.0,
         "error": null
       },
@@ -230,15 +279,15 @@
               "quantity": 2
             }
           ],
-          "rationale": "Escolhi duas pizzas muçarela grandes (serve 3 cada) para atender exatamente 6 pessoas com o menor R$/pessoa. Para as bebidas, duas garrafas de refrigerante guaraná de 2 L cobrem todos e são as mais econômicas."
+          "rationale": "Escolhi duas pizzas grandes de muçarela (serve 3 cada) para atender exatamente 6 pessoas com o menor R$/pessoa. Complementei com duas garrafas de guaraná, que cobrem o grupo e são as mais econômicas. Nenhum item extra foi incluído para manter o custo baixo."
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1823,
-        "tokens_out": 412,
-        "cost_usd": 0.00052065,
-        "latency_ms": 9570.4,
-        "wait_ms": 8000.0,
+        "tokens_in": 2383,
+        "tokens_out": 717,
+        "cost_usd": 0.00078765,
+        "latency_ms": 5121.9,
+        "wait_ms": 3000.0,
         "error": null
       },
       {
@@ -267,7 +316,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.5,
+        "latency_ms": 0.2,
         "wait_ms": 0.0,
         "error": null
       }

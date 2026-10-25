@@ -18,6 +18,7 @@ from montai.pipeline.orchestrator import MAX_REPAIRS, run_pipeline
 def churrasco_spec(budget=300.0, people=5, diet=None):
     return OrderSpec(
         occasion="churrasco",
+        specific_dish=None,
         people=people,
         budget=budget,
         diet=diet or [],
@@ -93,12 +94,25 @@ def test_orcamento_impossivel_detectado_sem_chamar_montador(fake_llm, retriever,
 
 
 def test_categoria_sem_candidatos_e_impossivel(fake_llm, retriever, catalog):
-    # Nenhum item de grelhados vegano custa até R$ 5: o filtro de preço esvazia
-    # a busca e a pré-checagem recusa o pedido sem chamar o Montador.
+    # Nenhum item vegano que sirva de comida custa até R$ 5 no catálogo inteiro:
+    # a pré-checagem recusa o pedido sem chamar o Montador.
     spec = churrasco_spec(budget=5, people=2, diet=[DietTag.VEGANO])
     result = run(fake_llm([spec]), retriever, catalog)
     assert result.cart.status == CartStatus.IMPOSSIBLE
     assert "Não há itens de 'grelhados'" in result.cart.message
+    assert "montador" not in steps(result)
+
+
+def test_pre_checagem_nao_depende_da_categoria_escolhida(fake_llm, retriever, catalog):
+    # Café da manhã para 5 com R$ 80, mas o Interpretador pediu só "kits" (R$ 189+).
+    # Pão francês, manteiga e café cabem: a pré-checagem não pode recusar.
+    spec = OrderSpec(
+        occasion="café da manhã", specific_dish=None, people=5, budget=80, diet=[], diet_options=[],
+        max_spice=None, assumptions=[],
+        needs=[CategoryNeed(category=Category.PRATO_PRINCIPAL, query="kits de café da manhã", essential=True)],
+    )
+    result = run(fake_llm([spec, proposal(feasible=False)]), retriever, catalog)
+    assert "montador" in steps(result)
 
 
 def test_montador_declara_impossivel(fake_llm, retriever, catalog):

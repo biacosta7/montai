@@ -3,45 +3,22 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "feijoada vegana para 6 pessoas",
-  "finished_at": "2026-10-24T23:35:47+00:00",
+  "finished_at": "2026-10-25T09:33:53+00:00",
   "cart": {
-    "status": "ok",
-    "lines": [
-      {
-        "item_id": "nonna-024",
-        "name": "Pizza vegana de legumes grande",
-        "store_id": "nonna",
-        "store_name": "Pizzaria Forno da Nonna",
-        "unit": "pizza grande (8 fatias)",
-        "quantity": 2,
-        "unit_price": 74.9,
-        "subtotal": 149.8
-      },
-      {
-        "item_id": "nonna-029",
-        "name": "Refrigerante cola 2 L",
-        "store_id": "nonna",
-        "store_name": "Pizzaria Forno da Nonna",
-        "unit": "garrafa 2 L",
-        "quantity": 2,
-        "unit_price": 13.9,
-        "subtotal": 27.8
-      }
-    ],
-    "items_total": 177.6,
-    "delivery_total": 6.9,
-    "total": 184.5,
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
     "people": 6,
     "budget": null,
-    "message": "Escolhemos duas pizzas veganas grandes (8 fatias) que servem exatamente 6 pessoas, o que cobre a refeição principal com o menor R$/pessoa. Para bebida, utilizamos duas garrafas de refrigerante da mesma pizzaria, evitando taxa extra de entrega e mantendo o custo total baixo.",
+    "message": "Nenhum dos candidatos oferece feijoada vegana, que é o prato pedido obrigatório.",
     "problems": [],
-    "assumptions": [
-      "Como não foi especificado, incluí arroz e farofa como acompanhamentos típicos de feijoada.",
-      "Incluí opções de bebidas não alcoólicas como apoio, pois não foram mencionadas."
-    ]
+    "assumptions": []
   },
   "spec": {
-    "occasion": "almoço tradicional",
+    "occasion": "almoço",
+    "specific_dish": "feijoada",
     "people": 6,
     "budget": null,
     "diet": [
@@ -57,7 +34,7 @@
       },
       {
         "category": "acompanhamento",
-        "query": "arroz branco e farofa vegana",
+        "query": "arroz branco",
         "essential": false
       },
       {
@@ -66,13 +43,10 @@
         "essential": false
       }
     ],
-    "assumptions": [
-      "Como não foi especificado, incluí arroz e farofa como acompanhamentos típicos de feijoada.",
-      "Incluí opções de bebidas não alcoólicas como apoio, pois não foram mencionadas."
-    ]
+    "assumptions": []
   },
   "trace": {
-    "run_id": "1dcf0cb6c89a",
+    "run_id": "673ddb3298d8",
     "version": "B",
     "order": "feijoada vegana para 6 pessoas",
     "steps": [
@@ -80,7 +54,8 @@
         "name": "interpretador",
         "input": "feijoada vegana para 6 pessoas",
         "output": {
-          "occasion": "almoço tradicional",
+          "occasion": "almoço",
+          "specific_dish": "feijoada",
           "people": 6,
           "budget": null,
           "diet": [
@@ -96,7 +71,7 @@
             },
             {
               "category": "acompanhamento",
-              "query": "arroz branco e farofa vegana",
+              "query": "arroz branco",
               "essential": false
             },
             {
@@ -105,18 +80,15 @@
               "essential": false
             }
           ],
-          "assumptions": [
-            "Como não foi especificado, incluí arroz e farofa como acompanhamentos típicos de feijoada.",
-            "Incluí opções de bebidas não alcoólicas como apoio, pois não foram mencionadas."
-          ]
+          "assumptions": []
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1347,
-        "tokens_out": 255,
-        "cost_usd": 0.00035504999999999993,
-        "latency_ms": 7191.5,
-        "wait_ms": 6000.0,
+        "tokens_in": 1462,
+        "tokens_out": 273,
+        "cost_usd": 0.0003831,
+        "latency_ms": 12268.0,
+        "wait_ms": 11000.0,
         "error": null
       },
       {
@@ -129,7 +101,7 @@
           },
           {
             "category": "acompanhamento",
-            "query": "arroz branco e farofa vegana",
+            "query": "arroz branco",
             "essential": false
           },
           {
@@ -173,34 +145,34 @@
           ],
           "acompanhamento": [
             {
-              "id": "churrascaria-012",
-              "nome": "Farofa de banana vegana 300 g",
-              "score": 0.9029
+              "id": "churrascaria-009",
+              "nome": "Arroz branco 500 g",
+              "score": 0.8962
             },
             {
               "id": "caseiro-015",
               "nome": "Arroz e feijão 500 g",
-              "score": 0.892
-            },
-            {
-              "id": "mercado-036",
-              "nome": "Farofa pronta temperada 250 g",
-              "score": 0.8852
-            },
-            {
-              "id": "churrascaria-009",
-              "nome": "Arroz branco 500 g",
-              "score": 0.8839
-            },
-            {
-              "id": "sahara-015",
-              "nome": "Arroz com lentilha 500 g",
-              "score": 0.8716
+              "score": 0.8783
             },
             {
               "id": "kenzo-024",
               "nome": "Arroz gohan 300 g",
-              "score": 0.8696
+              "score": 0.8601
+            },
+            {
+              "id": "sahara-015",
+              "nome": "Arroz com lentilha 500 g",
+              "score": 0.8581
+            },
+            {
+              "id": "lapicante-017",
+              "nome": "Arroz mexicano 300 g",
+              "score": 0.8559
+            },
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.8543
             }
           ],
           "bebida": [
@@ -241,7 +213,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 157.9,
+        "latency_ms": 147.5,
         "wait_ms": 0.0,
         "error": null
       },
@@ -257,7 +229,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.1,
         "wait_ms": 0.0,
         "error": null
       },
@@ -267,56 +239,17 @@
           "tentativa": 1
         },
         "output": {
-          "feasible": true,
-          "lines": [
-            {
-              "item_id": "nonna-024",
-              "quantity": 2
-            },
-            {
-              "item_id": "nonna-029",
-              "quantity": 2
-            }
-          ],
-          "rationale": "Escolhemos duas pizzas veganas grandes (8 fatias) que servem exatamente 6 pessoas, o que cobre a refeição principal com o menor R$/pessoa. Para bebida, utilizamos duas garrafas de refrigerante da mesma pizzaria, evitando taxa extra de entrega e mantendo o custo total baixo."
+          "feasible": false,
+          "lines": [],
+          "rationale": "Nenhum dos candidatos oferece feijoada vegana, que é o prato pedido obrigatório."
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 2414,
-        "tokens_out": 766,
-        "cost_usd": 0.0008217,
-        "latency_ms": 13451.6,
-        "wait_ms": 11000.0,
-        "error": null
-      },
-      {
-        "name": "validador",
-        "input": [
-          {
-            "item_id": "nonna-024",
-            "quantity": 2
-          },
-          {
-            "item_id": "nonna-029",
-            "quantity": 2
-          }
-        ],
-        "output": {
-          "ok": true,
-          "total": 184.5,
-          "problemas": [],
-          "cobertura": {
-            "prato_principal": 6.0,
-            "bebida": 10.0
-          }
-        },
-        "llm_calls": 0,
-        "retries": 0,
-        "tokens_in": 0,
-        "tokens_out": 0,
-        "cost_usd": 0.0,
-        "latency_ms": 0.1,
-        "wait_ms": 0.0,
+        "tokens_in": 2483,
+        "tokens_out": 84,
+        "cost_usd": 0.00042284999999999995,
+        "latency_ms": 20017.3,
+        "wait_ms": 19000.0,
         "error": null
       }
     ]

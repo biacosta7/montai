@@ -3,45 +3,22 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "sushi vegano e sem glúten para 2 pessoas",
-  "finished_at": "2026-10-24T23:35:26+00:00",
+  "finished_at": "2026-10-25T09:33:21+00:00",
   "cart": {
-    "status": "ok",
-    "lines": [
-      {
-        "item_id": "caseiro-013",
-        "name": "Marmita vegana",
-        "store_id": "caseiro",
-        "store_name": "Restaurante Sabor Caseiro",
-        "unit": "marmita",
-        "quantity": 2,
-        "unit_price": 28.9,
-        "subtotal": 57.8
-      },
-      {
-        "item_id": "mercado-005",
-        "name": "Água mineral sem gás 1,5 L",
-        "store_id": "mercado",
-        "store_name": "Supermercado Bom Preço",
-        "unit": "garrafa 1,5 L",
-        "quantity": 1,
-        "unit_price": 3.49,
-        "subtotal": 3.49
-      }
-    ],
-    "items_total": 61.29,
-    "delivery_total": 10.8,
-    "total": 72.09,
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
     "people": 2,
     "budget": null,
-    "message": "Escolhi a marmita vegana mais barata (R$/pessoa 28,90) e um único litro de água que serve até 3 pessoas, atendendo 2 pessoas com o menor custo total e apenas duas lojas.",
+    "message": "Nenhum dos candidatos disponíveis corresponde ao prato pedido 'sushi' dentro das restrições veganas e sem glúten.",
     "problems": [],
-    "assumptions": [
-      "Nenhuma bebida foi especificada, incluímos água ou suco como item de apoio.",
-      "Não foi informado orçamento, considerado sem limite específico."
-    ]
+    "assumptions": []
   },
   "spec": {
-    "occasion": "refeição leve",
+    "occasion": "refeição",
+    "specific_dish": "sushi",
     "people": 2,
     "budget": null,
     "diet": [
@@ -58,17 +35,14 @@
       },
       {
         "category": "bebida",
-        "query": "água ou suco sem açúcar",
+        "query": "bebidas sem álcool",
         "essential": false
       }
     ],
-    "assumptions": [
-      "Nenhuma bebida foi especificada, incluímos água ou suco como item de apoio.",
-      "Não foi informado orçamento, considerado sem limite específico."
-    ]
+    "assumptions": []
   },
   "trace": {
-    "run_id": "237d8732f691",
+    "run_id": "0bf665655645",
     "version": "B",
     "order": "sushi vegano e sem glúten para 2 pessoas",
     "steps": [
@@ -76,7 +50,8 @@
         "name": "interpretador",
         "input": "sushi vegano e sem glúten para 2 pessoas",
         "output": {
-          "occasion": "refeição leve",
+          "occasion": "refeição",
+          "specific_dish": "sushi",
           "people": 2,
           "budget": null,
           "diet": [
@@ -93,22 +68,19 @@
             },
             {
               "category": "bebida",
-              "query": "água ou suco sem açúcar",
+              "query": "bebidas sem álcool",
               "essential": false
             }
           ],
-          "assumptions": [
-            "Nenhuma bebida foi especificada, incluímos água ou suco como item de apoio.",
-            "Não foi informado orçamento, considerado sem limite específico."
-          ]
+          "assumptions": []
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1351,
+        "tokens_in": 1466,
         "tokens_out": 205,
-        "cost_usd": 0.00032565,
-        "latency_ms": 1454.9,
-        "wait_ms": 0.0,
+        "cost_usd": 0.0003429,
+        "latency_ms": 8213.4,
+        "wait_ms": 7000.0,
         "error": null
       },
       {
@@ -121,7 +93,7 @@
           },
           {
             "category": "bebida",
-            "query": "água ou suco sem açúcar",
+            "query": "bebidas sem álcool",
             "essential": false
           }
         ],
@@ -160,34 +132,34 @@
           ],
           "bebida": [
             {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9165
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8851
+            },
+            {
               "id": "graofino-027",
               "nome": "Água mineral 500 ml",
               "score": 0.8846
             },
             {
-              "id": "mercado-007",
-              "nome": "Suco de uva integral 1 L",
-              "score": 0.8832
-            },
-            {
               "id": "mercado-005",
               "nome": "Água mineral sem gás 1,5 L",
-              "score": 0.8826
+              "score": 0.8795
             },
             {
-              "id": "adega-018",
-              "nome": "Água mineral 1,5 L",
-              "score": 0.8789
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8786
             },
             {
-              "id": "mercado-006",
-              "nome": "Água com gás 500 ml",
-              "score": 0.8775
-            },
-            {
-              "id": "aloha-013",
-              "nome": "Suco de abacaxi com hortelã",
-              "score": 0.8768
+              "id": "lapicante-023",
+              "nome": "Água fresca de hibisco 500 ml",
+              "score": 0.8756
             }
           ]
         },
@@ -196,7 +168,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 87.9,
+        "latency_ms": 219.2,
         "wait_ms": 0.0,
         "error": null
       },
@@ -212,7 +184,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.1,
         "wait_ms": 0.0,
         "error": null
       },
@@ -222,56 +194,17 @@
           "tentativa": 1
         },
         "output": {
-          "feasible": true,
-          "lines": [
-            {
-              "item_id": "caseiro-013",
-              "quantity": 2
-            },
-            {
-              "item_id": "mercado-005",
-              "quantity": 1
-            }
-          ],
-          "rationale": "Escolhi a marmita vegana mais barata (R$/pessoa 28,90) e um único litro de água que serve até 3 pessoas, atendendo 2 pessoas com o menor custo total e apenas duas lojas."
+          "feasible": false,
+          "lines": [],
+          "rationale": "Nenhum dos candidatos disponíveis corresponde ao prato pedido 'sushi' dentro das restrições veganas e sem glúten."
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1916,
-        "tokens_out": 427,
-        "cost_usd": 0.0005435999999999999,
-        "latency_ms": 5062.7,
-        "wait_ms": 3000.0,
-        "error": null
-      },
-      {
-        "name": "validador",
-        "input": [
-          {
-            "item_id": "caseiro-013",
-            "quantity": 2
-          },
-          {
-            "item_id": "mercado-005",
-            "quantity": 1
-          }
-        ],
-        "output": {
-          "ok": true,
-          "total": 72.09,
-          "problemas": [],
-          "cobertura": {
-            "prato_principal": 2.0,
-            "bebida": 3.0
-          }
-        },
-        "llm_calls": 0,
-        "retries": 0,
-        "tokens_in": 0,
-        "tokens_out": 0,
-        "cost_usd": 0.0,
-        "latency_ms": 0.3,
-        "wait_ms": 0.0,
+        "tokens_in": 2011,
+        "tokens_out": 75,
+        "cost_usd": 0.00034665,
+        "latency_ms": 15820.6,
+        "wait_ms": 15000.0,
         "error": null
       }
     ]

@@ -3,65 +3,66 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "café da manhã para o escritório, 12 pessoas, uma opção vegana",
-  "finished_at": "2026-10-24T23:21:55+00:00",
+  "finished_at": "2026-10-25T04:55:20+00:00",
   "cart": {
     "status": "ok",
     "lines": [
       {
-        "item_id": "graofino-001",
-        "name": "Kit café da manhã corporativo 10 pessoas",
-        "store_id": "graofino",
-        "store_name": "Grão Fino Café & Bistrô",
-        "unit": "kit",
-        "quantity": 1,
-        "unit_price": 349.9,
-        "subtotal": 349.9
+        "item_id": "padaria-022",
+        "name": "Sanduíche natural vegano",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "unidade",
+        "quantity": 12,
+        "unit_price": 14.9,
+        "subtotal": 178.8
       },
       {
-        "item_id": "graofino-003",
-        "name": "Kit café da manhã vegano 5 pessoas",
-        "store_id": "graofino",
-        "store_name": "Grão Fino Café & Bistrô",
-        "unit": "kit",
-        "quantity": 1,
-        "unit_price": 219.9,
-        "subtotal": 219.9
+        "item_id": "padaria-001",
+        "name": "Pão francês 10 unidades",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "pacote 10 unidades",
+        "quantity": 3,
+        "unit_price": 8.9,
+        "subtotal": 26.7
       },
       {
-        "item_id": "hortifruti-015",
-        "name": "Salada de frutas 1 kg",
+        "item_id": "hortifruti-014",
+        "name": "Kit frutas cortadas para escritório 1 kg",
         "store_id": "hortifruti",
         "store_name": "Hortifruti Feira Fresca",
-        "unit": "pote 1 kg",
+        "unit": "bandeja 1 kg",
         "quantity": 2,
-        "unit_price": 32.9,
-        "subtotal": 65.8
+        "unit_price": 39.9,
+        "subtotal": 79.8
       },
       {
-        "item_id": "graofino-022",
-        "name": "Café coado garrafa térmica 2 L",
+        "item_id": "graofino-027",
+        "name": "Água mineral 500 ml",
         "store_id": "graofino",
         "store_name": "Grão Fino Café & Bistrô",
-        "unit": "garrafa 2 L",
-        "quantity": 1,
-        "unit_price": 52.9,
-        "subtotal": 52.9
+        "unit": "garrafa 500 ml",
+        "quantity": 12,
+        "unit_price": 4.9,
+        "subtotal": 58.8
       }
     ],
-    "items_total": 688.5,
-    "delivery_total": 11.8,
-    "total": 700.3,
+    "items_total": 344.1,
+    "delivery_total": 16.7,
+    "total": 360.8,
     "people": 12,
     "budget": null,
-    "message": "Escolhi os kits de café da manhã que cobrem 15 pessoas, incluindo ao menos um kit vegano, e acrescentei salada de frutas e café em garrafa de 2 L para completar a refeição de forma econômica.",
+    "message": "Escolhemos opções veganas e as de menor R$/pessoa para cobrir 12 pessoas em lanche, pães, frutas e bebida, usando apenas três lojas para minimizar a taxa de entrega.",
     "problems": [],
     "assumptions": [
-      "O cliente quer opções de itens veganos dentro do kit de café da manhã, mas não especificou quais; assume-se inclusão de pães/ croissants veganos, frutas e bebidas.",
-      "Não foi informado orçamento, portanto budget = null."
+      "Como não foi especificado um prato principal, assume‑se que o café da manhã inclui sanduíches, pães e frutas.",
+      "A opção vegana será oferecida em pelo menos um item de cada categoria principal."
     ]
   },
   "spec": {
     "occasion": "café da manhã para escritório",
+    "specific_dish": null,
     "people": 12,
     "budget": null,
     "diet": [],
@@ -71,33 +72,38 @@
     "max_spice": null,
     "needs": [
       {
-        "category": "prato_principal",
-        "query": "kits de café da manhã",
+        "category": "lanche",
+        "query": "sanduíches e wraps veganos e convencionais",
+        "essential": true
+      },
+      {
+        "category": "paes",
+        "query": "pães, croissants e pão de queijo vegano",
         "essential": true
       },
       {
         "category": "hortifruti",
-        "query": "frutas frescas",
-        "essential": false
+        "query": "frutas frescas cortadas",
+        "essential": true
       },
       {
         "category": "bebida",
-        "query": "café e suco",
-        "essential": false
+        "query": "café, suco natural e água",
+        "essential": true
       },
       {
-        "category": "paes",
-        "query": "pães veganos ou croissants",
+        "category": "utensilios",
+        "query": "descartáveis e copos",
         "essential": false
       }
     ],
     "assumptions": [
-      "O cliente quer opções de itens veganos dentro do kit de café da manhã, mas não especificou quais; assume-se inclusão de pães/ croissants veganos, frutas e bebidas.",
-      "Não foi informado orçamento, portanto budget = null."
+      "Como não foi especificado um prato principal, assume‑se que o café da manhã inclui sanduíches, pães e frutas.",
+      "A opção vegana será oferecida em pelo menos um item de cada categoria principal."
     ]
   },
   "trace": {
-    "run_id": "9728ee01a0f5",
+    "run_id": "2cafdbbb0ea1",
     "version": "B",
     "order": "café da manhã para o escritório, 12 pessoas, uma opção vegana",
     "steps": [
@@ -106,6 +112,7 @@
         "input": "café da manhã para o escritório, 12 pessoas, uma opção vegana",
         "output": {
           "occasion": "café da manhã para escritório",
+          "specific_dish": null,
           "people": 12,
           "budget": null,
           "diet": [],
@@ -115,191 +122,243 @@
           "max_spice": null,
           "needs": [
             {
-              "category": "prato_principal",
-              "query": "kits de café da manhã",
+              "category": "lanche",
+              "query": "sanduíches e wraps veganos e convencionais",
+              "essential": true
+            },
+            {
+              "category": "paes",
+              "query": "pães, croissants e pão de queijo vegano",
               "essential": true
             },
             {
               "category": "hortifruti",
-              "query": "frutas frescas",
-              "essential": false
+              "query": "frutas frescas cortadas",
+              "essential": true
             },
             {
               "category": "bebida",
-              "query": "café e suco",
-              "essential": false
+              "query": "café, suco natural e água",
+              "essential": true
             },
             {
-              "category": "paes",
-              "query": "pães veganos ou croissants",
+              "category": "utensilios",
+              "query": "descartáveis e copos",
               "essential": false
             }
           ],
           "assumptions": [
-            "O cliente quer opções de itens veganos dentro do kit de café da manhã, mas não especificou quais; assume-se inclusão de pães/ croissants veganos, frutas e bebidas.",
-            "Não foi informado orçamento, portanto budget = null."
+            "Como não foi especificado um prato principal, assume‑se que o café da manhã inclui sanduíches, pães e frutas.",
+            "A opção vegana será oferecida em pelo menos um item de cada categoria principal."
           ]
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1354,
-        "tokens_out": 269,
-        "cost_usd": 0.0003645,
-        "latency_ms": 13358.7,
-        "wait_ms": 12000.0,
+        "tokens_in": 1469,
+        "tokens_out": 361,
+        "cost_usd": 0.00043694999999999997,
+        "latency_ms": 1430.6,
+        "wait_ms": 0.0,
         "error": null
       },
       {
         "name": "buscador",
         "input": [
           {
-            "category": "prato_principal",
-            "query": "kits de café da manhã",
+            "category": "lanche",
+            "query": "sanduíches e wraps veganos e convencionais",
+            "essential": true
+          },
+          {
+            "category": "paes",
+            "query": "pães, croissants e pão de queijo vegano",
             "essential": true
           },
           {
             "category": "hortifruti",
-            "query": "frutas frescas",
-            "essential": false
+            "query": "frutas frescas cortadas",
+            "essential": true
           },
           {
             "category": "bebida",
-            "query": "café e suco",
-            "essential": false
+            "query": "café, suco natural e água",
+            "essential": true
           },
           {
-            "category": "paes",
-            "query": "pães veganos ou croissants",
+            "category": "utensilios",
+            "query": "descartáveis e copos",
             "essential": false
           }
         ],
         "output": {
-          "prato_principal": [
+          "lanche": [
             {
-              "id": "graofino-001",
-              "nome": "Kit café da manhã corporativo 10 pessoas",
-              "score": 0.9136
+              "id": "padaria-022",
+              "nome": "Sanduíche natural vegano",
+              "score": 0.8959
             },
             {
-              "id": "graofino-002",
-              "nome": "Kit café da manhã 5 pessoas",
-              "score": 0.9135
+              "id": "graofino-007",
+              "nome": "Mini sanduíches veganos 10 unidades",
+              "score": 0.8957
             },
             {
-              "id": "graofino-003",
-              "nome": "Kit café da manhã vegano 5 pessoas",
-              "score": 0.9073
+              "id": "verdevida-014",
+              "nome": "Wrap integral de frango",
+              "score": 0.8756
             },
             {
-              "id": "verdevida-013",
-              "nome": "Marmita fit semanal 5 refeições",
-              "score": 0.8469
+              "id": "graofino-011",
+              "nome": "Wrap de ovos mexidos",
+              "score": 0.8722
             },
             {
-              "id": "kenzo-005",
-              "nome": "Combinado vegetariano 20 peças",
-              "score": 0.8398
+              "id": "chapa-006",
+              "nome": "Burger vegano de grão-de-bico",
+              "score": 0.8654
             },
             {
-              "id": "verdevida-011",
-              "nome": "Curry de legumes com arroz basmati",
-              "score": 0.8384
-            }
-          ],
-          "hortifruti": [
-            {
-              "id": "hortifruti-015",
-              "nome": "Salada de frutas 1 kg",
-              "score": 0.8769
-            },
-            {
-              "id": "hortifruti-014",
-              "nome": "Kit frutas cortadas para escritório 1 kg",
-              "score": 0.8748
-            },
-            {
-              "id": "hortifruti-007",
-              "nome": "Morango 250 g",
-              "score": 0.8723
-            },
-            {
-              "id": "hortifruti-004",
-              "nome": "Abacaxi pérola",
-              "score": 0.8665
-            },
-            {
-              "id": "hortifruti-001",
-              "nome": "Banana prata",
-              "score": 0.8634
-            },
-            {
-              "id": "verdevida-025",
-              "nome": "Salada de frutas 300 g",
-              "score": 0.8607
-            }
-          ],
-          "bebida": [
-            {
-              "id": "graofino-026",
-              "nome": "Suco de laranja 1 L",
-              "score": 0.8734
-            },
-            {
-              "id": "aloha-013",
-              "nome": "Suco de abacaxi com hortelã",
-              "score": 0.864
-            },
-            {
-              "id": "verdevida-020",
-              "nome": "Suco verde 500 ml",
-              "score": 0.8616
-            },
-            {
-              "id": "graofino-021",
-              "nome": "Café coado garrafa térmica 1 L",
-              "score": 0.8524
-            },
-            {
-              "id": "graofino-022",
-              "nome": "Café coado garrafa térmica 2 L",
-              "score": 0.8522
-            },
-            {
-              "id": "verdevida-021",
-              "nome": "Suco de abacaxi com hortelã 500 ml",
-              "score": 0.8397
+              "id": "graofino-006",
+              "nome": "Mini sanduíches sortidos 20 unidades",
+              "score": 0.8651
             }
           ],
           "paes": [
             {
               "id": "padaria-007",
               "nome": "Croissant de manteiga",
-              "score": 0.9021
+              "score": 0.8725
             },
             {
-              "id": "graofino-004",
-              "nome": "Croissant tradicional",
-              "score": 0.902
+              "id": "graofino-005",
+              "nome": "Pão de queijo 30 unidades",
+              "score": 0.8722
             },
             {
               "id": "padaria-001",
               "nome": "Pão francês 10 unidades",
-              "score": 0.8931
+              "score": 0.8716
+            },
+            {
+              "id": "graofino-004",
+              "nome": "Croissant tradicional",
+              "score": 0.8707
             },
             {
               "id": "mercado-027",
               "nome": "Pão de forma tradicional",
-              "score": 0.8715
+              "score": 0.8646
+            },
+            {
+              "id": "padaria-002",
+              "nome": "Pão de queijo 20 unidades",
+              "score": 0.8645
             },
             {
               "id": "padaria-003",
               "nome": "Pão integral fatiado 500 g",
-              "score": 0.8706
+              "score": 0.8574
             },
             {
-              "id": "padaria-005",
-              "nome": "Baguete",
-              "score": 0.8698
+              "id": "sahara-020",
+              "nome": "Pão sírio 6 unidades",
+              "score": 0.8549
+            }
+          ],
+          "hortifruti": [
+            {
+              "id": "hortifruti-014",
+              "nome": "Kit frutas cortadas para escritório 1 kg",
+              "score": 0.8968
+            },
+            {
+              "id": "hortifruti-015",
+              "nome": "Salada de frutas 1 kg",
+              "score": 0.8655
+            },
+            {
+              "id": "hortifruti-007",
+              "nome": "Morango 250 g",
+              "score": 0.86
+            },
+            {
+              "id": "verdevida-025",
+              "nome": "Salada de frutas 300 g",
+              "score": 0.8573
+            },
+            {
+              "id": "graofino-020",
+              "nome": "Bandeja de frutas fatiadas 1 kg",
+              "score": 0.8572
+            },
+            {
+              "id": "hortifruti-004",
+              "nome": "Abacaxi pérola",
+              "score": 0.8568
+            }
+          ],
+          "bebida": [
+            {
+              "id": "graofino-026",
+              "nome": "Suco de laranja 1 L",
+              "score": 0.8934
+            },
+            {
+              "id": "verdevida-020",
+              "nome": "Suco verde 500 ml",
+              "score": 0.8911
+            },
+            {
+              "id": "aloha-013",
+              "nome": "Suco de abacaxi com hortelã",
+              "score": 0.8847
+            },
+            {
+              "id": "aloha-014",
+              "nome": "Água de coco 330 ml",
+              "score": 0.8756
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8749
+            },
+            {
+              "id": "hortifruti-022",
+              "nome": "Água de coco 1 L",
+              "score": 0.8717
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8922
+            },
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8862
+            },
+            {
+              "id": "adega-019",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.835
+            },
+            {
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.829
+            },
+            {
+              "id": "mercado-014",
+              "nome": "Carvão vegetal 3 kg",
+              "score": 0.8254
+            },
+            {
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8188
             }
           ]
         },
@@ -308,7 +367,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 354.2,
+        "latency_ms": 379.2,
         "wait_ms": 0.0,
         "error": null
       },
@@ -324,7 +383,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.6,
         "wait_ms": 0.0,
         "error": null
       },
@@ -337,61 +396,62 @@
           "feasible": true,
           "lines": [
             {
-              "item_id": "graofino-001",
-              "quantity": 1
+              "item_id": "padaria-022",
+              "quantity": 12
             },
             {
-              "item_id": "graofino-003",
-              "quantity": 1
+              "item_id": "padaria-001",
+              "quantity": 3
             },
             {
-              "item_id": "hortifruti-015",
+              "item_id": "hortifruti-014",
               "quantity": 2
             },
             {
-              "item_id": "graofino-022",
-              "quantity": 1
+              "item_id": "graofino-027",
+              "quantity": 12
             }
           ],
-          "rationale": "Escolhi os kits de café da manhã que cobrem 15 pessoas, incluindo ao menos um kit vegano, e acrescentei salada de frutas e café em garrafa de 2 L para completar a refeição de forma econômica."
+          "rationale": "Escolhemos opções veganas e as de menor R$/pessoa para cobrir 12 pessoas em lanche, pães, frutas e bebida, usando apenas três lojas para minimizar a taxa de entrega."
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 2773,
-        "tokens_out": 794,
-        "cost_usd": 0.0008923499999999999,
-        "latency_ms": 23386.0,
-        "wait_ms": 21000.0,
+        "tokens_in": 3511,
+        "tokens_out": 748,
+        "cost_usd": 0.00097545,
+        "latency_ms": 11729.7,
+        "wait_ms": 9000.0,
         "error": null
       },
       {
         "name": "validador",
         "input": [
           {
-            "item_id": "graofino-001",
-            "quantity": 1
+            "item_id": "padaria-022",
+            "quantity": 12
           },
           {
-            "item_id": "graofino-003",
-            "quantity": 1
+            "item_id": "padaria-001",
+            "quantity": 3
           },
           {
-            "item_id": "hortifruti-015",
+            "item_id": "hortifruti-014",
             "quantity": 2
           },
           {
-            "item_id": "graofino-022",
-            "quantity": 1
+            "item_id": "graofino-027",
+            "quantity": 12
           }
         ],
         "output": {
           "ok": true,
-          "total": 700.3,
+          "total": 360.8,
           "problemas": [],
           "cobertura": {
-            "prato_principal": 15.0,
-            "hortifruti": 12.0,
-            "bebida": 16.0
+            "lanche": 12.0,
+            "paes": 15.0,
+            "hortifruti": 16.0,
+            "bebida": 12.0
           }
         },
         "llm_calls": 0,
@@ -399,7 +459,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.7,
+        "latency_ms": 0.1,
         "wait_ms": 0.0,
         "error": null
       }

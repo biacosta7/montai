@@ -1,0 +1,405 @@
+{
+  "case_id": "o01",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "quero fazer um churrasco para 5 pessoas, até R$ 200",
+  "finished_at": "2026-10-24T23:40:55+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-032",
+        "name": "Kit churrasco econômico 2 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit 2 kg",
+        "quantity": 1,
+        "unit_price": 69.9,
+        "subtotal": 69.9
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      },
+      {
+        "item_id": "mercado-014",
+        "name": "Carvão vegetal 3 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "saco 3 kg",
+        "quantity": 2,
+        "unit_price": 19.9,
+        "subtotal": 39.8
+      },
+      {
+        "item_id": "mercado-016",
+        "name": "Kit descartáveis para 10 pessoas",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit",
+        "quantity": 1,
+        "unit_price": 24.9,
+        "subtotal": 24.9
+      }
+    ],
+    "items_total": 144.09,
+    "delivery_total": 5.9,
+    "total": 149.99,
+    "people": 5,
+    "budget": 200.0,
+    "message": "Escolhi o kit churrasco econômico que serve exatamente 5 pessoas, o refrigerante mais barato, carvão suficiente em duas sacas de 3 kg e um kit de descartáveis, tudo do Supermercado para minimizar a taxa de entrega e ficar dentro do orçamento.",
+    "problems": [],
+    "assumptions": [
+      "O cliente não especificou tipos de carnes, então consideramos opções típicas de churrasco.",
+      "Consideramos que a bebida principal será refrigerante e água, sem álcool."
+    ]
+  },
+  "spec": {
+    "occasion": "churrasco",
+    "specific_dish": null,
+    "people": 5,
+    "budget": 200.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "grelhados",
+        "query": "carnes e linguiças para churrasco",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "farofa, vinagrete e pão de alho",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante e água",
+        "essential": true
+      },
+      {
+        "category": "utensilios",
+        "query": "carvão e descartáveis",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "O cliente não especificou tipos de carnes, então consideramos opções típicas de churrasco.",
+      "Consideramos que a bebida principal será refrigerante e água, sem álcool."
+    ]
+  },
+  "trace": {
+    "run_id": "a0be4c6a5c69",
+    "version": "B",
+    "order": "quero fazer um churrasco para 5 pessoas, até R$ 200",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "quero fazer um churrasco para 5 pessoas, até R$ 200",
+        "output": {
+          "occasion": "churrasco",
+          "specific_dish": null,
+          "people": 5,
+          "budget": 200.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "grelhados",
+              "query": "carnes e linguiças para churrasco",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "farofa, vinagrete e pão de alho",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante e água",
+              "essential": true
+            },
+            {
+              "category": "utensilios",
+              "query": "carvão e descartáveis",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "O cliente não especificou tipos de carnes, então consideramos opções típicas de churrasco.",
+            "Consideramos que a bebida principal será refrigerante e água, sem álcool."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1469,
+        "tokens_out": 296,
+        "cost_usd": 0.00039795,
+        "latency_ms": 1394.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "grelhados",
+            "query": "carnes e linguiças para churrasco",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "farofa, vinagrete e pão de alho",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante e água",
+            "essential": true
+          },
+          {
+            "category": "utensilios",
+            "query": "carvão e descartáveis",
+            "essential": false
+          }
+        ],
+        "output": {
+          "grelhados": [
+            {
+              "id": "mercado-032",
+              "nome": "Kit churrasco econômico 2 kg",
+              "score": 0.8975
+            },
+            {
+              "id": "acougue-001",
+              "nome": "Picanha bovina",
+              "score": 0.8805
+            },
+            {
+              "id": "churrascaria-006",
+              "nome": "Linguiça assada 500 g",
+              "score": 0.8799
+            },
+            {
+              "id": "acougue-003",
+              "nome": "Fraldinha",
+              "score": 0.8773
+            },
+            {
+              "id": "acougue-009",
+              "nome": "Linguiça apimentada",
+              "score": 0.8732
+            },
+            {
+              "id": "churrascaria-005",
+              "nome": "Frango assado inteiro",
+              "score": 0.8723
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "acougue-018",
+              "nome": "Pão de alho tradicional",
+              "score": 0.8592
+            },
+            {
+              "id": "acougue-019",
+              "nome": "Pão de alho apimentado",
+              "score": 0.8546
+            },
+            {
+              "id": "churrascaria-012",
+              "nome": "Farofa de banana vegana 300 g",
+              "score": 0.8518
+            },
+            {
+              "id": "mercado-029",
+              "nome": "Pão de alho congelado",
+              "score": 0.8505
+            },
+            {
+              "id": "churrascaria-017",
+              "nome": "Pão de alho assado 6 unidades",
+              "score": 0.8501
+            },
+            {
+              "id": "caseiro-014",
+              "nome": "Couve refogada 300 g",
+              "score": 0.8459
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8773
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8753
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8746
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8703
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8687
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8683
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.865
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8605
+            },
+            {
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8516
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8494
+            },
+            {
+              "id": "mercado-014",
+              "nome": "Carvão vegetal 3 kg",
+              "score": 0.849
+            },
+            {
+              "id": "acougue-022",
+              "nome": "Carvão vegetal 10 kg",
+              "score": 0.8478
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 289.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "mercado-032",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-014",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-016",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o kit churrasco econômico que serve exatamente 5 pessoas, o refrigerante mais barato, carvão suficiente em duas sacas de 3 kg e um kit de descartáveis, tudo do Supermercado para minimizar a taxa de entrega e ficar dentro do orçamento."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2890,
+        "tokens_out": 652,
+        "cost_usd": 0.0008247,
+        "latency_ms": 1871.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "mercado-032",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-014",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-016",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 149.99,
+          "problemas": [],
+          "cobertura": {
+            "grelhados": 5.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

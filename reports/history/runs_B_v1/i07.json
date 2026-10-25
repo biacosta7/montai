@@ -1,0 +1,279 @@
+{
+  "case_id": "i07",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "sushi vegano e sem glúten para 2 pessoas",
+  "finished_at": "2026-10-24T23:35:26+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-013",
+        "name": "Marmita vegana",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "marmita",
+        "quantity": 2,
+        "unit_price": 28.9,
+        "subtotal": 57.8
+      },
+      {
+        "item_id": "mercado-005",
+        "name": "Água mineral sem gás 1,5 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 1,5 L",
+        "quantity": 1,
+        "unit_price": 3.49,
+        "subtotal": 3.49
+      }
+    ],
+    "items_total": 61.29,
+    "delivery_total": 10.8,
+    "total": 72.09,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi a marmita vegana mais barata (R$/pessoa 28,90) e um único litro de água que serve até 3 pessoas, atendendo 2 pessoas com o menor custo total e apenas duas lojas.",
+    "problems": [],
+    "assumptions": [
+      "Nenhuma bebida foi especificada, incluímos água ou suco como item de apoio.",
+      "Não foi informado orçamento, considerado sem limite específico."
+    ]
+  },
+  "spec": {
+    "occasion": "refeição leve",
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "vegano",
+      "sem_gluten"
+    ],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "sushi vegano sem glúten",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "água ou suco sem açúcar",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhuma bebida foi especificada, incluímos água ou suco como item de apoio.",
+      "Não foi informado orçamento, considerado sem limite específico."
+    ]
+  },
+  "trace": {
+    "run_id": "237d8732f691",
+    "version": "B",
+    "order": "sushi vegano e sem glúten para 2 pessoas",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "sushi vegano e sem glúten para 2 pessoas",
+        "output": {
+          "occasion": "refeição leve",
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "vegano",
+            "sem_gluten"
+          ],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "sushi vegano sem glúten",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "água ou suco sem açúcar",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhuma bebida foi especificada, incluímos água ou suco como item de apoio.",
+            "Não foi informado orçamento, considerado sem limite específico."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1351,
+        "tokens_out": 205,
+        "cost_usd": 0.00032565,
+        "latency_ms": 1454.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "sushi vegano sem glúten",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "água ou suco sem açúcar",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.9128
+            },
+            {
+              "id": "massamia-009",
+              "nome": "Espaguete sem glúten ao sugo",
+              "score": 0.9026
+            },
+            {
+              "id": "caseiro-013",
+              "nome": "Marmita vegana",
+              "score": 0.8985
+            },
+            {
+              "id": "bangkok-003",
+              "nome": "Pad thai vegano com tofu",
+              "score": 0.8924
+            },
+            {
+              "id": "verdevida-011",
+              "nome": "Curry de legumes com arroz basmati",
+              "score": 0.8898
+            },
+            {
+              "id": "verdevida-001",
+              "nome": "Bowl de quinoa com legumes assados",
+              "score": 0.8838
+            }
+          ],
+          "bebida": [
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8846
+            },
+            {
+              "id": "mercado-007",
+              "nome": "Suco de uva integral 1 L",
+              "score": 0.8832
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8826
+            },
+            {
+              "id": "adega-018",
+              "nome": "Água mineral 1,5 L",
+              "score": 0.8789
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8775
+            },
+            {
+              "id": "aloha-013",
+              "nome": "Suco de abacaxi com hortelã",
+              "score": 0.8768
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-013",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-005",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi a marmita vegana mais barata (R$/pessoa 28,90) e um único litro de água que serve até 3 pessoas, atendendo 2 pessoas com o menor custo total e apenas duas lojas."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1916,
+        "tokens_out": 427,
+        "cost_usd": 0.0005435999999999999,
+        "latency_ms": 5062.7,
+        "wait_ms": 3000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-013",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-005",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 72.09,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0,
+            "bebida": 3.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

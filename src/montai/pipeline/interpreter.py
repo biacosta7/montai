@@ -36,6 +36,8 @@ Restrições alimentares possíveis: {", ".join(t.value for t in DietTag)}.
 Picância: 0 = nada apimentado, 1 = leve, 2 = média, 3 = alta.
 
 Regras:
+- specific_dish: o prato ou item que o cliente nomeou ("pizza", "lasanha", "risoto", "hambúrguer").
+  Use null para pedidos genéricos ("jantar", "almoço caseiro", "comida árabe", "uma festa").
 - people: número de pessoas. Se o pedido não disser, suponha um valor razoável e registre em assumptions.
 - budget: orçamento TOTAL em reais (incluindo entrega). null se não houver.
 - diet: restrições que valem para TODOS os itens ("sem glúten", "somos veganos").
@@ -53,6 +55,7 @@ Regras:
 EXAMPLE_ORDER = "pizza para 3, sem lactose, até 150 reais"
 EXAMPLE_SPEC = OrderSpec(
     occasion="jantar com pizza",
+    specific_dish="pizza",
     people=3,
     budget=150,
     diet=[DietTag.SEM_LACTOSE],

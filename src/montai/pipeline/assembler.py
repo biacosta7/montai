@@ -17,7 +17,7 @@ SYSTEM_PROMPT = """Você é o Montador do Montaí. Monte um carrinho de delivery
 das tabelas de candidatos (use o id exato).
 
 Regras:
-1. Escolha itens que combinem com a ocasião (sushi não é café da manhã; carvão é de churrasco).
+1. Escolha itens que combinem com a ocasião (lasanha não é café da manhã; carvão é de churrasco).
    A busca pode trazer candidatos fora de contexto: ignore-os.
 2. Quantidades são números inteiros de unidades (>= 1).
 3. Para contar pessoas, use SEMPRE a coluna "serve" (pessoas por unidade), nunca o nome do item:
@@ -34,12 +34,15 @@ Regras:
 8. Compare custos pela coluna "R$/pessoa". Entre itens equivalentes, prefira o de menor R$/pessoa.
    Pratos principais, lanches e grelhados são, cada um, uma refeição: não some vários deles para as
    mesmas pessoas.
-9. "Opções obrigatórias" (ex.: uma opção vegana) valem para PARTE das pessoas: inclua ao menos um item
+9. Se houver "Prato pedido", o item principal TEM que ser esse prato. Não substitua por outro
+   (ex.: pediu risoto e não há risoto: não mande lasanha). Se nenhum candidato for esse prato
+   respeitando as restrições, responda feasible = false.
+10. "Opções obrigatórias" (ex.: uma opção vegana) valem para PARTE das pessoas: inclua ao menos um item
    com essa tag e atenda o restante com os itens comuns, que costumam ser mais baratos. Não troque o
    pedido inteiro pela opção.
-10. Se nenhum candidato atende ao que o cliente pediu (ex.: pediu pizza e não há pizza compatível),
+11. Se nenhum candidato atende ao que o cliente pediu (ex.: pediu pizza e não há pizza compatível),
    responda feasible = false, lines vazio, e explique em rationale.
-11. rationale: 1 a 3 frases em português para o cliente, explicando as escolhas.
+12. rationale: 1 a 3 frases em português para o cliente, explicando as escolhas.
 """
 
 
@@ -75,15 +78,16 @@ def format_candidates(spec: OrderSpec, candidates: list[NeedCandidates], catalog
     fees = "\n".join(f"- {name}: R$ {fee:.2f}" for name, fee in sorted(stores.items()))
     budget = f"R$ {spec.budget:.2f}" if spec.budget is not None else "não informado (seja econômico)"
     options = diet_label(spec.diet_options) if spec.diet_options else "nenhuma"
-    return (
-        f"Pedido: {spec.occasion}\n"
-        f"Pessoas: {people}\n"
-        f"Orçamento total: {budget}\n"
-        f"Restrições para todos os itens: {diet_label(spec.diet)}\n"
-        f"Opções obrigatórias (ao menos um item): {options}\n\n"
-        + "\n\n".join(blocks)
-        + f"\n\nTaxa de entrega por loja:\n{fees}"
-    )
+    header = [f"Pedido: {spec.occasion}"]
+    if spec.specific_dish:
+        header.append(f"Prato pedido: {spec.specific_dish}")
+    header += [
+        f"Pessoas: {people}",
+        f"Orçamento total: {budget}",
+        f"Restrições para todos os itens: {diet_label(spec.diet)}",
+        f"Opções obrigatórias (ao menos um item): {options}",
+    ]
+    return "\n".join(header) + "\n\n" + "\n\n".join(blocks) + f"\n\nTaxa de entrega por loja:\n{fees}"
 
 
 def initial_messages(spec: OrderSpec, candidates: list[NeedCandidates], catalog: Catalog) -> list[dict]:

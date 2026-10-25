@@ -3,7 +3,7 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "café da manhã para 5 pessoas com R$ 80",
-  "finished_at": "2026-10-24T23:28:51+00:00",
+  "finished_at": "2026-10-25T09:32:57+00:00",
   "cart": {
     "status": "impossivel",
     "lines": [],
@@ -12,18 +12,15 @@
     "total": 0.0,
     "people": 5,
     "budget": 80.0,
-    "message": "Não é possível atender este pedido: Só 'prato_principal' para 5 pessoa(s) custa no mínimo R$ 201.40 com entrega, acima do orçamento de R$ 80.00.",
-    "problems": [
-      "Só 'prato_principal' para 5 pessoa(s) custa no mínimo R$ 201.40 com entrega, acima do orçamento de R$ 80.00."
-    ],
+    "message": "Nenhum prato principal cabe no orçamento de R$ 80 para 5 pessoas, portanto não é possível montar o café da manhã solicitado.",
+    "problems": [],
     "assumptions": [
-      "O cliente não especificou tipos de bebida, assume-se café e suco como opções padrão.",
-      "Inclui-se frutas como opção complementar, embora não tenha sido mencionada.",
-      "Considera‑se necessário descartar utensílios para o serviço."
+      "Como não foi especificado o tipo de alimento, consideramos um combo típico de café da manhã com bebidas, pães e frutas."
     ]
   },
   "spec": {
     "occasion": "café da manhã",
+    "specific_dish": null,
     "people": 5,
     "budget": 80.0,
     "diet": [],
@@ -32,33 +29,31 @@
     "needs": [
       {
         "category": "prato_principal",
-        "query": "kits de café da manhã ou combos de café da manhã",
+        "query": "café da manhã completo",
         "essential": true
       },
       {
         "category": "bebida",
-        "query": "café, suco ou leite",
+        "query": "café ou suco",
         "essential": true
       },
       {
-        "category": "hortifruti",
-        "query": "frutas frescas para café da manhã",
+        "category": "paes",
+        "query": "pães e croissants",
         "essential": false
       },
       {
-        "category": "utensilios",
-        "query": "descartáveis (copos, talheres, guardanapos)",
+        "category": "hortifruti",
+        "query": "frutas frescas",
         "essential": false
       }
     ],
     "assumptions": [
-      "O cliente não especificou tipos de bebida, assume-se café e suco como opções padrão.",
-      "Inclui-se frutas como opção complementar, embora não tenha sido mencionada.",
-      "Considera‑se necessário descartar utensílios para o serviço."
+      "Como não foi especificado o tipo de alimento, consideramos um combo típico de café da manhã com bebidas, pães e frutas."
     ]
   },
   "trace": {
-    "run_id": "dfa65d878e89",
+    "run_id": "54e0682ba2dd",
     "version": "B",
     "order": "café da manhã para 5 pessoas com R$ 80",
     "steps": [
@@ -67,6 +62,7 @@
         "input": "café da manhã para 5 pessoas com R$ 80",
         "output": {
           "occasion": "café da manhã",
+          "specific_dish": null,
           "people": 5,
           "budget": 80.0,
           "diet": [],
@@ -75,38 +71,36 @@
           "needs": [
             {
               "category": "prato_principal",
-              "query": "kits de café da manhã ou combos de café da manhã",
+              "query": "café da manhã completo",
               "essential": true
             },
             {
               "category": "bebida",
-              "query": "café, suco ou leite",
+              "query": "café ou suco",
               "essential": true
             },
             {
-              "category": "hortifruti",
-              "query": "frutas frescas para café da manhã",
+              "category": "paes",
+              "query": "pães e croissants",
               "essential": false
             },
             {
-              "category": "utensilios",
-              "query": "descartáveis (copos, talheres, guardanapos)",
+              "category": "hortifruti",
+              "query": "frutas frescas",
               "essential": false
             }
           ],
           "assumptions": [
-            "O cliente não especificou tipos de bebida, assume-se café e suco como opções padrão.",
-            "Inclui-se frutas como opção complementar, embora não tenha sido mencionada.",
-            "Considera‑se necessário descartar utensílios para o serviço."
+            "Como não foi especificado o tipo de alimento, consideramos um combo típico de café da manhã com bebidas, pães e frutas."
           ]
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1351,
-        "tokens_out": 327,
-        "cost_usd": 0.00039885,
-        "latency_ms": 9317.4,
-        "wait_ms": 8000.0,
+        "tokens_in": 1466,
+        "tokens_out": 192,
+        "cost_usd": 0.0003351,
+        "latency_ms": 1124.9,
+        "wait_ms": 0.0,
         "error": null
       },
       {
@@ -114,152 +108,152 @@
         "input": [
           {
             "category": "prato_principal",
-            "query": "kits de café da manhã ou combos de café da manhã",
+            "query": "café da manhã completo",
             "essential": true
           },
           {
             "category": "bebida",
-            "query": "café, suco ou leite",
+            "query": "café ou suco",
             "essential": true
           },
           {
-            "category": "hortifruti",
-            "query": "frutas frescas para café da manhã",
+            "category": "paes",
+            "query": "pães e croissants",
             "essential": false
           },
           {
-            "category": "utensilios",
-            "query": "descartáveis (copos, talheres, guardanapos)",
+            "category": "hortifruti",
+            "query": "frutas frescas",
             "essential": false
           }
         ],
         "output": {
           "prato_principal": [
             {
-              "id": "aloha-006",
-              "nome": "Poke de camarão picante",
-              "score": 0.8492
+              "id": "verdevida-008",
+              "nome": "Moqueca de palmito com arroz integral",
+              "score": 0.8433
             },
             {
-              "id": "verdevida-011",
-              "nome": "Curry de legumes com arroz basmati",
-              "score": 0.8484
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.8424
             },
             {
-              "id": "aloha-005",
-              "nome": "Poke vegano sem glúten",
-              "score": 0.8473
+              "id": "caseiro-007",
+              "nome": "Frango com quiabo e angu",
+              "score": 0.8391
+            },
+            {
+              "id": "caseiro-003",
+              "nome": "Feijoada completa individual",
+              "score": 0.8378
             },
             {
               "id": "kenzo-005",
               "nome": "Combinado vegetariano 20 peças",
-              "score": 0.845
+              "score": 0.8365
             },
             {
-              "id": "verdevida-009",
-              "nome": "Strogonoff de cogumelos",
-              "score": 0.8437
-            },
-            {
-              "id": "aloha-004",
-              "nome": "Poke de tofu",
-              "score": 0.8428
+              "id": "verdevida-007",
+              "nome": "Escondidinho de mandioca com carne seca",
+              "score": 0.8353
             }
           ],
           "bebida": [
             {
               "id": "graofino-026",
               "nome": "Suco de laranja 1 L",
-              "score": 0.8835
-            },
-            {
-              "id": "padaria-014",
-              "nome": "Café com leite 300 ml",
-              "score": 0.8787
-            },
-            {
-              "id": "graofino-023",
-              "nome": "Leite integral garrafa 1 L",
-              "score": 0.878
-            },
-            {
-              "id": "verdevida-020",
-              "nome": "Suco verde 500 ml",
-              "score": 0.8745
+              "score": 0.8798
             },
             {
               "id": "aloha-013",
               "nome": "Suco de abacaxi com hortelã",
-              "score": 0.8692
+              "score": 0.8637
             },
             {
               "id": "graofino-021",
               "nome": "Café coado garrafa térmica 1 L",
-              "score": 0.8675
+              "score": 0.8624
+            },
+            {
+              "id": "graofino-022",
+              "nome": "Café coado garrafa térmica 2 L",
+              "score": 0.8613
+            },
+            {
+              "id": "verdevida-020",
+              "nome": "Suco verde 500 ml",
+              "score": 0.8607
+            },
+            {
+              "id": "graofino-023",
+              "nome": "Leite integral garrafa 1 L",
+              "score": 0.8464
+            }
+          ],
+          "paes": [
+            {
+              "id": "graofino-004",
+              "nome": "Croissant tradicional",
+              "score": 0.9027
+            },
+            {
+              "id": "padaria-007",
+              "nome": "Croissant de manteiga",
+              "score": 0.8992
+            },
+            {
+              "id": "padaria-001",
+              "nome": "Pão francês 10 unidades",
+              "score": 0.8873
+            },
+            {
+              "id": "mercado-027",
+              "nome": "Pão de forma tradicional",
+              "score": 0.861
+            },
+            {
+              "id": "padaria-004",
+              "nome": "Pão de leite 6 unidades",
+              "score": 0.859
+            },
+            {
+              "id": "padaria-003",
+              "nome": "Pão integral fatiado 500 g",
+              "score": 0.8555
             }
           ],
           "hortifruti": [
             {
-              "id": "hortifruti-014",
-              "nome": "Kit frutas cortadas para escritório 1 kg",
-              "score": 0.8798
-            },
-            {
-              "id": "verdevida-025",
-              "nome": "Salada de frutas 300 g",
-              "score": 0.8752
-            },
-            {
-              "id": "graofino-020",
-              "nome": "Bandeja de frutas fatiadas 1 kg",
-              "score": 0.8745
-            },
-            {
               "id": "hortifruti-015",
               "nome": "Salada de frutas 1 kg",
-              "score": 0.8669
+              "score": 0.8769
+            },
+            {
+              "id": "hortifruti-014",
+              "nome": "Kit frutas cortadas para escritório 1 kg",
+              "score": 0.8748
             },
             {
               "id": "hortifruti-007",
               "nome": "Morango 250 g",
-              "score": 0.8642
+              "score": 0.8723
             },
             {
-              "id": "padaria-030",
-              "nome": "Salada de frutas 500 ml",
-              "score": 0.862
-            }
-          ],
-          "utensilios": [
-            {
-              "id": "mercado-016",
-              "nome": "Kit descartáveis para 10 pessoas",
-              "score": 0.8728
+              "id": "hortifruti-004",
+              "nome": "Abacaxi pérola",
+              "score": 0.8665
             },
             {
-              "id": "adega-020",
-              "nome": "Copos descartáveis 50 unidades",
-              "score": 0.8535
+              "id": "hortifruti-001",
+              "nome": "Banana prata",
+              "score": 0.8634
             },
             {
-              "id": "acougue-024",
-              "nome": "Acendedor de carvão",
-              "score": 0.7927
-            },
-            {
-              "id": "acougue-023",
-              "nome": "Sal grosso 1 kg",
-              "score": 0.7879
-            },
-            {
-              "id": "mercado-014",
-              "nome": "Carvão vegetal 3 kg",
-              "score": 0.7875
-            },
-            {
-              "id": "acougue-021",
-              "nome": "Carvão vegetal 5 kg",
-              "score": 0.7856
+              "id": "verdevida-025",
+              "nome": "Salada de frutas 300 g",
+              "score": 0.8607
             }
           ]
         },
@@ -268,7 +262,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 264.0,
+        "latency_ms": 130.1,
         "wait_ms": 0.0,
         "error": null
       },
@@ -276,18 +270,35 @@
         "name": "pre_checagem",
         "input": null,
         "output": {
-          "impossivel": true,
-          "motivos": [
-            "Só 'prato_principal' para 5 pessoa(s) custa no mínimo R$ 201.40 com entrega, acima do orçamento de R$ 80.00."
-          ]
+          "impossivel": false,
+          "motivos": []
         },
         "llm_calls": 0,
         "retries": 0,
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.1,
+        "latency_ms": 0.5,
         "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": false,
+          "lines": [],
+          "rationale": "Nenhum prato principal cabe no orçamento de R$ 80 para 5 pessoas, portanto não é possível montar o café da manhã solicitado."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2819,
+        "tokens_out": 182,
+        "cost_usd": 0.00053205,
+        "latency_ms": 10142.6,
+        "wait_ms": 9000.0,
         "error": null
       }
     ]

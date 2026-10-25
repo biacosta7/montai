@@ -1,0 +1,276 @@
+{
+  "case_id": "o04",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "noite de pizza com os amigos, somos 6",
+  "finished_at": "2026-10-24T23:22:19+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "nonna-002",
+        "name": "Pizza muçarela grande",
+        "store_id": "nonna",
+        "store_name": "Pizzaria Forno da Nonna",
+        "unit": "pizza grande (8 fatias)",
+        "quantity": 2,
+        "unit_price": 59.9,
+        "subtotal": 119.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 2,
+        "unit_price": 9.49,
+        "subtotal": 18.98
+      }
+    ],
+    "items_total": 138.78,
+    "delivery_total": 12.8,
+    "total": 151.58,
+    "people": 6,
+    "budget": null,
+    "message": "Escolhi duas pizzas muçarela grandes (serve 3 cada) para atender exatamente 6 pessoas com o menor R$/pessoa. Para as bebidas, duas garrafas de refrigerante guaraná de 2 L cobrem todos e são as mais econômicas.",
+    "problems": [],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto budget = null.",
+      "Nenhuma restrição alimentar foi mencionada.",
+      "Incluí bebidas como item de apoio, já que não foram especificadas."
+    ]
+  },
+  "spec": {
+    "occasion": "noite de pizza com os amigos",
+    "people": 6,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "pizza",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Nenhum orçamento foi informado, portanto budget = null.",
+      "Nenhuma restrição alimentar foi mencionada.",
+      "Incluí bebidas como item de apoio, já que não foram especificadas."
+    ]
+  },
+  "trace": {
+    "run_id": "80b7449d6e0b",
+    "version": "B",
+    "order": "noite de pizza com os amigos, somos 6",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "noite de pizza com os amigos, somos 6",
+        "output": {
+          "occasion": "noite de pizza com os amigos",
+          "people": 6,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "pizza",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Nenhum orçamento foi informado, portanto budget = null.",
+            "Nenhuma restrição alimentar foi mencionada.",
+            "Incluí bebidas como item de apoio, já que não foram especificadas."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1349,
+        "tokens_out": 192,
+        "cost_usd": 0.00031754999999999994,
+        "latency_ms": 14064.0,
+        "wait_ms": 13000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "pizza",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "nonna-020",
+              "nome": "Pizza rúcula com tomate seco grande",
+              "score": 0.8496
+            },
+            {
+              "id": "nonna-019",
+              "nome": "Pizza rúcula com tomate seco média",
+              "score": 0.8457
+            },
+            {
+              "id": "nonna-002",
+              "nome": "Pizza muçarela grande",
+              "score": 0.8427
+            },
+            {
+              "id": "nonna-018",
+              "nome": "Pizza napolitana grande",
+              "score": 0.8414
+            },
+            {
+              "id": "nonna-024",
+              "nome": "Pizza vegana de legumes grande",
+              "score": 0.8403
+            },
+            {
+              "id": "nonna-001",
+              "nome": "Pizza muçarela média",
+              "score": 0.8392
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8784
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8755
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8729
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8676
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8669
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 273.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "nonna-002",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi duas pizzas muçarela grandes (serve 3 cada) para atender exatamente 6 pessoas com o menor R$/pessoa. Para as bebidas, duas garrafas de refrigerante guaraná de 2 L cobrem todos e são as mais econômicas."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1823,
+        "tokens_out": 412,
+        "cost_usd": 0.00052065,
+        "latency_ms": 9570.4,
+        "wait_ms": 8000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "nonna-002",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 151.58,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 6.0,
+            "bebida": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

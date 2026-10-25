@@ -36,6 +36,14 @@ class QuotaExhausted(RuntimeError):
     avaliação em vez de virar uma falha registrada.
     """
 
+    def __init__(self, wait_s: float) -> None:
+        super().__init__(f"cota do provedor esgotada; tente em {wait_s:.0f} s")
+        self.wait_s = wait_s
+
+
+# Erros 400 do Groq que indicam "o modelo gerou algo fora do formato", e não
+# um problema na requisição: vale devolver ao modelo e tentar de novo.
+RETRYABLE_GENERATION_ERRORS = {"json_validate_failed", "output_parse_failed"}
 
 MAX_ATTEMPTS = 8
 MAX_WAIT_S = 90  # pedir para esperar mais que isso indica cota diária, não por minuto
@@ -148,7 +156,7 @@ class LLMClient:
             except openai.RateLimitError as exc:
                 wait = _retry_after(exc) or min(2**attempt, 30)
                 if wait > MAX_WAIT_S:
-                    raise QuotaExhausted(f"cota do provedor esgotada; tente em {wait:.0f} s") from exc
+                    raise QuotaExhausted(wait) from exc
             except (openai.APIConnectionError, openai.InternalServerError):
                 wait = min(2**attempt, 30)
             if step is not None:
@@ -162,8 +170,8 @@ class LLMClient:
         """Pede uma resposta no formato `schema` e valida com Pydantic.
 
         O "modo estrito" do Groq não restringe a geração: ele valida depois e,
-        se o JSON não bate com o schema, devolve erro 400 (json_validate_failed)
-        com a geração que falhou. Tratamos esse erro igual a um JSON que não
+        se o JSON não bate com o schema, devolve erro 400 (json_validate_failed
+        ou output_parse_failed) com a geração que falhou. Tratamos esse erro igual a um JSON que não
         passou no Pydantic: o erro volta ao modelo, que tenta de novo.
         """
         response_format = {
@@ -179,7 +187,7 @@ class LLMClient:
                 return schema.model_validate_json(content)
             except openai.BadRequestError as exc:
                 body = exc.body if isinstance(exc.body, dict) else {}
-                if body.get("code") != "json_validate_failed":
+                if body.get("code") not in RETRYABLE_GENERATION_ERRORS:
                     raise
                 # Obs.: o provedor não devolve o uso de tokens de uma geração
                 # recusada, então essas tentativas não entram no custo estimado.

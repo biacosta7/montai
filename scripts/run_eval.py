@@ -6,14 +6,15 @@ Uso:
     python scripts/run_eval.py --report-only           # só recalcula o relatório
 
 Pedidos já executados (reports/runs/) são pulados, então dá para interromper
-e retomar. Se a cota diária do provedor acabar, o script para e salva o que
-já rodou.
+e retomar. Se a cota do provedor acabar, o script para e salva o que já
+rodou; com --wait-quota, ele espera a cota voltar e continua sozinho.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import time
 
 from montai.catalog import load_catalog
 from montai.config import REPORTS_DIR
@@ -26,7 +27,7 @@ from montai.retrieval import Retriever
 ALL_VERSIONS = ["A", "B"]
 
 
-def run(versions: list[str], case_ids: set[str] | None, force: bool) -> None:
+def run(versions: list[str], case_ids: set[str] | None, force: bool, wait_quota: bool) -> None:
     catalog = load_catalog()
     cases = [c for c in load_cases() if not case_ids or c.id in case_ids]
     llm = LLMClient()
@@ -40,11 +41,16 @@ def run(versions: list[str], case_ids: set[str] | None, force: bool) -> None:
         pending = [c for c in cases if force or c.id not in done]
         print(f"Versão {version}: {len(pending)} pedido(s) para rodar.")
         for n, case in enumerate(pending, start=1):
-            try:
-                output = runners[version](case.order)
-            except QuotaExhausted as exc:
-                print(f"\nParando: {exc}. Rode de novo mais tarde para continuar.")
-                return
+            while True:
+                try:
+                    output = runners[version](case.order)
+                    break
+                except QuotaExhausted as exc:
+                    if not wait_quota:
+                        print(f"\nParando: {exc}. Rode de novo mais tarde para continuar.")
+                        return
+                    print(f"  {exc}; esperando...", flush=True)
+                    time.sleep(exc.wait_s + 5)
             save_record(RunRecord(
                 case_id=case.id, version=version, model=llm.model, order=case.order,
                 finished_at=now(), cart=output.cart, spec=output.spec, trace=output.trace,
@@ -87,11 +93,12 @@ def main() -> None:
     parser.add_argument("--cases", help="ids separados por vírgula (padrão: todos)")
     parser.add_argument("--force", action="store_true", help="roda de novo mesmo se já houver resultado")
     parser.add_argument("--report-only", action="store_true")
+    parser.add_argument("--wait-quota", action="store_true", help="espera a cota voltar em vez de parar")
     args = parser.parse_args()
 
     if not args.report_only:
         case_ids = set(args.cases.split(",")) if args.cases else None
-        run(args.versions.split(","), case_ids, args.force)
+        run(args.versions.split(","), case_ids, args.force, args.wait_quota)
     report()
 
 

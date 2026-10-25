@@ -3,19 +3,19 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "aniversário da minha filha, 15 crianças, precisa de bolo e docinhos",
-  "finished_at": "2026-10-24T23:23:24+00:00",
+  "finished_at": "2026-10-25T05:02:28+00:00",
   "cart": {
     "status": "ok",
     "lines": [
       {
-        "item_id": "doceria-001",
-        "name": "Bolo de chocolate 1,5 kg",
-        "store_id": "doceria",
-        "store_name": "Doceria Açúcar & Afeto",
-        "unit": "bolo 1,5 kg",
-        "quantity": 1,
-        "unit_price": 79.9,
-        "subtotal": 79.9
+        "item_id": "graofino-017",
+        "name": "Bolo de laranja inteiro",
+        "store_id": "graofino",
+        "store_name": "Grão Fino Café & Bistrô",
+        "unit": "bolo inteiro",
+        "quantity": 2,
+        "unit_price": 49.9,
+        "subtotal": 99.8
       },
       {
         "item_id": "mercado-002",
@@ -26,23 +26,33 @@
         "quantity": 3,
         "unit_price": 10.9,
         "subtotal": 32.7
+      },
+      {
+        "item_id": "mercado-016",
+        "name": "Kit descartáveis para 10 pessoas",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit",
+        "quantity": 2,
+        "unit_price": 24.9,
+        "subtotal": 49.8
       }
     ],
-    "items_total": 112.6,
+    "items_total": 182.3,
     "delivery_total": 12.8,
-    "total": 125.4,
+    "total": 195.1,
     "people": 15,
     "budget": null,
-    "message": "Escolhi um bolo de chocolate que serve exatamente 15 pessoas e três garrafas de refrigerante 2 L (5 pessoas cada) para cobrir o consumo de bebidas. São os itens essenciais mais econômicos e atendem a todos os convidados sem excessos.",
+    "message": "Escolhi 2 bolos de laranja (servem 24 pessoas) por R$/pessoa mais baixo, 3 garrafas de refrigerante cola zero (15 pessoas) e 2 kits descartáveis (20 pessoas), cobrindo tudo com o menor custo e usando apenas duas lojas.",
     "problems": [],
     "assumptions": [
-      "Não foi informado orçamento, então foi deixado como null.",
-      "Não há restrições alimentares específicas.",
-      "Consideramos que além do bolo e docinhos, é adequado oferecer bebidas e um lanche leve para as crianças."
+      "Não foi especificado tipo de bebida, assume-se refrigerante e suco como opções padrão.",
+      "Não há restrições alimentares informadas, assume-se que todos podem consumir os itens."
     ]
   },
   "spec": {
     "occasion": "aniversário da filha",
+    "specific_dish": null,
     "people": 15,
     "budget": null,
     "diet": [],
@@ -56,23 +66,22 @@
       },
       {
         "category": "bebida",
-        "query": "suco ou refrigerante para crianças",
-        "essential": true
+        "query": "refrigerante e suco para crianças",
+        "essential": false
       },
       {
-        "category": "lanche",
-        "query": "salgadinhos ou mini sanduíches para crianças",
+        "category": "utensilios",
+        "query": "descartáveis para festa infantil",
         "essential": false
       }
     ],
     "assumptions": [
-      "Não foi informado orçamento, então foi deixado como null.",
-      "Não há restrições alimentares específicas.",
-      "Consideramos que além do bolo e docinhos, é adequado oferecer bebidas e um lanche leve para as crianças."
+      "Não foi especificado tipo de bebida, assume-se refrigerante e suco como opções padrão.",
+      "Não há restrições alimentares informadas, assume-se que todos podem consumir os itens."
     ]
   },
   "trace": {
-    "run_id": "3afc11d9e556",
+    "run_id": "6885c2041a56",
     "version": "B",
     "order": "aniversário da minha filha, 15 crianças, precisa de bolo e docinhos",
     "steps": [
@@ -81,6 +90,7 @@
         "input": "aniversário da minha filha, 15 crianças, precisa de bolo e docinhos",
         "output": {
           "occasion": "aniversário da filha",
+          "specific_dish": null,
           "people": 15,
           "budget": null,
           "diet": [],
@@ -94,28 +104,27 @@
             },
             {
               "category": "bebida",
-              "query": "suco ou refrigerante para crianças",
-              "essential": true
+              "query": "refrigerante e suco para crianças",
+              "essential": false
             },
             {
-              "category": "lanche",
-              "query": "salgadinhos ou mini sanduíches para crianças",
+              "category": "utensilios",
+              "query": "descartáveis para festa infantil",
               "essential": false
             }
           ],
           "assumptions": [
-            "Não foi informado orçamento, então foi deixado como null.",
-            "Não há restrições alimentares específicas.",
-            "Consideramos que além do bolo e docinhos, é adequado oferecer bebidas e um lanche leve para as crianças."
+            "Não foi especificado tipo de bebida, assume-se refrigerante e suco como opções padrão.",
+            "Não há restrições alimentares informadas, assume-se que todos podem consumir os itens."
           ]
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1355,
-        "tokens_out": 273,
-        "cost_usd": 0.00036704999999999995,
-        "latency_ms": 12519.5,
-        "wait_ms": 11000.0,
+        "tokens_in": 1470,
+        "tokens_out": 268,
+        "cost_usd": 0.00038129999999999994,
+        "latency_ms": 950.7,
+        "wait_ms": 0.0,
         "error": null
       },
       {
@@ -128,12 +137,12 @@
           },
           {
             "category": "bebida",
-            "query": "suco ou refrigerante para crianças",
-            "essential": true
+            "query": "refrigerante e suco para crianças",
+            "essential": false
           },
           {
-            "category": "lanche",
-            "query": "salgadinhos ou mini sanduíches para crianças",
+            "category": "utensilios",
+            "query": "descartáveis para festa infantil",
             "essential": false
           }
         ],
@@ -172,66 +181,66 @@
           ],
           "bebida": [
             {
-              "id": "mercado-002",
-              "nome": "Refrigerante cola zero 2 L",
-              "score": 0.867
-            },
-            {
               "id": "nonna-029",
               "nome": "Refrigerante cola 2 L",
-              "score": 0.8644
+              "score": 0.8667
+            },
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8658
             },
             {
               "id": "nonna-030",
               "nome": "Refrigerante lata 350 ml",
-              "score": 0.8627
-            },
-            {
-              "id": "mercado-001",
-              "nome": "Refrigerante cola 2 L",
-              "score": 0.8611
+              "score": 0.8647
             },
             {
               "id": "adega-017",
               "nome": "Refrigerante cola 2 L",
-              "score": 0.8607
+              "score": 0.8644
             },
             {
               "id": "chapa-019",
               "nome": "Refrigerante 2 L",
-              "score": 0.8605
+              "score": 0.8616
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8613
             }
           ],
-          "lanche": [
+          "utensilios": [
             {
-              "id": "graofino-006",
-              "nome": "Mini sanduíches sortidos 20 unidades",
-              "score": 0.8781
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8788
             },
             {
-              "id": "graofino-007",
-              "nome": "Mini sanduíches veganos 10 unidades",
-              "score": 0.876
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8531
             },
             {
-              "id": "padaria-021",
-              "nome": "Sanduíche natural de frango",
-              "score": 0.8431
+              "id": "acougue-023",
+              "nome": "Sal grosso 1 kg",
+              "score": 0.8219
             },
             {
-              "id": "padaria-022",
-              "nome": "Sanduíche natural vegano",
-              "score": 0.8424
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8213
             },
             {
-              "id": "lapicante-008",
-              "nome": "Quesadilla de frango",
-              "score": 0.8313
+              "id": "mercado-017",
+              "nome": "Gelo em cubos 5 kg",
+              "score": 0.8169
             },
             {
-              "id": "lapicante-002",
-              "nome": "Tacos al pastor 3 unidades",
-              "score": 0.8312
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8152
             }
           ]
         },
@@ -240,7 +249,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 307.6,
+        "latency_ms": 86.0,
         "wait_ms": 0.0,
         "error": null
       },
@@ -256,7 +265,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.1,
         "wait_ms": 0.0,
         "error": null
       },
@@ -269,43 +278,51 @@
           "feasible": true,
           "lines": [
             {
-              "item_id": "doceria-001",
-              "quantity": 1
+              "item_id": "graofino-017",
+              "quantity": 2
             },
             {
               "item_id": "mercado-002",
               "quantity": 3
+            },
+            {
+              "item_id": "mercado-016",
+              "quantity": 2
             }
           ],
-          "rationale": "Escolhi um bolo de chocolate que serve exatamente 15 pessoas e três garrafas de refrigerante 2 L (5 pessoas cada) para cobrir o consumo de bebidas. São os itens essenciais mais econômicos e atendem a todos os convidados sem excessos."
+          "rationale": "Escolhi 2 bolos de laranja (servem 24 pessoas) por R$/pessoa mais baixo, 3 garrafas de refrigerante cola zero (15 pessoas) e 2 kits descartáveis (20 pessoas), cobrindo tudo com o menor custo e usando apenas duas lojas."
         },
         "llm_calls": 1,
-        "retries": 0,
-        "tokens_in": 2305,
-        "tokens_out": 354,
-        "cost_usd": 0.00055815,
-        "latency_ms": 21887.8,
-        "wait_ms": 20000.0,
+        "retries": 1,
+        "tokens_in": 2937,
+        "tokens_out": 171,
+        "cost_usd": 0.00054315,
+        "latency_ms": 36189.2,
+        "wait_ms": 33000.0,
         "error": null
       },
       {
         "name": "validador",
         "input": [
           {
-            "item_id": "doceria-001",
-            "quantity": 1
+            "item_id": "graofino-017",
+            "quantity": 2
           },
           {
             "item_id": "mercado-002",
             "quantity": 3
+          },
+          {
+            "item_id": "mercado-016",
+            "quantity": 2
           }
         ],
         "output": {
           "ok": true,
-          "total": 125.4,
+          "total": 195.1,
           "problemas": [],
           "cobertura": {
-            "sobremesa": 15.0,
+            "sobremesa": 24.0,
             "bebida": 15.0
           }
         },
@@ -314,7 +331,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.4,
+        "latency_ms": 0.3,
         "wait_ms": 0.0,
         "error": null
       }

@@ -3,21 +3,55 @@
   "version": "B",
   "model": "openai/gpt-oss-120b",
   "order": "almoço tailandês para 3 pessoas",
-  "finished_at": "2026-10-24T23:27:22+00:00",
+  "finished_at": "2026-10-25T09:32:45+00:00",
   "cart": {
-    "status": "falhou",
-    "lines": [],
-    "items_total": 0.0,
-    "delivery_total": 0.0,
-    "total": 0.0,
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "bangkok-015",
+        "name": "Stir fry de legumes com castanha de caju",
+        "store_id": "bangkok",
+        "store_name": "Bangkok Express",
+        "unit": "prato",
+        "quantity": 3,
+        "unit_price": 38.9,
+        "subtotal": 116.7
+      },
+      {
+        "item_id": "kenzo-019",
+        "name": "Harumaki de legumes 4 unidades",
+        "store_id": "kenzo",
+        "store_name": "Sushi Kenzo",
+        "unit": "4 unidades",
+        "quantity": 3,
+        "unit_price": 19.9,
+        "subtotal": 59.7
+      },
+      {
+        "item_id": "bangkok-019",
+        "name": "Água de coco 330 ml",
+        "store_id": "bangkok",
+        "store_name": "Bangkok Express",
+        "unit": "garrafa 330 ml",
+        "quantity": 3,
+        "unit_price": 7.9,
+        "subtotal": 23.7
+      }
+    ],
+    "items_total": 200.1,
+    "delivery_total": 17.8,
+    "total": 217.9,
     "people": 3,
     "budget": null,
-    "message": "Erro ao consultar o modelo: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': 'We need essential prato_principal covering 3 people. Choose lowest R$/pessoa: look list: prices per person = price unit (serve=1). cheapest is curry amarelo de legumes R$41.90, stir fry 38.90 actually lower. stir fry 38.90. So pick 1 unit serves 1, need 3 units => quantity 3? That would serve 3. But double limit: max double 6, okay. Could also pick 3 different? Simpler: 3 x stir fry veg = 3*38.90. Could also pick 1 unit each of three different? But need >=3 servings. 3 units okay. Use same store Bangkok Express, delivery 8.90.\\n\\nOptional arroz: need maybe 2 pots serve 2 each => each pot serves 2, so 2 pots serve 4 >=3 and <=6. Choose cheapest R$/pessoa: look at serve2 items: price 12.90 serve2 => R$/pessoa 6.45. Two options same price. Choose Bangkok-009 same store to avoid extra delivery. Quantity 2.\\n\\nBeverage: need serve maybe 5 per bottle covers all. One bottle enough. Choose cheapest per person: mercado-003 price 9.49 serve5 R$/pessoa1.90. Same store Bangkok? No, different store Supermercado Bom Preço adds delivery 5.90. Could instead use lata 350 ml from Nonna serve1 each need 3 units => 3*6.90=20.7, same store as none other. Delivery 6.90. Compare total cost: option 1 bottle: 9.49 +5.90 =15.39. Option 3 latas: 20.7+6.9=27.6. So choose bottle.\\n\\nThus lines: stir fry qty3, arroz qty2, refrigerante qty1.\\n\\nCompute feasible true.\\n\\nRationale short.\\n\\n'}}",
+    "message": "Escolhi 3 pratos principais veganos de stir fry para atender 3 pessoas, adicionei entrada de legumes da Kenzo e água de coco, mantendo o menor custo total e usando apenas duas lojas.",
     "problems": [],
-    "assumptions": []
+    "assumptions": [
+      "Como o cliente não especificou itens, assumimos que o almoço inclui prato principal, uma entrada e bebidas."
+    ]
   },
   "spec": {
     "occasion": "almoço tailandês",
+    "specific_dish": null,
     "people": 3,
     "budget": null,
     "diet": [],
@@ -26,27 +60,26 @@
     "needs": [
       {
         "category": "prato_principal",
-        "query": "pratos tailandeses como curry, pad thai",
+        "query": "prato tailandês principal",
         "essential": true
       },
       {
-        "category": "acompanhamento",
-        "query": "arroz jasmine ou arroz de coco",
+        "category": "entrada",
+        "query": "entrada tailandesa como rolinhos primavera",
         "essential": false
       },
       {
         "category": "bebida",
-        "query": "refrigerante ou água gelada",
+        "query": "bebidas sem álcool para almoço tailandês",
         "essential": false
       }
     ],
     "assumptions": [
-      "Nenhum orçamento foi informado; será considerado sem restrição de valor.",
-      "Não foram especificadas restrições alimentares nem nível de picância."
+      "Como o cliente não especificou itens, assumimos que o almoço inclui prato principal, uma entrada e bebidas."
     ]
   },
   "trace": {
-    "run_id": "1f0467fcbe83",
+    "run_id": "b97eff9bae20",
     "version": "B",
     "order": "almoço tailandês para 3 pessoas",
     "steps": [
@@ -55,6 +88,7 @@
         "input": "almoço tailandês para 3 pessoas",
         "output": {
           "occasion": "almoço tailandês",
+          "specific_dish": null,
           "people": 3,
           "budget": null,
           "diet": [],
@@ -63,32 +97,31 @@
           "needs": [
             {
               "category": "prato_principal",
-              "query": "pratos tailandeses como curry, pad thai",
+              "query": "prato tailandês principal",
               "essential": true
             },
             {
-              "category": "acompanhamento",
-              "query": "arroz jasmine ou arroz de coco",
+              "category": "entrada",
+              "query": "entrada tailandesa como rolinhos primavera",
               "essential": false
             },
             {
               "category": "bebida",
-              "query": "refrigerante ou água gelada",
+              "query": "bebidas sem álcool para almoço tailandês",
               "essential": false
             }
           ],
           "assumptions": [
-            "Nenhum orçamento foi informado; será considerado sem restrição de valor.",
-            "Não foram especificadas restrições alimentares nem nível de picância."
+            "Como o cliente não especificou itens, assumimos que o almoço inclui prato principal, uma entrada e bebidas."
           ]
         },
         "llm_calls": 1,
         "retries": 0,
-        "tokens_in": 1347,
-        "tokens_out": 258,
-        "cost_usd": 0.00035685,
-        "latency_ms": 6271.7,
-        "wait_ms": 5000.0,
+        "tokens_in": 1462,
+        "tokens_out": 221,
+        "cost_usd": 0.0003519,
+        "latency_ms": 1322.8,
+        "wait_ms": 0.0,
         "error": null
       },
       {
@@ -96,115 +129,115 @@
         "input": [
           {
             "category": "prato_principal",
-            "query": "pratos tailandeses como curry, pad thai",
+            "query": "prato tailandês principal",
             "essential": true
           },
           {
-            "category": "acompanhamento",
-            "query": "arroz jasmine ou arroz de coco",
+            "category": "entrada",
+            "query": "entrada tailandesa como rolinhos primavera",
             "essential": false
           },
           {
             "category": "bebida",
-            "query": "refrigerante ou água gelada",
+            "query": "bebidas sem álcool para almoço tailandês",
             "essential": false
           }
         ],
         "output": {
           "prato_principal": [
             {
-              "id": "bangkok-001",
-              "nome": "Pad thai de camarão",
-              "score": 0.9021
-            },
-            {
               "id": "bangkok-002",
               "nome": "Pad thai de frango",
-              "score": 0.893
+              "score": 0.8709
             },
             {
-              "id": "bangkok-006",
-              "nome": "Curry amarelo de legumes",
-              "score": 0.8924
+              "id": "bangkok-001",
+              "nome": "Pad thai de camarão",
+              "score": 0.8699
             },
             {
-              "id": "bangkok-003",
-              "nome": "Pad thai vegano com tofu",
-              "score": 0.8895
+              "id": "bangkok-016",
+              "nome": "Combo Bangkok para 2",
+              "score": 0.8695
             },
             {
-              "id": "bangkok-004",
-              "nome": "Curry verde de frango",
-              "score": 0.8811
+              "id": "massamia-003",
+              "nome": "Lasanha à bolonhesa individual",
+              "score": 0.8668
             },
             {
               "id": "bangkok-015",
               "nome": "Stir fry de legumes com castanha de caju",
-              "score": 0.8792
+              "score": 0.863
+            },
+            {
+              "id": "bangkok-003",
+              "nome": "Pad thai vegano com tofu",
+              "score": 0.858
             }
           ],
-          "acompanhamento": [
+          "entrada": [
             {
-              "id": "bangkok-009",
-              "nome": "Arroz de jasmim 300 g",
-              "score": 0.8801
+              "id": "bangkok-011",
+              "nome": "Rolinho primavera 4 unidades",
+              "score": 0.9088
             },
             {
-              "id": "kenzo-024",
-              "nome": "Arroz gohan 300 g",
-              "score": 0.8637
+              "id": "kenzo-019",
+              "nome": "Harumaki de legumes 4 unidades",
+              "score": 0.868
             },
             {
-              "id": "caseiro-015",
-              "nome": "Arroz e feijão 500 g",
-              "score": 0.8561
+              "id": "bangkok-012",
+              "nome": "Satay de frango 4 espetos",
+              "score": 0.8562
             },
             {
-              "id": "lapicante-017",
-              "nome": "Arroz mexicano 300 g",
-              "score": 0.8536
+              "id": "bangkok-008",
+              "nome": "Tom kha gai",
+              "score": 0.8497
             },
             {
-              "id": "sahara-015",
-              "nome": "Arroz com lentilha 500 g",
-              "score": 0.851
+              "id": "kenzo-009",
+              "nome": "Hossomaki de pepino 8 peças",
+              "score": 0.8489
             },
             {
-              "id": "verdevida-018",
-              "nome": "Arroz integral 500 g",
-              "score": 0.8494
+              "id": "bangkok-007",
+              "nome": "Tom yum de camarão",
+              "score": 0.8395
             }
           ],
           "bebida": [
             {
-              "id": "mercado-003",
-              "nome": "Refrigerante guaraná 2 L",
-              "score": 0.8877
+              "id": "bangkok-018",
+              "nome": "Chá tailandês gelado",
+              "score": 0.8918
             },
             {
-              "id": "churrascaria-021",
-              "nome": "Refrigerante guaraná 2 L",
-              "score": 0.8818
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8867
             },
             {
-              "id": "mercado-001",
-              "nome": "Refrigerante cola 2 L",
-              "score": 0.8815
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.8835
             },
             {
-              "id": "nonna-030",
-              "nome": "Refrigerante lata 350 ml",
-              "score": 0.8796
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8802
             },
             {
-              "id": "mercado-002",
-              "nome": "Refrigerante cola zero 2 L",
-              "score": 0.8792
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8735
             },
             {
-              "id": "adega-017",
-              "nome": "Refrigerante cola 2 L",
-              "score": 0.8788
+              "id": "bangkok-019",
+              "nome": "Água de coco 330 ml",
+              "score": 0.8728
             }
           ]
         },
@@ -213,7 +246,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 226.9,
+        "latency_ms": 398.8,
         "wait_ms": 0.0,
         "error": null
       },
@@ -229,7 +262,7 @@
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 0.0,
+        "latency_ms": 0.2,
         "wait_ms": 0.0,
         "error": null
       },
@@ -238,15 +271,67 @@
         "input": {
           "tentativa": 1
         },
-        "output": null,
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "bangkok-015",
+              "quantity": 3
+            },
+            {
+              "item_id": "kenzo-019",
+              "quantity": 3
+            },
+            {
+              "item_id": "bangkok-019",
+              "quantity": 3
+            }
+          ],
+          "rationale": "Escolhi 3 pratos principais veganos de stir fry para atender 3 pessoas, adicionei entrada de legumes da Kenzo e água de coco, mantendo o menor custo total e usando apenas duas lojas."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2272,
+        "tokens_out": 509,
+        "cost_usd": 0.0006462000000000001,
+        "latency_ms": 1527.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "bangkok-015",
+            "quantity": 3
+          },
+          {
+            "item_id": "kenzo-019",
+            "quantity": 3
+          },
+          {
+            "item_id": "bangkok-019",
+            "quantity": 3
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 217.9,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 3.0,
+            "entrada": 3.0,
+            "bebida": 3.0
+          }
+        },
         "llm_calls": 0,
         "retries": 0,
         "tokens_in": 0,
         "tokens_out": 0,
         "cost_usd": 0.0,
-        "latency_ms": 17733.9,
-        "wait_ms": 16000.0,
-        "error": "BadRequestError: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': 'We need essential prato_principal covering 3 people. Choose lowest R$/pessoa: look list: prices per person = price unit (serve=1). cheapest is curry amarelo de legumes R$41.90, stir fry 38.90 actually lower. stir fry 38.90. So pick 1 unit serves 1, need 3 units => quantity 3? That would serve 3. But double limit: max double 6, okay. Could also pick 3 different? Simpler: 3 x stir fry veg = 3*38.90. Could also pick 1 unit each of three different? But need >=3 servings. 3 units okay. Use same store Bangkok Express, delivery 8.90.\\n\\nOptional arroz: need maybe 2 pots serve 2 each => each pot serves 2, so 2 pots serve 4 >=3 and <=6. Choose cheapest R$/pessoa: look at serve2 items: price 12.90 serve2 => R$/pessoa 6.45. Two options same price. Choose Bangkok-009 same store to avoid extra delivery. Quantity 2.\\n\\nBeverage: need serve maybe 5 per bottle covers all. One bottle enough. Choose cheapest per person: mercado-003 price 9.49 serve5 R$/pessoa1.90. Same store Bangkok? No, different store Supermercado Bom Preço adds delivery 5.90. Could instead use lata 350 ml from Nonna serve1 each need 3 units => 3*6.90=20.7, same store as none other. Delivery 6.90. Compare total cost: option 1 bottle: 9.49 +5.90 =15.39. Option 3 latas: 20.7+6.9=27.6. So choose bottle.\\n\\nThus lines: stir fry qty3, arroz qty2, refrigerante qty1.\\n\\nCompute feasible true.\\n\\nRationale short.\\n\\n'}}"
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
       }
     ]
   }

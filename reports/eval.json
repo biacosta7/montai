@@ -3,62 +3,54 @@
     {
       "version": "B",
       "model": "openai/gpt-oss-120b",
-      "cases": 45,
+      "cases": 10,
       "rates": {
         "classification_ok": {
-          "ok": 41,
-          "n": 45
+          "ok": 9,
+          "n": 10
         },
         "budget_ok": {
-          "ok": 8,
-          "n": 8
+          "ok": 1,
+          "n": 1
         },
         "diet_ok": {
-          "ok": 14,
-          "n": 14
+          "ok": 2,
+          "n": 2
         },
         "quantity_ok": {
-          "ok": 37,
-          "n": 37
+          "ok": 7,
+          "n": 7
         },
         "catalog_ok": {
-          "ok": 37,
-          "n": 37
+          "ok": 7,
+          "n": 7
         },
         "success": {
-          "ok": 41,
-          "n": 45
+          "ok": 9,
+          "n": 10
         }
       },
       "success_by_group": {
         "ocasiao": {
-          "ok": 13,
-          "n": 14
+          "ok": 7,
+          "n": 7
         },
         "orcamento_apertado": {
-          "ok": 7,
-          "n": 8
-        },
-        "restricoes_combinadas": {
-          "ok": 9,
-          "n": 9
+          "ok": 0,
+          "n": 1
         },
         "impossivel": {
-          "ok": 6,
-          "n": 8
-        },
-        "ambiguo": {
-          "ok": 6,
-          "n": 6
+          "ok": 2,
+          "n": 2
         }
       },
-      "mean_tokens": 4078.5777777777776,
-      "mean_llm_calls": 1.8444444444444446,
-      "mean_latency_s": 22.897966666666665,
-      "median_latency_s": 23.908,
-      "mean_net_latency_s": 3.2757444444444443,
-      "mean_cost_usd": 0.0009157666666666666,
-      "total_cost_usd": 0.041209499999999996
+      "mean_tokens": 4727.7,
+      "mean_llm_calls": 2.0,
+      "mean_latency_s": 75.92805999999999,
+      "median_latency_s": 16.1098,
+      "mean_net_latency_s": 63.22805999999999,
+      "mean_cost_usd": 0.00100008,
+      "total_cost_usd": 0.010000799999999999
     }
   ],
   "scores": {
@@ -136,131 +128,11 @@
         "notes": []
       },
       {
-        "case_id": "o07",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "o08",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "o09",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "o10",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "o11",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "o12",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "o13",
-        "group": "ocasiao",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
         "case_id": "o14",
         "group": "ocasiao",
-        "status": "falhou",
-        "classification_ok": false,
+        "status": "ok",
+        "classification_ok": true,
         "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": false,
-        "notes": []
-      },
-      {
-        "case_id": "t01",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "t02",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "t03",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
         "diet_ok": null,
         "quantity_ok": true,
         "catalog_ok": true,
@@ -280,326 +152,26 @@
         "notes": []
       },
       {
-        "case_id": "t05",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "t06",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "t07",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "t08",
-        "group": "orcamento_apertado",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": true,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c01",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c02",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c03",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c04",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c05",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c06",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c07",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c08",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "c09",
-        "group": "restricoes_combinadas",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "i01",
-        "group": "impossivel",
-        "status": "impossivel",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "i02",
-        "group": "impossivel",
-        "status": "impossivel",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "i03",
-        "group": "impossivel",
-        "status": "impossivel",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "i04",
-        "group": "impossivel",
-        "status": "impossivel",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "i05",
-        "group": "impossivel",
-        "status": "impossivel",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "i06",
-        "group": "impossivel",
-        "status": "impossivel",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": null,
-        "catalog_ok": null,
-        "success": true,
-        "notes": []
-      },
-      {
         "case_id": "i07",
         "group": "impossivel",
-        "status": "ok",
-        "classification_ok": false,
+        "status": "impossivel",
+        "classification_ok": true,
         "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": false,
+        "diet_ok": null,
+        "quantity_ok": null,
+        "catalog_ok": null,
+        "success": true,
         "notes": []
       },
       {
         "case_id": "i08",
         "group": "impossivel",
-        "status": "ok",
-        "classification_ok": false,
-        "budget_ok": null,
-        "diet_ok": true,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": false,
-        "notes": []
-      },
-      {
-        "case_id": "a01",
-        "group": "ambiguo",
-        "status": "ok",
+        "status": "impossivel",
         "classification_ok": true,
         "budget_ok": null,
         "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "a02",
-        "group": "ambiguo",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "a03",
-        "group": "ambiguo",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "a04",
-        "group": "ambiguo",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "a05",
-        "group": "ambiguo",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
-        "success": true,
-        "notes": []
-      },
-      {
-        "case_id": "a06",
-        "group": "ambiguo",
-        "status": "ok",
-        "classification_ok": true,
-        "budget_ok": null,
-        "diet_ok": null,
-        "quantity_ok": true,
-        "catalog_ok": true,
+        "quantity_ok": null,
+        "catalog_ok": null,
         "success": true,
         "notes": []
       }

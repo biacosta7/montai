@@ -6,8 +6,8 @@ Fluxo:
              ^________ problemas (até MAX_REPAIRS vezes) ______|
 
 A pré-checagem detecta pedidos impossíveis sem gastar chamadas ao Montador:
-uma categoria essencial sem nenhum candidato, ou um orçamento menor que o
-mínimo teórico.
+uma categoria essencial sem nenhum item compatível no catálogo, ou um
+orçamento menor que o mínimo teórico.
 """
 
 from __future__ import annotations
@@ -17,13 +17,13 @@ from pydantic import BaseModel
 
 from montai.catalog import load_catalog
 from montai.llm import LLMClient, LLMError
-from montai.models import Cart, CartProposal, CartStatus, Catalog, OrderSpec
+from montai.models import Cart, CartProposal, CartStatus, Catalog, Category, Item, OrderSpec
 from montai.pipeline.assembler import feedback_message, initial_messages
 from montai.pipeline.interpreter import interpret
 from montai.pipeline.searcher import NeedCandidates, search_candidates
 from montai.retrieval import Retriever
 from montai.tracing import Trace
-from montai.validation import MEAL_CATEGORY, NOT_COVERED_BY_MEAL, diet_label, validate_cart
+from montai.validation import MAIN_COURSES, NOT_COVERED_BY_MEAL, diet_label, validate_cart
 
 MAX_REPAIRS = 2  # tentativas de correção depois da primeira montagem
 
@@ -34,40 +34,60 @@ class PipelineResult(BaseModel):
     trace: Trace
 
 
-def check_feasibility(spec: OrderSpec, candidates: list[NeedCandidates], catalog: Catalog) -> list[str]:
-    """Prova, sem LLM, que um pedido é impossível. Lista vazia = pode ser possível."""
-    meal_items = [i for nc in candidates if nc.need.category == MEAL_CATEGORY for i in nc.items]
+# Categorias que podem ser "a comida" de alguma ocasião. Na pré-checagem, uma
+# categoria de comida escolhida pelo Interpretador pode ser trocada por qualquer
+# uma destas: a prova de impossibilidade não pode depender dessa escolha.
+MEAL_LIKE = {*MAIN_COURSES, Category.PAES, Category.ENTRADA, Category.SOBREMESA}
 
-    def coverable_by_meal(nc: NeedCandidates) -> bool:
-        return nc.need.category not in NOT_COVERED_BY_MEAL and bool(meal_items)
+
+def _alternatives(category: Category) -> set[Category]:
+    if category in NOT_COVERED_BY_MEAL:  # bebida, sobremesa, utensílios: não há substituto
+        return {category}
+    return {category, *MEAL_LIKE}
+
+
+def check_feasibility(spec: OrderSpec, catalog: Catalog) -> list[str]:
+    """Prova, sem LLM, que um pedido é impossível. Lista vazia = pode ser possível.
+
+    Usa o catálogo inteiro, e não só o que a busca trouxe: a busca e a escolha
+    de categorias do Interpretador podem ser estreitas demais, e uma prova
+    baseada nelas recusaria pedidos possíveis.
+    """
+    def compatible(item: Item) -> bool:
+        return item.satisfies(set(spec.diet)) and (
+            spec.max_spice is None or item.spice_level <= spec.max_spice
+        )
 
     reasons = []
-    for nc in candidates:
-        if nc.need.essential and not nc.items and not coverable_by_meal(nc):
+    for need in spec.needs:
+        if not need.essential:
+            continue
+        options = [
+            i for i in catalog.items
+            if i.category in _alternatives(need.category)
+            and compatible(i)
+            and (spec.budget is None or i.price <= spec.budget)
+        ]
+        if not options:
             restrictions = diet_label(spec.diet)
             if spec.max_spice is not None:
                 restrictions += f", picância até {int(spec.max_spice)}"
             reasons.append(
-                f"Não há itens de '{nc.need.category.value}' ('{nc.need.query}') "
-                f"compatíveis com as restrições ({restrictions}) e o orçamento."
+                f"Não há itens de '{need.category.value}' (nem substitutos) compatíveis com as "
+                f"restrições ({restrictions}) e o orçamento."
             )
-    if reasons or spec.budget is None:
-        return reasons
-
-    # Limite inferior de custo: para cada categoria essencial, o menor preço por
-    # pessoa vezes o número de pessoas, mais a entrega mais barata. É uma
-    # estimativa otimista (permite "meia unidade"), então se nem ela cabe no
-    # orçamento, nenhum carrinho real cabe.
-    for nc in candidates:
-        if not nc.need.essential or not nc.items:
             continue
-        options = nc.items + (meal_items if coverable_by_meal(nc) else [])
+        if spec.budget is None:
+            continue
+        # Limite inferior otimista: menor preço por pessoa vezes o número de
+        # pessoas, mais a entrega daquela loja (permite "meia unidade"). Se nem
+        # isso cabe no orçamento, nenhum carrinho real cabe.
         cheapest = min(
             spec.people * i.price / i.serves + catalog.get_store(i.store_id).delivery_fee for i in options
         )
         if cheapest > spec.budget + 0.005:
             reasons.append(
-                f"Só '{nc.need.category.value}' para {spec.people} pessoa(s) custa no mínimo "
+                f"Só '{need.category.value}' para {spec.people} pessoa(s) custa no mínimo "
                 f"R$ {cheapest:.2f} com entrega, acima do orçamento de R$ {spec.budget:.2f}."
             )
     return reasons
@@ -97,7 +117,7 @@ def run_pipeline(
             }
 
         with trace.step("pre_checagem") as step:
-            reasons = check_feasibility(spec, candidates, catalog)
+            reasons = check_feasibility(spec, catalog)
             step.output = {"impossivel": bool(reasons), "motivos": reasons}
 
         if reasons:

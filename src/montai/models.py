@@ -136,6 +136,9 @@ class OrderSpec(BaseModel):
     """Saída do Interpretador: o pedido em linguagem natural, estruturado."""
 
     occasion: str
+    specific_dish: str | None = Field(
+        description="Prato ou item que o cliente nomeou (ex.: 'pizza', 'risoto'), ou null se o pedido é genérico."
+    )
     people: int
     budget: float | None = Field(description="Orçamento total em reais, ou null se não informado.")
     diet: list[DietTag] = Field(description="Restrições que valem para TODOS os itens.")
