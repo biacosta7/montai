@@ -96,7 +96,7 @@ def _mark(score: CaseScore | None) -> str:
 
 
 def to_markdown(
-    summaries: list[VersionSummary], scores: dict[str, list[CaseScore]], cases: list[EvalCase]
+    summaries: list[VersionSummary], scores: dict[str, list[CaseScore]], cases: list[EvalCase], scope: str
 ) -> str:
     versions = [s.version for s in summaries]
     header = "| | " + " | ".join(f"Versão {v}" for v in versions) + " |"
@@ -104,7 +104,7 @@ def to_markdown(
 
     out = ["# Avaliação do Montaí", ""]
     out.append(
-        f"{len(cases)} pedidos de teste em `data/eval/orders.json`. "
+        f"Pedidos de teste em `data/eval/orders.json`. {scope} "
         + ", ".join(f"Versão {s.version}: {s.cases} executados ({s.model})" for s in summaries)
         + "."
     )

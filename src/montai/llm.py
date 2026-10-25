@@ -87,7 +87,8 @@ def provider_json_schema(model: type[BaseModel]) -> dict:
         if "type" not in other or not isinstance(other["type"], str):
             return
         del node["anyOf"]
-        node.update({k: v for k, v in other.items() if k not in node or k in ("type", "enum")})
+        # Copia só o que restringe o valor; descrições internas da classe não interessam ao modelo.
+        node.update({k: v for k, v in other.items() if k not in ("title", "description")})
         node["type"] = [other["type"], "null"]
         if "enum" in node:
             node["enum"] = [*node["enum"], None]

@@ -33,9 +33,11 @@ Como trabalhar:
    (inclui a taxa de entrega de cada loja usada), restrições que valem para todos os itens, opções
    que valem para parte das pessoas ("uma opção vegana"), picância máxima ("nada apimentado" = 0)
    e se o cliente nomeou um prato específico.
-2. Busque itens com buscar_itens, por categoria, passando as restrições como filtros.
-3. Use a coluna serve_pessoas (pessoas por unidade) para quantidades, nunca o nome do item:
-   "20 peças" ou "1 kg" não dizem quantas pessoas o item serve. calcular_quantidade ajuda.
+2. Busque itens com buscar_itens, por categoria, passando as restrições como filtros e o número
+   de pessoas (a busca já devolve unidades e custo para elas). Faça as buscas independentes no
+   MESMO turno (ex.: carnes, bebidas e carvão de uma vez): cada turno a mais custa caro.
+3. Use a coluna serve (pessoas por unidade) para quantidades, nunca o nome do item:
+   "20 peças" ou "1 kg" não dizem quantas pessoas o item serve.
 4. Monte com montar_carrinho e confira com validar_carrinho, informando as restrições do pedido
    e as categorias essenciais (as que precisam alimentar todas as pessoas). Se houver problemas,
    corrija e valide de novo.
@@ -138,7 +140,7 @@ def run_agent(
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tool_call.id,
-                    "content": json.dumps(result, ensure_ascii=False),
+                    "content": json.dumps(result, ensure_ascii=False, separators=(",", ":")),
                 })
 
         cart = _final_cart(toolbox, final_text)

@@ -15,6 +15,7 @@ Métricas (None quando não se aplicam ao caso):
 from __future__ import annotations
 
 import json
+import random
 from pathlib import Path
 
 from pydantic import BaseModel, Field
@@ -85,6 +86,20 @@ METRICS = ["classification_ok", "budget_ok", "diet_ok", "quantity_ok", "catalog_
 def load_cases(path: Path = ORDERS_PATH) -> list[EvalCase]:
     data = json.loads(path.read_text(encoding="utf-8"))
     return [EvalCase.model_validate(c) for c in data["cases"]]
+
+
+def stratified_sample(cases: list[EvalCase], per_group: int, seed: int = 42) -> list[EvalCase]:
+    """Sorteia `per_group` pedidos de cada grupo, com semente fixa.
+
+    O sorteio (e não uma escolha manual) evita escolher sem querer os casos em
+    que uma das versões vai melhor. A semente fixa torna a amostra reproduzível.
+    """
+    rng = random.Random(seed)
+    sample = []
+    for group in dict.fromkeys(c.group for c in cases):
+        members = [c for c in cases if c.group == group]
+        sample += sorted(rng.sample(members, min(per_group, len(members))), key=lambda c: c.id)
+    return sample
 
 
 def score_case(case: EvalCase, cart: Cart, catalog: Catalog) -> CaseScore:

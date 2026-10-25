@@ -64,9 +64,18 @@ def test_ferramentas_devolvem_erro_em_vez_de_quebrar(retriever, catalog):
 def test_busca_respeita_filtros(retriever, catalog):
     box = Toolbox(catalog, retriever)
     result = box.call("buscar_itens", json.dumps({"consulta": "jantar", "dieta": ["vegano", "sem_gluten"]}))
-    assert result["resultados"]
-    for item in result["resultados"]:
-        assert {"vegano", "sem_gluten"} <= set(item["dieta"])
+    assert result["itens"]
+    for row in result["itens"]:
+        diet = row.split(" | ")[7]
+        assert {"vegano", "sem_gluten"} <= set(diet.split(","))
+
+
+def test_busca_com_pessoas_traz_quantidade_e_custo(retriever, catalog):
+    box = Toolbox(catalog, retriever)
+    result = box.call("buscar_itens", json.dumps({"consulta": "picanha", "categoria": "grelhados", "pessoas": 5}))
+    assert "unidades p/ 5 pessoas" in result["colunas"]
+    row = next(r for r in result["itens"] if r.startswith("acougue-001 "))
+    assert row.endswith("| 2 | 189.80")
 
 
 def test_calcular_quantidade(retriever, catalog):

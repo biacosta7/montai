@@ -111,3 +111,12 @@ def test_score_ambiguo_usa_pessoas_assumidas(cases, catalog):
 def test_tags_do_gabarito_sao_validas(cases):
     for case in cases:
         assert set(case.expected.diet) <= set(DietTag)
+
+
+def test_amostra_estratificada_e_reproduzivel(cases):
+    from montai.eval.metrics import stratified_sample
+
+    sample = stratified_sample(cases, per_group=4)
+    assert len(sample) == 20
+    assert Counter(c.group for c in sample) == {g: 4 for g in {c.group for c in cases}}
+    assert [c.id for c in sample] == [c.id for c in stratified_sample(cases, per_group=4)]

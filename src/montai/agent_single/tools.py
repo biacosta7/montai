@@ -29,14 +29,15 @@ from montai.validation import ValidationReport, validate_cart
 
 
 class BuscarItensArgs(BaseModel):
-    """Busca semântica no catálogo, com filtros exatos."""
+    """Busca semântica no catálogo, com filtros exatos. Com `pessoas`, já devolve quantidade e custo."""
 
-    consulta: str = Field(description="O que procurar, em português. Ex.: 'carnes para churrasco'.")
-    categoria: Category | None = Field(default=None, description="Restringe a uma categoria.")
-    dieta: list[DietTag] = Field(default_factory=list, description="Todas as tags que o item precisa ter.")
-    preco_maximo: float | None = Field(default=None, description="Preço máximo da unidade, em reais.")
-    picancia_maxima: SpiceLevel | None = Field(default=None, description="0 a 3.")
-    limite: int = Field(default=6, ge=1, le=12)
+    consulta: str = Field(description="O que procurar. Ex.: 'carnes para churrasco'.")
+    categoria: Category | None = None
+    dieta: list[DietTag] = Field(default_factory=list, description="Tags que o item precisa ter.")
+    preco_maximo: float | None = Field(default=None, description="Preço máximo da unidade.")
+    picancia_maxima: SpiceLevel | None = None
+    pessoas: int | None = Field(default=None, ge=1, description="Para calcular unidades e custo.")
+    limite: int = Field(default=5, ge=1, le=10)
 
 
 class DetalhesItemArgs(BaseModel):
@@ -97,12 +98,31 @@ TOOL_ARGS: dict[str, type[BaseModel]] = {
 }
 
 
+def _compact(node: Any) -> Any:
+    """Remove do schema o que não ajuda o modelo ("title", "default": null).
+
+    O schema das ferramentas é reenviado em toda chamada do loop; cada token
+    economizado aqui se repete a cada turno.
+    """
+    if isinstance(node, dict):
+        return {
+            k: _compact(v) for k, v in node.items()
+            if k != "title" and not (k == "default" and v is None)
+        }
+    if isinstance(node, list):
+        return [_compact(v) for v in node]
+    return node
+
+
 def tool_schemas() -> list[dict]:
     """Definições no formato de function calling da API da OpenAI."""
     schemas = []
     for name, args in TOOL_ARGS.items():
-        parameters = provider_json_schema(args)
-        parameters.pop("title", None)
+        parameters = _compact(provider_json_schema(args))
+        # A descrição já vai no nível da função; a dos enums é documentação interna.
+        parameters.pop("description", None)
+        for definition in parameters.get("$defs", {}).values():
+            definition.pop("description", None)
         schemas.append({
             "type": "function",
             "function": {"name": name, "description": args.__doc__.strip(), "parameters": parameters},
@@ -132,6 +152,19 @@ class Toolbox:
             return {"erro": f"argumentos inválidos: {exc}"}
         return getattr(self, name)(args)
 
+    def _item_row(self, item: Item, people: int | None = None) -> str:
+        """Uma linha de tabela por item: bem menos tokens que JSON com chaves repetidas."""
+        store = self.catalog.get_store(item.store_id)
+        diet = ",".join(t.value for t in item.diet) or "-"
+        row = (
+            f"{item.id} | {item.name} | {item.category.value} | {store.name} | {item.price:.2f} | "
+            f"{item.unit} | {item.serves:g} | {diet} | {int(item.spice_level)}"
+        )
+        if people:
+            units = units_needed(people, item.serves)
+            row += f" | {units} | {units * item.price:.2f}"
+        return row
+
     def _item_summary(self, item: Item) -> dict[str, Any]:
         store = self.catalog.get_store(item.store_id)
         return {
@@ -154,7 +187,10 @@ class Toolbox:
             max_spice=args.picancia_maxima,
         )
         hits = self.retriever.search(args.consulta, filters, k=args.limite)
-        return {"resultados": [self._item_summary(h.item) for h in hits]}
+        columns = "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância"
+        if args.pessoas:
+            columns += f" | unidades p/ {args.pessoas} pessoas | custo dessas unidades"
+        return {"colunas": columns, "itens": [self._item_row(h.item, args.pessoas) for h in hits]}
 
     def detalhes_item(self, args: DetalhesItemArgs) -> dict[str, Any]:
         item = self.catalog.get_item(args.item_id)
@@ -185,8 +221,7 @@ class Toolbox:
         report = validate_cart(self.cart_lines, Constraints(people=1), self.catalog)
         return {
             "linhas": [
-                {"item_id": line.item_id, "nome": line.name, "loja": line.store_name,
-                 "quantidade": line.quantity, "subtotal": line.subtotal}
+                f"{line.quantity} x {line.name} ({line.item_id}, {line.store_name}) = {line.subtotal:.2f}"
                 for line in report.lines
             ],
             "itens": report.items_total,
