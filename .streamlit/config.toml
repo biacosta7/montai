@@ -1,0 +1,7 @@
+[server]
+# O observador de arquivos tenta inspecionar todos os módulos do transformers
+# e enche o log de erros inofensivos. Sem ele, recarregue a página após editar.
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
