@@ -15,6 +15,7 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
+from montai.agent_single.agent import run_agent
 from montai.config import REPORTS_DIR
 from montai.llm import LLMClient
 from montai.models import Cart, Catalog
@@ -51,7 +52,11 @@ def make_runners(llm: LLMClient, retriever: Retriever, catalog: Catalog) -> dict
         spec = result.spec.model_dump(mode="json") if result.spec else None
         return RunOutput(cart=result.cart, trace=result.trace, spec=spec)
 
-    return {"B": run_b}
+    def run_a(order: str) -> RunOutput:
+        result = run_agent(order, llm=llm, retriever=retriever, catalog=catalog)
+        return RunOutput(cart=result.cart, trace=result.trace)
+
+    return {"A": run_a, "B": run_b}
 
 
 def record_path(version: str, case_id: str, runs_dir: Path = RUNS_DIR) -> Path:

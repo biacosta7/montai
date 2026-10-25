@@ -57,22 +57,27 @@ def _retry_after(exc: openai.APIStatusError) -> float | None:
         return None
 
 
-def strict_json_schema(model: type[BaseModel]) -> dict:
-    """JSON Schema no formato exigido pelo modo estrito de structured outputs.
+def _walk(node: Any, visit) -> None:
+    if isinstance(node, dict):
+        visit(node)
+        for value in node.values():
+            _walk(value, visit)
+    elif isinstance(node, list):
+        for value in node:
+            _walk(value, visit)
 
-    No modo estrito o provedor restringe a geração de tokens ao schema
-    (constrained decoding), e a resposta sempre é um JSON válido nesse formato.
-    As exigências são: todo objeto com `additionalProperties: false` e todos
-    os campos listados em `required`. Os modelos expostos ao LLM não têm
-    valores padrão, então essa conversão não muda o significado deles.
+
+def provider_json_schema(model: type[BaseModel]) -> dict:
+    """JSON Schema do modelo, ajustado para o que o Groq aceita.
+
+    Pydantic escreve `X | None` como anyOf [X, {"type": "null"}]. O Groq recusa
+    esse anyOf (em structured outputs e em parâmetros de ferramenta), mas aceita
+    a forma equivalente {"type": [X, "null"]}, ou um enum que inclui null.
     """
     schema = copy.deepcopy(model.model_json_schema())
     defs = schema.get("$defs", {})
 
     def collapse_optional(node: dict) -> None:
-        # Pydantic escreve `X | None` como anyOf [X, {"type": "null"}]. O modo
-        # estrito do Groq recusa esse anyOf, mas aceita a forma equivalente
-        # {"type": [X, "null"]} (ou um enum que inclui null).
         branches = node.get("anyOf")
         if not branches or len(branches) != 2 or {"type": "null"} not in branches:
             return
@@ -82,24 +87,30 @@ def strict_json_schema(model: type[BaseModel]) -> dict:
         if "type" not in other or not isinstance(other["type"], str):
             return
         del node["anyOf"]
-        node.update(other)
+        node.update({k: v for k, v in other.items() if k not in node or k in ("type", "enum")})
         node["type"] = [other["type"], "null"]
         if "enum" in node:
             node["enum"] = [*node["enum"], None]
 
-    def visit(node: Any) -> None:
-        if isinstance(node, dict):
-            collapse_optional(node)
-            if node.get("type") == "object" and "properties" in node:
-                node["additionalProperties"] = False
-                node["required"] = list(node["properties"])
-            for value in node.values():
-                visit(value)
-        elif isinstance(node, list):
-            for value in node:
-                visit(value)
+    _walk(schema, collapse_optional)
+    return schema
 
-    visit(schema)
+
+def strict_json_schema(model: type[BaseModel]) -> dict:
+    """JSON Schema no formato exigido pelo modo estrito de structured outputs.
+
+    As exigências são: todo objeto com `additionalProperties: false` e todos
+    os campos listados em `required`. Os modelos expostos ao LLM não têm
+    valores padrão, então essa conversão não muda o significado deles.
+    """
+    schema = provider_json_schema(model)
+
+    def require_all(node: dict) -> None:
+        if node.get("type") == "object" and "properties" in node:
+            node["additionalProperties"] = False
+            node["required"] = list(node["properties"])
+
+    _walk(schema, require_all)
     return schema
 
 
