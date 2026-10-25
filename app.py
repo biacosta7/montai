@@ -10,6 +10,7 @@ Rodar: streamlit run app.py
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import sys
@@ -126,18 +127,32 @@ def render_cart(cart: Cart) -> None:
 
 def render_usage(trace: Trace) -> None:
     tokens = f"{trace.tokens_in + trace.tokens_out:,}".replace(",", ".")
+    wait = f" (+{trace.wait_ms / 1000:.0f} s esperando limite de taxa)" if trace.wait_ms else ""
     st.caption(
         f"{tokens} tokens · {trace.llm_calls} chamada(s) ao LLM · "
-        f"{trace.net_latency_ms / 1000:.1f} s · US$ {trace.cost_usd:.4f} (custo estimado)",
+        f"{trace.net_latency_ms / 1000:.1f} s{wait} · US$ {trace.cost_usd:.4f} (custo estimado)",
         help="Latência sem a espera por limite de taxa do plano gratuito. O custo usa o preço de "
         "referência de um plano pago; no plano gratuito ele é zero.",
     )
 
 
+COUNTERS = {"tentativa": "tentativa", "turno": "turno"}
+
+
+def step_counter(step: Step) -> str | None:
+    """Etapas cuja entrada é só um contador ("tentativa 2") mostram isso no título."""
+    if isinstance(step.input, dict) and step.input and set(step.input) <= set(COUNTERS):
+        return " ".join(f"{COUNTERS[k]} {v}" for k, v in step.input.items())
+    return None
+
+
 def step_title(step: Step) -> str:
     name = step.name
     label = STEP_LABELS.get(name) or (f"Ferramenta `{name.split(':', 1)[1]}`" if name.startswith("ferramenta:") else name)
-    details = [f"{step.latency_ms / 1000:.1f} s"]
+    details = [counter] if (counter := step_counter(step)) else []
+    details.append(f"{step.latency_ms / 1000:.1f} s")
+    if step.wait_ms:
+        details.append(f"{step.wait_ms / 1000:.0f} s esperando limite de taxa")
     if step.llm_calls:
         details.append(f"{step.tokens_in + step.tokens_out} tokens")
     if step.retries:
@@ -145,10 +160,25 @@ def step_title(step: Step) -> str:
     return f"{label} · {' · '.join(details)}"
 
 
+def render_input(step: Step) -> None:
+    value = step.input
+    if value in (None, {}, [], "") or step_counter(step):
+        return
+    st.caption("Entrada")
+    if isinstance(value, str):
+        st.markdown(md(f"> {value}"))
+    elif step.name.startswith("ferramenta:"):
+        st.code(json.dumps(value, ensure_ascii=False), language="json", wrap_lines=True)
+    else:
+        st.json(value, expanded=False)
+
+
 def render_step(step: Step) -> None:
     st.markdown(f"**{step_title(step)}**")
     if step.error:
         st.error(step.error)
+    render_input(step)
+    st.caption("Saída")
     out = step.output
 
     if step.name == "buscador" and isinstance(out, dict):
