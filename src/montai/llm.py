@@ -46,7 +46,9 @@ class QuotaExhausted(RuntimeError):
 RETRYABLE_GENERATION_ERRORS = {"json_validate_failed", "output_parse_failed"}
 
 MAX_ATTEMPTS = 8
-MAX_WAIT_S = 90  # pedir para esperar mais que isso indica cota diária, não por minuto
+# Pedir para esperar mais que isso indica cota diária, não por minuto. Na
+# interface, desistir rápido é melhor; na avaliação, vale esperar (max_wait_s).
+MAX_WAIT_S = 90
 
 
 def _retry_after(exc: openai.APIStatusError) -> float | None:
@@ -116,8 +118,9 @@ def strict_json_schema(model: type[BaseModel]) -> dict:
 
 
 class LLMClient:
-    def __init__(self, settings: LLMSettings | None = None) -> None:
+    def __init__(self, settings: LLMSettings | None = None, max_wait_s: float = MAX_WAIT_S) -> None:
         self.settings = settings or LLMSettings.from_env()
+        self.max_wait_s = max_wait_s
         if not self.settings.api_key:
             raise LLMError("LLM_API_KEY não configurada. Copie .env.example para .env e preencha.")
         # Reenvios ficam com a gente (max_retries=0) para medir quanto tempo foi
@@ -162,19 +165,29 @@ class LLMClient:
         return response.choices[0].message
 
     def _create_with_retries(self, kwargs: dict, step: Step | None):
-        for attempt in range(MAX_ATTEMPTS):
+        """Chama o modelo, esperando quando o provedor pede.
+
+        Esperas por limite de taxa não contam como tentativa: a requisição está
+        certa, só precisa esperar. Esperar aqui dentro (em vez de desistir)
+        preserva o trabalho já feito no pedido: abandonar no meio jogaria fora
+        os tokens das etapas anteriores.
+        """
+        failures = 0
+        while True:
             try:
                 return self.client.chat.completions.create(**kwargs)
             except openai.RateLimitError as exc:
-                wait = _retry_after(exc) or min(2**attempt, 30)
-                if wait > MAX_WAIT_S:
+                wait = _retry_after(exc) or 30
+                if wait > self.max_wait_s:
                     raise QuotaExhausted(wait) from exc
-            except (openai.APIConnectionError, openai.InternalServerError):
-                wait = min(2**attempt, 30)
+            except (openai.APIConnectionError, openai.InternalServerError) as exc:
+                failures += 1
+                if failures >= MAX_ATTEMPTS:
+                    raise LLMError(f"o provedor não respondeu depois de {MAX_ATTEMPTS} tentativas") from exc
+                wait = min(2**failures, 30)
             if step is not None:
                 step.wait_ms += wait * 1000
             time.sleep(wait)
-        raise LLMError(f"o provedor não respondeu depois de {MAX_ATTEMPTS} tentativas")
 
     def structured(
         self, messages: list[dict], schema: type[T], *, step: Step | None = None, attempts: int = 3

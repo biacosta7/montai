@@ -131,3 +131,13 @@ def test_cota_diaria_interrompe(client, monkeypatch):
     fake_sdk(client, [rate_limited("3600")])
     with pytest.raises(QuotaExhausted):
         client._create_with_retries({}, None)
+
+
+def test_espera_longa_permitida_continua_a_chamada(client, monkeypatch):
+    slept = []
+    monkeypatch.setattr("montai.llm.time.sleep", slept.append)
+    client.max_wait_s = 3600
+    ok = object()
+    fake_sdk(client, [rate_limited("900"), rate_limited("900"), ok])
+    assert client._create_with_retries({}, None) is ok
+    assert slept == [900.0, 900.0]

@@ -25,7 +25,7 @@ from montai.config import REPORTS_DIR
 from montai.eval.metrics import EvalCase, load_cases, score_case, stratified_sample
 from montai.eval.report import summarize, to_markdown
 from montai.eval.runner import RunRecord, load_records, make_runners, now, save_record
-from montai.llm import LLMClient, QuotaExhausted
+from montai.llm import MAX_WAIT_S, LLMClient, QuotaExhausted
 from montai.retrieval import Retriever
 
 ALL_VERSIONS = ["A", "B"]
@@ -40,7 +40,9 @@ def select_cases(case_ids: set[str] | None, sample: int | None) -> list[EvalCase
 
 def run(versions: list[str], cases: list[EvalCase], force: bool, wait_quota: bool) -> None:
     catalog = load_catalog()
-    llm = LLMClient()
+    # Na avaliação, esperar a cota dentro da chamada (até 1 h por espera) evita
+    # recomeçar pedidos do zero e desperdiçar os tokens já gastos neles.
+    llm = LLMClient(max_wait_s=3600 if wait_quota else MAX_WAIT_S)
     runners = make_runners(llm, Retriever(catalog), catalog)
     done = {v: load_records(v) for v in versions}
     pending = [(c, v) for c in cases for v in versions if force or c.id not in done[v]]
