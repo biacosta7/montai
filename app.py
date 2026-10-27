@@ -44,6 +44,7 @@ EXAMPLES = [
     "jantar leve e sem glúten para 2, nada apimentado",
     "café da manhã para o escritório, 12 pessoas, uma opção vegana",
 ]
+MAX_ORDERS_PER_SESSION = int(os.getenv("MONTAI_MAX_ORDERS_PER_SESSION", "5"))
 VERSIONS = {
     "B": "B · pipeline com papéis",
     "A": "A · agente único",
@@ -231,7 +232,7 @@ def page_new_order() -> None:
     llm = llm_client()
     if llm is None:
         st.info("Configure `LLM_API_KEY` (no `.env` ou nos secrets) para fazer pedidos novos. "
-                "Enquanto isso, veja os exemplos da avaliação na barra lateral.")
+                "Enquanto isso, veja os exemplos em \"Exemplos da avaliação\".")
         return
 
     version = st.segmented_control(
@@ -252,12 +253,21 @@ def page_new_order() -> None:
         submitted = st.form_submit_button("Montar carrinho", type="primary")
 
     if submitted and order.strip():
+        # A demo pública usa uma chave no plano gratuito: um limite por sessão
+        # evita que um único visitante gaste a cota diária de todo mundo.
+        used = st.session_state.get("orders_used", 0)
+        if used >= MAX_ORDERS_PER_SESSION:
+            st.warning(f"Limite de {MAX_ORDERS_PER_SESSION} pedidos por sessão nesta demo. "
+                       "Veja os exemplos salvos em \"Exemplos da avaliação\".")
+            return
+        st.session_state.orders_used = used + 1
         run = run_agent if version == "A" else run_pipeline
         with st.spinner("Montando o carrinho..."):
             try:
                 result = run(order.strip(), llm=llm, retriever=retriever, catalog=catalog)
             except QuotaExhausted as exc:
-                st.error(f"A cota gratuita do provedor acabou ({exc}). Veja os exemplos salvos na barra lateral.")
+                st.error(f"A cota gratuita do provedor acabou ({exc}). "
+                         "Veja os exemplos salvos em \"Exemplos da avaliação\".")
                 return
         st.session_state.last = (version, result.cart, result.trace)
 

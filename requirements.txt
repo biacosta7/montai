@@ -1,0 +1,14 @@
+# Dependências do deploy (Streamlit Community Cloud / Hugging Face Spaces).
+# Desenvolvimento local: pip install -e ".[dev,ui]"
+#
+# No Linux, o torch vem do índice só-CPU do PyTorch (~200 MB). O pacote padrão
+# do PyPI inclui CUDA (vários GB) e não cabe nos planos gratuitos.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu; sys_platform == "linux"
+torch==2.14.1; sys_platform != "linux"
+pydantic==2.14.1
+sentence-transformers==6.2.0
+chromadb==1.5.9
+openai==3.37.0
+python-dotenv==1.2.4
+streamlit==1.66.1
