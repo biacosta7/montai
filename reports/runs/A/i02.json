@@ -1,0 +1,100 @@
+{
+  "case_id": "i02",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar para 4 pessoas com R$ 10",
+  "finished_at": "2026-10-27T01:11:03+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": null,
+    "budget": null,
+    "message": "O orçamento total de R$ 10 é insuficiente para cobrir o custo mínimo de qualquer prato principal para 4 pessoas, mesmo os itens mais baratos do catálogo custam bem acima desse valor.",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "b4227d48a2aa",
+    "version": "A",
+    "order": "jantar para 4 pessoas com R$ 10",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "prato barato",
+                "limite": 5,
+                "pessoas": 4
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1187,
+        "tokens_out": 81,
+        "cost_usd": 0.00022664999999999998,
+        "latency_ms": 653.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "prato barato",
+          "limite": 5,
+          "pessoas": 4
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 4 pessoas | custo dessas unidades",
+          "itens": [
+            "caseiro-001 | Prato feito de bife | prato_principal | Restaurante Sabor Caseiro | 29.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 4 | 119.60",
+            "caseiro-006 | Escondidinho de carne seca | prato_principal | Restaurante Sabor Caseiro | 38.90 | prato | 1 | sem_gluten | 0 | 4 | 155.60",
+            "caseiro-002 | Prato feito de frango grelhado | prato_principal | Restaurante Sabor Caseiro | 27.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 4 | 111.60",
+            "churrascaria-007 | Combo churrasco gaúcho para 4 | prato_principal | Churrascaria Gaúcha Querência | 239.90 | combo | 4 | sem_gluten | 0 | 1 | 239.90",
+            "massamia-005 | Nhoque ao sugo | prato_principal | Cantina Massa Mia | 39.90 | prato | 1 | vegetariano | 0 | 4 | 159.60"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 209.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": "IMPOSSÍVEL: O orçamento total de R$ 10 é insuficiente para cobrir o custo mínimo de qualquer prato principal para 4 pessoas, mesmo os itens mais baratos do catálogo custam bem acima desse valor.",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1533,
+        "tokens_out": 61,
+        "cost_usd": 0.00026655,
+        "latency_ms": 592.9,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

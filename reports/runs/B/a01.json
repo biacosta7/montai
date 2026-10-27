@@ -1,0 +1,309 @@
+{
+  "case_id": "a01",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "algo pra comer hoje à noite",
+  "finished_at": "2026-10-27T03:02:11+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-001",
+        "name": "Prato feito de bife",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 29.9,
+        "subtotal": 59.8
+      }
+    ],
+    "items_total": 59.8,
+    "delivery_total": 4.9,
+    "total": 64.7,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o Prato feito de bife, que tem o menor R$/pessoa entre as opções e atende 2 pessoas com duas unidades. Sem itens opcionais mantemos o custo mais baixo.",
+    "problems": [],
+    "assumptions": [
+      "Número de pessoas estimado em 2 por ser um jantar típico.",
+      "Orçamento não informado, deixado como null.",
+      "Sem restrições alimentares especificadas.",
+      "Nenhuma preferência de picância foi mencionada."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar",
+    "specific_dish": null,
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "prato pronto para jantar",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "acompanhamento simples",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "bebida não alcoólica",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de pessoas estimado em 2 por ser um jantar típico.",
+      "Orçamento não informado, deixado como null.",
+      "Sem restrições alimentares especificadas.",
+      "Nenhuma preferência de picância foi mencionada."
+    ]
+  },
+  "trace": {
+    "run_id": "e7be1c257400",
+    "version": "B",
+    "order": "algo pra comer hoje à noite",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "algo pra comer hoje à noite",
+        "output": {
+          "occasion": "jantar",
+          "specific_dish": null,
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "prato pronto para jantar",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "acompanhamento simples",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "bebida não alcoólica",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de pessoas estimado em 2 por ser um jantar típico.",
+            "Orçamento não informado, deixado como null.",
+            "Sem restrições alimentares especificadas.",
+            "Nenhuma preferência de picância foi mencionada."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1453,
+        "tokens_out": 256,
+        "cost_usd": 0.00037154999999999995,
+        "latency_ms": 921.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "prato pronto para jantar",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "acompanhamento simples",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "bebida não alcoólica",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "caseiro-006",
+              "nome": "Escondidinho de carne seca",
+              "score": 0.868
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8649
+            },
+            {
+              "id": "bangkok-016",
+              "nome": "Combo Bangkok para 2",
+              "score": 0.8637
+            },
+            {
+              "id": "massamia-001",
+              "nome": "Espaguete à bolonhesa",
+              "score": 0.8619
+            },
+            {
+              "id": "verdevida-007",
+              "nome": "Escondidinho de mandioca com carne seca",
+              "score": 0.8617
+            },
+            {
+              "id": "massamia-014",
+              "nome": "Polpettone recheado",
+              "score": 0.8602
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "verdevida-018",
+              "nome": "Arroz integral 500 g",
+              "score": 0.8312
+            },
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8308
+            },
+            {
+              "id": "chapa-010",
+              "nome": "Batata frita média",
+              "score": 0.8253
+            },
+            {
+              "id": "lapicante-018",
+              "nome": "Feijão refrito 300 g",
+              "score": 0.8237
+            },
+            {
+              "id": "kenzo-024",
+              "nome": "Arroz gohan 300 g",
+              "score": 0.8214
+            },
+            {
+              "id": "acougue-019",
+              "nome": "Pão de alho apimentado",
+              "score": 0.8189
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9038
+            },
+            {
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8984
+            },
+            {
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.8951
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8851
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.883
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8818
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 147.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-001",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi o Prato feito de bife, que tem o menor R$/pessoa entre as opções e atende 2 pessoas com duas unidades. Sem itens opcionais mantemos o custo mais baixo."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2409,
+        "tokens_out": 348,
+        "cost_usd": 0.00057015,
+        "latency_ms": 844642.1,
+        "wait_ms": 843000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-001",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 64.7,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

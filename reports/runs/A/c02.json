@@ -1,0 +1,330 @@
+{
+  "case_id": "c02",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "almoço sem lactose e sem glúten para 3, nada apimentado",
+  "finished_at": "2026-10-26T19:34:33+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-002",
+        "name": "Prato feito de frango grelhado",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 3,
+        "unit_price": 27.9,
+        "subtotal": 83.7
+      },
+      {
+        "item_id": "mercado-005",
+        "name": "Água mineral sem gás 1,5 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 1,5 L",
+        "quantity": 1,
+        "unit_price": 3.49,
+        "subtotal": 3.49
+      }
+    ],
+    "items_total": 87.19,
+    "delivery_total": 10.8,
+    "total": 97.99,
+    "people": 3,
+    "budget": null,
+    "message": "Prato principal de frango grelhado (sem lactose e sem glúten) para as 3 pessoas, acompanhado de água mineral. O total, já com taxa de entrega, ficou em R$ 97,99. Boa refeição!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "1baf97be128f",
+    "version": "A",
+    "order": "almoço sem lactose e sem glúten para 3, nada apimentado",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "prato principal sem lactose sem glúten",
+                "dieta": [
+                  "sem_lactose",
+                  "sem_gluten"
+                ],
+                "limite": 5,
+                "pessoas": 3,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1193,
+        "tokens_out": 115,
+        "cost_usd": 0.00024795,
+        "latency_ms": 708.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "prato principal sem lactose sem glúten",
+          "dieta": [
+            "sem_lactose",
+            "sem_gluten"
+          ],
+          "limite": 5,
+          "pessoas": 3,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 3 pessoas | custo dessas unidades",
+          "itens": [
+            "caseiro-001 | Prato feito de bife | prato_principal | Restaurante Sabor Caseiro | 29.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 3 | 89.70",
+            "caseiro-002 | Prato feito de frango grelhado | prato_principal | Restaurante Sabor Caseiro | 27.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 3 | 83.70",
+            "kenzo-006 | Combinado sem glúten 20 peças | prato_principal | Sushi Kenzo | 84.90 | combinado 20 peças | 1 | sem_gluten,sem_lactose | 0 | 3 | 254.70",
+            "massamia-009 | Espaguete sem glúten ao sugo | prato_principal | Cantina Massa Mia | 47.90 | prato | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 3 | 143.70",
+            "aloha-005 | Poke vegano sem glúten | prato_principal | Aloha Poke & Bowls | 42.90 | bowl | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 3 | 128.70"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 83.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "bebida sem lactose sem gluten",
+                "dieta": [
+                  "sem_lactose",
+                  "sem_gluten"
+                ],
+                "limite": 5,
+                "pessoas": 3,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1598,
+        "tokens_out": 93,
+        "cost_usd": 0.0002955,
+        "latency_ms": 1035.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "bebida sem lactose sem gluten",
+          "dieta": [
+            "sem_lactose",
+            "sem_gluten"
+          ],
+          "limite": 5,
+          "pessoas": 3,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 3 pessoas | custo dessas unidades",
+          "itens": [
+            "adega-012 | Espumante sem álcool | bebida | Adega Lúpulo & Uva | 34.90 | garrafa 750 ml | 6 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 34.90",
+            "padaria-018 | Bebida vegetal de amêndoas 1 L | bebida | Padaria Pão Dourado | 16.90 | caixa 1 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 16.90",
+            "mercado-005 | Água mineral sem gás 1,5 L | bebida | Supermercado Bom Preço | 3.49 | garrafa 1,5 L | 3 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 3.49",
+            "graofino-027 | Água mineral 500 ml | bebida | Grão Fino Café & Bistrô | 4.90 | garrafa 500 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 3 | 14.70",
+            "kenzo-026 | Chá verde gelado 500 ml | bebida | Sushi Kenzo | 9.90 | garrafa 500 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 3 | 29.70"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 33.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "caseiro-002",
+                    "quantidade": 3
+                  },
+                  {
+                    "item_id": "mercado-005",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2030,
+        "tokens_out": 155,
+        "cost_usd": 0.0003975,
+        "latency_ms": 934.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "caseiro-002",
+              "quantidade": 3
+            },
+            {
+              "item_id": "mercado-005",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "3 x Prato feito de frango grelhado (caseiro-002, Restaurante Sabor Caseiro) = 83.70",
+            "1 x Água mineral sem gás 1,5 L (mercado-005, Supermercado Bom Preço) = 3.49"
+          ],
+          "itens": 87.19,
+          "entrega": 10.8,
+          "total": 97.99
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal",
+                  "bebida"
+                ],
+                "dieta": [
+                  "sem_lactose",
+                  "sem_gluten"
+                ],
+                "orcamento": null,
+                "pessoas": 3,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2173,
+        "tokens_out": 84,
+        "cost_usd": 0.00037634999999999996,
+        "latency_ms": 6830.4,
+        "wait_ms": 6000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal",
+            "bebida"
+          ],
+          "dieta": [
+            "sem_lactose",
+            "sem_gluten"
+          ],
+          "orcamento": null,
+          "pessoas": 3,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 97.99,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 3.0,
+            "bebida": 3.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": "Prato principal de frango grelhado (sem lactose e sem glúten) para as 3 pessoas, acompanhado de água mineral. O total, já com taxa de entrega, ficou em R$ 97,99. Boa refeição!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2284,
+        "tokens_out": 55,
+        "cost_usd": 0.00037559999999999997,
+        "latency_ms": 3844.8,
+        "wait_ms": 3000.0,
+        "error": null
+      }
+    ]
+  }
+}

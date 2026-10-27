@@ -1,0 +1,341 @@
+{
+  "case_id": "o11",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "sessão de filme para 2 com hambúrguer e batata frita",
+  "finished_at": "2026-10-26T11:46:15+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "chapa-001",
+        "name": "Burger clássico",
+        "store_id": "chapa",
+        "store_name": "Hamburgueria Chapa Quente",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 34.9,
+        "subtotal": 69.8
+      },
+      {
+        "item_id": "mercado-035",
+        "name": "Batata palha 140 g",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "pacote 140 g",
+        "quantity": 1,
+        "unit_price": 8.9,
+        "subtotal": 8.9
+      },
+      {
+        "item_id": "mercado-002",
+        "name": "Refrigerante cola zero 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 10.9,
+        "subtotal": 10.9
+      }
+    ],
+    "items_total": 89.6,
+    "delivery_total": 11.8,
+    "total": 101.4,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o burger clássico, que tem o menor custo por pessoa, e complementei com batata palha e refrigerante da mesma rede para economizar na taxa de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Não foi especificado tipo de bebida, assumindo refrigerante ou suco como apoio.",
+      "Nenhum orçamento informado, portanto sem limite de gasto definido."
+    ]
+  },
+  "spec": {
+    "occasion": "sessão de filme",
+    "specific_dish": "hambúrguer",
+    "people": 2,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "lanche",
+        "query": "hambúrguer",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "batata frita",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco para acompanhar o filme",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Não foi especificado tipo de bebida, assumindo refrigerante ou suco como apoio.",
+      "Nenhum orçamento informado, portanto sem limite de gasto definido."
+    ]
+  },
+  "trace": {
+    "run_id": "1e2bdc9255fe",
+    "version": "B",
+    "order": "sessão de filme para 2 com hambúrguer e batata frita",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "sessão de filme para 2 com hambúrguer e batata frita",
+        "output": {
+          "occasion": "sessão de filme",
+          "specific_dish": "hambúrguer",
+          "people": 2,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "lanche",
+              "query": "hambúrguer",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "batata frita",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco para acompanhar o filme",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Não foi especificado tipo de bebida, assumindo refrigerante ou suco como apoio.",
+            "Nenhum orçamento informado, portanto sem limite de gasto definido."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1463,
+        "tokens_out": 266,
+        "cost_usd": 0.00037904999999999997,
+        "latency_ms": 12304.2,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "lanche",
+            "query": "hambúrguer",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "batata frita",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco para acompanhar o filme",
+            "essential": false
+          }
+        ],
+        "output": {
+          "lanche": [
+            {
+              "id": "chapa-008",
+              "nome": "Burger no prato sem pão",
+              "score": 0.871
+            },
+            {
+              "id": "chapa-003",
+              "nome": "Bacon burger",
+              "score": 0.8697
+            },
+            {
+              "id": "chapa-004",
+              "nome": "Burger picante com jalapeño",
+              "score": 0.8658
+            },
+            {
+              "id": "chapa-002",
+              "nome": "Cheeseburger duplo",
+              "score": 0.8651
+            },
+            {
+              "id": "chapa-001",
+              "nome": "Burger clássico",
+              "score": 0.8648
+            },
+            {
+              "id": "chapa-006",
+              "nome": "Burger vegano de grão-de-bico",
+              "score": 0.8533
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "chapa-010",
+              "nome": "Batata frita média",
+              "score": 0.8927
+            },
+            {
+              "id": "chapa-011",
+              "nome": "Batata frita grande",
+              "score": 0.8913
+            },
+            {
+              "id": "mercado-035",
+              "nome": "Batata palha 140 g",
+              "score": 0.8541
+            },
+            {
+              "id": "churrascaria-015",
+              "nome": "Maionese de batata 500 g",
+              "score": 0.8537
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.853
+            },
+            {
+              "id": "verdevida-019",
+              "nome": "Legumes assados 400 g",
+              "score": 0.8362
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8578
+            },
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8577
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8562
+            },
+            {
+              "id": "nonna-029",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8553
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.855
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8547
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 260.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 1.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "chapa-001",
+              "quantity": 2
+            },
+            {
+              "item_id": "mercado-035",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-002",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o burger clássico, que tem o menor custo por pessoa, e complementei com batata palha e refrigerante da mesma rede para economizar na taxa de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2354,
+        "tokens_out": 438,
+        "cost_usd": 0.0006159,
+        "latency_ms": 605715.3,
+        "wait_ms": 1000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "chapa-001",
+            "quantity": 2
+          },
+          {
+            "item_id": "mercado-035",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-002",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 101.4,
+          "problemas": [],
+          "cobertura": {
+            "lanche": 2.0,
+            "acompanhamento": 4.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

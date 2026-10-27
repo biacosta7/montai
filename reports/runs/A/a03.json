@@ -1,0 +1,221 @@
+{
+  "case_id": "a03",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida para o pessoal do trabalho",
+  "finished_at": "2026-10-27T04:13:13+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-002",
+        "name": "Prato feito de frango grelhado",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 10,
+        "unit_price": 27.9,
+        "subtotal": 279.0
+      }
+    ],
+    "items_total": 279.0,
+    "delivery_total": 4.9,
+    "total": 283.9,
+    "people": 10,
+    "budget": null,
+    "message": "Pronto! Preparei 10 porções do **Prato feito de frango grelhado**, suficiente para alimentar todo o time, com entrega incluída. Boa refeição para o pessoal do trabalho!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "1f5faaa2a5ce",
+    "version": "A",
+    "order": "comida para o pessoal do trabalho",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "prato principal",
+                "limite": 5,
+                "pessoas": 10
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1183,
+        "tokens_out": 73,
+        "cost_usd": 0.00022125,
+        "latency_ms": 576.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "prato principal",
+          "limite": 5,
+          "pessoas": 10
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 10 pessoas | custo dessas unidades",
+          "itens": [
+            "caseiro-001 | Prato feito de bife | prato_principal | Restaurante Sabor Caseiro | 29.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 10 | 299.00",
+            "massamia-003 | Lasanha à bolonhesa individual | prato_principal | Cantina Massa Mia | 44.90 | prato | 1 | - | 0 | 10 | 449.00",
+            "nonna-008 | Pizza portuguesa grande | prato_principal | Pizzaria Forno da Nonna | 69.90 | pizza grande (8 fatias) | 3 | - | 0 | 4 | 279.60",
+            "nonna-022 | Pizza atum grande | prato_principal | Pizzaria Forno da Nonna | 69.90 | pizza grande (8 fatias) | 3 | - | 0 | 4 | 279.60",
+            "caseiro-002 | Prato feito de frango grelhado | prato_principal | Restaurante Sabor Caseiro | 27.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 10 | 279.00"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 285.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "caseiro-002",
+                    "quantidade": 10
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1529,
+        "tokens_out": 83,
+        "cost_usd": 0.00027915,
+        "latency_ms": 572.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "caseiro-002",
+              "quantidade": 10
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "10 x Prato feito de frango grelhado (caseiro-002, Restaurante Sabor Caseiro) = 279.00"
+          ],
+          "itens": 279.0,
+          "entrega": 4.9,
+          "total": 283.9
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal"
+                ],
+                "pessoas": 10
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1629,
+        "tokens_out": 57,
+        "cost_usd": 0.00027855,
+        "latency_ms": 7040.3,
+        "wait_ms": 6000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal"
+          ],
+          "pessoas": 10
+        },
+        "output": {
+          "ok": true,
+          "total": 283.9,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": "Pronto! Preparei 10 porções do **Prato feito de frango grelhado**, suficiente para alimentar todo o time, com entrega incluída. Boa refeição para o pessoal do trabalho!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1705,
+        "tokens_out": 46,
+        "cost_usd": 0.00028335000000000003,
+        "latency_ms": 8091.5,
+        "wait_ms": 7000.0,
+        "error": null
+      }
+    ]
+  }
+}

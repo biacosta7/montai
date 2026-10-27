@@ -1,0 +1,104 @@
+{
+  "case_id": "i08",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "feijoada vegana para 6 pessoas",
+  "finished_at": "2026-10-27T01:14:47+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": null,
+    "budget": null,
+    "message": "Não encontramos nenhuma feijoada vegana no catálogo que atenda ao pedido para 6 pessoas. Se quiser, podemos sugerir outra opção vegana de prato principal.",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "1b6179e92ac9",
+    "version": "A",
+    "order": "feijoada vegana para 6 pessoas",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "feijoada vegana",
+                "dieta": [
+                  "vegano"
+                ],
+                "limite": 3,
+                "pessoas": 6
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1185,
+        "tokens_out": 82,
+        "cost_usd": 0.00022695,
+        "latency_ms": 22349.0,
+        "wait_ms": 21000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "feijoada vegana",
+          "dieta": [
+            "vegano"
+          ],
+          "limite": 3,
+          "pessoas": 6
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 6 pessoas | custo dessas unidades",
+          "itens": [
+            "lapicante-013 | Chili vegano 400 ml | prato_principal | La Picante Cozinha Mexicana | 30.90 | pote 400 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 2 | 6 | 185.40",
+            "caseiro-013 | Marmita vegana | prato_principal | Restaurante Sabor Caseiro | 28.90 | marmita | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 6 | 173.40",
+            "bangkok-015 | Stir fry de legumes com castanha de caju | prato_principal | Bangkok Express | 38.90 | prato | 1 | vegano,vegetariano,sem_lactose | 1 | 6 | 233.40"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 119.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": "IMPOSSÍVEL: Não encontramos nenhuma feijoada vegana no catálogo que atenda ao pedido para 6 pessoas. Se quiser, podemos sugerir outra opção vegana de prato principal.",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1463,
+        "tokens_out": 72,
+        "cost_usd": 0.00026264999999999996,
+        "latency_ms": 790.6,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

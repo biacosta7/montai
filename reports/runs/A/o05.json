@@ -1,0 +1,252 @@
+{
+  "case_id": "o05",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "rodízio de sushi em casa para 4 pessoas",
+  "finished_at": "2026-10-26T05:19:13+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "kenzo-005",
+        "name": "Combinado vegetariano 20 peças",
+        "store_id": "kenzo",
+        "store_name": "Sushi Kenzo",
+        "unit": "combinado 20 peças",
+        "quantity": 1,
+        "unit_price": 59.9,
+        "subtotal": 59.9
+      },
+      {
+        "item_id": "kenzo-003",
+        "name": "Combinado festa 60 peças",
+        "store_id": "kenzo",
+        "store_name": "Sushi Kenzo",
+        "unit": "combinado 60 peças",
+        "quantity": 1,
+        "unit_price": 209.9,
+        "subtotal": 209.9
+      }
+    ],
+    "items_total": 269.8,
+    "delivery_total": 8.9,
+    "total": 278.7,
+    "people": 4,
+    "budget": null,
+    "message": "Pronto! Seu rodízio de sushi para 4 pessoas inclui um **Combinado festa 60 peças** e um **Combinado vegetariano 20 peças**, atendendo a todos e oferecendo a opção vegana. O total, já com taxa de entrega, fica em R$ 278,70. Bom apetite!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "e8546094fce1",
+    "version": "A",
+    "order": "rodízio de sushi em casa para 4 pessoas",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "sushi",
+                "limite": 5,
+                "pessoas": 4
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1187,
+        "tokens_out": 71,
+        "cost_usd": 0.00022064999999999997,
+        "latency_ms": 797.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "sushi",
+          "limite": 5,
+          "pessoas": 4
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 4 pessoas | custo dessas unidades",
+          "itens": [
+            "kenzo-003 | Combinado festa 60 peças | prato_principal | Sushi Kenzo | 209.90 | combinado 60 peças | 3 | - | 0 | 2 | 419.80",
+            "kenzo-005 | Combinado vegetariano 20 peças | prato_principal | Sushi Kenzo | 59.90 | combinado 20 peças | 1 | vegano,vegetariano,sem_lactose | 0 | 4 | 239.60",
+            "kenzo-004 | Combinado festa 100 peças | prato_principal | Sushi Kenzo | 329.90 | barca 100 peças | 5 | - | 0 | 1 | 329.90",
+            "kenzo-006 | Combinado sem glúten 20 peças | prato_principal | Sushi Kenzo | 84.90 | combinado 20 peças | 1 | sem_gluten,sem_lactose | 0 | 4 | 339.60",
+            "kenzo-015 | Yakisoba de legumes 500 g | prato_principal | Sushi Kenzo | 39.90 | porção 500 g | 1.5 | vegano,vegetariano,sem_lactose | 0 | 3 | 119.70"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 238.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "kenzo-005",
+                    "quantidade": 1
+                  },
+                  {
+                    "item_id": "kenzo-003",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1547,
+        "tokens_out": 321,
+        "cost_usd": 0.00042465,
+        "latency_ms": 1076.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "kenzo-005",
+              "quantidade": 1
+            },
+            {
+              "item_id": "kenzo-003",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "1 x Combinado vegetariano 20 peças (kenzo-005, Sushi Kenzo) = 59.90",
+            "1 x Combinado festa 60 peças (kenzo-003, Sushi Kenzo) = 209.90"
+          ],
+          "itens": 269.8,
+          "entrega": 8.9,
+          "total": 278.7
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [
+                  "vegano"
+                ],
+                "orcamento": null,
+                "pessoas": 4,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1682,
+        "tokens_out": 82,
+        "cost_usd": 0.0003015,
+        "latency_ms": 572.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [
+            "vegano"
+          ],
+          "orcamento": null,
+          "pessoas": 4,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 278.7,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 4.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 1.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": "Pronto! Seu rodízio de sushi para 4 pessoas inclui um **Combinado festa 60 peças** e um **Combinado vegetariano 20 peças**, atendendo a todos e oferecendo a opção vegana. O total, já com taxa de entrega, fica em R$ 278,70. Bom apetite!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1783,
+        "tokens_out": 73,
+        "cost_usd": 0.00031125,
+        "latency_ms": 562.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

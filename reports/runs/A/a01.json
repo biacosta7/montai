@@ -1,0 +1,430 @@
+{
+  "case_id": "a01",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "algo pra comer hoje à noite",
+  "finished_at": "2026-10-27T01:18:22+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-001",
+        "name": "Prato feito de bife",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 29.9,
+        "subtotal": 59.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      }
+    ],
+    "items_total": 69.29,
+    "delivery_total": 10.8,
+    "total": 80.09,
+    "people": 2,
+    "budget": null,
+    "message": "Pronto! Seu jantar inclui duas porções de **Prato feito de bife** para atender as 2 pessoas e um **Refrigerante Guaraná 2 L**. O total (itens + taxa de entrega) ficou em R$ 80,09. Bom apetite!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "1059d3f3b781",
+    "version": "A",
+    "order": "algo pra comer hoje à noite",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "prato principal jantar",
+                "limite": 3,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1182,
+        "tokens_out": 81,
+        "cost_usd": 0.0002259,
+        "latency_ms": 925.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "prato principal jantar",
+          "limite": 3,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "caseiro-001 | Prato feito de bife | prato_principal | Restaurante Sabor Caseiro | 29.90 | prato | 1 | sem_gluten,sem_lactose | 0 | 2 | 59.80",
+            "massamia-003 | Lasanha à bolonhesa individual | prato_principal | Cantina Massa Mia | 44.90 | prato | 1 | - | 0 | 2 | 89.80",
+            "nonna-008 | Pizza portuguesa grande | prato_principal | Pizzaria Forno da Nonna | 69.90 | pizza grande (8 fatias) | 3 | - | 0 | 1 | 69.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 61.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "refrigerante",
+                "limite": 3,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1422,
+        "tokens_out": 114,
+        "cost_usd": 0.00028169999999999996,
+        "latency_ms": 785.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "refrigerante",
+          "limite": 3,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-019 | Refrigerante 2 L | bebida | Hamburgueria Chapa Quente | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 13.90",
+            "mercado-003 | Refrigerante guaraná 2 L | bebida | Supermercado Bom Preço | 9.49 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 9.49",
+            "nonna-029 | Refrigerante cola 2 L | bebida | Pizzaria Forno da Nonna | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 13.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 22.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "caseiro-001",
+                    "quantidade": 1
+                  },
+                  {
+                    "item_id": "mercado-003",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1700,
+        "tokens_out": 114,
+        "cost_usd": 0.0003234,
+        "latency_ms": 663.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "caseiro-001",
+              "quantidade": 1
+            },
+            {
+              "item_id": "mercado-003",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "1 x Prato feito de bife (caseiro-001, Restaurante Sabor Caseiro) = 29.90",
+            "1 x Refrigerante guaraná 2 L (mercado-003, Supermercado Bom Preço) = 9.49"
+          ],
+          "itens": 39.39,
+          "entrega": 10.8,
+          "total": 50.19
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [],
+                "orcamento": null,
+                "pessoas": 2,
+                "picancia_maxima": null
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1839,
+        "tokens_out": 75,
+        "cost_usd": 0.00032084999999999997,
+        "latency_ms": 8499.5,
+        "wait_ms": 7000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [],
+          "orcamento": null,
+          "pessoas": 2,
+          "picancia_maxima": null
+        },
+        "output": {
+          "ok": false,
+          "total": 50.19,
+          "problemas": [
+            "'prato_principal' atende 1 pessoa(s), mas o pedido é para 2."
+          ],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 1.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "caseiro-001",
+                    "quantidade": 2
+                  },
+                  {
+                    "item_id": "mercado-003",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1964,
+        "tokens_out": 82,
+        "cost_usd": 0.00034379999999999995,
+        "latency_ms": 791.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "caseiro-001",
+              "quantidade": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "2 x Prato feito de bife (caseiro-001, Restaurante Sabor Caseiro) = 59.80",
+            "1 x Refrigerante guaraná 2 L (mercado-003, Supermercado Bom Preço) = 9.49"
+          ],
+          "itens": 69.29,
+          "entrega": 10.8,
+          "total": 80.09
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 6
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [],
+                "orcamento": null,
+                "pessoas": 2,
+                "picancia_maxima": null
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2103,
+        "tokens_out": 61,
+        "cost_usd": 0.00035205,
+        "latency_ms": 11940.9,
+        "wait_ms": 11000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [],
+          "orcamento": null,
+          "pessoas": 2,
+          "picancia_maxima": null
+        },
+        "output": {
+          "ok": true,
+          "total": 80.09,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 2.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 7
+        },
+        "output": {
+          "texto": "Pronto! Seu jantar inclui duas porções de **Prato feito de bife** para atender as 2 pessoas e um **Refrigerante Guaraná 2 L**. O total (itens + taxa de entrega) ficou em R$ 80,09. Bom apetite!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2208,
+        "tokens_out": 66,
+        "cost_usd": 0.0003708,
+        "latency_ms": 930.8,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

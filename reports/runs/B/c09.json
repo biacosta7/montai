@@ -1,0 +1,298 @@
+{
+  "case_id": "c09",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida tailandesa vegana para 2, pouco apimentada",
+  "finished_at": "2026-10-26T21:46:01+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "bangkok-015",
+        "name": "Stir fry de legumes com castanha de caju",
+        "store_id": "bangkok",
+        "store_name": "Bangkok Express",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 38.9,
+        "subtotal": 77.8
+      }
+    ],
+    "items_total": 77.8,
+    "delivery_total": 8.9,
+    "total": 86.7,
+    "people": 2,
+    "budget": null,
+    "message": "Escolhi o Stir fry de legumes com castanha de caju, o prato vegano mais barato, em 2 unidades para atender 2 pessoas, usando apenas a Bangkok Express e mantendo o custo mínimo.",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": {
+    "occasion": "jantar tailandês vegano",
+    "specific_dish": null,
+    "people": 2,
+    "budget": null,
+    "diet": [
+      "vegano"
+    ],
+    "diet_options": [],
+    "max_spice": 1,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "pratos tailandeses veganos",
+        "essential": true
+      },
+      {
+        "category": "entrada",
+        "query": "entradas tailandesas veganas",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "bebidas sem álcool",
+        "essential": false
+      }
+    ],
+    "assumptions": []
+  },
+  "trace": {
+    "run_id": "540fe192486a",
+    "version": "B",
+    "order": "comida tailandesa vegana para 2, pouco apimentada",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "comida tailandesa vegana para 2, pouco apimentada",
+        "output": {
+          "occasion": "jantar tailandês vegano",
+          "specific_dish": null,
+          "people": 2,
+          "budget": null,
+          "diet": [
+            "vegano"
+          ],
+          "diet_options": [],
+          "max_spice": 1,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "pratos tailandeses veganos",
+              "essential": true
+            },
+            {
+              "category": "entrada",
+              "query": "entradas tailandesas veganas",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "bebidas sem álcool",
+              "essential": false
+            }
+          ],
+          "assumptions": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1462,
+        "tokens_out": 248,
+        "cost_usd": 0.00036809999999999995,
+        "latency_ms": 9479.7,
+        "wait_ms": 8000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "pratos tailandeses veganos",
+            "essential": true
+          },
+          {
+            "category": "entrada",
+            "query": "entradas tailandesas veganas",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "bebidas sem álcool",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "bangkok-003",
+              "nome": "Pad thai vegano com tofu",
+              "score": 0.8989
+            },
+            {
+              "id": "bangkok-015",
+              "nome": "Stir fry de legumes com castanha de caju",
+              "score": 0.8931
+            },
+            {
+              "id": "aloha-005",
+              "nome": "Poke vegano sem glúten",
+              "score": 0.8783
+            },
+            {
+              "id": "kenzo-005",
+              "nome": "Combinado vegetariano 20 peças",
+              "score": 0.8777
+            },
+            {
+              "id": "aloha-004",
+              "nome": "Poke de tofu",
+              "score": 0.8776
+            },
+            {
+              "id": "verdevida-001",
+              "nome": "Bowl de quinoa com legumes assados",
+              "score": 0.8715
+            }
+          ],
+          "entrada": [
+            {
+              "id": "bangkok-011",
+              "nome": "Rolinho primavera 4 unidades",
+              "score": 0.8686
+            },
+            {
+              "id": "aloha-010",
+              "nome": "Edamame com sal",
+              "score": 0.8645
+            },
+            {
+              "id": "sahara-008",
+              "nome": "Falafel 10 unidades",
+              "score": 0.8596
+            },
+            {
+              "id": "kenzo-018",
+              "nome": "Guioza de legumes 6 unidades",
+              "score": 0.8585
+            },
+            {
+              "id": "kenzo-019",
+              "nome": "Harumaki de legumes 4 unidades",
+              "score": 0.8539
+            },
+            {
+              "id": "kenzo-021",
+              "nome": "Edamame 200 g",
+              "score": 0.8536
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-012",
+              "nome": "Espumante sem álcool",
+              "score": 0.9165
+            },
+            {
+              "id": "mercado-012",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.9108
+            },
+            {
+              "id": "adega-007",
+              "nome": "Cerveja sem álcool lata",
+              "score": 0.9066
+            },
+            {
+              "id": "padaria-018",
+              "nome": "Bebida vegetal de amêndoas 1 L",
+              "score": 0.8851
+            },
+            {
+              "id": "graofino-024",
+              "nome": "Bebida de aveia garrafa 1 L",
+              "score": 0.885
+            },
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8846
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 164.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "bangkok-015",
+              "quantity": 2
+            }
+          ],
+          "rationale": "Escolhi o Stir fry de legumes com castanha de caju, o prato vegano mais barato, em 2 unidades para atender 2 pessoas, usando apenas a Bangkok Express e mantendo o custo mínimo."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2406,
+        "tokens_out": 399,
+        "cost_usd": 0.0006002999999999999,
+        "latency_ms": 265942.8,
+        "wait_ms": 264000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "bangkok-015",
+            "quantity": 2
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 86.7,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

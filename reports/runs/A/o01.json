@@ -1,0 +1,383 @@
+{
+  "case_id": "o01",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "quero fazer um churrasco para 5 pessoas, até R$ 200",
+  "finished_at": "2026-10-25T11:21:44+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-032",
+        "name": "Kit churrasco econômico 2 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit 2 kg",
+        "quantity": 1,
+        "unit_price": 69.9,
+        "subtotal": 69.9
+      },
+      {
+        "item_id": "churrascaria-017",
+        "name": "Pão de alho assado 6 unidades",
+        "store_id": "churrascaria",
+        "store_name": "Churrascaria Gaúcha Querência",
+        "unit": "porção 6 unidades",
+        "quantity": 1,
+        "unit_price": 22.9,
+        "subtotal": 22.9
+      },
+      {
+        "item_id": "mercado-001",
+        "name": "Refrigerante cola 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 10.9,
+        "subtotal": 10.9
+      }
+    ],
+    "items_total": 103.7,
+    "delivery_total": 15.8,
+    "total": 119.5,
+    "people": 5,
+    "budget": 200.0,
+    "message": "Pronto! Seu churrasco para 5 pessoas fica com um kit de carne econômica, pão de alho e 2 L de refrigerante, tudo dentro do orçamento de R$ 200 (total R$ 119,50, incluindo entrega). Boa festa!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "f8bd837e9f50",
+    "version": "A",
+    "order": "quero fazer um churrasco para 5 pessoas, até R$ 200",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "grelhados",
+                "consulta": "carne para churrasco",
+                "limite": 5,
+                "pessoas": 5
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1192,
+        "tokens_out": 76,
+        "cost_usd": 0.00022439999999999998,
+        "latency_ms": 919.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "grelhados",
+          "consulta": "carne para churrasco",
+          "limite": 5,
+          "pessoas": 5
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 5 pessoas | custo dessas unidades",
+          "itens": [
+            "mercado-032 | Kit churrasco econômico 2 kg | grelhados | Supermercado Bom Preço | 69.90 | kit 2 kg | 5 | sem_gluten,sem_lactose | 0 | 1 | 69.90",
+            "acougue-001 | Picanha bovina | grelhados | Açougue Boi na Brasa | 94.90 | kg | 2.5 | sem_gluten,sem_lactose | 0 | 2 | 189.80",
+            "churrascaria-005 | Frango assado inteiro | grelhados | Churrascaria Gaúcha Querência | 49.90 | unidade | 3 | sem_gluten,sem_lactose | 0 | 2 | 99.80",
+            "acougue-003 | Fraldinha | grelhados | Açougue Boi na Brasa | 49.90 | kg | 2.5 | sem_gluten,sem_lactose | 0 | 2 | 99.80",
+            "churrascaria-003 | Costela no bafo 1 kg | grelhados | Churrascaria Gaúcha Querência | 89.90 | bandeja 1 kg | 3 | sem_gluten,sem_lactose | 0 | 2 | 179.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 117.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "acompanhamento",
+                "consulta": "acompanhamento para churrasco",
+                "limite": 5,
+                "pessoas": 5
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1573,
+        "tokens_out": 59,
+        "cost_usd": 0.00027134999999999995,
+        "latency_ms": 604.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "acompanhamento",
+          "consulta": "acompanhamento para churrasco",
+          "limite": 5,
+          "pessoas": 5
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 5 pessoas | custo dessas unidades",
+          "itens": [
+            "churrascaria-017 | Pão de alho assado 6 unidades | acompanhamento | Churrascaria Gaúcha Querência | 22.90 | porção 6 unidades | 6 | vegetariano | 0 | 1 | 22.90",
+            "churrascaria-014 | Mandioca cozida na manteiga 500 g | acompanhamento | Churrascaria Gaúcha Querência | 19.90 | pote 500 g | 3 | vegetariano,sem_gluten | 0 | 2 | 39.80",
+            "churrascaria-013 | Vinagrete 300 g | acompanhamento | Churrascaria Gaúcha Querência | 12.90 | pote 300 g | 4 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 25.80",
+            "acougue-019 | Pão de alho apimentado | acompanhamento | Açougue Boi na Brasa | 18.90 | pacote 400 g (5 unidades) | 5 | vegetariano | 2 | 1 | 18.90",
+            "churrascaria-019 | Feijão tropeiro 500 g | acompanhamento | Churrascaria Gaúcha Querência | 29.90 | pote 500 g | 3 | sem_gluten,sem_lactose | 0 | 2 | 59.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 32.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "refrigerante lata",
+                "limite": 5,
+                "pessoas": 5
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1968,
+        "tokens_out": 94,
+        "cost_usd": 0.0003516,
+        "latency_ms": 711.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "refrigerante lata",
+          "limite": 5,
+          "pessoas": 5
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 5 pessoas | custo dessas unidades",
+          "itens": [
+            "nonna-030 | Refrigerante lata 350 ml | bebida | Pizzaria Forno da Nonna | 6.90 | lata 350 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 5 | 34.50",
+            "mercado-004 | Refrigerante cola lata 350 ml | bebida | Supermercado Bom Preço | 4.29 | lata 350 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 5 | 21.45",
+            "chapa-018 | Refrigerante lata 350 ml | bebida | Hamburgueria Chapa Quente | 6.50 | lata 350 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 5 | 32.50",
+            "nonna-029 | Refrigerante cola 2 L | bebida | Pizzaria Forno da Nonna | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 13.90",
+            "mercado-001 | Refrigerante cola 2 L | bebida | Supermercado Bom Preço | 10.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 10.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 61.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "mercado-032",
+                    "quantidade": 1
+                  },
+                  {
+                    "item_id": "churrascaria-017",
+                    "quantidade": 1
+                  },
+                  {
+                    "item_id": "mercado-001",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2370,
+        "tokens_out": 218,
+        "cost_usd": 0.00048629999999999995,
+        "latency_ms": 1124.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "mercado-032",
+              "quantidade": 1
+            },
+            {
+              "item_id": "churrascaria-017",
+              "quantidade": 1
+            },
+            {
+              "item_id": "mercado-001",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "1 x Kit churrasco econômico 2 kg (mercado-032, Supermercado Bom Preço) = 69.90",
+            "1 x Pão de alho assado 6 unidades (churrascaria-017, Churrascaria Gaúcha Querência) = 22.90",
+            "1 x Refrigerante cola 2 L (mercado-001, Supermercado Bom Preço) = 10.90"
+          ],
+          "itens": 103.7,
+          "entrega": 15.8,
+          "total": 119.5
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "grelhados",
+                  "acompanhamento",
+                  "bebida"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [],
+                "orcamento": 200,
+                "pessoas": 5,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2559,
+        "tokens_out": 69,
+        "cost_usd": 0.00042524999999999996,
+        "latency_ms": 13690.9,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "grelhados",
+            "acompanhamento",
+            "bebida"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [],
+          "orcamento": 200,
+          "pessoas": 5,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 119.5,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "grelhados": 5.0,
+            "acompanhamento": 6.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 1.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 6
+        },
+        "output": {
+          "texto": "Pronto! Seu churrasco para 5 pessoas fica com um kit de carne econômica, pão de alho e 2 L de refrigerante, tudo dentro do orçamento de R$ 200 (total R$ 119,50, incluindo entrega). Boa festa!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2679,
+        "tokens_out": 58,
+        "cost_usd": 0.00043664999999999996,
+        "latency_ms": 21741.6,
+        "wait_ms": 20000.0,
+        "error": null
+      }
+    ]
+  }
+}

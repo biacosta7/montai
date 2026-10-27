@@ -1,0 +1,379 @@
+{
+  "case_id": "t01",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "churrasco para 10 pessoas com R$ 300",
+  "finished_at": "2026-10-26T11:47:11+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-032",
+        "name": "Kit churrasco econômico 2 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit 2 kg",
+        "quantity": 2,
+        "unit_price": 69.9,
+        "subtotal": 139.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 2,
+        "unit_price": 9.49,
+        "subtotal": 18.98
+      },
+      {
+        "item_id": "churrascaria-013",
+        "name": "Vinagrete 300 g",
+        "store_id": "churrascaria",
+        "store_name": "Churrascaria Gaúcha Querência",
+        "unit": "pote 300 g",
+        "quantity": 3,
+        "unit_price": 12.9,
+        "subtotal": 38.7
+      }
+    ],
+    "items_total": 197.48,
+    "delivery_total": 15.8,
+    "total": 213.28,
+    "people": 10,
+    "budget": 300.0,
+    "message": "Pronto! Seu churrasco para 10 pessoas ficou dentro do orçamento de R$ 300, com:\n\n- **2 kits econômicos de carne** (5 p/kit) – R$ 139,80  \n- **2 garrafas de refrigerante 2 L** – R$ 18,98  \n- **3 porções de vinagrete** – R$ 38,70  \n\nTotal do pedido + entrega: **R$ 213,28**. Boa festa e bom apetite!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "2a51600f7012",
+    "version": "A",
+    "order": "churrasco para 10 pessoas com R$ 300",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "grelhados",
+                "consulta": "carne para churrasco",
+                "limite": 5,
+                "pessoas": 10
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1188,
+        "tokens_out": 86,
+        "cost_usd": 0.00022979999999999997,
+        "latency_ms": 975.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "grelhados",
+          "consulta": "carne para churrasco",
+          "limite": 5,
+          "pessoas": 10
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 10 pessoas | custo dessas unidades",
+          "itens": [
+            "mercado-032 | Kit churrasco econômico 2 kg | grelhados | Supermercado Bom Preço | 69.90 | kit 2 kg | 5 | sem_gluten,sem_lactose | 0 | 2 | 139.80",
+            "acougue-001 | Picanha bovina | grelhados | Açougue Boi na Brasa | 94.90 | kg | 2.5 | sem_gluten,sem_lactose | 0 | 4 | 379.60",
+            "churrascaria-005 | Frango assado inteiro | grelhados | Churrascaria Gaúcha Querência | 49.90 | unidade | 3 | sem_gluten,sem_lactose | 0 | 4 | 199.60",
+            "acougue-003 | Fraldinha | grelhados | Açougue Boi na Brasa | 49.90 | kg | 2.5 | sem_gluten,sem_lactose | 0 | 4 | 199.60",
+            "churrascaria-003 | Costela no bafo 1 kg | grelhados | Churrascaria Gaúcha Querência | 89.90 | bandeja 1 kg | 3 | sem_gluten,sem_lactose | 0 | 4 | 359.60"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 327.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "refrigerante",
+                "limite": 5,
+                "pessoas": 10
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1569,
+        "tokens_out": 52,
+        "cost_usd": 0.00026655,
+        "latency_ms": 784.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "refrigerante",
+          "limite": 5,
+          "pessoas": 10
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 10 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-019 | Refrigerante 2 L | bebida | Hamburgueria Chapa Quente | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 27.80",
+            "mercado-003 | Refrigerante guaraná 2 L | bebida | Supermercado Bom Preço | 9.49 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 18.98",
+            "nonna-029 | Refrigerante cola 2 L | bebida | Pizzaria Forno da Nonna | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 27.80",
+            "adega-017 | Refrigerante cola 2 L | bebida | Adega Lúpulo & Uva | 11.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 23.80",
+            "nonna-030 | Refrigerante lata 350 ml | bebida | Pizzaria Forno da Nonna | 6.90 | lata 350 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 10 | 69.00"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 24.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "acompanhamento",
+                "consulta": "carvao para churrasco",
+                "limite": 3,
+                "pessoas": 10
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1974,
+        "tokens_out": 53,
+        "cost_usd": 0.0003279,
+        "latency_ms": 583.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "acompanhamento",
+          "consulta": "carvao para churrasco",
+          "limite": 3,
+          "pessoas": 10
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 10 pessoas | custo dessas unidades",
+          "itens": [
+            "churrascaria-011 | Farofa de mandioca com bacon 300 g | acompanhamento | Churrascaria Gaúcha Querência | 16.90 | pote 300 g | 4 | sem_gluten | 0 | 3 | 50.70",
+            "churrascaria-017 | Pão de alho assado 6 unidades | acompanhamento | Churrascaria Gaúcha Querência | 22.90 | porção 6 unidades | 6 | vegetariano | 0 | 2 | 45.80",
+            "churrascaria-013 | Vinagrete 300 g | acompanhamento | Churrascaria Gaúcha Querência | 12.90 | pote 300 g | 4 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 3 | 38.70"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 31.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "mercado-032",
+                    "quantidade": 2
+                  },
+                  {
+                    "item_id": "mercado-003",
+                    "quantidade": 2
+                  },
+                  {
+                    "item_id": "churrascaria-013",
+                    "quantidade": 3
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2247,
+        "tokens_out": 174,
+        "cost_usd": 0.00044144999999999997,
+        "latency_ms": 14963.6,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "mercado-032",
+              "quantidade": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantidade": 2
+            },
+            {
+              "item_id": "churrascaria-013",
+              "quantidade": 3
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "2 x Kit churrasco econômico 2 kg (mercado-032, Supermercado Bom Preço) = 139.80",
+            "2 x Refrigerante guaraná 2 L (mercado-003, Supermercado Bom Preço) = 18.98",
+            "3 x Vinagrete 300 g (churrascaria-013, Churrascaria Gaúcha Querência) = 38.70"
+          ],
+          "itens": 197.48,
+          "entrega": 15.8,
+          "total": 213.28
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "grelhados",
+                  "bebida",
+                  "acompanhamento"
+                ],
+                "dieta": [],
+                "orcamento": 300,
+                "pessoas": 10,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2435,
+        "tokens_out": 63,
+        "cost_usd": 0.00040305,
+        "latency_ms": 19824.9,
+        "wait_ms": 19000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "grelhados",
+            "bebida",
+            "acompanhamento"
+          ],
+          "dieta": [],
+          "orcamento": 300,
+          "pessoas": 10,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 213.28,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "grelhados": 10.0,
+            "bebida": 10.0,
+            "acompanhamento": 12.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 6
+        },
+        "output": {
+          "texto": "Pronto! Seu churrasco para 10 pessoas ficou dentro do orçamento de R$ 300, com:\n\n- **2 kits econômicos de carne** (5 p/kit) – R$ 139,80  \n- **2 garrafas de refrigerante 2 L** – R$ 18,98  \n- **3 porções de vinagrete** – R$ 38,70  \n\nTotal do pedido + entrega: **R$ 213,28**. Boa festa e bom apetite!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2549,
+        "tokens_out": 112,
+        "cost_usd": 0.00044954999999999995,
+        "latency_ms": 19053.6,
+        "wait_ms": 18000.0,
+        "error": null
+      }
+    ]
+  }
+}

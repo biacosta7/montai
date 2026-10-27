@@ -125,8 +125,10 @@ class LLMClient:
             raise LLMError("LLM_API_KEY não configurada. Copie .env.example para .env e preencha.")
         # Reenvios ficam com a gente (max_retries=0) para medir quanto tempo foi
         # gasto esperando o limite de taxa, separado do tempo do modelo.
+        # timeout=60: o padrão do SDK (10 min) deixava uma chamada presa no
+        # provedor travar o pedido inteiro antes de tentar de novo.
         self.client = OpenAI(
-            base_url=self.settings.base_url, api_key=self.settings.api_key, max_retries=0
+            base_url=self.settings.base_url, api_key=self.settings.api_key, max_retries=0, timeout=60
         )
 
     @property
@@ -174,6 +176,7 @@ class LLMClient:
         """
         failures = 0
         while True:
+            started = time.perf_counter()
             try:
                 return self.client.chat.completions.create(**kwargs)
             except openai.RateLimitError as exc:
@@ -186,7 +189,8 @@ class LLMClient:
                     raise LLMError(f"o provedor não respondeu depois de {MAX_ATTEMPTS} tentativas") from exc
                 wait = min(2**failures, 30)
             if step is not None:
-                step.wait_ms += wait * 1000
+                # Tempo da tentativa que falhou + espera: é tempo do provedor, não do modelo.
+                step.wait_ms += (time.perf_counter() - started + wait) * 1000
             time.sleep(wait)
 
     def structured(

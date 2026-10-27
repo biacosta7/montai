@@ -1,0 +1,166 @@
+{
+  "case_id": "i02",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "jantar para 4 pessoas com R$ 10",
+  "finished_at": "2026-10-27T01:11:04+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": 4,
+    "budget": 10.0,
+    "message": "Não é possível atender este pedido: Só 'prato_principal' para 4 pessoa(s) custa no mínimo R$ 12.02 com entrega, acima do orçamento de R$ 10.00.",
+    "problems": [
+      "Só 'prato_principal' para 4 pessoa(s) custa no mínimo R$ 12.02 com entrega, acima do orçamento de R$ 10.00."
+    ],
+    "assumptions": [
+      "Com orçamento tão baixo, supõe‑se que o cliente quer apenas um prato principal barato e, se possível, alguma bebida de baixo custo."
+    ]
+  },
+  "spec": {
+    "occasion": "jantar econômico",
+    "specific_dish": null,
+    "people": 4,
+    "budget": 10.0,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "refeição econômica para jantar",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "bebida barata ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Com orçamento tão baixo, supõe‑se que o cliente quer apenas um prato principal barato e, se possível, alguma bebida de baixo custo."
+    ]
+  },
+  "trace": {
+    "run_id": "b595838bfbd4",
+    "version": "B",
+    "order": "jantar para 4 pessoas com R$ 10",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "jantar para 4 pessoas com R$ 10",
+        "output": {
+          "occasion": "jantar econômico",
+          "specific_dish": null,
+          "people": 4,
+          "budget": 10.0,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "refeição econômica para jantar",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "bebida barata ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Com orçamento tão baixo, supõe‑se que o cliente quer apenas um prato principal barato e, se possível, alguma bebida de baixo custo."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1458,
+        "tokens_out": 210,
+        "cost_usd": 0.0003447,
+        "latency_ms": 1016.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "refeição econômica para jantar",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "bebida barata ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [],
+          "bebida": [
+            {
+              "id": "graofino-027",
+              "nome": "Água mineral 500 ml",
+              "score": 0.8694
+            },
+            {
+              "id": "mercado-006",
+              "nome": "Água com gás 500 ml",
+              "score": 0.8652
+            },
+            {
+              "id": "mercado-005",
+              "nome": "Água mineral sem gás 1,5 L",
+              "score": 0.8645
+            },
+            {
+              "id": "adega-018",
+              "nome": "Água mineral 1,5 L",
+              "score": 0.8605
+            },
+            {
+              "id": "adega-016",
+              "nome": "Água tônica lata",
+              "score": 0.8595
+            },
+            {
+              "id": "aloha-014",
+              "nome": "Água de coco 330 ml",
+              "score": 0.8572
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 84.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": true,
+          "motivos": [
+            "Só 'prato_principal' para 4 pessoa(s) custa no mínimo R$ 12.02 com entrega, acima do orçamento de R$ 10.00."
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

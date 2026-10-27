@@ -1,0 +1,314 @@
+{
+  "case_id": "c09",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida tailandesa vegana para 2, pouco apimentada",
+  "finished_at": "2026-10-26T21:41:25+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "bangkok-003",
+        "name": "Pad thai vegano com tofu",
+        "store_id": "bangkok",
+        "store_name": "Bangkok Express",
+        "unit": "prato",
+        "quantity": 2,
+        "unit_price": 42.9,
+        "subtotal": 85.8
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      }
+    ],
+    "items_total": 95.29,
+    "delivery_total": 14.8,
+    "total": 110.09,
+    "people": 2,
+    "budget": null,
+    "message": "Seu carrinho está pronto: Pad Thai vegano com tofu (2 porções) e Refrigerante guaraná 2 L. O total, já com entrega, ficou em **R$ 110,09** e atende 2 pessoas, é vegano e tem pouca picância. Boa refeição!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "4b5baecdb737",
+    "version": "A",
+    "order": "comida tailandesa vegana para 2, pouco apimentada",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "tailandesa vegana",
+                "dieta": [
+                  "vegano"
+                ],
+                "pessoas": 2,
+                "picancia_maxima": 1
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1191,
+        "tokens_out": 84,
+        "cost_usd": 0.00022905,
+        "latency_ms": 561.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "tailandesa vegana",
+          "dieta": [
+            "vegano"
+          ],
+          "pessoas": 2,
+          "picancia_maxima": 1
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "bangkok-003 | Pad thai vegano com tofu | prato_principal | Bangkok Express | 42.90 | prato | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 1 | 2 | 85.80",
+            "bangkok-015 | Stir fry de legumes com castanha de caju | prato_principal | Bangkok Express | 38.90 | prato | 1 | vegano,vegetariano,sem_lactose | 1 | 2 | 77.80",
+            "nonna-024 | Pizza vegana de legumes grande | prato_principal | Pizzaria Forno da Nonna | 74.90 | pizza grande (8 fatias) | 3 | vegano,vegetariano,sem_lactose | 0 | 1 | 74.90",
+            "nonna-023 | Pizza vegana de legumes média | prato_principal | Pizzaria Forno da Nonna | 58.90 | pizza média (6 fatias) | 2 | vegano,vegetariano,sem_lactose | 0 | 1 | 58.90",
+            "aloha-005 | Poke vegano sem glúten | prato_principal | Aloha Poke & Bowls | 42.90 | bowl | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 85.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 68.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "refrigerante",
+                "dieta": [
+                  "vegano"
+                ],
+                "limite": 3,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1595,
+        "tokens_out": 59,
+        "cost_usd": 0.00027465,
+        "latency_ms": 9092.7,
+        "wait_ms": 8000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "refrigerante",
+          "dieta": [
+            "vegano"
+          ],
+          "limite": 3,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-019 | Refrigerante 2 L | bebida | Hamburgueria Chapa Quente | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 13.90",
+            "mercado-003 | Refrigerante guaraná 2 L | bebida | Supermercado Bom Preço | 9.49 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 9.49",
+            "nonna-029 | Refrigerante cola 2 L | bebida | Pizzaria Forno da Nonna | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 13.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 77.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "bangkok-003",
+                    "quantidade": 2
+                  },
+                  {
+                    "item_id": "mercado-003",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1880,
+        "tokens_out": 158,
+        "cost_usd": 0.0003768,
+        "latency_ms": 15383.9,
+        "wait_ms": 14000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "bangkok-003",
+              "quantidade": 2
+            },
+            {
+              "item_id": "mercado-003",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "2 x Pad thai vegano com tofu (bangkok-003, Bangkok Express) = 85.80",
+            "1 x Refrigerante guaraná 2 L (mercado-003, Supermercado Bom Preço) = 9.49"
+          ],
+          "itens": 95.29,
+          "entrega": 14.8,
+          "total": 110.09
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal"
+                ],
+                "dieta": [
+                  "vegano"
+                ],
+                "pessoas": 2,
+                "picancia_maxima": 1
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2016,
+        "tokens_out": 54,
+        "cost_usd": 0.00033479999999999995,
+        "latency_ms": 14236.2,
+        "wait_ms": 13000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal"
+          ],
+          "dieta": [
+            "vegano"
+          ],
+          "pessoas": 2,
+          "picancia_maxima": 1
+        },
+        "output": {
+          "ok": true,
+          "total": 110.09,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 2.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": "Seu carrinho está pronto: Pad Thai vegano com tofu (2 porções) e Refrigerante guaraná 2 L. O total, já com entrega, ficou em **R$ 110,09** e atende 2 pessoas, é vegano e tem pouca picância. Boa refeição!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2113,
+        "tokens_out": 69,
+        "cost_usd": 0.00035834999999999996,
+        "latency_ms": 18671.6,
+        "wait_ms": 17000.0,
+        "error": null
+      }
+    ]
+  }
+}

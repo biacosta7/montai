@@ -28,6 +28,11 @@ GROUP_LABELS = {
 }
 
 
+# Uma chamada que levou mais que isso (fora as esperas registradas) ficou presa
+# no provedor até o timeout: não é tempo do modelo nem do nosso código.
+STALL_MS = 5 * 60 * 1000
+
+
 class Rate(BaseModel):
     ok: int
     n: int
@@ -51,6 +56,8 @@ class VersionSummary(BaseModel):
     mean_latency_s: float
     median_latency_s: float
     mean_net_latency_s: float
+    median_net_latency_s: float
+    stalled_runs: int  # execuções com uma chamada presa > 5 min no provedor (timeout)
     mean_cost_usd: float
     total_cost_usd: float
 
@@ -83,6 +90,10 @@ def summarize(
         mean_latency_s=mean(latencies) if traces else 0,
         median_latency_s=median(latencies) if traces else 0,
         mean_net_latency_s=mean(t.net_latency_ms / 1000 for t in traces) if traces else 0,
+        median_net_latency_s=median(t.net_latency_ms / 1000 for t in traces) if traces else 0,
+        stalled_runs=sum(
+            any(s.latency_ms - s.wait_ms > STALL_MS for s in t.steps) for t in traces
+        ),
         mean_cost_usd=mean(t.cost_usd for t in traces) if traces else 0,
         total_cost_usd=sum(t.cost_usd for t in traces),
     )
@@ -123,11 +134,17 @@ def to_markdown(
         sep,
         "| Tokens (entrada + saída) | " + " | ".join(f"{s.mean_tokens:,.0f}" for s in summaries) + " |",
         "| Chamadas ao LLM | " + " | ".join(f"{s.mean_llm_calls:.1f}" for s in summaries) + " |",
-        "| Latência total (s) | " + " | ".join(f"{s.mean_latency_s:.1f}" for s in summaries) + " |",
-        "| Latência mediana (s) | " + " | ".join(f"{s.median_latency_s:.1f}" for s in summaries) + " |",
-        "| Latência sem espera de limite de taxa (s) | "
-        + " | ".join(f"{s.mean_net_latency_s:.1f}" for s in summaries) + " |",
+        "| **Latência líquida, mediana (s)** | "
+        + " | ".join(f"**{s.median_net_latency_s:.1f}**" for s in summaries) + " |",
+        "| Latência líquida, média (s) | " + " | ".join(f"{s.mean_net_latency_s:.1f}" for s in summaries) + " |",
+        "| Latência total com esperas, mediana (s) | "
+        + " | ".join(f"{s.median_latency_s:.1f}" for s in summaries) + " |",
+        "| Execuções com chamada presa no provedor | " + " | ".join(str(s.stalled_runs) for s in summaries) + " |",
         "| Custo estimado (US$) | " + " | ".join(f"{s.mean_cost_usd:.5f}" for s in summaries) + " |",
+        "",
+        ("Latência líquida = tempo total menos as esperas por limite de taxa do plano gratuito. "
+        "A mediana é a medida principal: algumas chamadas ficaram presas no provedor até o timeout "
+        "(cerca de 10 min) antes de serem reenviadas, e esses casos distorcem a média."),
         "",
         "## Pedidos resolvidos por grupo",
         "",

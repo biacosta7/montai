@@ -1,0 +1,400 @@
+{
+  "case_id": "a02",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "uma festa",
+  "finished_at": "2026-10-27T04:12:56+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-032",
+        "name": "Kit churrasco econômico 2 kg",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit 2 kg",
+        "quantity": 4,
+        "unit_price": 69.9,
+        "subtotal": 279.6
+      }
+    ],
+    "items_total": 279.6,
+    "delivery_total": 5.9,
+    "total": 285.5,
+    "people": 20,
+    "budget": null,
+    "message": "Escolhi o kit churrasco econômico, que atende exatamente 20 pessoas com o menor custo por pessoa, evitando itens extras e entregas múltiplas.",
+    "problems": [],
+    "assumptions": [
+      "Número de convidados estimado em 20 pessoas.",
+      "Orçamento não especificado, será definido pelo cliente.",
+      "Nenhuma restrição dietética informada."
+    ]
+  },
+  "spec": {
+    "occasion": "festa",
+    "specific_dish": null,
+    "people": 20,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "grelhados",
+        "query": "carnes e opções para churrasco",
+        "essential": true
+      },
+      {
+        "category": "acompanhamento",
+        "query": "arroz, farofa, batata frita e pão de alho",
+        "essential": false
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerantes, sucos e água",
+        "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "carvão, gelo e descartáveis",
+        "essential": false
+      },
+      {
+        "category": "sobremesa",
+        "query": "doces e sorvetes",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de convidados estimado em 20 pessoas.",
+      "Orçamento não especificado, será definido pelo cliente.",
+      "Nenhuma restrição dietética informada."
+    ]
+  },
+  "trace": {
+    "run_id": "038d5dcc031a",
+    "version": "B",
+    "order": "uma festa",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "uma festa",
+        "output": {
+          "occasion": "festa",
+          "specific_dish": null,
+          "people": 20,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "grelhados",
+              "query": "carnes e opções para churrasco",
+              "essential": true
+            },
+            {
+              "category": "acompanhamento",
+              "query": "arroz, farofa, batata frita e pão de alho",
+              "essential": false
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerantes, sucos e água",
+              "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "carvão, gelo e descartáveis",
+              "essential": false
+            },
+            {
+              "category": "sobremesa",
+              "query": "doces e sorvetes",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de convidados estimado em 20 pessoas.",
+            "Orçamento não especificado, será definido pelo cliente.",
+            "Nenhuma restrição dietética informada."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1449,
+        "tokens_out": 326,
+        "cost_usd": 0.00041295,
+        "latency_ms": 1352.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "grelhados",
+            "query": "carnes e opções para churrasco",
+            "essential": true
+          },
+          {
+            "category": "acompanhamento",
+            "query": "arroz, farofa, batata frita e pão de alho",
+            "essential": false
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerantes, sucos e água",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "carvão, gelo e descartáveis",
+            "essential": false
+          },
+          {
+            "category": "sobremesa",
+            "query": "doces e sorvetes",
+            "essential": false
+          }
+        ],
+        "output": {
+          "grelhados": [
+            {
+              "id": "acougue-001",
+              "nome": "Picanha bovina",
+              "score": 0.8804
+            },
+            {
+              "id": "acougue-003",
+              "nome": "Fraldinha",
+              "score": 0.8775
+            },
+            {
+              "id": "mercado-032",
+              "nome": "Kit churrasco econômico 2 kg",
+              "score": 0.8766
+            },
+            {
+              "id": "churrascaria-005",
+              "nome": "Frango assado inteiro",
+              "score": 0.8739
+            },
+            {
+              "id": "acougue-015",
+              "nome": "Espetinho de carne 10 unidades",
+              "score": 0.8676
+            },
+            {
+              "id": "churrascaria-003",
+              "nome": "Costela no bafo 1 kg",
+              "score": 0.8583
+            }
+          ],
+          "acompanhamento": [
+            {
+              "id": "acougue-018",
+              "nome": "Pão de alho tradicional",
+              "score": 0.8634
+            },
+            {
+              "id": "bangkok-010",
+              "nome": "Arroz frito thai com ovo",
+              "score": 0.8588
+            },
+            {
+              "id": "acougue-019",
+              "nome": "Pão de alho apimentado",
+              "score": 0.8579
+            },
+            {
+              "id": "churrascaria-017",
+              "nome": "Pão de alho assado 6 unidades",
+              "score": 0.8578
+            },
+            {
+              "id": "mercado-029",
+              "nome": "Pão de alho congelado",
+              "score": 0.8576
+            },
+            {
+              "id": "churrascaria-012",
+              "nome": "Farofa de banana vegana 300 g",
+              "score": 0.8518
+            }
+          ],
+          "bebida": [
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8692
+            },
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.8652
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8645
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8637
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8632
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8629
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8676
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8539
+            },
+            {
+              "id": "mercado-014",
+              "nome": "Carvão vegetal 3 kg",
+              "score": 0.8496
+            },
+            {
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8492
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8478
+            },
+            {
+              "id": "acougue-022",
+              "nome": "Carvão vegetal 10 kg",
+              "score": 0.8445
+            }
+          ],
+          "sobremesa": [
+            {
+              "id": "doceria-020",
+              "nome": "Sorvete artesanal 1 L",
+              "score": 0.8919
+            },
+            {
+              "id": "doceria-018",
+              "nome": "Cookies 6 unidades",
+              "score": 0.8814
+            },
+            {
+              "id": "doceria-021",
+              "nome": "Sorbet de manga 500 ml",
+              "score": 0.8755
+            },
+            {
+              "id": "sahara-022",
+              "nome": "Baklava 6 unidades",
+              "score": 0.8749
+            },
+            {
+              "id": "doceria-013",
+              "nome": "Brownie 6 unidades",
+              "score": 0.8744
+            },
+            {
+              "id": "lapicante-020",
+              "nome": "Churros com doce de leite 6 unidades",
+              "score": 0.8744
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 228.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "mercado-032",
+              "quantity": 4
+            }
+          ],
+          "rationale": "Escolhi o kit churrasco econômico, que atende exatamente 20 pessoas com o menor custo por pessoa, evitando itens extras e entregas múltiplas."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 3333,
+        "tokens_out": 334,
+        "cost_usd": 0.00070035,
+        "latency_ms": 549995.3,
+        "wait_ms": 548000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "mercado-032",
+            "quantity": 4
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 285.5,
+          "problemas": [],
+          "cobertura": {
+            "grelhados": 20.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

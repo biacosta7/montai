@@ -1,0 +1,262 @@
+{
+  "case_id": "a05",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "lanche rápido e barato",
+  "finished_at": "2026-10-27T05:52:29+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "padaria-021",
+        "name": "Sanduíche natural de frango",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "unidade",
+        "quantity": 1,
+        "unit_price": 13.9,
+        "subtotal": 13.9
+      }
+    ],
+    "items_total": 13.9,
+    "delivery_total": 4.9,
+    "total": 18.8,
+    "people": 1,
+    "budget": null,
+    "message": "Escolhi o sanduíche natural de frango, o mais barato que serve 1 pessoa, e evitamos bebidas para manter o pedido econômico.",
+    "problems": [],
+    "assumptions": [
+      "Como não foi especificado número de pessoas, assumiu‑se 1 pessoa.",
+      "Não há restrições alimentares mencionadas.",
+      "Orçamento não foi informado, portanto não há limite definido.",
+      "Considerou‑se que uma bebida é opcional para completar o lanche."
+    ]
+  },
+  "spec": {
+    "occasion": "lanche rápido e barato",
+    "specific_dish": null,
+    "people": 1,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "lanche",
+        "query": "sanduíches ou wraps simples",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou água",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Como não foi especificado número de pessoas, assumiu‑se 1 pessoa.",
+      "Não há restrições alimentares mencionadas.",
+      "Orçamento não foi informado, portanto não há limite definido.",
+      "Considerou‑se que uma bebida é opcional para completar o lanche."
+    ]
+  },
+  "trace": {
+    "run_id": "4f38970fe68a",
+    "version": "B",
+    "order": "lanche rápido e barato",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "lanche rápido e barato",
+        "output": {
+          "occasion": "lanche rápido e barato",
+          "specific_dish": null,
+          "people": 1,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "lanche",
+              "query": "sanduíches ou wraps simples",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou água",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Como não foi especificado número de pessoas, assumiu‑se 1 pessoa.",
+            "Não há restrições alimentares mencionadas.",
+            "Orçamento não foi informado, portanto não há limite definido.",
+            "Considerou‑se que uma bebida é opcional para completar o lanche."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1452,
+        "tokens_out": 242,
+        "cost_usd": 0.000363,
+        "latency_ms": 9394.7,
+        "wait_ms": 8000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "lanche",
+            "query": "sanduíches ou wraps simples",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou água",
+            "essential": false
+          }
+        ],
+        "output": {
+          "lanche": [
+            {
+              "id": "graofino-006",
+              "nome": "Mini sanduíches sortidos 20 unidades",
+              "score": 0.8752
+            },
+            {
+              "id": "graofino-011",
+              "nome": "Wrap de ovos mexidos",
+              "score": 0.8735
+            },
+            {
+              "id": "verdevida-014",
+              "nome": "Wrap integral de frango",
+              "score": 0.8728
+            },
+            {
+              "id": "graofino-007",
+              "nome": "Mini sanduíches veganos 10 unidades",
+              "score": 0.8719
+            },
+            {
+              "id": "padaria-021",
+              "nome": "Sanduíche natural de frango",
+              "score": 0.8578
+            },
+            {
+              "id": "padaria-022",
+              "nome": "Sanduíche natural vegano",
+              "score": 0.8575
+            }
+          ],
+          "bebida": [
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8765
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8735
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8711
+            },
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8699
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8689
+            },
+            {
+              "id": "nonna-030",
+              "nome": "Refrigerante lata 350 ml",
+              "score": 0.8655
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 110.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "padaria-021",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o sanduíche natural de frango, o mais barato que serve 1 pessoa, e evitamos bebidas para manter o pedido econômico."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1949,
+        "tokens_out": 228,
+        "cost_usd": 0.00042915,
+        "latency_ms": 1040.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "padaria-021",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 18.8,
+          "problemas": [],
+          "cobertura": {
+            "lanche": 1.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

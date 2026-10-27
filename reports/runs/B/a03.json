@@ -1,0 +1,343 @@
+{
+  "case_id": "a03",
+  "version": "B",
+  "model": "openai/gpt-oss-120b",
+  "order": "comida para o pessoal do trabalho",
+  "finished_at": "2026-10-27T05:49:02+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "caseiro-001",
+        "name": "Prato feito de bife",
+        "store_id": "caseiro",
+        "store_name": "Restaurante Sabor Caseiro",
+        "unit": "prato",
+        "quantity": 5,
+        "unit_price": 29.9,
+        "subtotal": 149.5
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 1,
+        "unit_price": 9.49,
+        "subtotal": 9.49
+      },
+      {
+        "item_id": "mercado-016",
+        "name": "Kit descartáveis para 10 pessoas",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "kit",
+        "quantity": 1,
+        "unit_price": 24.9,
+        "subtotal": 24.9
+      }
+    ],
+    "items_total": 183.89,
+    "delivery_total": 10.8,
+    "total": 194.69,
+    "people": 5,
+    "budget": null,
+    "message": "Escolhi o prato feito de bife (R$/pessoa mais barato) para atender 5 pessoas, um refrigerante guaraná 2 L que serve todo o grupo e um kit descartável para 10 pessoas, minimizando custos e taxas de entrega.",
+    "problems": [],
+    "assumptions": [
+      "Número de pessoas estimado em 5, típico de um pequeno grupo de trabalho.",
+      "Orçamento não informado, portanto não foi considerado.",
+      "Nenhuma restrição alimentar foi mencionada."
+    ]
+  },
+  "spec": {
+    "occasion": "refeição no trabalho",
+    "specific_dish": null,
+    "people": 5,
+    "budget": null,
+    "diet": [],
+    "diet_options": [],
+    "max_spice": null,
+    "needs": [
+      {
+        "category": "prato_principal",
+        "query": "pratos prontos ou combos para almoço",
+        "essential": true
+      },
+      {
+        "category": "bebida",
+        "query": "refrigerante ou suco em garrafas",
+        "essential": false
+      },
+      {
+        "category": "utensilios",
+        "query": "descartáveis para servir",
+        "essential": false
+      }
+    ],
+    "assumptions": [
+      "Número de pessoas estimado em 5, típico de um pequeno grupo de trabalho.",
+      "Orçamento não informado, portanto não foi considerado.",
+      "Nenhuma restrição alimentar foi mencionada."
+    ]
+  },
+  "trace": {
+    "run_id": "65a7d3683dfd",
+    "version": "B",
+    "order": "comida para o pessoal do trabalho",
+    "steps": [
+      {
+        "name": "interpretador",
+        "input": "comida para o pessoal do trabalho",
+        "output": {
+          "occasion": "refeição no trabalho",
+          "specific_dish": null,
+          "people": 5,
+          "budget": null,
+          "diet": [],
+          "diet_options": [],
+          "max_spice": null,
+          "needs": [
+            {
+              "category": "prato_principal",
+              "query": "pratos prontos ou combos para almoço",
+              "essential": true
+            },
+            {
+              "category": "bebida",
+              "query": "refrigerante ou suco em garrafas",
+              "essential": false
+            },
+            {
+              "category": "utensilios",
+              "query": "descartáveis para servir",
+              "essential": false
+            }
+          ],
+          "assumptions": [
+            "Número de pessoas estimado em 5, típico de um pequeno grupo de trabalho.",
+            "Orçamento não informado, portanto não foi considerado.",
+            "Nenhuma restrição alimentar foi mencionada."
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1454,
+        "tokens_out": 254,
+        "cost_usd": 0.0003705,
+        "latency_ms": 90442.6,
+        "wait_ms": 89000.0,
+        "error": null
+      },
+      {
+        "name": "buscador",
+        "input": [
+          {
+            "category": "prato_principal",
+            "query": "pratos prontos ou combos para almoço",
+            "essential": true
+          },
+          {
+            "category": "bebida",
+            "query": "refrigerante ou suco em garrafas",
+            "essential": false
+          },
+          {
+            "category": "utensilios",
+            "query": "descartáveis para servir",
+            "essential": false
+          }
+        ],
+        "output": {
+          "prato_principal": [
+            {
+              "id": "bangkok-016",
+              "nome": "Combo Bangkok para 2",
+              "score": 0.8734
+            },
+            {
+              "id": "aloha-003",
+              "nome": "Poke de atum",
+              "score": 0.8697
+            },
+            {
+              "id": "aloha-006",
+              "nome": "Poke de camarão picante",
+              "score": 0.8661
+            },
+            {
+              "id": "graofino-002",
+              "nome": "Kit café da manhã 5 pessoas",
+              "score": 0.8641
+            },
+            {
+              "id": "caseiro-001",
+              "nome": "Prato feito de bife",
+              "score": 0.8637
+            },
+            {
+              "id": "caseiro-009",
+              "nome": "Peixe frito com pirão",
+              "score": 0.8629
+            }
+          ],
+          "bebida": [
+            {
+              "id": "chapa-019",
+              "nome": "Refrigerante 2 L",
+              "score": 0.8917
+            },
+            {
+              "id": "mercado-001",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8901
+            },
+            {
+              "id": "adega-017",
+              "nome": "Refrigerante cola 2 L",
+              "score": 0.8898
+            },
+            {
+              "id": "mercado-002",
+              "nome": "Refrigerante cola zero 2 L",
+              "score": 0.889
+            },
+            {
+              "id": "mercado-003",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8889
+            },
+            {
+              "id": "churrascaria-021",
+              "nome": "Refrigerante guaraná 2 L",
+              "score": 0.8856
+            }
+          ],
+          "utensilios": [
+            {
+              "id": "mercado-016",
+              "nome": "Kit descartáveis para 10 pessoas",
+              "score": 0.8828
+            },
+            {
+              "id": "adega-020",
+              "nome": "Copos descartáveis 50 unidades",
+              "score": 0.8591
+            },
+            {
+              "id": "acougue-024",
+              "nome": "Acendedor de carvão",
+              "score": 0.8425
+            },
+            {
+              "id": "acougue-023",
+              "nome": "Sal grosso 1 kg",
+              "score": 0.8338
+            },
+            {
+              "id": "mercado-015",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8278
+            },
+            {
+              "id": "acougue-021",
+              "nome": "Carvão vegetal 5 kg",
+              "score": 0.8271
+            }
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 268.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "pre_checagem",
+        "input": null,
+        "output": {
+          "impossivel": false,
+          "motivos": []
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "montador",
+        "input": {
+          "tentativa": 1
+        },
+        "output": {
+          "feasible": true,
+          "lines": [
+            {
+              "item_id": "caseiro-001",
+              "quantity": 5
+            },
+            {
+              "item_id": "mercado-003",
+              "quantity": 1
+            },
+            {
+              "item_id": "mercado-016",
+              "quantity": 1
+            }
+          ],
+          "rationale": "Escolhi o prato feito de bife (R$/pessoa mais barato) para atender 5 pessoas, um refrigerante guaraná 2 L que serve todo o grupo e um kit descartável para 10 pessoas, minimizando custos e taxas de entrega."
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2412,
+        "tokens_out": 425,
+        "cost_usd": 0.0006167999999999999,
+        "latency_ms": 678768.4,
+        "wait_ms": 677000.0,
+        "error": null
+      },
+      {
+        "name": "validador",
+        "input": [
+          {
+            "item_id": "caseiro-001",
+            "quantity": 5
+          },
+          {
+            "item_id": "mercado-003",
+            "quantity": 1
+          },
+          {
+            "item_id": "mercado-016",
+            "quantity": 1
+          }
+        ],
+        "output": {
+          "ok": true,
+          "total": 194.69,
+          "problemas": [],
+          "cobertura": {
+            "prato_principal": 5.0,
+            "bebida": 5.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.9,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

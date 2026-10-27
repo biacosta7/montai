@@ -1,0 +1,469 @@
+{
+  "case_id": "o11",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "sessão de filme para 2 com hambúrguer e batata frita",
+  "finished_at": "2026-10-26T11:03:24+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "chapa-001",
+        "name": "Burger clássico",
+        "store_id": "chapa",
+        "store_name": "Hamburgueria Chapa Quente",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 34.9,
+        "subtotal": 69.8
+      },
+      {
+        "item_id": "chapa-010",
+        "name": "Batata frita média",
+        "store_id": "chapa",
+        "store_name": "Hamburgueria Chapa Quente",
+        "unit": "porção média",
+        "quantity": 1,
+        "unit_price": 18.9,
+        "subtotal": 18.9
+      }
+    ],
+    "items_total": 88.7,
+    "delivery_total": 5.9,
+    "total": 94.6,
+    "people": 2,
+    "budget": null,
+    "message": "Pronto! Seu combo para a sessão de filme inclui 2 burgers clássicos e uma porção média de batata frita, totalizando R$ 94,60 (incluindo a entrega). Boa diversão!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "33d663a8f645",
+    "version": "A",
+    "order": "sessão de filme para 2 com hambúrguer e batata frita",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "hambúrguer",
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1192,
+        "tokens_out": 108,
+        "cost_usd": 0.00024359999999999996,
+        "latency_ms": 1005.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "hambúrguer",
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "massamia-005 | Nhoque ao sugo | prato_principal | Cantina Massa Mia | 39.90 | prato | 1 | vegetariano | 0 | 2 | 79.80",
+            "nonna-004 | Pizza margherita grande | prato_principal | Pizzaria Forno da Nonna | 64.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 1 | 64.90",
+            "nonna-020 | Pizza rúcula com tomate seco grande | prato_principal | Pizzaria Forno da Nonna | 72.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 1 | 72.90",
+            "nonna-003 | Pizza margherita média | prato_principal | Pizzaria Forno da Nonna | 50.90 | pizza média (6 fatias) | 2 | vegetariano | 0 | 1 | 50.90",
+            "nonna-012 | Pizza quatro queijos grande | prato_principal | Pizzaria Forno da Nonna | 72.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 1 | 72.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 286.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "burger",
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1545,
+        "tokens_out": 51,
+        "cost_usd": 0.00026235,
+        "latency_ms": 527.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "burger",
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "verdevida-011 | Curry de legumes com arroz basmati | prato_principal | Verde Vida Cozinha Natural | 38.90 | prato | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 2 | 2 | 77.80",
+            "bangkok-005 | Curry vermelho de carne | prato_principal | Bangkok Express | 49.90 | prato | 1 | sem_gluten,sem_lactose | 3 | 2 | 99.80",
+            "bangkok-004 | Curry verde de frango | prato_principal | Bangkok Express | 46.90 | prato | 1 | sem_gluten,sem_lactose | 3 | 2 | 93.80",
+            "caseiro-006 | Escondidinho de carne seca | prato_principal | Restaurante Sabor Caseiro | 38.90 | prato | 1 | sem_gluten | 0 | 2 | 77.80",
+            "verdevida-012 | Tofu grelhado com legumes salteados | prato_principal | Verde Vida Cozinha Natural | 38.90 | prato | 1 | vegano,vegetariano,sem_lactose | 0 | 2 | 77.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 32.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "hamburguer",
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1895,
+        "tokens_out": 54,
+        "cost_usd": 0.00031664999999999997,
+        "latency_ms": 602299.1,
+        "wait_ms": 1000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "hamburguer",
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "nonna-004 | Pizza margherita grande | prato_principal | Pizzaria Forno da Nonna | 64.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 1 | 64.90",
+            "nonna-003 | Pizza margherita média | prato_principal | Pizzaria Forno da Nonna | 50.90 | pizza média (6 fatias) | 2 | vegetariano | 0 | 1 | 50.90",
+            "nonna-020 | Pizza rúcula com tomate seco grande | prato_principal | Pizzaria Forno da Nonna | 72.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 1 | 72.90",
+            "massamia-005 | Nhoque ao sugo | prato_principal | Cantina Massa Mia | 39.90 | prato | 1 | vegetariano | 0 | 2 | 79.80",
+            "nonna-012 | Pizza quatro queijos grande | prato_principal | Pizzaria Forno da Nonna | 72.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 1 | 72.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 247.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "lanche",
+                "consulta": "hamburguer",
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2248,
+        "tokens_out": 54,
+        "cost_usd": 0.0003696,
+        "latency_ms": 635.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "lanche",
+          "consulta": "hamburguer",
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-003 | Bacon burger | lanche | Hamburgueria Chapa Quente | 39.90 | unidade | 1 | - | 0 | 2 | 79.80",
+            "chapa-004 | Burger picante com jalapeño | lanche | Hamburgueria Chapa Quente | 39.90 | unidade | 1 | - | 2 | 2 | 79.80",
+            "chapa-002 | Cheeseburger duplo | lanche | Hamburgueria Chapa Quente | 42.90 | unidade | 1 | - | 0 | 2 | 85.80",
+            "chapa-008 | Burger no prato sem pão | lanche | Hamburgueria Chapa Quente | 38.90 | prato | 1 | sem_gluten | 0 | 2 | 77.80",
+            "chapa-001 | Burger clássico | lanche | Hamburgueria Chapa Quente | 34.90 | unidade | 1 | - | 0 | 2 | 69.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 31.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "acompanhamento",
+                "consulta": "batata frita",
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2559,
+        "tokens_out": 54,
+        "cost_usd": 0.00041624999999999995,
+        "latency_ms": 785.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "acompanhamento",
+          "consulta": "batata frita",
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-010 | Batata frita média | acompanhamento | Hamburgueria Chapa Quente | 18.90 | porção média | 2 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 18.90",
+            "chapa-011 | Batata frita grande | acompanhamento | Hamburgueria Chapa Quente | 26.90 | porção grande | 3 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 26.90",
+            "mercado-035 | Batata palha 140 g | acompanhamento | Supermercado Bom Preço | 8.90 | pacote 140 g | 4 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 8.90",
+            "churrascaria-015 | Maionese de batata 500 g | acompanhamento | Churrascaria Gaúcha Querência | 22.90 | pote 500 g | 4 | vegetariano,sem_gluten,sem_lactose | 0 | 1 | 22.90",
+            "bangkok-010 | Arroz frito thai com ovo | acompanhamento | Bangkok Express | 24.90 | pote 300 g | 1.5 | vegetariano,sem_lactose | 0 | 2 | 49.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 21.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 6
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "chapa-001",
+                    "quantidade": 2
+                  },
+                  {
+                    "item_id": "chapa-010",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2949,
+        "tokens_out": 157,
+        "cost_usd": 0.00053655,
+        "latency_ms": 20284.5,
+        "wait_ms": 19000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "chapa-001",
+              "quantidade": 2
+            },
+            {
+              "item_id": "chapa-010",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "2 x Burger clássico (chapa-001, Hamburgueria Chapa Quente) = 69.80",
+            "1 x Batata frita média (chapa-010, Hamburgueria Chapa Quente) = 18.90"
+          ],
+          "itens": 88.7,
+          "entrega": 5.9,
+          "total": 94.6
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 7
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "lanche"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [],
+                "orcamento": null,
+                "pessoas": 2,
+                "picancia_maxima": null
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 3084,
+        "tokens_out": 63,
+        "cost_usd": 0.0005004,
+        "latency_ms": 1610.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "lanche"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [],
+          "orcamento": null,
+          "pessoas": 2,
+          "picancia_maxima": null
+        },
+        "output": {
+          "ok": true,
+          "total": 94.6,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "lanche": 2.0,
+            "acompanhamento": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.4,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 8
+        },
+        "output": {
+          "texto": "Pronto! Seu combo para a sessão de filme inclui 2 burgers clássicos e uma porção média de batata frita, totalizando R$ 94,60 (incluindo a entrega). Boa diversão!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 3187,
+        "tokens_out": 50,
+        "cost_usd": 0.0005080499999999999,
+        "latency_ms": 9869.0,
+        "wait_ms": 9000.0,
+        "error": null
+      }
+    ]
+  }
+}

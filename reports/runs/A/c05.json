@@ -1,0 +1,237 @@
+{
+  "case_id": "c05",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "sobremesas veganas para uma festa de 10 pessoas",
+  "finished_at": "2026-10-26T21:40:24+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "doceria-011",
+        "name": "Bolo vegano de cenoura",
+        "store_id": "doceria",
+        "store_name": "Doceria Açúcar & Afeto",
+        "unit": "bolo inteiro",
+        "quantity": 1,
+        "unit_price": 59.9,
+        "subtotal": 59.9
+      }
+    ],
+    "items_total": 59.9,
+    "delivery_total": 6.9,
+    "total": 66.8,
+    "people": 10,
+    "budget": null,
+    "message": "Pronto! Seu carrinho tem um bolo vegano de cenoura que serve as 10 pessoas, dentro do seu pedido de sobremesas veganas. Boa festa!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "ef177f592604",
+    "version": "A",
+    "order": "sobremesas veganas para uma festa de 10 pessoas",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "sobremesa",
+                "consulta": "sobremesa vegana",
+                "dieta": [
+                  "vegano"
+                ],
+                "limite": 5,
+                "pessoas": 10
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1188,
+        "tokens_out": 93,
+        "cost_usd": 0.000234,
+        "latency_ms": 662.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "sobremesa",
+          "consulta": "sobremesa vegana",
+          "dieta": [
+            "vegano"
+          ],
+          "limite": 5,
+          "pessoas": 10
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 10 pessoas | custo dessas unidades",
+          "itens": [
+            "graofino-016 | Overnight oats vegano | sobremesa | Grão Fino Café & Bistrô | 15.90 | pote | 1 | vegano,vegetariano,sem_lactose | 0 | 10 | 159.00",
+            "graofino-019 | Cookie vegano | sobremesa | Grão Fino Café & Bistrô | 9.90 | unidade | 1 | vegano,vegetariano,sem_lactose | 0 | 10 | 99.00",
+            "doceria-011 | Bolo vegano de cenoura | sobremesa | Doceria Açúcar & Afeto | 59.90 | bolo inteiro | 10 | vegano,vegetariano,sem_lactose | 0 | 1 | 59.90",
+            "mercado-040 | Sorvete vegano de chocolate 1 L | sobremesa | Supermercado Bom Preço | 29.90 | pote 1 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 59.80",
+            "verdevida-023 | Brownie vegano sem glúten | sobremesa | Verde Vida Cozinha Natural | 14.90 | unidade | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 10 | 149.00"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 94.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "doceria-011",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1582,
+        "tokens_out": 102,
+        "cost_usd": 0.0002985,
+        "latency_ms": 843.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "doceria-011",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "1 x Bolo vegano de cenoura (doceria-011, Doceria Açúcar & Afeto) = 59.90"
+          ],
+          "itens": 59.9,
+          "entrega": 6.9,
+          "total": 66.8
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "sobremesa"
+                ],
+                "dieta": [
+                  "vegano"
+                ],
+                "orcamento": null,
+                "pessoas": 10,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1682,
+        "tokens_out": 58,
+        "cost_usd": 0.0002871,
+        "latency_ms": 932.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "sobremesa"
+          ],
+          "dieta": [
+            "vegano"
+          ],
+          "orcamento": null,
+          "pessoas": 10,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 66.8,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "sobremesa": 10.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": "Pronto! Seu carrinho tem um bolo vegano de cenoura que serve as 10 pessoas, dentro do seu pedido de sobremesas veganas. Boa festa!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1775,
+        "tokens_out": 38,
+        "cost_usd": 0.00028905,
+        "latency_ms": 603536.5,
+        "wait_ms": 2000.0,
+        "error": null
+      }
+    ]
+  }
+}

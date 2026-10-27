@@ -123,7 +123,7 @@ def test_espera_limite_por_minuto_e_registra_espera(client, monkeypatch):
     step = Step(name="x")
     assert client._create_with_retries({}, step) is ok
     assert slept == [2.0]
-    assert step.wait_ms == 2000
+    assert 2000 <= step.wait_ms < 2100  # espera pedida + duração da tentativa que falhou
 
 
 def test_cota_diaria_interrompe(client, monkeypatch):

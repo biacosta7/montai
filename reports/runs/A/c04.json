@@ -1,0 +1,241 @@
+{
+  "case_id": "c04",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "lanche sem glúten para 2 crianças, sem pimenta",
+  "finished_at": "2026-10-26T19:45:28+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "graofino-010",
+        "name": "Tapioca de banana com canela",
+        "store_id": "graofino",
+        "store_name": "Grão Fino Café & Bistrô",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 15.9,
+        "subtotal": 31.8
+      }
+    ],
+    "items_total": 31.8,
+    "delivery_total": 6.9,
+    "total": 38.7,
+    "people": 2,
+    "budget": null,
+    "message": "Pronto! Seu lanche sem glúten para as duas crianças ficou com 2 unidades de Tapioca de banana com canela, tudo dentro do limite de picância e pronto para servir. Boa refeição!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "eaab5f308934",
+    "version": "A",
+    "order": "lanche sem glúten para 2 crianças, sem pimenta",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "lanche",
+                "consulta": "lanche sem glúten",
+                "dieta": [
+                  "sem_gluten"
+                ],
+                "limite": 5,
+                "pessoas": 2,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1190,
+        "tokens_out": 109,
+        "cost_usd": 0.00024389999999999997,
+        "latency_ms": 1278.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "lanche",
+          "consulta": "lanche sem glúten",
+          "dieta": [
+            "sem_gluten"
+          ],
+          "limite": 5,
+          "pessoas": 2,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-007 | Burger no pão sem glúten | lanche | Hamburgueria Chapa Quente | 41.90 | unidade | 1 | sem_gluten | 0 | 2 | 83.80",
+            "chapa-008 | Burger no prato sem pão | lanche | Hamburgueria Chapa Quente | 38.90 | prato | 1 | sem_gluten | 0 | 2 | 77.80",
+            "graofino-010 | Tapioca de banana com canela | lanche | Grão Fino Café & Bistrô | 15.90 | unidade | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 31.80",
+            "graofino-008 | Tapioca de queijo coalho | lanche | Grão Fino Café & Bistrô | 16.90 | unidade | 1 | vegetariano,sem_gluten | 0 | 2 | 33.80",
+            "graofino-009 | Tapioca de frango | lanche | Grão Fino Café & Bistrô | 17.90 | unidade | 1 | sem_gluten | 0 | 2 | 35.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 78.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "graofino-010",
+                    "quantidade": 2
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1560,
+        "tokens_out": 89,
+        "cost_usd": 0.0002874,
+        "latency_ms": 605.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "graofino-010",
+              "quantidade": 2
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "2 x Tapioca de banana com canela (graofino-010, Grão Fino Café & Bistrô) = 31.80"
+          ],
+          "itens": 31.8,
+          "entrega": 6.9,
+          "total": 38.7
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "lanche"
+                ],
+                "dieta": [
+                  "sem_gluten"
+                ],
+                "opcoes_dieta": [],
+                "orcamento": null,
+                "pessoas": 2,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1664,
+        "tokens_out": 98,
+        "cost_usd": 0.00030839999999999996,
+        "latency_ms": 691.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "lanche"
+          ],
+          "dieta": [
+            "sem_gluten"
+          ],
+          "opcoes_dieta": [],
+          "orcamento": null,
+          "pessoas": 2,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 38.7,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "lanche": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": "Pronto! Seu lanche sem glúten para as duas crianças ficou com 2 unidades de Tapioca de banana com canela, tudo dentro do limite de picância e pronto para servir. Boa refeição!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1762,
+        "tokens_out": 48,
+        "cost_usd": 0.0002931,
+        "latency_ms": 9646.3,
+        "wait_ms": 9000.0,
+        "error": null
+      }
+    ]
+  }
+}

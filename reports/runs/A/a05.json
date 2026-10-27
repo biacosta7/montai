@@ -1,0 +1,229 @@
+{
+  "case_id": "a05",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "lanche rápido e barato",
+  "finished_at": "2026-10-27T05:49:15+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "padaria-021",
+        "name": "Sanduíche natural de frango",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "unidade",
+        "quantity": 2,
+        "unit_price": 13.9,
+        "subtotal": 27.8
+      }
+    ],
+    "items_total": 27.8,
+    "delivery_total": 4.9,
+    "total": 32.7,
+    "people": 2,
+    "budget": null,
+    "message": "Pronto! Seu lanche rápido e barato ficou assim: 2 sanduíches naturais de frango por R$ 27,80, com entrega totalizando R$ 32,70. Boa refeição!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "21d64d2598ea",
+    "version": "A",
+    "order": "lanche rápido e barato",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "lanche",
+                "consulta": "lanche rápido barato",
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1181,
+        "tokens_out": 84,
+        "cost_usd": 0.00022755,
+        "latency_ms": 676.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "lanche",
+          "consulta": "lanche rápido barato",
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "padaria-021 | Sanduíche natural de frango | lanche | Padaria Pão Dourado | 13.90 | unidade | 1 | sem_lactose | 0 | 2 | 27.80",
+            "verdevida-014 | Wrap integral de frango | lanche | Verde Vida Cozinha Natural | 27.90 | unidade | 1 | sem_lactose | 0 | 2 | 55.80",
+            "chapa-005 | Burger de frango crispy | lanche | Hamburgueria Chapa Quente | 33.90 | unidade | 1 | sem_lactose | 0 | 2 | 67.80",
+            "chapa-009 | Combo família 4 burgers | lanche | Hamburgueria Chapa Quente | 169.90 | combo | 4 | - | 0 | 1 | 169.90",
+            "chapa-001 | Burger clássico | lanche | Hamburgueria Chapa Quente | 34.90 | unidade | 1 | - | 0 | 2 | 69.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 285.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "padaria-021",
+                    "quantidade": 2
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1501,
+        "tokens_out": 92,
+        "cost_usd": 0.00028035,
+        "latency_ms": 708.1,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "padaria-021",
+              "quantidade": 2
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "2 x Sanduíche natural de frango (padaria-021, Padaria Pão Dourado) = 27.80"
+          ],
+          "itens": 27.8,
+          "entrega": 4.9,
+          "total": 32.7
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "lanche"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [],
+                "orcamento": null,
+                "pessoas": 2,
+                "picancia_maxima": null
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1601,
+        "tokens_out": 62,
+        "cost_usd": 0.00027735,
+        "latency_ms": 562.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "lanche"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [],
+          "orcamento": null,
+          "pessoas": 2,
+          "picancia_maxima": null
+        },
+        "output": {
+          "ok": true,
+          "total": 32.7,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "lanche": 2.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": "Pronto! Seu lanche rápido e barato ficou assim: 2 sanduíches naturais de frango por R$ 27,80, com entrega totalizando R$ 32,70. Boa refeição!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1695,
+        "tokens_out": 48,
+        "cost_usd": 0.00028305,
+        "latency_ms": 9908.6,
+        "wait_ms": 9000.0,
+        "error": null
+      }
+    ]
+  }
+}

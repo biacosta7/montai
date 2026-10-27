@@ -1,0 +1,108 @@
+{
+  "case_id": "i07",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "sushi vegano e sem glúten para 2 pessoas",
+  "finished_at": "2026-10-27T01:11:23+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": null,
+    "budget": null,
+    "message": "não há opção de sushi vegano e sem glúten disponível no catálogo para atender ao pedido de 2 pessoas.",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "05d7162735c8",
+    "version": "A",
+    "order": "sushi vegano e sem glúten para 2 pessoas",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "sushi vegano",
+                "dieta": [
+                  "vegano",
+                  "sem_gluten"
+                ],
+                "limite": 5,
+                "pessoas": 2
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1189,
+        "tokens_out": 92,
+        "cost_usd": 0.00023354999999999998,
+        "latency_ms": 17676.2,
+        "wait_ms": 16000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "sushi vegano",
+          "dieta": [
+            "vegano",
+            "sem_gluten"
+          ],
+          "limite": 5,
+          "pessoas": 2
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 2 pessoas | custo dessas unidades",
+          "itens": [
+            "caseiro-013 | Marmita vegana | prato_principal | Restaurante Sabor Caseiro | 28.90 | marmita | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 57.80",
+            "aloha-005 | Poke vegano sem glúten | prato_principal | Aloha Poke & Bowls | 42.90 | bowl | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 85.80",
+            "lapicante-013 | Chili vegano 400 ml | prato_principal | La Picante Cozinha Mexicana | 30.90 | pote 400 ml | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 2 | 2 | 61.80",
+            "bangkok-003 | Pad thai vegano com tofu | prato_principal | Bangkok Express | 42.90 | prato | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 1 | 2 | 85.80",
+            "verdevida-001 | Bowl de quinoa com legumes assados | prato_principal | Verde Vida Cozinha Natural | 39.90 | bowl | 1 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 2 | 79.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 85.0,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": "IMPOSSÍVEL: não há opção de sushi vegano e sem glúten disponível no catálogo para atender ao pedido de 2 pessoas.",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1593,
+        "tokens_out": 67,
+        "cost_usd": 0.00027915,
+        "latency_ms": 637.2,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

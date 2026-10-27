@@ -1,0 +1,298 @@
+{
+  "case_id": "a02",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "uma festa",
+  "finished_at": "2026-10-27T03:05:40+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "churrascaria-007",
+        "name": "Combo churrasco gaúcho para 4",
+        "store_id": "churrascaria",
+        "store_name": "Churrascaria Gaúcha Querência",
+        "unit": "combo",
+        "quantity": 5,
+        "unit_price": 239.9,
+        "subtotal": 1199.5
+      },
+      {
+        "item_id": "mercado-003",
+        "name": "Refrigerante guaraná 2 L",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "garrafa 2 L",
+        "quantity": 4,
+        "unit_price": 9.49,
+        "subtotal": 37.96
+      }
+    ],
+    "items_total": 1237.46,
+    "delivery_total": 15.8,
+    "total": 1253.26,
+    "people": 20,
+    "budget": null,
+    "message": "Pronto! Seu carrinho tem 5 combos de churrasco gaúcho (alimentam 20 pessoas) e 4 garrafas de refrigerante 2 L, cobrindo a bebida para todos. O total, já com a taxa de entrega, fica R$ 1.253,26. Boa festa!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "d7781ef66e1a",
+    "version": "A",
+    "order": "uma festa",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "churrasco",
+                "limite": 3,
+                "pessoas": 20
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1178,
+        "tokens_out": 114,
+        "cost_usd": 0.00024509999999999994,
+        "latency_ms": 673.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "churrasco",
+          "limite": 3,
+          "pessoas": 20
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 20 pessoas | custo dessas unidades",
+          "itens": [
+            "churrascaria-008 | Combo churrasco gaúcho para 2 | prato_principal | Churrascaria Gaúcha Querência | 129.90 | combo | 2 | sem_gluten | 0 | 10 | 1299.00",
+            "churrascaria-007 | Combo churrasco gaúcho para 4 | prato_principal | Churrascaria Gaúcha Querência | 239.90 | combo | 4 | sem_gluten | 0 | 5 | 1199.50",
+            "nonna-012 | Pizza quatro queijos grande | prato_principal | Pizzaria Forno da Nonna | 72.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 7 | 510.30"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 264.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "refrigerante",
+                "limite": 3,
+                "pessoas": 20
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1436,
+        "tokens_out": 116,
+        "cost_usd": 0.000285,
+        "latency_ms": 701.7,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "refrigerante",
+          "limite": 3,
+          "pessoas": 20
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 20 pessoas | custo dessas unidades",
+          "itens": [
+            "chapa-019 | Refrigerante 2 L | bebida | Hamburgueria Chapa Quente | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 4 | 55.60",
+            "mercado-003 | Refrigerante guaraná 2 L | bebida | Supermercado Bom Preço | 9.49 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 4 | 37.96",
+            "nonna-029 | Refrigerante cola 2 L | bebida | Pizzaria Forno da Nonna | 13.90 | garrafa 2 L | 5 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 4 | 55.60"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 29.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "churrascaria-007",
+                    "quantidade": 5
+                  },
+                  {
+                    "item_id": "mercado-003",
+                    "quantidade": 4
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1714,
+        "tokens_out": 233,
+        "cost_usd": 0.0003969,
+        "latency_ms": 943.2,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "churrascaria-007",
+              "quantidade": 5
+            },
+            {
+              "item_id": "mercado-003",
+              "quantidade": 4
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "5 x Combo churrasco gaúcho para 4 (churrascaria-007, Churrascaria Gaúcha Querência) = 1199.50",
+            "4 x Refrigerante guaraná 2 L (mercado-003, Supermercado Bom Preço) = 37.96"
+          ],
+          "itens": 1237.46,
+          "entrega": 15.8,
+          "total": 1253.26
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "prato_principal"
+                ],
+                "dieta": [],
+                "orcamento": null,
+                "pessoas": 20,
+                "picancia_maxima": null
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1867,
+        "tokens_out": 59,
+        "cost_usd": 0.00031545,
+        "latency_ms": 12852.7,
+        "wait_ms": 12000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "prato_principal"
+          ],
+          "dieta": [],
+          "orcamento": null,
+          "pessoas": 20,
+          "picancia_maxima": null
+        },
+        "output": {
+          "ok": true,
+          "total": 1253.26,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "prato_principal": 20.0,
+            "bebida": 20.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": "Pronto! Seu carrinho tem 5 combos de churrasco gaúcho (alimentam 20 pessoas) e 4 garrafas de refrigerante 2 L, cobrindo a bebida para todos. O total, já com a taxa de entrega, fica R$ 1.253,26. Boa festa!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1967,
+        "tokens_out": 71,
+        "cost_usd": 0.00033765000000000005,
+        "latency_ms": 13254.0,
+        "wait_ms": 12000.0,
+        "error": null
+      }
+    ]
+  }
+}

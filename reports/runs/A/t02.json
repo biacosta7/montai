@@ -1,0 +1,100 @@
+{
+  "case_id": "t02",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "pizza para 4 pessoas, só tenho R$ 110",
+  "finished_at": "2026-10-26T11:59:07+00:00",
+  "cart": {
+    "status": "impossivel",
+    "lines": [],
+    "items_total": 0.0,
+    "delivery_total": 0.0,
+    "total": 0.0,
+    "people": null,
+    "budget": null,
+    "message": "Nenhuma combinação de pizzas que sirva 4 pessoas cabe no orçamento total de R$ 110 (as opções encontradas custam a partir de R$ 113,80, sem incluir a taxa de entrega).",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "b8a7998122a5",
+    "version": "A",
+    "order": "pizza para 4 pessoas, só tenho R$ 110",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "prato_principal",
+                "consulta": "pizza",
+                "limite": 5,
+                "pessoas": 4
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1188,
+        "tokens_out": 64,
+        "cost_usd": 0.0002166,
+        "latency_ms": 3780.8,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "prato_principal",
+          "consulta": "pizza",
+          "limite": 5,
+          "pessoas": 4
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 4 pessoas | custo dessas unidades",
+          "itens": [
+            "nonna-020 | Pizza rúcula com tomate seco grande | prato_principal | Pizzaria Forno da Nonna | 72.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 2 | 145.80",
+            "nonna-019 | Pizza rúcula com tomate seco média | prato_principal | Pizzaria Forno da Nonna | 56.90 | pizza média (6 fatias) | 2 | vegetariano | 0 | 2 | 113.80",
+            "nonna-002 | Pizza muçarela grande | prato_principal | Pizzaria Forno da Nonna | 59.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 2 | 119.80",
+            "nonna-018 | Pizza napolitana grande | prato_principal | Pizzaria Forno da Nonna | 64.90 | pizza grande (8 fatias) | 3 | vegetariano | 0 | 2 | 129.80",
+            "nonna-024 | Pizza vegana de legumes grande | prato_principal | Pizzaria Forno da Nonna | 74.90 | pizza grande (8 fatias) | 3 | vegano,vegetariano,sem_lactose | 0 | 2 | 149.80"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 236.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": "IMPOSSÍVEL: Nenhuma combinação de pizzas que sirva 4 pessoas cabe no orçamento total de R$ 110 (as opções encontradas custam a partir de R$ 113,80, sem incluir a taxa de entrega).",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2584,
+        "tokens_out": 191,
+        "cost_usd": 0.0005022,
+        "latency_ms": 676.9,
+        "wait_ms": 0.0,
+        "error": null
+      }
+    ]
+  }
+}

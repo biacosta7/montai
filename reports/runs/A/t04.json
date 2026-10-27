@@ -1,0 +1,306 @@
+{
+  "case_id": "t04",
+  "version": "A",
+  "model": "openai/gpt-oss-120b",
+  "order": "café da manhã para 5 pessoas com R$ 80",
+  "finished_at": "2026-10-26T15:29:16+00:00",
+  "cart": {
+    "status": "ok",
+    "lines": [
+      {
+        "item_id": "mercado-027",
+        "name": "Pão de forma tradicional",
+        "store_id": "mercado",
+        "store_name": "Supermercado Bom Preço",
+        "unit": "pacote 500 g",
+        "quantity": 1,
+        "unit_price": 8.99,
+        "subtotal": 8.99
+      },
+      {
+        "item_id": "padaria-013",
+        "name": "Café coado garrafa térmica 1 L",
+        "store_id": "padaria",
+        "store_name": "Padaria Pão Dourado",
+        "unit": "garrafa 1 L",
+        "quantity": 1,
+        "unit_price": 24.9,
+        "subtotal": 24.9
+      }
+    ],
+    "items_total": 33.89,
+    "delivery_total": 10.8,
+    "total": 44.69,
+    "people": 5,
+    "budget": 80.0,
+    "message": "Pronto! Seu café da manhã para 5 pessoas ficou assim:\n\n- 1 × Pão de forma tradicional (R$ 8,99)  \n- 1 × Café coado em garrafa térmica 1 L (R$ 24,90)  \n\nA taxa de entrega total é R$ 10,80, ficando o pedido completo em **R$ 44,69**, bem dentro do seu orçamento de R$ 80. Bom apetite!",
+    "problems": [],
+    "assumptions": []
+  },
+  "spec": null,
+  "trace": {
+    "run_id": "02198dd3f4d8",
+    "version": "A",
+    "order": "café da manhã para 5 pessoas com R$ 80",
+    "steps": [
+      {
+        "name": "agente",
+        "input": {
+          "turno": 1
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "paes",
+                "consulta": "pão de forma",
+                "limite": 5,
+                "pessoas": 5
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1189,
+        "tokens_out": 100,
+        "cost_usd": 0.00023835,
+        "latency_ms": 178569.1,
+        "wait_ms": 176000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "paes",
+          "consulta": "pão de forma",
+          "limite": 5,
+          "pessoas": 5
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 5 pessoas | custo dessas unidades",
+          "itens": [
+            "mercado-027 | Pão de forma tradicional | paes | Supermercado Bom Preço | 8.99 | pacote 500 g | 5 | vegetariano | 0 | 1 | 8.99",
+            "mercado-028 | Pão de forma sem glúten | paes | Supermercado Bom Preço | 19.90 | pacote 350 g | 4 | vegetariano,sem_gluten | 0 | 2 | 39.80",
+            "padaria-001 | Pão francês 10 unidades | paes | Padaria Pão Dourado | 8.90 | pacote 10 unidades | 5 | vegano,vegetariano,sem_lactose | 0 | 1 | 8.90",
+            "padaria-004 | Pão de leite 6 unidades | paes | Padaria Pão Dourado | 9.90 | pacote 6 unidades | 3 | vegetariano | 0 | 2 | 19.80",
+            "padaria-003 | Pão integral fatiado 500 g | paes | Padaria Pão Dourado | 13.90 | pacote 500 g | 5 | vegano,vegetariano,sem_lactose | 0 | 1 | 13.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 334.3,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 2
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "buscar_itens",
+              "argumentos": {
+                "categoria": "bebida",
+                "consulta": "café",
+                "limite": 5,
+                "pessoas": 5
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1553,
+        "tokens_out": 65,
+        "cost_usd": 0.00027194999999999997,
+        "latency_ms": 719250.2,
+        "wait_ms": 717000.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:buscar_itens",
+        "input": {
+          "categoria": "bebida",
+          "consulta": "café",
+          "limite": 5,
+          "pessoas": 5
+        },
+        "output": {
+          "colunas": "id | nome | categoria | loja | preço | unidade | serve (pessoas/unidade) | dieta | picância | unidades p/ 5 pessoas | custo dessas unidades",
+          "itens": [
+            "graofino-021 | Café coado garrafa térmica 1 L | bebida | Grão Fino Café & Bistrô | 29.90 | garrafa 1 L | 8 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 29.90",
+            "graofino-022 | Café coado garrafa térmica 2 L | bebida | Grão Fino Café & Bistrô | 52.90 | garrafa 2 L | 16 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 52.90",
+            "graofino-023 | Leite integral garrafa 1 L | bebida | Grão Fino Café & Bistrô | 9.90 | garrafa 1 L | 5 | vegetariano,sem_gluten | 0 | 1 | 9.90",
+            "padaria-014 | Café com leite 300 ml | bebida | Padaria Pão Dourado | 7.90 | copo 300 ml | 1 | vegetariano,sem_gluten | 0 | 5 | 39.50",
+            "padaria-013 | Café coado garrafa térmica 1 L | bebida | Padaria Pão Dourado | 24.90 | garrafa 1 L | 8 | vegano,vegetariano,sem_gluten,sem_lactose | 0 | 1 | 24.90"
+          ]
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 274.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 3
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "montar_carrinho",
+              "argumentos": {
+                "itens": [
+                  {
+                    "item_id": "mercado-027",
+                    "quantidade": 1
+                  },
+                  {
+                    "item_id": "padaria-013",
+                    "quantidade": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 1960,
+        "tokens_out": 167,
+        "cost_usd": 0.0003942,
+        "latency_ms": 806.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:montar_carrinho",
+        "input": {
+          "itens": [
+            {
+              "item_id": "mercado-027",
+              "quantidade": 1
+            },
+            {
+              "item_id": "padaria-013",
+              "quantidade": 1
+            }
+          ]
+        },
+        "output": {
+          "linhas": [
+            "1 x Pão de forma tradicional (mercado-027, Supermercado Bom Preço) = 8.99",
+            "1 x Café coado garrafa térmica 1 L (padaria-013, Padaria Pão Dourado) = 24.90"
+          ],
+          "itens": 33.89,
+          "entrega": 10.8,
+          "total": 44.69
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.6,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 4
+        },
+        "output": {
+          "texto": null,
+          "chamadas": [
+            {
+              "ferramenta": "validar_carrinho",
+              "argumentos": {
+                "categorias_essenciais": [
+                  "paes",
+                  "bebida"
+                ],
+                "dieta": [],
+                "opcoes_dieta": [],
+                "orcamento": 80,
+                "pessoas": 5,
+                "picancia_maxima": 0
+              }
+            }
+          ]
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2102,
+        "tokens_out": 66,
+        "cost_usd": 0.0003549,
+        "latency_ms": 659.9,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "ferramenta:validar_carrinho",
+        "input": {
+          "categorias_essenciais": [
+            "paes",
+            "bebida"
+          ],
+          "dieta": [],
+          "opcoes_dieta": [],
+          "orcamento": 80,
+          "pessoas": 5,
+          "picancia_maxima": 0
+        },
+        "output": {
+          "ok": true,
+          "total": 44.69,
+          "problemas": [],
+          "pessoas_atendidas_por_categoria": {
+            "paes": 5.0,
+            "bebida": 8.0
+          }
+        },
+        "llm_calls": 0,
+        "retries": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0.5,
+        "wait_ms": 0.0,
+        "error": null
+      },
+      {
+        "name": "agente",
+        "input": {
+          "turno": 5
+        },
+        "output": {
+          "texto": "Pronto! Seu café da manhã para 5 pessoas ficou assim:\n\n- 1 × Pão de forma tradicional (R$ 8,99)  \n- 1 × Café coado em garrafa térmica 1 L (R$ 24,90)  \n\nA taxa de entrega total é R$ 10,80, ficando o pedido completo em **R$ 44,69**, bem dentro do seu orçamento de R$ 80. Bom apetite!",
+          "chamadas": []
+        },
+        "llm_calls": 1,
+        "retries": 0,
+        "tokens_in": 2206,
+        "tokens_out": 107,
+        "cost_usd": 0.00039509999999999995,
+        "latency_ms": 3014.1,
+        "wait_ms": 2000.0,
+        "error": null
+      }
+    ]
+  }
+}
