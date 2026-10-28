@@ -1,4 +1,4 @@
-# Dependências do deploy (Streamlit Community Cloud / Hugging Face Spaces).
+# Dependências do deploy (Streamlit Community Cloud).
 # Desenvolvimento local: pip install -e ".[dev,ui]"
 #
 # No Linux, o torch vem do índice só-CPU do PyTorch (~200 MB). O pacote padrão

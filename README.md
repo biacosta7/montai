@@ -229,20 +229,6 @@ A demo roda no **Streamlit Community Cloud** (plano gratuito), publicada a parti
 
 Cada push na `main` atualiza a demo. O [requirements.txt](requirements.txt) instala o torch só-CPU no Linux (o pacote padrão traz CUDA e não cabe no plano gratuito). Na primeira visita depois de um deploy, o app baixa o modelo de embeddings e monta o índice, o que leva cerca de um minuto. A demo limita os pedidos por sessão (`MONTAI_MAX_ORDERS_PER_SESSION`, padrão 5), e o modo **Exemplos da avaliação** funciona mesmo sem cota.
 
-### Container (opcional)
-
-O [Dockerfile](Dockerfile) monta uma imagem com torch só-CPU, o modelo de embeddings e o índice já prontos, sem depender do Hub ao subir:
-
-```bash
-docker build -t montai .
-```
-
-```bash
-docker run --rm -p 8501:8501 --env-file .env montai
-```
-
-A pasta [space/](space/) tem o README e o script para publicar essa imagem num Hugging Face Space (Docker). Spaces Docker exigem plano pago (PRO), por isso a demo pública fica no Streamlit Cloud.
-
 ## Estrutura
 
 ```
