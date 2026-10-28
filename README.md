@@ -4,7 +4,7 @@
 
 Você escreve um pedido vago, do jeito que falaria ("quero fazer um churrasco para 5 pessoas, até R$ 200"), e o Montaí monta um carrinho de delivery concreto: itens, quantidades, lojas e preço total, respeitando orçamento, número de pessoas e restrições alimentares.
 
-**Demo:** _link a ser publicado após o deploy no Streamlit Community Cloud_ (veja [Deploy](#deploy)).
+**Demo:** [montai-demo.streamlit.app](https://montai-demo.streamlit.app) (veja [Deploy](#deploy)).
 
 O projeto implementa **duas arquiteturas** para o mesmo problema, um agente único com tool calling e um pipeline com papéis separados, e compara as duas com **avaliação automática**: 45 pedidos de teste com gabarito, métricas calculadas em código e avaliação da busca semântica com recall@5.
 
@@ -221,14 +221,27 @@ A versão B também foi avaliada nos **45 pedidos** antes de algumas correções
 
 ## Deploy
 
-O app está preparado para o **Streamlit Community Cloud**:
+A demo roda no **Streamlit Community Cloud** (plano gratuito), publicada a partir da branch `main`:
 
-1. O repositório precisa estar no GitHub, com os commits mais recentes.
-2. Em [share.streamlit.io](https://share.streamlit.io), crie um app apontando para este repositório, branch `main`, arquivo `app.py`.
-3. Em *Advanced settings*, escolha **Python 3.12** (o desenvolvimento foi feito em 3.14; o código usa só recursos de 3.11+, e o `ruff` confere isso).
-4. Em *Secrets*, cole o conteúdo de [.streamlit/secrets.toml.example](.streamlit/secrets.toml.example) com a sua chave.
+1. Em [share.streamlit.io](https://share.streamlit.io), crie um app apontando para este repositório, branch `main`, arquivo `app.py`.
+2. Em *Advanced settings*, escolha **Python 3.14** (a versão do desenvolvimento; o código usa só recursos de 3.11+, e o `ruff` confere isso).
+3. Em *Secrets*, cole o conteúdo de [.streamlit/secrets.toml.example](.streamlit/secrets.toml.example) com a sua chave. Dá para editar depois em *Settings → Secrets*.
 
-O [requirements.txt](requirements.txt) instala o torch só-CPU no Linux (o pacote padrão traz CUDA e não cabe no plano gratuito). Na primeira visita, o app baixa o modelo de embeddings e monta o índice, o que leva menos de um minuto. A demo limita os pedidos por sessão (`MONTAI_MAX_ORDERS_PER_SESSION`, padrão 5), e o modo **Exemplos da avaliação** funciona mesmo sem cota.
+Cada push na `main` atualiza a demo. O [requirements.txt](requirements.txt) instala o torch só-CPU no Linux (o pacote padrão traz CUDA e não cabe no plano gratuito). Na primeira visita depois de um deploy, o app baixa o modelo de embeddings e monta o índice, o que leva cerca de um minuto. A demo limita os pedidos por sessão (`MONTAI_MAX_ORDERS_PER_SESSION`, padrão 5), e o modo **Exemplos da avaliação** funciona mesmo sem cota.
+
+### Container (opcional)
+
+O [Dockerfile](Dockerfile) monta uma imagem com torch só-CPU, o modelo de embeddings e o índice já prontos, sem depender do Hub ao subir:
+
+```bash
+docker build -t montai .
+```
+
+```bash
+docker run --rm -p 8501:8501 --env-file .env montai
+```
+
+A pasta [space/](space/) tem o README e o script para publicar essa imagem num Hugging Face Space (Docker). Spaces Docker exigem plano pago (PRO), por isso a demo pública fica no Streamlit Cloud.
 
 ## Estrutura
 
